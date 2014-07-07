@@ -1,0 +1,143 @@
+\begin{thebibliography}{GDCH12}
+
+\bibitem[Ben75]{Bentley:1975:MBS:361002.361007}
+Jon~Louis Bentley.
+\newblock Multidimensional binary search trees used for associative searching.
+\newblock {\em Commun. ACM}, 18(9):509--517, September 1975.
+
+\bibitem[BL97]{DBLP:journals/ai/BlumL97}
+Avrim Blum and Pat Langley.
+\newblock Selection of relevant features and examples in machine learning.
+\newblock {\em Artif. Intell.}, 97(1-2):245--271, 1997.
+
+\bibitem[BT12]{2012arXiv1202.5933B}
+J.~{Bien} and R.~{Tibshirani}.
+\newblock {Prototype selection for interpretable classification}.
+\newblock {\em ArXiv e-prints}, February 2012.
+
+\bibitem[CH67]{Cover:2006:NNP:2263261.2267456}
+T.~Cover and P.~Hart.
+\newblock Nearest neighbor pattern classification.
+\newblock {\em IEEE Trans. Inf. Theor.}, 13(1):21--27, January 1967.
+
+\bibitem[DGKL94]{devroye1994strong}
+Luc Devroye, Laszlo Gyorfi, Adam Krzyzak, and G{\'a}bor Lugosi.
+\newblock On the strong universal consistency of nearest neighbor regression
+  function estimates.
+\newblock {\em The Annals of Statistics}, pages 1371--1385, 1994.
+
+\bibitem[FH51]{fix_51_discriminatory}
+E.~Fix and J.~L. Hodges.
+\newblock {Discriminatory analysis, nonparametric discrimination: Consistency
+  properties}.
+\newblock {\em US Air Force School of Aviation Medicine}, Technical Report
+  4(3):477+, January 1951.
+
+\bibitem[FI93]{DBLP:conf/ijcai/FayyadI93}
+Usama~M. Fayyad and Keki~B. Irani.
+\newblock Multi-interval discretization of continuous-valued attributes for
+  classification learning.
+\newblock In Ruzena Bajcsy, editor, {\em IJCAI}, pages 1022--1029. Morgan
+  Kaufmann, 1993.
+
+\bibitem[Gat72]{DBLP:journals/tit/Gates72}
+Geoffrey~W. Gates.
+\newblock The reduced nearest neighbor rule (corresp.).
+\newblock {\em IEEE Transactions on Information Theory}, 18(3):431--433, 1972.
+
+\bibitem[GDCH12]{Garcia:2012:PSN:2122272.2122582}
+Salvador Garcia, Joaquin Derrac, Jose Cano, and Francisco Herrera.
+\newblock Prototype selection for nearest neighbor classification: Taxonomy and
+  empirical study.
+\newblock {\em IEEE Trans. Pattern Anal. Mach. Intell.}, 34(3):417--435, March
+  2012.
+
+\bibitem[GK14]{DBLP:journals/corr/GottliebK14}
+Lee-Ad Gottlieb and Aryeh Kontorovich.
+\newblock Near-optimal sample compression for nearest neighbors.
+\newblock {\em CoRR}, abs/1404.3368, 2014.
+
+\bibitem[GKK13]{DBLP:journals/corr/GottliebKK13}
+Lee-Ad Gottlieb, Aryeh Kontorovich, and Robert Krauthgamer.
+\newblock Efficient classification for metric data.
+\newblock {\em CoRR}, abs/1306.2547, 2013.
+
+\bibitem[Har68]{Hart:2006:CNN:2263267.2267647}
+P.~Hart.
+\newblock The condensed nearest neighbor rule (corresp.).
+\newblock {\em IEEE Trans. Inf. Theor.}, 14(3):515--516, September 1968.
+
+\bibitem[KL04]{DBLP:conf/soda/KrauthgamerL04}
+Robert Krauthgamer and James~R. Lee.
+\newblock Navigating nets: simple algorithms for proximity search.
+\newblock In J.~Ian Munro, editor, {\em SODA}, pages 798--807. SIAM, 2004.
+
+\bibitem[KS04]{Kolahdouzan:2004:VKN:1316689.1316762}
+Mohammad Kolahdouzan and Cyrus Shahabi.
+\newblock Voronoi-based k nearest neighbor search for spatial network
+  databases.
+\newblock In {\em Proceedings of the Thirtieth International Conference on Very
+  Large Data Bases - Volume 30}, VLDB '04, pages 840--851. VLDB Endowment,
+  2004.
+
+\bibitem[LHTD02]{Liu:2002:DET:593435.593535}
+Huan Liu, Farhad Hussain, Chew~Lim Tan, and Manoranjan Dash.
+\newblock Discretization: An enabling technique.
+\newblock {\em Data Min. Knowl. Discov.}, 6(4):393--423, October 2002.
+
+\bibitem[LM98]{Liu:1998:FEC:551943}
+Huan Liu and Hiroshi Motoda.
+\newblock {\em Feature Extraction, Construction and Selection: A Data Mining
+  Perspective}.
+\newblock Kluwer Academic Publishers, Norwell, MA, USA, 1998.
+
+\bibitem[LM02]{Liu:2002:IIS:593433.593525}
+Huan Liu and Hiroshi Motoda.
+\newblock On issues of instance selection.
+\newblock {\em Data Min. Knowl. Discov.}, 6(2):115--130, April 2002.
+
+\bibitem[SSBD14]{shalev2014understanding}
+S.~Shalev-Shwartz and S.~Ben-David.
+\newblock {\em Understanding Machine Learning: From Theory to Algorithms}.
+\newblock Cambridge University Press, 2014.
+
+\bibitem[Tou02]{DBLP:conf/jcdcg/Toussaint02}
+Godfried~T. Toussaint.
+\newblock Open problems in geometric methods for instance-based learning.
+\newblock In Jin Akiyama and Mikio Kano, editors, {\em JCDCG}, volume 2866 of
+  {\em Lecture Notes in Computer Science}, pages 273--283. Springer, 2002.
+
+\bibitem[Vor08]{voronoi1908nouvelles}
+Georges Vorono{\"\i}.
+\newblock Nouvelles applications des param{\`e}tres continus {\`a} la
+  th{\'e}orie des formes quadratiques. deuxi{\`e}me m{\'e}moire. recherches sur
+  les parall{\'e}llo{\`e}dres primitifs.
+\newblock {\em Journal f{\"u}r die reine und angewandte Mathematik},
+  134:198--287, 1908.
+
+\bibitem[Wil72]{wilson1972asymptotic}
+DR~Wilson.
+\newblock Asymptotic properties of nearest neighbor rules using edited data.
+\newblock {\em Institute of Electrical and Electronic Engineers Transactions on
+  Systems, Man and Cybernetics}, 2:408--421, 1972.
+
+\bibitem[Wil91]{Wilfong:1991:NNP:109648.109673}
+Gordon Wilfong.
+\newblock Nearest neighbor problems.
+\newblock In {\em Proceedings of the Seventh Annual Symposium on Computational
+  Geometry}, SCG '91, pages 224--233, New York, NY, USA, 1991. ACM.
+
+\bibitem[WM97]{Wilson:1997:IPT:645526.657143}
+D.~Randall Wilson and Tony~R. Martinez.
+\newblock Instance pruning techniques.
+\newblock In {\em Proceedings of the Fourteenth International Conference on
+  Machine Learning}, ICML '97, pages 403--411, San Francisco, CA, USA, 1997.
+  Morgan Kaufmann Publishers Inc.
+
+\bibitem[Zuk10]{Zukhba:2010:NPP:1921730.1921735}
+A.~V. Zukhba.
+\newblock Np-completeness of the problem of prototype selection in the nearest
+  neighbor method.
+\newblock {\em Pattern Recognit. Image Anal.}, 20(4):484--494, December 2010.
+
+\end{thebibliography}

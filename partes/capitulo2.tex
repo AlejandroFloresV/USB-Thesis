@@ -1,0 +1,61 @@
+\chapter{Algoritmos Evolutivos}
+\label{capitulo2}
+\lhead{Capítulo 2. \emph{Algoritmos Evolutivos}}
+
+Los algoritmos evolutivos (\emph{EA}) son métodos estocásticos de búsqueda sobre espacios combinatorios, basados en el comportamiento evolutivo de las poblaciones. Comúnmente son aplicados en problemas con espacios de búsqueda poco conocidos, dado que permite explorar en amplitud el espacio de soluciones, sin olvidar la explotación de soluciones prometedoras.
+
+Este es el caso del problema de \emph{selección de instancias} (\emph{IS}), donde un conjunto inicial de datos pequeño, con 100 instancias, tiene un espacio de $2^{100}$ soluciones factibles, y donde no tenemos información adicional sobre la distribución de los datos.
+
+De los diferentes algoritmos evolutivos existentes, los autores propusieron la evaluación de los siguientes cuatro (4) modelos:
+
+\section{Generational Genetic Algorithm (GGA)}
+
+Se mantiene una \emph{población} de \emph{cromosomas} (conjunto de posibles soluciones), que evolucionan durante un número de \emph{generaciones} (iteraciones).
+
+El proceso de evolución consiste en: \emph{i}) selección del conjunto de individuos con mayor \emph{fitness} de la población, \emph{ii}) proceso de recombinación entre pares de individuos/cromosomas (llamados padres) usando operadores de cruce y mutación, que generan un par de nuevas soluciones (llamadas \emph{descendencia}).
+
+\section{Steady-State Genetic Algorithm (SGA)}
+
+Utiliza un proceso similar a \emph{GGA}. La diferencia radica en que en cada iteración/generación se producen solo 1 o 2 individuos nuevos.
+
+En cada iteración se \emph{i}) seleccionan dos individuos padres de la población actual, \emph{ii}) se crea su descendencia mediante operadores de cruce y mutación, \emph{iii}) se seleccionan el/los individos a reemplazar de la población siguiendo alguna estrategia de selección (menor \emph{fitness}, más ``viejo'', aleatorio), y \emph{iv}) se decide si se reemplazan dichos individuos con la nueva descendencia o no (reemplazo incondicional, o dependiente del \emph{fitness} de los individuos).
+
+\section{CHC Adaptive Search Algorithm}
+
+Similarmente, este algorítmo mantiene una población de $N$ cromosomas, donde en cada iteración: \emph{i}) de la población de $N$ individuos padres se genera una descendencia de $N$ individuos, \emph{ii}) de ambas poblaciones sobreviven los mejores $N$ individuos para la siguiente generación.
+
+\emph{CHC} tiene otras dos particularidades. Por un lado, implementa un operador de recombinación llamado HUX, que intercambia la mitad de los bits que difieren entre los dos individos de forma aleatoria. Además \emph{CHC} emplea la prevención de ``incesto'': antes de realizar el cruce usando HUX, calcula la \emph{distancia de Hamming} entre ambos individuos padres; si dicha distancia es mayor a cierto umbral (inicialmente $L/4$, donde $L$ es la longitud de los cromosomas), se realiza el cruce. En caso de no haberse generado ninguna descendencia durante una iteración, dicho umbral se disminuye en 1.
+
+Nótese que durante este proceso no se aplica el operador de mutación. Cuando el umbral de prevención de incesto llega a cero, significa que la población convergió, y se comienza un proceso de repoblación en el que se usa la mejor solución/cromosoma encontrado hasta el momento, modificando hasta $35\%$ de sus bits para generar los $N-1$ individuos restantes de la nueva población, y luego continuar el proceso evolutivo.
+
+\section{Population-Based Incremental Learning (PBIL)}
+
+Esta metaheurística consiste en mantener un vector de probabilidades $V_p$ de tamaño $L$ (número de instancias iniciales), donde $V_p\left[i\right]$ es la probabilidad de que la $i$-esima instancia pertenezca a la solución ($i$-esimo bit sea 1).\\
+Inicialmente $V_p\left[i\right] = 0.5\ \ \forall{i \in [1\dots L]}$. En cada iteración se sigue el siguiente proceso:
+
+\begin{enumerate}[a)]
+\item Se generan $N$ cromosomas (secuencias de bits) basados en las probabilidades en $V_p$.
+\item Se acerca $V_p$ hacia la mejor solución generada $S_{best}$
+$$V_p\left[i\right]=V_p\left[i\right]*(1-LR)+S_{best}\left[i\right]*LR$$
+Donde $LR$ es la tasa de aprendizaje (\emph{learning rate}).
+\item Se aleja $V_p$ de la peor solución generada $S_{worst}$\\
+\noindent{Si $S_{best}\left[i\right] <> S_{worst}\left[i\right]$}
+$$V_p\left[i\right]=V_p\left[i\right]*(1-Negat\_LR)+S_{best}\left[i\right]*Negat\_LR$$
+Donde $Negat\_LR$ es la tasa de aprendizaje negativa.
+\end{enumerate}
+
+\section{Particle Swarm Optimization (PSO)}
+
+\emph{PSO} se inspira en el comportamiento de organismos biológicos, en particular, del vuelo de una bandada de aves. Cada ave o ``partícula'' (que representa una posible solución del espacio de búsqueda) tiene una velocidad asociada, y modifica su vuelo en relación a su propia experiencia, y a la experiencia de sus ``compañeras''. Diferentes estudios muestran que \emph{PSO} obtiene mejores resultados que los algoritmos genéticos (\emph{GA}), y en menor tiempo de cómputo.
+
+Inicialmente se obtienen $P$ soluciones aleatorias, o partículas. Cada partícula $i$ está representada por un posición en un espacio $s$-dimensional \linebreak $\textbf{x}_i =\ <x_{i1},x_{i2},\dots,x_{is}>$. Luego, se realizan un número de iteraciones (\texttt{MAX\_ITER}) en las que se actualiza la posición de cada partícula de acuerdo a su velocidad $v_i$:
+
+$$\textbf{x}_i = \textbf{x}_i + v_i$$
+
+$$v_i = w v_i + c_1 Rand() (p_i - \textbf{x}_i) +  c_2 Rand() (p_g - \textbf{x}_i)$$
+
+Donde $c_1$ y $c_2$ con constantes, $Rand()$ es una función aleatoria $[0,1]$, $p_i$ es la mejor solución encontrada por la partícula $i$ (de acuerdo a una función de evaluación/\emph{fitness} establecida), $p_g$ es la mejor solución global, y $w$ es el ``peso de inercia'' que establece la posible variabilidad de $v_i$. $w$ disminuye cada iteración de acuerdo a la siguiente fórmula:
+
+$$w = \frac{(w_{start} - w_{end})(\texttt{MAX\_ITER} - \texttt{Iter})}{\texttt{MAX\_ITER} + w_{end}}$$
+
+Siendo \texttt{Iter} la iteración actual del algoritmo, y $w_{start}$ y $w_{end}$ valores predeterminados.
