@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.7)  6 JUL 2014 19:10
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.7)  8 JUL 2014 10:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1415,7 +1415,7 @@ babelbib extension \btxifchangecaseoff added to \extrasspanish
 babelbib: Load BibTeX extensions \bibsspanish for spanish
 babelbib: Set language for keywords in the bibliography fixed to spanish
 ABD: EveryShipout initializing macros
-<img/./usb.pdf, id=95, 171.64125pt x 114.4275pt>
+<img/./usb.pdf, id=111, 171.64125pt x 114.4275pt>
 File: img/./usb.pdf Graphic file (type pdf)
  <use img/./usb.pdf>
 Package pdftex.def Info: img/./usb.pdf used on input line 62.
@@ -1436,7 +1436,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 {/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./img/.
 /usb.pdf>]
-(./partes/acta.tex <img/usb.pdf, id=105, 171.64125pt x 114.4275pt>
+(./partes/acta.tex <img/usb.pdf, id=121, 171.64125pt x 114.4275pt>
 File: img/usb.pdf Graphic file (type pdf)
 
 <use img/usb.pdf>
@@ -1469,14 +1469,14 @@ Package blindtext Warning: spanish not defined, using English instead.
 (./tesis.toc
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-)
-\tf@toc=\write6
-\openout6 = `tesis.toc'.
-
  [3
 
 
-]
+])
+\tf@toc=\write6
+\openout6 = `tesis.toc'.
+
+ [4]
 ------------------------------------------------------------------------------
  \IeC {\'I}ndice de Figuras
 ------------------------------------------------------------------------------
@@ -1487,7 +1487,7 @@ LaTeX Info: Redefining \% on input line 1.
 \tf@lof=\write7
 \openout7 = `tesis.lof'.
 
- [4
+ [5
 
 
 ]
@@ -1501,14 +1501,14 @@ LaTeX Info: Redefining \% on input line 1.
 \tf@lot=\write8
 \openout8 = `tesis.lot'.
 
- [5
+ [6
 
 
 ] (./partes/acronimos.tex
 ------------------------------------------------------------------------------
  Acr\IeC {\'o}nimos y S\IeC {\'\i }mbolos
 ------------------------------------------------------------------------------
-[6
+[7
 
 
 
@@ -1516,7 +1516,7 @@ LaTeX Info: Redefining \% on input line 1.
 ------------------------------------------------------------------------------
  Dedicatoria
 ------------------------------------------------------------------------------
-[7
+[8
 
 ]) (./partes/introduccion.tex) (./partes/capitulo1.tex [1
 
@@ -1535,36 +1535,26 @@ Underfull \hbox (badness 2809) in paragraph at lines 44--45
 T \OT1/cmr/m/n/12 = []$ \T1/cmr/m/n/12 don-de
  []
 
-[3] [4] <img/voronoi.pdf, id=238, 546.29094pt x 369.88188pt>
+[3] [4] [5] <img/voronoi.pdf, id=272, 546.29094pt x 369.88188pt>
 File: img/voronoi.pdf Graphic file (type pdf)
 
 <use img/voronoi.pdf>
 Package pdftex.def Info: img/voronoi.pdf used on input line 77.
 (pdftex.def)             Requested size: 250.48637pt x 169.60027pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[5] [6 <./img/voronoi.pdf>] [7] [8]
-<img/taxonomia.pdf, id=530, 256.07669pt x 170.7178pt>
-File: img/taxonomia.pdf Graphic file (type pdf)
- <use img/taxonomia.pdf>
-Package pdftex.def Info: img/taxonomia.pdf used on input line 134.
-(pdftex.def)             Requested size: 292.22987pt x 194.8287pt.
-
-[9 <./img/taxonomia.pdf>] [10]) (./partes/capitulo2.tex [11]
+ [6 <./img/voronoi.pdf>] [7] [8] [9])
+(./partes/capitulo2.tex [10]
 Cap\'{\i }tulo 2.
 ------------------------------------------------------------------------------
  2 Algoritmos Evolutivos
 ------------------------------------------------------------------------------
-[12
+[11
 
-] [13]
+] [12]
 Overfull \hbox (13.62851pt too wide) in paragraph at lines 31--31
 []\T1/cmr/bx/n/17.28 Population-Based In-cre-men-tal Lear-ning (PBIL) 
  []
 
-[14]
+[13]
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 51.
  (/usr/local/texlive/2013/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
@@ -1574,7 +1564,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 51--52
 mm/m/it/12 s$\T1/cmr/m/n/12 -dimensional
  []
 
-) (./partes/capitulo3.tex [15]
+) (./partes/capitulo3.tex [14]
 Cap\'{\i }tulo 3.
 ------------------------------------------------------------------------------
  3 Punto de partida
@@ -1596,7 +1586,7 @@ Package blindtext Warning: spanish not defined, using English instead.
 Package blindtext Warning: spanish not defined, using English instead.
 (blindtext)                 on input line 129.
 
-[16
+[15
 
 ]
 
@@ -1607,7 +1597,7 @@ Package blindtext Warning: spanish not defined, using English instead.
 Package blindtext Warning: spanish not defined, using English instead.
 (blindtext)                 on input line 129.
 
-(./partes/capitulo4.tex [17]
+(./partes/capitulo4.tex [16]
 Cap\'{\i }tulo 4.
 ------------------------------------------------------------------------------
  4 Evaluaci\IeC {\'o}n Experimental
@@ -1629,7 +1619,7 @@ Package blindtext Warning: spanish not defined, using English instead.
 Package blindtext Warning: spanish not defined, using English instead.
 (blindtext)                 on input line 130.
 
-[18
+[17
 
 ]
 
@@ -1640,7 +1630,7 @@ Package blindtext Warning: spanish not defined, using English instead.
 Package blindtext Warning: spanish not defined, using English instead.
 (blindtext)                 on input line 130.
 
-(./partes/conclusiones.tex [19]
+(./partes/conclusiones.tex [18]
 
 Package blindtext Warning: spanish not defined, using English instead.
 (blindtext)                 on input line 7.
@@ -1657,7 +1647,7 @@ Package blindtext Warning: spanish not defined, using English instead.
 Package blindtext Warning: spanish not defined, using English instead.
 (blindtext)                 on input line 7.
 
-[20
+[19
 
 ]
 
@@ -1672,9 +1662,9 @@ Package blindtext Warning: spanish not defined, using English instead.
 Package blindtext Warning: spanish not defined, using English instead.
 (blindtext)                 on input line 9.
 
-) (./tesis.bbl [21] [22
+) (./tesis.bbl [20] [21
 
-] [23]) [24]
+] [22] [23]) [24]
 ------------------------------------------------------------------------------
  Bibliograf\'{\i }a
 ------------------------------------------------------------------------------
@@ -1687,17 +1677,17 @@ LaTeX Info: Redefining \% on input line 24.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 155.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 155.
 Package rerunfilecheck Info: File `tesis.out' has not changed.
-(rerunfilecheck)             Checksum: 01836436B36E6FCFD472D8615F44CBF3;4157.
+(rerunfilecheck)             Checksum: 0DD6D1B4F3827727BFCB4AD535147469;5527.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 155.
  ) 
 Here is how much of TeX's memory you used:
- 29702 strings out of 493308
- 511728 string characters out of 6137817
- 576879 words of memory out of 5000000
- 32484 multiletter control sequences out of 15000+600000
+ 29734 strings out of 493308
+ 512352 string characters out of 6137817
+ 576954 words of memory out of 5000000
+ 32506 multiletter control sequences out of 15000+600000
  32076 words of font info for 77 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 56i,11n,55p,10441b,505s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,12n,55p,10441b,648s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 </usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
 /usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></
@@ -1727,10 +1717,10 @@ s/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2013/texmf-dist/fonts/
 type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2013/texmf-dist/fonts/ty
 pe1/public/cm-super/sftt1200.pfb></usr/local/texlive/2013/texmf-dist/fonts/type
 1/public/cm-super/sfxc1200.pfb>
-Output written on tesis.pdf (33 pages, 1061849 bytes).
+Output written on tesis.pdf (34 pages, 731871 bytes).
 PDF statistics:
- 824 PDF objects out of 1000 (max. 8388607)
- 543 compressed objects within 6 object streams
- 106 named destinations out of 1000 (max. 500000)
- 209 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 761 PDF objects out of 1000 (max. 8388607)
+ 571 compressed objects within 6 object streams
+ 117 named destinations out of 1000 (max. 500000)
+ 236 words of extra memory for PDF output out of 10000 (max. 10000000)
 

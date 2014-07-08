@@ -1,4 +1,5 @@
-\begin{thebibliography}{GDCH12}
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{DGKL94}
 
 \bibitem[Ben75]{Bentley:1975:MBS:361002.361007}
 Jon~Louis Bentley.
@@ -15,10 +16,24 @@ J.~{Bien} and R.~{Tibshirani}.
 \newblock {Prototype selection for interpretable classification}.
 \newblock {\em ArXiv e-prints}, February 2012.
 
+\bibitem[CF01]{cerveron2001another}
+Vicente Cerveron and Francesc~J Ferri.
+\newblock Another move toward the minimum consistent subset: a tabu search
+  approach to the condensed nearest neighbor rule.
+\newblock {\em Systems, Man, and Cybernetics, Part B: Cybernetics, IEEE
+  Transactions on}, 31(3):408--413, 2001.
+
 \bibitem[CH67]{Cover:2006:NNP:2263261.2267456}
 T.~Cover and P.~Hart.
 \newblock Nearest neighbor pattern classification.
 \newblock {\em IEEE Trans. Inf. Theor.}, 13(1):21--27, January 1967.
+
+\bibitem[CHL03]{cano2003using}
+Jos{\'e}~Ram{\'o}n Cano, Francisco Herrera, and Manuel Lozano.
+\newblock Using evolutionary algorithms as instance selection for data
+  reduction in kdd: an experimental study.
+\newblock {\em Evolutionary Computation, IEEE Transactions on}, 7(6):561--575,
+  2003.
 
 \bibitem[DGKL94]{devroye1994strong}
 Luc Devroye, Laszlo Gyorfi, Adam Krzyzak, and G{\'a}bor Lugosi.
@@ -45,12 +60,11 @@ Geoffrey~W. Gates.
 \newblock The reduced nearest neighbor rule (corresp.).
 \newblock {\em IEEE Transactions on Information Theory}, 18(3):431--433, 1972.
 
-\bibitem[GDCH12]{Garcia:2012:PSN:2122272.2122582}
-Salvador Garcia, Joaquin Derrac, Jose Cano, and Francisco Herrera.
-\newblock Prototype selection for nearest neighbor classification: Taxonomy and
-  empirical study.
-\newblock {\em IEEE Trans. Pattern Anal. Mach. Intell.}, 34(3):417--435, March
-  2012.
+\bibitem[GCH08]{garcia2008memetic}
+Salvador Garc{\'\i}a, Jos{\'e}~Ram{\'o}n Cano, and Francisco Herrera.
+\newblock A memetic algorithm for evolutionary prototype selection: A scaling
+  up approach.
+\newblock {\em Pattern Recognition}, 41(8):2693--2709, 2008.
 
 \bibitem[GK14]{DBLP:journals/corr/GottliebK14}
 Lee-Ad Gottlieb and Aryeh Kontorovich.
@@ -62,10 +76,21 @@ Lee-Ad Gottlieb, Aryeh Kontorovich, and Robert Krauthgamer.
 \newblock Efficient classification for metric data.
 \newblock {\em CoRR}, abs/1306.2547, 2013.
 
+\bibitem[GPY08]{gil2008evolving}
+Roberto Gil-Pita and Xin Yao.
+\newblock Evolving edited k-nearest neighbor classifiers.
+\newblock {\em International Journal of Neural Systems}, 18(06):459--467, 2008.
+
 \bibitem[Har68]{Hart:2006:CNN:2263267.2267647}
 P.~Hart.
 \newblock The condensed nearest neighbor rule (corresp.).
 \newblock {\em IEEE Trans. Inf. Theor.}, 14(3):515--516, September 1968.
+
+\bibitem[HLL02]{ho2002design}
+Shinn-Ying Ho, Chia-Cheng Liu, and Soundy Liu.
+\newblock Design of an optimal nearest neighbor classifier using an intelligent
+  genetic algorithm.
+\newblock {\em Pattern Recognition Letters}, 23(13):1495--1503, 2002.
 
 \bibitem[KL04]{DBLP:conf/soda/KrauthgamerL04}
 Robert Krauthgamer and James~R. Lee.
@@ -95,6 +120,22 @@ Huan Liu and Hiroshi Motoda.
 Huan Liu and Hiroshi Motoda.
 \newblock On issues of instance selection.
 \newblock {\em Data Min. Knowl. Discov.}, 6(2):115--130, April 2002.
+
+\bibitem[Ska94]{DBLP:conf/icml/Skalak94}
+David~B. Skalak.
+\newblock Prototype and feature selection by sampling and random mutation hill
+  climbing algorithms.
+\newblock In William~W. Cohen and Haym Hirsh, editors, {\em ICML}, pages
+  293--301. Morgan Kaufmann, 1994.
+
+\bibitem[SLI{\etalchar{+}}01]{sierra2001prototype}
+Basilio Sierra, Elena Lazkano, I{\~n}aki Inza, Marisa Merino, Pedro
+  Larra{\~n}aga, and Jorge Quiroga.
+\newblock Prototype selection and feature subset selection by estimation of
+  distribution algorithms. a case study in the survival of cirrhotic patients
+  treated with tips.
+\newblock In {\em Artificial Intelligence in Medicine}, pages 20--29. Springer,
+  2001.
 
 \bibitem[SSBD14]{shalev2014understanding}
 S.~Shalev-Shwartz and S.~Ben-David.
@@ -133,6 +174,12 @@ D.~Randall Wilson and Tony~R. Martinez.
 \newblock In {\em Proceedings of the Fourteenth International Conference on
   Machine Learning}, ICML '97, pages 403--411, San Francisco, CA, USA, 1997.
   Morgan Kaufmann Publishers Inc.
+
+\bibitem[ZS02]{zhang2002optimal}
+Hongbin Zhang and Guangyu Sun.
+\newblock Optimal reference subset selection for nearest neighbor
+  classification by tabu search.
+\newblock {\em Pattern Recognition}, 35(7):1481--1490, 2002.
 
 \bibitem[Zuk10]{Zukhba:2010:NPP:1921730.1921735}
 A.~V. Zukhba.
