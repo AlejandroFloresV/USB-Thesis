@@ -3,44 +3,44 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: tesis.aux
 The style file: alpha.bst
 Database file #1: bibliografia.bib
-You've used 31 entries,
+You've used 37 entries,
             2543 wiz_defined-function locations,
-            801 strings with 11322 characters,
-and the built_in function-call counts, 13649 in all, are:
-= -- 1419
-> -- 583
-< -- 19
-+ -- 192
-- -- 189
-* -- 992
-:= -- 2178
-add.period$ -- 101
-call.type$ -- 31
-change.case$ -- 187
-chr.to.int$ -- 31
-cite$ -- 31
-duplicate$ -- 551
-empty$ -- 1011
-format.name$ -- 228
-if$ -- 2858
+            833 strings with 12386 characters,
+and the built_in function-call counts, 15637 in all, are:
+= -- 1614
+> -- 642
+< -- 25
++ -- 209
+- -- 205
+* -- 1104
+:= -- 2496
+add.period$ -- 121
+call.type$ -- 37
+change.case$ -- 214
+chr.to.int$ -- 37
+cite$ -- 37
+duplicate$ -- 656
+empty$ -- 1185
+format.name$ -- 254
+if$ -- 3280
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 33
-newline$ -- 159
-num.names$ -- 101
-pop$ -- 146
+missing$ -- 43
+newline$ -- 189
+num.names$ -- 119
+pop$ -- 189
 preamble$ -- 1
-purify$ -- 220
+purify$ -- 257
 quote$ -- 0
-skip$ -- 486
+skip$ -- 562
 stack$ -- 0
-substring$ -- 916
-swap$ -- 121
-text.length$ -- 19
-text.prefix$ -- 9
+substring$ -- 1016
+swap$ -- 137
+text.length$ -- 25
+text.prefix$ -- 13
 top$ -- 0
-type$ -- 240
+type$ -- 272
 warning$ -- 0
-while$ -- 142
-width$ -- 36
-write$ -- 418
+while$ -- 160
+width$ -- 43
+write$ -- 494

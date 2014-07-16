@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.7)  8 JUL 2014 10:26
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.7)  16 JUL 2014 00:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -704,6 +704,9 @@ Package babel Info: Making . an active character on input line 599.
 Package babel Info: Making < an active character on input line 644.
 Package babel Info: Making > an active character on input line 644.
 ))
+LaTeX Info: Redefining \. on input line 4.
+LaTeX Info: Redefining \% on input line 4.
+
 (/usr/local/texlive/2013/texmf-dist/tex/latex/babelbib/babelbib.sty
 Package: babelbib 2012/01/03 v1.31 babelbib: multilingual bibliographies (HH)
 \c@btxromaniannumeral=\count140
@@ -1016,7 +1019,7 @@ Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix
 \FV@StepNumber=\count163
 \FV@OutFile=\write4
 )
-Package hyperref Info: Option `colorlinks' set `false' on input line 14.
+Package hyperref Info: Option `colorlinks' set `false' on input line 15.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/mdframed/mdframed.sty
 Package: mdframed 2013/07/01 1.9b: mdframed
@@ -1335,31 +1338,70 @@ Package: paralist 2013/06/09 v2.4 Extended list environments
 \plparsep=\skip149
 \pl@lab=\toks45
 )
-\c@definicion=\count295
+(/usr/local/texlive/2013/texmf-dist/tex/latex/parskip/parskip.sty
+Package: parskip 2001/04/09 non-zero parskip adjustments
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
+Package: algpseudocode 
 
-(./tesis.aux
+(/usr/local/texlive/2013/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count295
+\c@ALG@rem=\count296
+\c@ALG@nested=\count297
+\ALG@tlm=\skip150
+\ALG@thistlm=\skip151
+\c@ALG@Lnr=\count298
+\c@ALG@blocknr=\count299
+\c@ALG@storecount=\count300
+\c@ALG@tmpcounter=\count301
+\ALG@tmplength=\skip152
+)
+Document Style - pseudocode environments for use with the `algorithmicx' style
+) (/usr/local/texlive/2013/texmf-dist/tex/latex/algorithms/algorithm.sty
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count302
+\float@exts=\toks46
+\float@box=\box65
+\@float@everytoks=\toks47
+\@floatcapt=\box66
+)
+\@float@every@algorithm=\toks48
+\c@algorithm=\count303
+)
+\c@definicion=\count304
+ (./tesis.aux
 LaTeX Info: Redefining \. on input line 24.
 LaTeX Info: Redefining \% on input line 24.
+LaTeX Info: Redefining \. on input line 28.
+LaTeX Info: Redefining \% on input line 28.
 )
 \openout1 = `tesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: longtable package is loaded.
@@ -1372,39 +1414,39 @@ Package caption Info: End \AtBeginDocument code.
 
 (/usr/local/texlive/2013/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count296
+\scratchcounter=\count305
 \scratchdimen=\dimen279
-\scratchbox=\box65
-\nofMPsegments=\count297
-\nofMParguments=\count298
-\everyMPshowfont=\toks46
-\MPscratchCnt=\count299
+\scratchbox=\box67
+\nofMPsegments=\count306
+\nofMParguments=\count307
+\everyMPshowfont=\toks49
+\MPscratchCnt=\count308
 \MPscratchDim=\dimen280
-\MPnumerator=\count300
-\makeMPintoPDFobject=\count301
-\everyMPtoPDFconversion=\toks47
+\MPnumerator=\count309
+\makeMPintoPDFobject=\count310
+\everyMPtoPDFconversion=\toks50
 )
-\c@lstlisting=\count302
-\AtBeginShipoutBox=\box66
-Package hyperref Info: Link coloring OFF on input line 59.
+\c@lstlisting=\count311
+\AtBeginShipoutBox=\box68
+Package hyperref Info: Link coloring OFF on input line 67.
  (/usr/local/texlive/2013/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
 (/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count303
+\c@section@level=\count312
 )
-LaTeX Info: Redefining \ref on input line 59.
-LaTeX Info: Redefining \pageref on input line 59.
-LaTeX Info: Redefining \nameref on input line 59.
+LaTeX Info: Redefining \ref on input line 67.
+LaTeX Info: Redefining \pageref on input line 67.
+LaTeX Info: Redefining \nameref on input line 67.
 
 (./tesis.out) (./tesis.out)
 \@outlinefile=\write5
 \openout5 = `tesis.out'.
 
-LaTeX Info: Redefining \. on input line 59.
-LaTeX Info: Redefining \% on input line 59.
+LaTeX Info: Redefining \. on input line 67.
+LaTeX Info: Redefining \% on input line 67.
 
 babelbib: Set bibliography fall-back language to spanish
 (/usr/local/texlive/2013/texmf-dist/tex/latex/babelbib/spanish.bdf
@@ -1415,17 +1457,17 @@ babelbib extension \btxifchangecaseoff added to \extrasspanish
 babelbib: Load BibTeX extensions \bibsspanish for spanish
 babelbib: Set language for keywords in the bibliography fixed to spanish
 ABD: EveryShipout initializing macros
-<img/./usb.pdf, id=111, 171.64125pt x 114.4275pt>
+<img/./usb.pdf, id=143, 171.64125pt x 114.4275pt>
 File: img/./usb.pdf Graphic file (type pdf)
  <use img/./usb.pdf>
-Package pdftex.def Info: img/./usb.pdf used on input line 62.
+Package pdftex.def Info: img/./usb.pdf used on input line 70.
 (pdftex.def)             Requested size: 86.72377pt x 57.81422pt.
-LaTeX Font Info:    Try loading font information for U+msa on input line 62.
+LaTeX Font Info:    Try loading font information for U+msa on input line 70.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 62.
+LaTeX Font Info:    Try loading font information for U+msb on input line 70.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1436,7 +1478,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 {/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./img/.
 /usb.pdf>]
-(./partes/acta.tex <img/usb.pdf, id=121, 171.64125pt x 114.4275pt>
+(./partes/acta.tex <img/usb.pdf, id=153, 171.64125pt x 114.4275pt>
 File: img/usb.pdf Graphic file (type pdf)
 
 <use img/usb.pdf>
@@ -1469,6 +1511,8 @@ Package blindtext Warning: spanish not defined, using English instead.
 (./tesis.toc
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
+LaTeX Info: Redefining \. on input line 2.
+LaTeX Info: Redefining \% on input line 2.
  [3
 
 
@@ -1483,6 +1527,8 @@ LaTeX Info: Redefining \% on input line 1.
 (./tesis.lof
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
+LaTeX Info: Redefining \. on input line 2.
+LaTeX Info: Redefining \% on input line 2.
 )
 \tf@lof=\write7
 \openout7 = `tesis.lof'.
@@ -1497,6 +1543,8 @@ LaTeX Info: Redefining \% on input line 1.
 (./tesis.lot
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
+LaTeX Info: Redefining \. on input line 2.
+LaTeX Info: Redefining \% on input line 2.
 )
 \tf@lot=\write8
 \openout8 = `tesis.lot'.
@@ -1504,19 +1552,25 @@ LaTeX Info: Redefining \% on input line 1.
  [6
 
 
-] (./partes/acronimos.tex
+] (./tesis.loa)
+\tf@loa=\write9
+\openout9 = `tesis.loa'.
+
+ (./partes/acronimos.tex [7
+
+
+]
 ------------------------------------------------------------------------------
  Acr\IeC {\'o}nimos y S\IeC {\'\i }mbolos
 ------------------------------------------------------------------------------
-[7
-
+[8
 
 
 ]) (./partes/dedicatoria.tex
 ------------------------------------------------------------------------------
  Dedicatoria
 ------------------------------------------------------------------------------
-[8
+[9
 
 ]) (./partes/introduccion.tex) (./partes/capitulo1.tex [1
 
@@ -1535,36 +1589,38 @@ Underfull \hbox (badness 2809) in paragraph at lines 44--45
 T \OT1/cmr/m/n/12 = []$ \T1/cmr/m/n/12 don-de
  []
 
-[3] [4] [5] <img/voronoi.pdf, id=272, 546.29094pt x 369.88188pt>
+[3] [4] <img/voronoi.pdf, id=316, 546.29094pt x 369.88188pt>
 File: img/voronoi.pdf Graphic file (type pdf)
 
 <use img/voronoi.pdf>
 Package pdftex.def Info: img/voronoi.pdf used on input line 77.
 (pdftex.def)             Requested size: 250.48637pt x 169.60027pt.
- [6 <./img/voronoi.pdf>] [7] [8] [9])
-(./partes/capitulo2.tex [10]
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[5] [6 <./img/voronoi.pdf>] [7] [8] [9]) (./partes/capitulo2.tex [10]
 Cap\'{\i }tulo 2.
 ------------------------------------------------------------------------------
- 2 Algoritmos Evolutivos
+ 2 Metaheur\IeC {\'\i }sticas para seleccionar instancias
 ------------------------------------------------------------------------------
 [11
 
 ] [12]
-Overfull \hbox (13.62851pt too wide) in paragraph at lines 31--31
-[]\T1/cmr/bx/n/17.28 Population-Based In-cre-men-tal Lear-ning (PBIL) 
- []
-
-[13]
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 51.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 43.
  (/usr/local/texlive/2013/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-Underfull \hbox (badness 10000) in paragraph at lines 51--52
+[13]
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
+put line 52.
+ [14] [15] [16]
+Underfull \hbox (badness 10000) in paragraph at lines 228--229
 \T1/cmr/m/n/12 es-tá re-pre-sen-ta-da por un po-si-ción en un es-pa-cio $\OML/c
 mm/m/it/12 s$\T1/cmr/m/n/12 -dimensional
  []
 
-) (./partes/capitulo3.tex [14]
+[17]) (./partes/capitulo3.tex [18]
 Cap\'{\i }tulo 3.
 ------------------------------------------------------------------------------
  3 Punto de partida
@@ -1572,32 +1628,32 @@ Cap\'{\i }tulo 3.
 )
 
 Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 129.
+(blindtext)                 on input line 138.
 
 
 Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 129.
+(blindtext)                 on input line 138.
 
 
 Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 129.
+(blindtext)                 on input line 138.
 
 
 Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 129.
+(blindtext)                 on input line 138.
 
-[15
+[19
 
 ]
 
 Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 129.
+(blindtext)                 on input line 138.
 
 
 Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 129.
+(blindtext)                 on input line 138.
 
-(./partes/capitulo4.tex [16]
+(./partes/capitulo4.tex [20]
 Cap\'{\i }tulo 4.
 ------------------------------------------------------------------------------
  4 Evaluaci\IeC {\'o}n Experimental
@@ -1605,36 +1661,32 @@ Cap\'{\i }tulo 4.
 )
 
 Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 130.
+(blindtext)                 on input line 139.
 
 
 Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 130.
+(blindtext)                 on input line 139.
 
 
 Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 130.
+(blindtext)                 on input line 139.
 
 
 Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 130.
+(blindtext)                 on input line 139.
 
-[17
+[21
 
 ]
 
 Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 130.
+(blindtext)                 on input line 139.
 
 
 Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 130.
+(blindtext)                 on input line 139.
 
-(./partes/conclusiones.tex [18]
-
-Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 7.
-
+(./partes/conclusiones.tex [22]
 
 Package blindtext Warning: spanish not defined, using English instead.
 (blindtext)                 on input line 7.
@@ -1647,7 +1699,11 @@ Package blindtext Warning: spanish not defined, using English instead.
 Package blindtext Warning: spanish not defined, using English instead.
 (blindtext)                 on input line 7.
 
-[19
+
+Package blindtext Warning: spanish not defined, using English instead.
+(blindtext)                 on input line 7.
+
+[23
 
 ]
 
@@ -1662,32 +1718,34 @@ Package blindtext Warning: spanish not defined, using English instead.
 Package blindtext Warning: spanish not defined, using English instead.
 (blindtext)                 on input line 9.
 
-) (./tesis.bbl [20] [21
+) (./tesis.bbl [24] [25
 
-] [22] [23]) [24]
+] [26] [27]) [28]
 ------------------------------------------------------------------------------
  Bibliograf\'{\i }a
 ------------------------------------------------------------------------------
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 155.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 155.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 164.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 164.
 (./tesis.aux
 LaTeX Info: Redefining \. on input line 24.
 LaTeX Info: Redefining \% on input line 24.
+LaTeX Info: Redefining \. on input line 28.
+LaTeX Info: Redefining \% on input line 28.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 155.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 155.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 164.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 164.
 Package rerunfilecheck Info: File `tesis.out' has not changed.
-(rerunfilecheck)             Checksum: 0DD6D1B4F3827727BFCB4AD535147469;5527.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 155.
+(rerunfilecheck)             Checksum: 11E0D5B45795E884627C5CE8E5E131C7;7541.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 164.
  ) 
 Here is how much of TeX's memory you used:
- 29734 strings out of 493308
- 512352 string characters out of 6137817
- 576954 words of memory out of 5000000
- 32506 multiletter control sequences out of 15000+600000
- 32076 words of font info for 77 fonts, out of 8000000 for 9000
+ 30397 strings out of 493308
+ 522387 string characters out of 6137817
+ 593123 words of memory out of 5000000
+ 33115 multiletter control sequences out of 15000+600000
+ 32839 words of font info for 78 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 56i,12n,55p,10441b,648s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,12n,55p,10441b,647s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 </usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
 /usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></
@@ -1708,19 +1766,20 @@ e/2013/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/
 /texmf-dist/fonts/type1/public/cm-super/sfcc1095.pfb></usr/local/texlive/2013/t
 exmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb></usr/local/texlive/2013/tex
 mf-dist/fonts/type1/public/cm-super/sfcc1440.pfb></usr/local/texlive/2013/texmf
--dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2013/texmf-d
-ist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2013/texmf-dis
-t/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2013/texmf-dist/
-fonts/type1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2013/texmf-dist/fo
-nts/type1/public/cm-super/sfsl1728.pfb></usr/local/texlive/2013/texmf-dist/font
-s/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2013/texmf-dist/fonts/
-type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2013/texmf-dist/fonts/ty
-pe1/public/cm-super/sftt1200.pfb></usr/local/texlive/2013/texmf-dist/fonts/type
-1/public/cm-super/sfxc1200.pfb>
-Output written on tesis.pdf (34 pages, 731871 bytes).
+-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2013/texmf-d
+ist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2013/texmf-dis
+t/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2013/texmf-dist/
+fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2013/texmf-dist/fo
+nts/type1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2013/texmf-dist/font
+s/type1/public/cm-super/sfsl1728.pfb></usr/local/texlive/2013/texmf-dist/fonts/
+type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2013/texmf-dist/fonts/ty
+pe1/public/cm-super/sfti1200.pfb></usr/local/texlive/2013/texmf-dist/fonts/type
+1/public/cm-super/sftt1200.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/
+public/cm-super/sfxc1200.pfb>
+Output written on tesis.pdf (39 pages, 763550 bytes).
 PDF statistics:
- 761 PDF objects out of 1000 (max. 8388607)
- 571 compressed objects within 6 object streams
- 117 named destinations out of 1000 (max. 500000)
- 236 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 867 PDF objects out of 1000 (max. 8388607)
+ 670 compressed objects within 7 object streams
+ 149 named destinations out of 1000 (max. 500000)
+ 300 words of extra memory for PDF output out of 10000 (max. 10000000)
 

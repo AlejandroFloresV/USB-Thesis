@@ -1,6 +1,12 @@
 \newcommand{\etalchar}[1]{$^{#1}$}
 \begin{thebibliography}{DGKL94}
 
+\bibitem[Bac96]{back1996evolutionary}
+T.~Back.
+\newblock {\em Evolutionary algorithms in theory and practice: evolution
+  strategies, evolutionary programming, genetic algorithms}.
+\newblock Oxford University Press, USA, 1996.
+
 \bibitem[Ben75]{Bentley:1975:MBS:361002.361007}
 Jon~Louis Bentley.
 \newblock Multidimensional binary search trees used for associative searching.
@@ -10,6 +16,12 @@ Jon~Louis Bentley.
 Avrim Blum and Pat Langley.
 \newblock Selection of relevant features and examples in machine learning.
 \newblock {\em Artif. Intell.}, 97(1-2):245--271, 1997.
+
+\bibitem[BS12]{binitha2012survey}
+S~Siva~Sathya Binitha~S.
+\newblock A survey of bio inspired optimization algorithm.
+\newblock {\em International Journal of Soft Computing and Engineering},
+  2(2):137--151, 2012.
 
 \bibitem[BT12]{2012arXiv1202.5933B}
 J.~{Bien} and R.~{Tibshirani}.
@@ -92,6 +104,12 @@ Shinn-Ying Ho, Chia-Cheng Liu, and Soundy Liu.
   genetic algorithm.
 \newblock {\em Pattern Recognition Letters}, 23(13):1495--1503, 2002.
 
+\bibitem[Hol75]{holland1975adaptation}
+J.H. Holland.
+\newblock {\em Adaptation in natural and artificial systems: an introductory
+  analysis with applications to biology, control, and artificial intelligence}.
+\newblock University of Michigan Press, 1975.
+
 \bibitem[KL04]{DBLP:conf/soda/KrauthgamerL04}
 Robert Krauthgamer and James~R. Lee.
 \newblock Navigating nets: simple algorithms for proximity search.
@@ -120,6 +138,12 @@ Huan Liu and Hiroshi Motoda.
 Huan Liu and Hiroshi Motoda.
 \newblock On issues of instance selection.
 \newblock {\em Data Min. Knowl. Discov.}, 6(2):115--130, April 2002.
+
+\bibitem[Muh91]{Muhlenbein91evolutionin}
+Heinz Muhlenbein.
+\newblock Evolution in time and space - the parallel genetic algorithm.
+\newblock In {\em Foundations of Genetic Algorithms}, pages 316--337. Morgan
+  Kaufmann, 1991.
 
 \bibitem[Ska94]{DBLP:conf/icml/Skalak94}
 David~B. Skalak.
@@ -168,12 +192,23 @@ Gordon Wilfong.
 \newblock In {\em Proceedings of the Seventh Annual Symposium on Computational
   Geometry}, SCG '91, pages 224--233, New York, NY, USA, 1991. ACM.
 
+\bibitem[WK88]{whitley1988genitor}
+D.~Whitley and J.~Kauth.
+\newblock {\em GENITOR: A Different Genetic Algorithm}.
+\newblock Technical report (Colorado State University. Department of Computer
+  Science). Colorado State University, Department of Computer Science, 1988.
+
 \bibitem[WM97]{Wilson:1997:IPT:645526.657143}
 D.~Randall Wilson and Tony~R. Martinez.
 \newblock Instance pruning techniques.
 \newblock In {\em Proceedings of the Fourteenth International Conference on
   Machine Learning}, ICML '97, pages 403--411, San Francisco, CA, USA, 1997.
   Morgan Kaufmann Publishers Inc.
+
+\bibitem[Yan08]{Yang:2008:NMA:1628847}
+Xin-She Yang.
+\newblock {\em Nature-Inspired Metaheuristic Algorithms}.
+\newblock Luniver Press, 2008.
 
 \bibitem[ZS02]{zhang2002optimal}
 Hongbin Zhang and Guangyu Sun.

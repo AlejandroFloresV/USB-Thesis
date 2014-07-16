@@ -1,6 +1,7 @@
 \documentclass[letterpaper, 12pt, oneside]{tesis}
 
 \usepackage[spanish]{babel}
+\selectlanguage{spanish}
 \usepackage[utf8]{inputenc}
 \usepackage[fixlanguage]{babelbib}
 \usepackage[T1]{fontenc}
@@ -18,6 +19,13 @@
 \usepackage{mdframed}
 \usepackage{blindtext}
 \usepackage{paralist}
+\usepackage{parskip}
+\usepackage[noend]{algpseudocode}
+\usepackage[chapter]{algorithm}
+
+\floatname{algorithm}{Algoritmo}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
 
 \graphicspath{{img/}}
 
@@ -26,7 +34,7 @@
 % Interlineado
 \setlength{\baselineskip}{1.5pt}
 % Interpárrafo
-\setlength{\parskip}{16.5pt}
+%\setlength{\parskip}{16.5pt}
 
 \topmargin 2cm
 
@@ -95,9 +103,10 @@ Ingeniero de Computación}
 \renewcommand*\listtablename{Índice de Tablas}
 \listoftables
 
-%\lhead{\emph{Índice de Algoritmos}}
-%\renewcommand*\listalgorithmname{Índice de algoritmos}
-%\listofalgorithms
+\lhead{\emph{Índice de Algoritmos}}
+\renewcommand*\listalgorithmname{Índice de algoritmos}
+\listofalgorithms
+\addcontentsline{toc}{chapter}{Índice de algoritmos}
 
 % +----------------------+
 % | ACRONIMOS Y SIMBOLOS |
