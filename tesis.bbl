@@ -7,6 +7,23 @@ T.~Back.
   strategies, evolutionary programming, genetic algorithms}.
 \newblock Oxford University Press, USA, 1996.
 
+\bibitem[Bal94]{Baluja94pbil}
+Shumeet Baluja.
+\newblock Population-based incremental learning: A method for integrating
+  genetic search based function optimization and competitive learning.
+\newblock Technical report, 1994.
+
+\bibitem[Bal95]{Baluja95anempirical}
+Shumeet Baluja.
+\newblock An empirical comparison of seven iterative and evolutionary function
+  optimization heuristics.
+\newblock Technical report, 1995.
+
+\bibitem[BC95]{Baluja95removingthe}
+Shumeet Baluja and Rich Caruana.
+\newblock Removing the genetics from the standard genetic algorithm.
+\newblock pages 38--46. Morgan Kaufmann Publishers, 1995.
+
 \bibitem[Ben75]{Bentley:1975:MBS:361002.361007}
 Jon~Louis Bentley.
 \newblock Multidimensional binary search trees used for associative searching.
@@ -52,6 +69,12 @@ Luc Devroye, Laszlo Gyorfi, Adam Krzyzak, and G{\'a}bor Lugosi.
 \newblock On the strong universal consistency of nearest neighbor regression
   function estimates.
 \newblock {\em The Annals of Statistics}, pages 1371--1385, 1994.
+
+\bibitem[Esh90]{eshelman1990chc}
+Larry~J Eshelman.
+\newblock The chc adaptive search algorithm: How to have safe search when
+  engaging in nontraditional genetic recombination.
+\newblock {\em Foundations of genetic algorithms}, pages 265--283, 1990.
 
 \bibitem[FH51]{fix_51_discriminatory}
 E.~Fix and J.~L. Hodges.

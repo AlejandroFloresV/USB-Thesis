@@ -24,7 +24,7 @@ En particular, los enfoques más comunes en la literatura sobre metaheurísticas
 
 Los Algoritmos Evolutivos (\emph{AE}) son metaheurísticas basadas en procesos de evolución biológica con el objetivo de explorar en amplitud espacios de solución con distribución desconocida. Con el fin de replicar los procesos evolutivos, los \emph{AE} mantienen un conjunto de soluciones candidatas al problema (una \emph{población} de \emph{cromosomas}/\emph{individuos}), que modifican iterativamente apoyandose en el uso de operadores de \emph{mutación}, \emph{recombinación} y/o \emph{selección}.
 
-Los \emph{AE} codifican cada cromosoma como una cadena de genes (análogo a la estructura del ADN), donde cada gen representa una parte de la solución al problema en cuestión. A partir de esta representación, los \emph{AE} definen un conjunto de operadores que cumplen la función de las estrategias de \emph{exploración} y \emph{explotación}:
+Los \emph{AE} codifican cada cromosoma como una cadena de genes de tamaño $l$ (análogo a la estructura del ADN), donde cada gen representa una parte de la solución al problema en cuestión. A partir de esta representación, los \emph{AE} definen un conjunto de operadores que cumplen la función de las estrategias de \emph{exploración} y \emph{explotación}:
 
 \begin{itemize}
 \item \emph{Mutación}: Modifica los genes de soluciones intermedias con la finalidad de explorar el espacio de soluciones e introducir nueva información a la población. Simula la variabilidad en las poblaciones, fenómeno clave para la aparición de nuevos genes que aumenten la posibilidad de supervivencia.
@@ -121,7 +121,7 @@ Ver el algoritmo \ref{sga-alg}.
 
 \subsubsection{CHC Adaptive Search Algorithm}
 
-CHC se basa en el esquema de evolución generacional aplicado por GGA; mantiene una población de individuos de tamaño fijo ($\texttt{pop}$), generando una nueva población en cada iteración. Sin embargo, en cada iteración CHC aplica una estrategia de reemplazo ``elitista'', donde sobreviven los mejores $\texttt{pop}$ individuos entre la población actual y la descendencia producida.
+CHC \cite{eshelman1990chc} se basa en el esquema de evolución generacional aplicado por GGA; mantiene una población de individuos de tamaño fijo ($\texttt{pop}$), generando una nueva población en cada iteración. Sin embargo, en cada iteración CHC aplica una estrategia de reemplazo ``elitista'', donde sobreviven los mejores individuos entre la población actual y la descendencia producida.
 
 La fase de reproducción aplicada por CHC tiene dos particularidades. En primer lugar, implementa un operador de recombinación llamado HUX, que intercambia la mitad de los genes que difieren entre los dos padres de forma aleatoria. Adicionalmente, CHC emplea ``prevención de incesto'': antes de realizar el cruce usando HUX, calcula la \emph{distancia de Hamming} entre ambos padres; si dicha distancia es mayor a cierto umbral (inicialmente $l/4$, donde $l$ es la longitud de los cromosomas), se realiza el cruce. En caso de no generarse ninguna descendencia durante una iteración particular, se disminuye el umbral en 1.
 
@@ -169,19 +169,18 @@ A continuación se presenta el pseudocódigo para CHC (algoritmo \ref{chc-alg}).
 
 \subsubsection{Population-Based Incremental Learning (PBIL)}
 
-Esta metaheurística consiste en mantener un vector de probabilidades $V_p$ de tamaño $L$ (número de instancias iniciales), donde $V_p\left[i\right]$ es la probabilidad de que la $i$-esima instancia pertenezca a la solución ($i$-esimo bit sea 1).\\
-Inicialmente $V_p\left[i\right] = 0.5\ \ \forall{i \in [1\dots L]}$. En cada iteración se sigue el siguiente proceso:
+PBIL es una metaheurística perteneciente a la clase de \emph{Algoritmos de Estimación de Distribución} desarrollada por \emph{Baluja} \cite{Baluja94pbil} para su uso sobre cromosomas con representación binaria. PBIL destaca por ser más simple que los algoritmos genéticos tradicionales y por lograr mejores soluciones para gran variedad de problemas \cite{Baluja95anempirical,Baluja95removingthe}.
 
-\begin{enumerate}[a)]
-\item Se generan $N$ cromosomas (secuencias de bits) basados en las probabilidades en $V_p$.
-\item Se acerca $V_p$ hacia la mejor solución generada $S_{best}$
-$$V_p\left[i\right]=V_p\left[i\right]*(1-LR)+S_{best}\left[i\right]*LR$$
-Donde $LR$ es la tasa de aprendizaje (\emph{learning rate}).
-\item Se aleja $V_p$ de la peor solución generada $S_{worst}$\\
-\noindent{Si $S_{best}\left[i\right] <> S_{worst}\left[i\right]$}
-$$V_p\left[i\right]=V_p\left[i\right]*(1-Negat\_LR)+S_{best}\left[i\right]*Negat\_LR$$
-Donde $Negat\_LR$ es la tasa de aprendizaje negativa.
-\end{enumerate}
+Este algoritmo mantiene una población \emph{implicita} de soluciones, mediante el uso de un vector de probabilidades $V$ de tamaño $l$, donde $V_i$ (con $i \in [1 \dots l]$) es la probabilidad que el $i$-esimo bit/gen de una solución en la población esté ``prendido'' (sea igual a 1). PBIL usa este vector de probabilidades para generar poblaciones de tamaño $\texttt{pop}$ en cada iteración, y guiar el proceso evolutivo en base a las soluciones generadas.
+
+Inicialmente $V_i = 0.5\ \ \forall{i \in [1\dots l]}$. Luego en cada iteración:
+\begin{inparaenum}[\itshape a\upshape)]
+\item se generan $\texttt{pop}$ cromosomas binarios basados en las probabilidades en $V$,
+\item se ``acerca'' $V$ hacia la mejor solución generada (usando una tasa de aprendizaje $\texttt{lr}$), 
+\item se ``aleja'' $V$ de la peor solución generada (usando una tasa de aprendizaje negativa $\texttt{nlr}$),
+\item se sigue una estrategia de mutación sobre $V$ en la que se aumenta o disminuye $V_i$ en $\texttt{ms}$ (\emph{mutation shift}) con probabilidad de mutación $\texttt{mp}$.
+\end{inparaenum}
+Ver algoritmo \ref{pbil-alg}.
 
 \begin{algorithm}
 \caption{Population-Based Incremental Learning}
@@ -223,7 +222,9 @@ Donde $Negat\_LR$ es la tasa de aprendizaje negativa.
 
 \subsubsection{Particle Swarm Optimization (PSO)}
 
-\emph{PSO} se inspira en el comportamiento de organismos biológicos, en particular, del vuelo de una bandada de aves. Cada ave o ``partícula'' (que representa una posible solución del espacio de búsqueda) tiene una velocidad asociada, y modifica su vuelo en relación a su propia experiencia, y a la experiencia de sus ``compañeras''. Diferentes estudios muestran que \emph{PSO} obtiene mejores resultados que los algoritmos genéticos (\emph{GA}), y en menor tiempo de cómputo.
+\cite{kennedy1995particle}
+
+PSO se inspira en el comportamiento de organismos biológicos, en particular del vuelo de bandadas. Cada ave o ``partícula'' representa una solución al problema, y tiene una posición y velocidad asociada, modificando su ``vuelo'' en relación a su propia experiencia y la de sus ``compañeras''. Diferentes estudios muestran que PSO obtiene mejores resultados que los algoritmos genéticos, y en menor tiempo de cómputo.
 
 Inicialmente se obtienen $P$ soluciones aleatorias, o partículas. Cada partícula $i$ está representada por un posición en un espacio $s$-dimensional \linebreak $\textbf{x}_i =\ <x_{i1},x_{i2},\dots,x_{is}>$. Luego, se realizan un número de iteraciones (\texttt{MAX\_ITER}) en las que se actualiza la posición de cada partícula de acuerdo a su velocidad $v_i$:
 
