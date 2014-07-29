@@ -1,5 +1,101 @@
-\chapter{Punto de partida}
+\chapter{Adaptación al problema de Selección de Instancias}
 \label{capitulo3}
-\lhead{Capítulo 3. \emph{Punto de partida}}
+\lhead{Capítulo 3. \emph{Adaptación al problema de Selección de Instancias}}
 
-\Blindtext
+Al tratarse de métodos de búsqueda de propósito general, las metaheurísticas pueden modificarse para encontrar soluciones a todo tipo de problemas de optimización combinatoria. Para ello debe definirse la representación a usar, que permita codificar las posibles soluciones al problema, y una función de \emph{fitness} para evaluar dichas soluciones en función a los objetivos de optimización del problema.
+
+A continuación se describen éstas y otras consideraciones generales para la aplicación de metaheurísticas al problema de \emph{Selección de Instancias}. Adicionalmente se plantea para cada metaheurística, las estrategias a usar durante el proceso de búsqueda, así como algunas modificaciones particulares.
+
+\section{Consideraciones generales}
+
+\subsection{Representación}
+
+Una solución cualquiera al problema de \emph{SI} está dada por un subconjunto de instancias $R$ del conjunto inicial $T$ (\emph{i.e.} $R \subseteq T$). Por lo tanto, para un orden dado de las instancias $t_i \in T\ (i = 1 \dots n)$, una codificación usando mapas de bits es suficiente para representar el espacio de soluciones al problema.
+
+En este sentido, una solución particular al problema de \emph{SI} está descrita por un cromosoma $s$ de tamaño $n$, donde cada gen $s_i$ ($i = 1 \dots n$) es un \emph{bit} con valor 1/0 (``prendido'' o ``apagado'' respectivamente) que denota la pertenencia o no de la instancia correspondiente $t_i \in T$ al subconjunto seleccionado. $R_s \subseteq T$ es el subconjunto seleccionado representado por el cromosoma $s$, donde:
+
+\begin{equation}
+R_s = \left\lbrace t_i \in T \mid i = 1 \dots n \land s_i = 1 \right\rbrace
+\end{equation}
+
+\subsection{Función de evaluación}
+
+El objeto de la aplicación de metaheurísticas es conseguir soluciones óptimas o casi óptimas a problemas. Para ello es necesario definir una estrategia de comparación entre soluciones, \emph{i.e.} saber cuándo una solución es \guillemotleft\emph{mejor}\guillemotright\ que otra.
+
+Para el caso del problema de \emph{SI}, el objetivo es encontrar un subconjunto $R$ del menor tamaño posible, que mantenga un alto porcentaje de precisión de clasificación. \emph{Cano et. al} \cite{cano2003using} definen una función de evaluación que combina ambos objetivos en función de un parámetro $\alpha \in [0,1]$; a continuación se presenta una modificación de dicha función (su complemento), usada en el presente trabajo:
+
+\begin{equation}
+\mathit{fitness}(R) = \alpha\ \mathit{error}(R) + (1 - \alpha) \mid R \mid
+\end{equation}
+
+Donde $\mathit{error}(R)$ es el número de instancias en $T$ que son erróneamente clasificadas usando el conjunto $R \subseteq T$ como conjunto de entrenamiento de un clasificador 1-NN. El parámetro $\alpha$ combina los objetivos de la búsqueda: se usa $\alpha = 0.5$ siguiendo lo descrito por \cite{cano2003using} para obtener soluciones que satisfagan ambos objetivos del problema.
+
+Para esta definción, el objetivo de las metaheurísticas para selección de instancias es \emph{minimizar} la función de evaluación descrita. Para ello deben minimizar ambos objetivos de la función; el error de clasificación usando el subconjunto seleccionado, y el tamaño de dicho subconjunto. En este sentido, dadas dos posibles soluciones $a$ y $b$, $a$ es \guillemotleft\emph{mejor}\guillemotright\ que $b$ si y solo si $\mathit{fitness}(R_a) < \mathit{fitness}(R_b)$.
+
+\subsection{Generación de soluciones iniciales}
+\label{generacion-sol-inic}
+
+\blindtext
+
+\section{Modificaciones particulares}
+
+\subsection{GGA, SGA y CHC}
+
+Para aplicar algún algoritmo genético al problema de \emph{SI}, es necesario describir las estrategias de selección, recombinación, mutación y reemplazo que seguirá el algoritmo durante el proceso evolutivo.
+
+GGA, SGA y CHC requieren de un operador que seleccione individuos de la población para participar en el proceso reproductivo. Se emplea el método de \emph{selección por torneo} en su versión ``determinista'': se escoge al azar un conjunto de individuos entre la población original, y es seleccionado el más apto entre ellos. El tamaño de dicho conjunto debe ser pequeño; generalmente se usa un ``tamaño de torneo'' entre 2 y 5 \cite{Miller95geneticalgorithms}. En este trabajo se usan torneos de tamaño 3.
+
+Debido a que CHC aplica un operador de recombinación particular (HUX) y no requiere de un operador de mutación, dichos operadores deben ser definidos solo para GGA y SGA. El operador de \emph{crossover} aplicado en ambos algoritmos es el \emph{recombinación en un punto}. Dados dos cromosomas ``padres'', se elige aleatoriamente un punto de corte en la longitud de ambos cromosomas; los cromosomas ``hijos'' resultan de combinar la sección izquierda del corte de un padre, con la sección derecha del corte del otro padre. El operador de mutación sigue --en ambos casos-- el esquema estándar de modificación de cada bit con una cierta probabilidad.
+
+Finalmente, es necesario describir los criterios de reemplazo. Al tratarse de estrategias evolutivas generacionales, GGA y CHC reemplazan la población de forma incondicional en favor de la decendencia. En cambio, el criterio de reemplazo usado en SGA es ``elitista''; se sustituyen los peores individuos en la población por la nueva decendencia generada, solo si dicha decendencia es mejor.
+
+\subsection{PBIL}
+
+La estrategia evolutiva de PBIL no requiere modificaciones adicionales para su aplicación al problema de selección de instancias; está diseñado para encontrar soluciones con representación binaria, lo que permite su aplicación directa al problema. La única modificación realizada al esquema estándar de PBIL es en el método de generación del vector de probabilidades iniciales, reflejando lo descrito en la sección \ref{generacion-sol-inic}.
+
+\subsection{PSO}
+
+La adaptación de PSO al problema de \emph{SI} es mayor, debido a que PSO está pensado para problemas con representación en espacios euclideanos; \emph{i.e.} es necesario el mapeo de vectores en $\mathbb{R}^l$ a soluciones con representación binaria. En este sentido, se adopta el esquema poblacional de PBIL en el que el genotipo de la población se representa de forma probabilística.
+
+A esta adaptación de PSO la llamaremos \emph{Population-Based PSO} (ver algoritmo \ref{pbpso-alg}), en la cuál el vector de posición $\vec{X_i}$ de cada partícula es un vector de probabilidades que representa el genotipo de una población particular. Esto permite la generación de soluciones en codificación binaria para su respectiva evaluación, en base al vector de probabilidades que describe dicha población. A diferencia del PSO tradicional, la selección de óptimos locales y globales se hace en base a las soluciones generadas mediante $\vec{X_i}$, y no en base al vector $\vec{X_i}$ por si solo. Sin embargo, la modificación de los vectores de probabilidad y velocidad ($\vec{X_i}$ y $\vec{V_i}$ respectivamente) sigue la estrategia de actualización estándar en base a la mejor solución local y la mejor solución global.
+
+\begin{algorithm}
+\caption{Population-Based PSO}
+\label{pbpso-alg}
+\begin{algorithmic}[1]
+
+\Require \texttt{pop} tamaño de la población,
+	\texttt{part} número de particulas,
+	\texttt{vmax} velocidad máxima,
+	\texttt{w} peso de inercia,
+	\texttt{c1} peso del mejor local,
+	\texttt{c2} peso del mejor global
+\Ensure Una solución al problema
+
+\For{$i \in [1 \dots \texttt{part}]$}
+	\State{$\vec{X_i} \gets$ Vector de probabilidades de tamaño $l$}
+	\State{$\vec{V_i} \gets$ Vector de velocidades aleatorias entre $[-\texttt{vmax},\texttt{vmax}]$}
+	\State{$p_i \gets$ Generar una solución a partir de $\vec{X_i}$}
+\EndFor
+\State $s^* \gets$ La \emph{mejor} solución $p_i, i \in [1 \dots \texttt{part}]$
+\While {$\neg$ Condición de parada}
+	\For{$i \in [1 \dots \texttt{part}]$}
+		\State{$\vec{X_i} \gets \vec{X_i} + \vec{V_i}$}
+		\State{Limitar valores en $\vec{X_i}$ entre $[0,1]$}
+		\State{$\vec{V_i} \gets \texttt{w} \vec{V_i} + \texttt{c1}\ \mathrm{Unif}(0,1) (p_i - \vec{X_i}) + \texttt{c2}\ \mathrm{Unif}(0,1) (s^* - \vec{X_i})$}
+		\State{Limitar valores en $\vec{V_i}$ entre $[-\texttt{vmax},\texttt{vmax}]$}
+		\State{$P \gets$ Generar población de tamaño \texttt{pop} a partir de $\vec{X_i}$}
+		\If {El \emph{mejor} individuo en $P$ es \emph{mejor} que $p_i$}
+			\State $p_i \gets$ El \emph{mejor} individuo en $P$
+			\If {$p_i$ es \emph{mejor} que $s^*$}
+				\State $s^* \gets p_i$
+			\EndIf
+		\EndIf
+	\EndFor
+\EndWhile
+\State \Return $s^*$
+
+\end{algorithmic}
+\end{algorithm}
+
+Esta versión de PSO puede clasificarse como una metaheurística de la clase de \emph{Algorítmos de Coevolución Cooperativa} \cite{Derrac:2009:FSU:1574827.1574906} (puesto que mantiene diferentes poblaciones que evolucionan de forma colaborativa) y \emph{Algoritmos de Estimación de Distribución} (debido a que adopta las ideas de representación descritas por PBIL).

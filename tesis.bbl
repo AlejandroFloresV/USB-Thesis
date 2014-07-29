@@ -24,6 +24,11 @@ Shumeet Baluja and Rich Caruana.
 \newblock Removing the genetics from the standard genetic algorithm.
 \newblock pages 38--46. Morgan Kaufmann Publishers, 1995.
 
+\bibitem[BDT99]{Bonabeau:1999:SIN:328320}
+Eric Bonabeau, Marco Dorigo, and Guy Theraulaz.
+\newblock {\em Swarm Intelligence: From Natural to Artificial Systems}.
+\newblock Oxford University Press, Inc., New York, NY, USA, 1999.
+
 \bibitem[Ben75]{Bentley:1975:MBS:361002.361007}
 Jon~Louis Bentley.
 \newblock Multidimensional binary search trees used for associative searching.
@@ -63,6 +68,14 @@ Jos{\'e}~Ram{\'o}n Cano, Francisco Herrera, and Manuel Lozano.
   reduction in kdd: an experimental study.
 \newblock {\em Evolutionary Computation, IEEE Transactions on}, 7(6):561--575,
   2003.
+
+\bibitem[DGH09]{Derrac:2009:FSU:1574827.1574906}
+Joaqu\'{\i}n Derrac, Salvador Garc\'{\i}a, and Francisco Herrera.
+\newblock A first study on the use of coevolutionary algorithms for instance
+  and feature selection.
+\newblock In {\em Proceedings of the 4th International Conference on Hybrid
+  Artificial Intelligence Systems}, HAIS '09, pages 557--564, Berlin,
+  Heidelberg, 2009. Springer-Verlag.
 
 \bibitem[DGKL94]{devroye1994strong}
 Luc Devroye, Laszlo Gyorfi, Adam Krzyzak, and G{\'a}bor Lugosi.
@@ -133,10 +146,24 @@ J.H. Holland.
   analysis with applications to biology, control, and artificial intelligence}.
 \newblock University of Michigan Press, 1975.
 
+\bibitem[KE95]{kennedy1995particle}
+J~Kennedy and R~Eberhart.
+\newblock Particle swarm optimization.
+\newblock In {\em Neural Networks, 1995. Proceedings., IEEE International
+  Conference on}, volume~4, pages 1942--1948. IEEE, 1995.
+
 \bibitem[KL04]{DBLP:conf/soda/KrauthgamerL04}
 Robert Krauthgamer and James~R. Lee.
 \newblock Navigating nets: simple algorithms for proximity search.
 \newblock In J.~Ian Munro, editor, {\em SODA}, pages 798--807. SIAM, 2004.
+
+\bibitem[KS98]{kennedy1998matching}
+J~Kennedy and WM~Spears.
+\newblock Matching algorithms to problems: an experimental test of the particle
+  swarm and some genetic algorithms on the multimodal problem generator.
+\newblock In {\em Evolutionary Computation Proceedings, 1998. IEEE World
+  Congress on Computational Intelligence., The 1998 IEEE International
+  Conference on}, pages 78--83. IEEE, 1998.
 
 \bibitem[KS04]{Kolahdouzan:2004:VKN:1316689.1316762}
 Mohammad Kolahdouzan and Cyrus Shahabi.
@@ -162,11 +189,23 @@ Huan Liu and Hiroshi Motoda.
 \newblock On issues of instance selection.
 \newblock {\em Data Min. Knowl. Discov.}, 6(2):115--130, April 2002.
 
+\bibitem[MG95]{Miller95geneticalgorithms}
+Brad~L. Miller and David~E. Goldberg.
+\newblock Genetic algorithms, tournament selection, and the effects of noise.
+\newblock {\em Complex Systems}, 9:193--212, 1995.
+
 \bibitem[Muh91]{Muhlenbein91evolutionin}
 Heinz Muhlenbein.
 \newblock Evolution in time and space - the parallel genetic algorithm.
 \newblock In {\em Foundations of Genetic Algorithms}, pages 316--337. Morgan
   Kaufmann, 1991.
+
+\bibitem[SE98]{shi1998modified}
+Yuhui Shi and Russell Eberhart.
+\newblock A modified particle swarm optimizer.
+\newblock In {\em Evolutionary Computation Proceedings, 1998. IEEE World
+  Congress on Computational Intelligence., The 1998 IEEE International
+  Conference on}, pages 69--73. IEEE, 1998.
 
 \bibitem[Ska94]{DBLP:conf/icml/Skalak94}
 David~B. Skalak.

@@ -1,8 +1,8 @@
-\chapter{Metaheurísticas para seleccionar instancias}
+\chapter{Metaheurísticas}
 \label{capitulo2}
-\lhead{Capítulo 2. \emph{Metaheurísticas para seleccionar instancias}}
+\lhead{Capítulo 2. \emph{Metaheurísticas}}
 
-\section{Metaheurísticas}
+\section{Descripción general}
 
 Las metaheurísticas son métodos estocásticos de búsqueda de propósito general sobre espacios combinatorios. Son usados generalmente para tratar problemas de optimización combinatoria, donde su complejidad hace imposible evaluar todas las soluciones factibles en un tiempo razonable; estos algoritmos son capaces de conseguir ``buenas'' soluciones a un problema en un período de tiempo mucho menor. Sin embargo, para muchos problemas la complejidad de estos algoritmos sigue siendo un factor prohíbitivo, debido al uso de funciones ``costosas'' para la evaluación de soluciones intermedias (\emph{fitness}).
 
@@ -59,7 +59,7 @@ Ver el algoritmo \ref{gga-alg}.
 \Ensure{Una solución al problema}
 
 \State $P \gets$ Generar población aleatoria de $\texttt{pop}$ individuos
-\State $p^{*} \gets $ el \emph{mejor} individuo en $P$
+\State $s^* \gets $ el \emph{mejor} individuo en $P$
 \While{$\neg$ Condición de parada}
 	\State $P' \gets \emptyset$
 	\While{$\mid P' \mid < \texttt{pop}$}
@@ -70,11 +70,11 @@ Ver el algoritmo \ref{gga-alg}.
 		\State $P' \gets P' \cup \left\lbrace c_1, c_2 \right\rbrace$
 	\EndWhile
 	\State $P \gets P'$
-	\If{El \emph{mejor} individuo en $P$ es \emph{mejor} que $p^{*}$}
-		\State $p^{*} \gets$ el \emph{mejor} individuo en $P$
+	\If{El \emph{mejor} individuo en $P$ es \emph{mejor} que $s^*$}
+		\State $s^* \gets$ el \emph{mejor} individuo en $P$
 	\EndIf
 \EndWhile
-\State \Return $p^{*}$
+\State \Return $s^*$
 
 \end{algorithmic}
 \end{algorithm}
@@ -103,18 +103,18 @@ Ver el algoritmo \ref{sga-alg}.
 \Ensure{Una solución al problema}
 
 \State $P \gets$ Generar población aleatoria de $\texttt{pop}$ individuos
-\State $p^{*} \gets $ el \emph{mejor} individuo en $P$
+\State $s^* \gets $ el \emph{mejor} individuo en $P$
 \While{$\neg$ Condición de parada}
 	\State $p_1 \gets$ Seleccionar un individuo en $P$
 	\State $p_2 \gets$ Seleccionar un individuo en $P$
 	\State $c_1, c_2 \gets $ recombinar $p_1$ y $p_2$ con probabilidad $\texttt{cp}$
 	\State Mutar $c_1$ y $c_2$ con probabilidad $\texttt{mp}$
 	\State Seguir algún criterio de reemplazo de individuos en $P$ por $c_1$ y $c_2$
-	\If{El \emph{mejor} individuo en $P$ es \emph{mejor} que $p^{*}$}
-		\State $p^{*} \gets$ el \emph{mejor} individuo en $P$
+	\If{El \emph{mejor} individuo en $P$ es \emph{mejor} que $s^*$}
+		\State $s^* \gets$ el \emph{mejor} individuo en $P$
 	\EndIf
 \EndWhile
-\State \Return $p^{*}$
+\State \Return $s^*$
 
 \end{algorithmic}
 \end{algorithm}
@@ -123,7 +123,7 @@ Ver el algoritmo \ref{sga-alg}.
 
 CHC \cite{eshelman1990chc} se basa en el esquema de evolución generacional aplicado por GGA; mantiene una población de individuos de tamaño fijo ($\texttt{pop}$), generando una nueva población en cada iteración. Sin embargo, en cada iteración CHC aplica una estrategia de reemplazo ``elitista'', donde sobreviven los mejores individuos entre la población actual y la descendencia producida.
 
-La fase de reproducción aplicada por CHC tiene dos particularidades. En primer lugar, implementa un operador de recombinación llamado HUX, que intercambia la mitad de los genes que difieren entre los dos padres de forma aleatoria. Adicionalmente, CHC emplea ``prevención de incesto'': antes de realizar el cruce usando HUX, calcula la \emph{distancia de Hamming} entre ambos padres; si dicha distancia es mayor a cierto umbral (inicialmente $l/4$, donde $l$ es la longitud de los cromosomas), se realiza el cruce. En caso de no generarse ninguna descendencia durante una iteración particular, se disminuye el umbral en 1.
+La fase de reproducción aplicada por CHC tiene dos particularidades. En primer lugar, implementa un operador de recombinación uniforme media llamado HUX (``\emph{Half Uniform Crossover}''), que intercambia la mitad de los genes que difieren entre los dos padres de forma aleatoria. Adicionalmente, CHC emplea ``prevención de incesto'': antes de realizar el cruce usando HUX, calcula la \emph{distancia de Hamming} entre ambos padres; si dicha distancia es mayor a cierto umbral (inicialmente $l/4$, donde $l$ es la longitud de los cromosomas), se realiza el cruce. En caso de no generarse ninguna descendencia durante una iteración particular, se disminuye el umbral en 1.
 
 Durante el proceso de evolución de CHC no se aplica el operador de mutación: cuando el umbral de prevención de incesto llega a cero se considera que la población convergió, y comienza un proceso de repoblación en el que se usa la mejor solución encontrada hasta el momento. Se modifican hasta $35\%$ de sus genes de forma aleatoria para generar los $\texttt{pop}-1$ individuos restantes de la nueva población, y luego continuar el proceso evolutivo.
 
@@ -138,7 +138,7 @@ A continuación se presenta el pseudocódigo para CHC (algoritmo \ref{chc-alg}).
 \Ensure Una solución al problema
 
 \State $P \gets$ Generar población aleatoria de $\texttt{pop}$ individuos
-\State $p^{*} \gets $ el \emph{mejor} individuo en $P$
+\State $s^* \gets $ el \emph{mejor} individuo en $P$
 \State $\mu \gets l/4$ \Comment Umbral de cruce
 \While {$\neg$ Condición de parada}
 	\For {$i \in [1 \dots \texttt{pop}/2]$}
@@ -152,17 +152,17 @@ A continuación se presenta el pseudocódigo para CHC (algoritmo \ref{chc-alg}).
 	\If {$\mid P \mid = \texttt{pop}$}
 		\State $\mu \gets \mu-1$
 		\If {$\mu = 0$}
-			\State $P \gets$ Generar población de $\texttt{pop}$ individuos usando $p^*$
+			\State $P \gets$ Generar población de $\texttt{pop}$ individuos usando $s^*$
 			\State $\mu \gets l/4$
 		\EndIf
 	\Else
 		\State $P \gets \texttt{pop}$ mejores individuos en $P$
-		\If {El \emph{mejor} individuo en $P$ es \emph{mejor} que $p^{*}$}
-			\State $p^{*} \gets$ el \emph{mejor} individuo en $P$
+		\If {El \emph{mejor} individuo en $P$ es \emph{mejor} que $s^*$}
+			\State $s^* \gets$ el \emph{mejor} individuo en $P$
 		\EndIf
 	\EndIf
 \EndWhile
-\State \Return $p^{*}$
+\State \Return $s^*$
 
 \end{algorithmic}
 \end{algorithm}
@@ -195,13 +195,13 @@ Ver algoritmo \ref{pbil-alg}.
 \Ensure Una solución al problema
 
 \State $V \gets$ Vector de probabilidades de tamaño $l$
-\State $p^* \gets$ Una solución cualquiera
+\State $s^* \gets$ Una solución cualquiera
 \While {$\neg$ Condición de parada}
 	\State $P \gets$ Generar población de tamaño $\texttt{pop}$ según las probabilidades en $V$
 	\State $b \gets $ El \emph{mejor} individuo en $P$
 	\State $w \gets $ El \emph{peor} individuo en $P$
-	\If {$b$ es \emph{mejor} que $p^{*}$}
-		\State $p^{*} \gets b$
+	\If {$b$ es \emph{mejor} que $s^*$}
+		\State $s^* \gets b$
 	\EndIf
 	\For {$i \in [1 \dots l]$} \Comment{Actualizar el vector de probabilidades}
 		\State $V_i \gets V_i * (1 - \texttt{lr}) + b_i * \texttt{lr}$
@@ -213,33 +213,70 @@ Ver algoritmo \ref{pbil-alg}.
 		\EndIf
 	\EndFor
 \EndWhile
-\State \Return $p^{*}$
+\State \Return $s^*$
 
 \end{algorithmic}
 \end{algorithm}
 
 \subsection{Inteligencia de Enjambre}
 
+\emph{Inteligencia de Enjambre} \cite{Bonabeau:1999:SIN:328320} (\emph{IE}) es un paradigma emergente entre los sistemas de cómputo bio-inspirados; surge como una extensión de los \emph{AE}, pero no se basa en la adaptación genética de poblaciones, sino en el comportamiento colectivo de grupos de organismos. Las estrategias de \emph{IE} exhiben patrones de búsqueda descentralizada y auto-organizada, mediante la simulación de la inteligencia colectiva de grupos de ``agentes'' sencillos.
+
+Durante la última década se han desarrollado numerosos enfoques basados en la explotación de inteligencia colectiva; inspirados en el comportamiendo de colonias de hormigas, abejas, luciérnagas, etc. Uno de los más estudiados se conoce como PSO, inspirado en el vuelo de grupos de aves.
+
 \subsubsection{Particle Swarm Optimization (PSO)}
 
-\cite{kennedy1995particle}
+PSO \cite{kennedy1995particle} se inspira en el comportamiento de organismos biológicos, en particular del vuelo de bandadas. Cada ave o ``partícula'' representa una solución que se mueve en el espacio de soluciones del problema, y modifica su ``vuelo'' en relación a su propia experiencia y la de sus ``compañeras''. Diferentes estudios \cite{shi1998modified,kennedy1998matching} muestran que PSO obtiene mejores resultados que los algoritmos genéticos y en menor tiempo de cómputo.
 
-PSO se inspira en el comportamiento de organismos biológicos, en particular del vuelo de bandadas. Cada ave o ``partícula'' representa una solución al problema, y tiene una posición y velocidad asociada, modificando su ``vuelo'' en relación a su propia experiencia y la de sus ``compañeras''. Diferentes estudios muestran que PSO obtiene mejores resultados que los algoritmos genéticos, y en menor tiempo de cómputo.
+La $i$-esima partícula de PSO tiene asociado
+\begin{inparaenum}[\itshape a\upshape)]
+\item un vector de posición $x_i \in \mathbb{R}^l$ en un espacio euclideano $l$-dimensional que representa una solución al problema (\emph{i.e.} un cromosoma de tamaño $l$ con genes en pertenecientes a $\mathbb{R}$), y
+\item un vector de velocidad $v_i \in \mathbb{R}^l$ que modifica la posición de la partícula en cada iteración.
+\end{inparaenum}
+Ver algoritmo \ref{pso-alg}.
 
-Inicialmente se obtienen $P$ soluciones aleatorias, o partículas. Cada partícula $i$ está representada por un posición en un espacio $s$-dimensional \linebreak $\textbf{x}_i =\ <x_{i1},x_{i2},\dots,x_{is}>$. Luego, se realizan un número de iteraciones (\texttt{MAX\_ITER}) en las que se actualiza la posición de cada partícula de acuerdo a su velocidad $v_i$:
+\begin{algorithm}
+\caption{Particle Swarm Optimization}
+\label{pso-alg}
+\begin{algorithmic}[1]
 
-$$\textbf{x}_i = \textbf{x}_i + v_i$$
+\Require \texttt{part} número de particulas,
+	\texttt{vmax} velocidad máxima,
+	\texttt{w} peso de inercia,
+	\texttt{c1} peso del mejor local,
+	\texttt{c2} peso del mejor global
+\Ensure Una solución al problema
 
-$$v_i = w v_i + c_1 Rand() (p_i - \textbf{x}_i) +  c_2 Rand() (p_g - \textbf{x}_i)$$
+\For{$i \in [1 \dots \texttt{part}]$}
+	\State{$\vec{X_i} \gets$ Solución inicial aleatoria $\in \mathbb{R}^l$}
+	\State{$\vec{V_i} \gets$ Vector de velocidades aleatorias entre $[-\texttt{vmax},\texttt{vmax}]$}
+	\State{$p_i \gets \vec{X_i}$} \Comment{La \emph{mejor} solución encontrada por la particula $i$}
+\EndFor
+\State $s^* \gets$ La \emph{mejor} solución $p_i, i \in [1 \dots \texttt{part}]$
+\While {$\neg$ Condición de parada}
+	\For{$i \in [1 \dots \texttt{part}]$}
+		\State{$\vec{X_i} \gets \vec{X_i} + \vec{V_i}$}
+		\State{$\vec{V_i} \gets \texttt{w} \vec{V_i} + \texttt{c1}\ \mathrm{Unif}(0,1) (p_i - \vec{X_i}) + \texttt{c2}\ \mathrm{Unif}(0,1) (s^* - \vec{X_i})$}
+		\State{Limitar valores en $\vec{V_i}$ entre $[-\texttt{vmax},\texttt{vmax}]$}
+		\If {$\vec{X_i}$ es \emph{mejor} que $p_i$}
+			\State $p_i \gets \vec{X_i}$
+			\If {$p_i$ es \emph{mejor} que $s^*$}
+				\State $s^* \gets p_i$
+			\EndIf
+		\EndIf
+	\EndFor
+\EndWhile
+\State \Return $s^*$
 
-Donde $c_1$ y $c_2$ con constantes, $Rand()$ es una función aleatoria $[0,1]$, $p_i$ es la mejor solución encontrada por la partícula $i$ (de acuerdo a una función de evaluación/\emph{fitness} establecida), $p_g$ es la mejor solución global, y $w$ es el ``peso de inercia'' que establece la posible variabilidad de $v_i$. $w$ disminuye cada iteración de acuerdo a la siguiente fórmula:
+\end{algorithmic}
+\end{algorithm}
 
-$$w = \frac{(w_{start} - w_{end})(\texttt{MAX\_ITER} - \texttt{Iter})}{\texttt{MAX\_ITER} + w_{end}}$$
+El vector de velocidad se modifica en función de varios parámetros:
+\begin{inparaenum}[\itshape a\upshape)]
+\item el peso de inercia $\texttt{w} \in \mathbb{R}$ que evita cambios bruscos respecto a la velocidad anterior,
+\item el peso del mejor local $\texttt{c1} \in \mathbb{R}$ que indica la importancia de la mejor solución encontrada por dicha particula, y
+\item  el peso del mejor global $\texttt{c2} \in \mathbb{R}$ que establece la importancia de la mejor solución global encontrada hasta el momento.
+\end{inparaenum}
+Estos parámetros se encargan de dar dirección a la búsqueda de cada partícula. Adicionalmente, usualmente los valores del vector de velocidad se limitan a ciertos rangos para permitir la explotación de soluciones locales; se usa el parámetro $\texttt{vmax} \in \mathbb{R}$ para limitar la velocidad entre $[-\texttt{vmax},\texttt{vmax}]$.
 
-Siendo \texttt{Iter} la iteración actual del algoritmo, y $w_{start}$ y $w_{end}$ valores predeterminados.
-
-\section{Adaptación para el problema de Selección de Instancias}
-
-\subsection{Representación}
-
-\subsection{Función objetivo}
+A pesar de estar definido para cromosomas con representación entre los números reales, PSO puede modificarse para optimizar soluciones con representaciones variadas, definiendo apropiadamente los operadores usados para la actualización de la velocidad. Otro enfoque radica en mapear el espacio de búsqueda del problema a un dominio continuo; en el caso de soluciones con representación binaria se puede limitar la posición de las partículas entre $[0,1]$ y obtener soluciones redondeando dichos valores.

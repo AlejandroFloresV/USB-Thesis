@@ -6,45 +6,45 @@ Database file #1: bibliografia.bib
 Warning--empty institution in Baluja94pbil
 Warning--empty institution in Baluja95anempirical
 Warning--empty booktitle in Baluja95removingthe
-You've used 41 entries,
+You've used 47 entries,
             2543 wiz_defined-function locations,
-            853 strings with 13036 characters,
-and the built_in function-call counts, 17100 in all, are:
-= -- 1771
-> -- 685
-< -- 30
-+ -- 223
-- -- 217
-* -- 1185
-:= -- 2723
-add.period$ -- 134
-call.type$ -- 41
-change.case$ -- 237
-chr.to.int$ -- 41
-cite$ -- 44
-duplicate$ -- 727
-empty$ -- 1295
-format.name$ -- 273
-if$ -- 3592
+            889 strings with 14323 characters,
+and the built_in function-call counts, 20083 in all, are:
+= -- 2093
+> -- 811
+< -- 35
++ -- 267
+- -- 259
+* -- 1378
+:= -- 3173
+add.period$ -- 156
+call.type$ -- 47
+change.case$ -- 274
+chr.to.int$ -- 47
+cite$ -- 50
+duplicate$ -- 858
+empty$ -- 1520
+format.name$ -- 321
+if$ -- 4249
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 45
-newline$ -- 209
-num.names$ -- 131
-pop$ -- 212
+missing$ -- 52
+newline$ -- 239
+num.names$ -- 149
+pop$ -- 253
 preamble$ -- 1
-purify$ -- 282
+purify$ -- 326
 quote$ -- 0
-skip$ -- 625
+skip$ -- 743
 stack$ -- 0
-substring$ -- 1102
-swap$ -- 155
-text.length$ -- 30
+substring$ -- 1291
+swap$ -- 199
+text.length$ -- 35
 text.prefix$ -- 16
 top$ -- 0
-type$ -- 304
+type$ -- 348
 warning$ -- 3
-while$ -- 175
-width$ -- 47
-write$ -- 544
+while$ -- 207
+width$ -- 53
+write$ -- 629
 (There were 3 warnings)
