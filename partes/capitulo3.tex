@@ -61,14 +61,14 @@ Sin embargo, el punto inicial de la búsqueda en términos de precisión sigue s
 \end{algorithmic}
 \end{algorithm}
 
-Cualquier solución generada por algoritmos de aproximación para el problema de \emph{SI} (sección \ref{alg-aprox-si}) sirve como ``semilla'' de este generador; en el presente trabajo se prueba el impacto del uso de soluciones iniciales calculadas por CNN y ENN. Adicionalmente se incluyen dos selecciones basadas en el órden según el \emph{enemigo más cercano} (NE - ``\emph{Nearest Enemy}''); se seleccionan las $\delta \vert T \vert$ instancias con mayor distancia NE (selección por \emph{Farthest NE}), o menor distancia NE (selección por \emph{Closest NE}). Finalmente, se prueba un método de selección propio llamado \emph{Nearest Enemy Cell Selection} descrito a continuación.
+Cualquier solución generada por algoritmos de aproximación para el problema de \emph{SI} (sección \ref{alg-aprox-si}) sirve como ``semilla'' de este generador; en el presente trabajo se prueba el impacto del uso de soluciones iniciales calculadas por CNN y ENN. Adicionalmente se incluyen dos selecciones basadas en el órden según el \emph{enemigo más cercano} (NE - ``\emph{Nearest Enemy}''); se seleccionan las $\delta \vert T \vert$ instancias con mayor distancia NE (selección por \emph{Farthest NE}), o menor distancia NE (selección por \emph{Closest NE}). Finalmente, se prueba un método de selección propio llamado \emph{Nearest Enemy Hypersphere Selection} descrito a continuación.
 
-\subsubsection{Nearest Enemy Cell Selection}
+\subsubsection{Nearest Enemy Hypersphere Selection}
 
-La idea tras el uso de la regla NN es que instancias ``cercanas'' en un espacio cualquiera (\emph{i.e.} con atributos similares) comparten su clasificación; esto conlleva a la división de dicho espacio en regiones con instancias de igual clase. La idea fundamental de NECS es seleccionar instancias en los centros de dichas regiones, con la finalidad de reducir la cantidad de instancias necesarias para generalizar el espacio descrito por el conjunto original.
+La idea tras el uso de la regla NN es que instancias ``cercanas'' en un espacio cualquiera (\emph{i.e.} con atributos similares) comparten su clasificación; esto conlleva a la división de dicho espacio en regiones con instancias de igual clase. La idea fundamental de \emph{Nearest Enemy Hypersphere Selection} (NEHS) es seleccionar instancias en los centros de dichas regiones, con la finalidad de reducir la cantidad de instancias necesarias para generalizar el espacio descrito por el conjunto original. Para esto hace uso de la distancia del \emph{enemigo más cercano}: cada instancia $t \in T$ tiene un enemigo más cercano $\mathrm{NE}(t)$, cuya distancia $\varphi(t,\mathrm{NE}(t))$ define una hiperesfera en el espacio dentro de la cual toda instancia comparte la clase $\omega_t$. NEHS implementa una estrategia \emph{greedy} que busca seleccionar las mayores hiperesferas que no intersecten entre sí. Ver algoritmo \ref{necs-alg}.
 
 \begin{algorithm}
-\caption{Nearest Enemy Cell Selection}
+\caption{Nearest Enemy Hypersphere Selection}
 \label{necs-alg}
 \begin{algorithmic}[1]
 
