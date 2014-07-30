@@ -35,9 +35,9 @@ Para esta definción, el objetivo de las metaheurísticas para selección de ins
 \subsection{Generación de soluciones iniciales}
 \label{generacion-sol-inic}
 
-Para muchos problemas con esquemas de representación binaria, la generación de soluciones iniciales usadas por metaheurísticas sigue una estrategia común: al generar un cromosoma aleatorio, cada bit tiene $50\%$ de probabilidad de estar prendido ($\delta = 0.5$). Esta estrategia genera soluciones con valor esperado de la mitad de los bits prendidos. Para el problema de \emph{SI} esto implica soluciones con una reducción inicial del $50\%$ sobre el conjunto $T$, y hace necesario un alto número de iteraciones para lograr obtener soluciones con reducciones significativas \cite{cano2003using}. Por esta razón, en el presente trabajo se usa una probabilidad de aparición del $5\%$ por cada bit ($\delta = 0.05$), generando soluciones iniciales con reducciones cercanas al $95\%$; el rol de la función objetivo no recae en disminuir los porcentajes de reducción de las soluciones, sino en mantenerlos en niveles aceptables, permitiendo explotar el espacio de búsqueda para conseguir soluciones con mayor precisión.
+Para muchos problemas con esquemas de representación binaria, la generación de soluciones iniciales usada por metaheurísticas sigue una estrategia común: al generar un cromosoma aleatorio, cada bit tiene $50\%$ de probabilidad de estar prendido ($\delta = 0.5$). Esta estrategia genera soluciones con valor esperado de la mitad de los bits prendidos. Para el problema de \emph{SI} esto implica soluciones con una reducción inicial del $50\%$ sobre el conjunto $T$, y hace necesario un alto número de iteraciones para lograr obtener soluciones con reducciones significativas \cite{cano2003using}. Por esta razón, en el presente trabajo se usa una probabilidad de aparición del $5\%$ por cada bit ($\delta = 0.05$), generando soluciones iniciales con reducciones cercanas al $95\%$; el rol de la función objetivo no recae en disminuir los porcentajes de reducción de las soluciones, sino en mantenerlos en niveles aceptables, permitiendo explotar el espacio de búsqueda para conseguir soluciones con mayor precisión.
 
-Sin embargo, el punto inicial de la búsqueda en términos de precisión sigue siendo aleatorio. Una estrategia común en metaheurísticas de trayectoria es la generación de soluciones iniciales usando algoritmos de aproximación; \emph{Cerveron et. al} \cite{cerveron2001another} plantean una modificación del algoritmo de Búsqueda Tabú usando CNN para generar la solución inicial de la búsqueda. Esta idea puede trasladarse a metaheurísticas poblacionales siguiendo un enfoque probabilístico: dada una selección inicial $R_0 \subseteq T$, los bits correspondientes a instancias en $R_0$ tienen mayor probabilidad de aparición que los bits de instancias en $T \setminus R_0$. Estas probabilidades constituyen un vector de probabilidades a ser usado por PBIL como vector inicial, o por los algoritmos genéticos (GGA, SGA y CHC) para generar soluciones iniciales. El algoritmo \ref{inicial-sol-alg} implementa este esquema de generación. Para un $\delta$ particular (que determina número de bits prendidos en las soluciones iniciales), el vector de probabilidades $V$ generado por el algoritmo cumple con que un máximo del $70\%$ de los bits prendidos en soluciones generadas usando $V$, pertenecen a la solución inicial $R_0$. Esto contribuye a guiar la búsqueda realizada por las metaheurísticas poblacionales, mientras se mantiene la variabilidad.
+Sin embargo, el punto inicial de la búsqueda en términos de precisión sigue siendo aleatorio. Una estrategia común en metaheurísticas de trayectoria es la generación de soluciones iniciales usando algoritmos de aproximación; \emph{Cerveron et. al} \cite{cerveron2001another} plantean una modificación del algoritmo de Búsqueda Tabú usando CNN para generar la solución inicial de la búsqueda. Esta idea puede trasladarse a metaheurísticas poblacionales siguiendo un enfoque probabilístico: dada una selección inicial $R_0 \subseteq T$, los bits correspondientes a instancias en $R_0$ tienen mayor probabilidad de aparición que los bits de instancias en $T \setminus R_0$. Estas probabilidades constituyen un vector de probabilidades a ser usado por PBIL como vector inicial, o por los algoritmos genéticos (GGA, SGA y CHC) para generar soluciones iniciales. El algoritmo \ref{inicial-sol-alg} implementa este esquema de generación. Para un $\delta$ particular (que determina el número de bits prendidos en las soluciones iniciales), el vector de probabilidades $V$ generado por el algoritmo cumple con que un máximo del $70\%$ de los bits prendidos en soluciones generadas usando $V$, pertenecen a la solución inicial $R_0$. Esto contribuye a guiar la búsqueda realizada por las metaheurísticas poblacionales, mientras se mantiene la variabilidad.
 
 \begin{algorithm}
 \caption{Generador de vector de probabilidades inicial}
@@ -61,7 +61,30 @@ Sin embargo, el punto inicial de la búsqueda en términos de precisión sigue s
 \end{algorithmic}
 \end{algorithm}
 
-Cualquier solución generada por algoritmos de aproximación para el problema de \emph{SI} (sección \ref{alg-aprox-si}) sirve como ``semilla'' de este generador; en el presente trabajo se prueba el impacto del uso de soluciones iniciales calculadas por CNN y ENN. Adicionalmente se incluyen dos selecciones basadas en el órden según el \emph{enemigo más cercano} (NE - ``\emph{Nearest Enemy}''); se seleccionan las $\delta \vert T \vert$ instancias con mayor distancia NE (selección por \emph{Farthest NE}), o menor distancia NE (selección por \emph{Closest NE}). Finalmente, se prueba un método de selección propio llamado \emph{Farthest Enemy Voronoi} descrito en la sección \ref{}.
+Cualquier solución generada por algoritmos de aproximación para el problema de \emph{SI} (sección \ref{alg-aprox-si}) sirve como ``semilla'' de este generador; en el presente trabajo se prueba el impacto del uso de soluciones iniciales calculadas por CNN y ENN. Adicionalmente se incluyen dos selecciones basadas en el órden según el \emph{enemigo más cercano} (NE - ``\emph{Nearest Enemy}''); se seleccionan las $\delta \vert T \vert$ instancias con mayor distancia NE (selección por \emph{Farthest NE}), o menor distancia NE (selección por \emph{Closest NE}). Finalmente, se prueba un método de selección propio llamado \emph{Nearest Enemy Cell Selection} descrito a continuación.
+
+\subsubsection{Nearest Enemy Cell Selection}
+
+La idea tras el uso de la regla NN es que instancias ``cercanas'' en un espacio cualquiera (\emph{i.e.} con atributos similares) comparten su clasificación; esto conlleva a la división de dicho espacio en regiones con instancias de igual clase. La idea fundamental de NECS es seleccionar instancias en los centros de dichas regiones, con la finalidad de reducir la cantidad de instancias necesarias para generalizar el espacio descrito por el conjunto original.
+
+\begin{algorithm}
+\caption{Nearest Enemy Cell Selection}
+\label{necs-alg}
+\begin{algorithmic}[1]
+
+\Require $T$ conjunto de instancias inicial, $\Delta$ porcentaje de instancias a excluir
+\Ensure Conjunto de instancias $R \subseteq T$
+
+\State $R \gets \emptyset$
+\For{$t \in T$ en orden descendiente de distancia NE\par
+	\hskip\algorithmicindent excluyendo las últimas $\Delta\vert T \vert$ instancias}
+	\If{$\lnot\exists\ r \in R$ tal que $\varphi(t,r) < \varphi(r,\mathrm{NE}(r)) + \varphi(t,\mathrm{NE}(t))$}
+		\State $R \gets R \cup \left\lbrace t \right\rbrace$
+	\EndIf
+\EndFor
+\State \Return{$R$}
+\end{algorithmic}
+\end{algorithm}
 
 \section{Modificaciones particulares}
 
