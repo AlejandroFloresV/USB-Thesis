@@ -4,4 +4,5 @@
 \contentsline {algorithm}{\numberline {2.4}{\ignorespaces Population-Based Incremental Learning\relax }}{17}{algorithm.59}
 \contentsline {algorithm}{\numberline {2.5}{\ignorespaces Particle Swarm Optimization\relax }}{18}{algorithm.64}
 \contentsline {algorithm}{\numberline {3.1}{\ignorespaces Generador de vector de probabilidades inicial\relax }}{23}{algorithm.75}
-\contentsline {algorithm}{\numberline {3.2}{\ignorespaces Population-Based PSO\relax }}{25}{algorithm.80}
+\contentsline {algorithm}{\numberline {3.2}{\ignorespaces Nearest Enemy Hypersphere Selection\relax }}{23}{algorithm.77}
+\contentsline {algorithm}{\numberline {3.3}{\ignorespaces Population-Based PSO\relax }}{26}{algorithm.82}
