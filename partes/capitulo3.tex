@@ -18,9 +18,11 @@ En este sentido, una solución particular al problema de \emph{SI} está descrit
 R_s = \left\lbrace t_i \in T \mid i = 1 \dots n \land s_i = 1 \right\rbrace
 \end{equation}
 
+Este conjunto $R_s$ permite evaluar la ``bondad'' de la solución $s$ en función de los objetivos de optimización del problema.
+
 \subsection{Función de evaluación}
 
-El objeto de la aplicación de metaheurísticas es conseguir soluciones óptimas o casi óptimas a problemas. Para ello es necesario definir una estrategia de comparación entre soluciones, \emph{i.e.} saber cuándo una solución es \guillemotleft\emph{mejor}\guillemotright\ que otra.
+El objeto de la aplicación de metaheurísticas es conseguir soluciones óptimas o casi óptimas a gran variedad de problemas. Para ello es necesario definir una estrategia de comparación entre soluciones, \emph{i.e.} saber cuándo una solución es \guillemotleft\emph{mejor}\guillemotright\ que otra, que permita seleccionar aquellas soluciones que mejor se adapten a los objetivos del problema en cuestión.
 
 Para el caso del problema de \emph{SI}, el objetivo es encontrar un subconjunto $R$ del menor tamaño posible, que mantenga un alto porcentaje de precisión de clasificación. \emph{Cano et. al} \cite{cano2003using} definen una función de evaluación que combina ambos objetivos en función de un parámetro $\alpha \in [0,1]$; a continuación se presenta una modificación de dicha función (su complemento), usada en el presente trabajo:
 
@@ -37,7 +39,7 @@ Para esta definción, el objetivo de las metaheurísticas para selección de ins
 
 Para muchos problemas con esquemas de representación binaria, la generación de soluciones iniciales usada por metaheurísticas sigue una estrategia común: al generar un cromosoma aleatorio, cada bit tiene $50\%$ de probabilidad de estar prendido ($\delta = 0.5$). Esta estrategia genera soluciones con valor esperado de la mitad de los bits prendidos. Para el problema de \emph{SI} esto implica soluciones con una reducción inicial del $50\%$ sobre el conjunto $T$, y hace necesario un alto número de iteraciones para lograr obtener soluciones con reducciones significativas \cite{cano2003using}. Por esta razón, en el presente trabajo se usa una probabilidad de aparición del $5\%$ por cada bit ($\delta = 0.05$), generando soluciones iniciales con reducciones cercanas al $95\%$; el rol de la función objetivo no recae en disminuir los porcentajes de reducción de las soluciones, sino en mantenerlos en niveles aceptables, permitiendo explotar el espacio de búsqueda para conseguir soluciones con mayor precisión.
 
-Sin embargo, el punto inicial de la búsqueda en términos de precisión sigue siendo aleatorio. Una estrategia común en metaheurísticas de trayectoria es la generación de soluciones iniciales usando algoritmos de aproximación; \emph{Cerveron et. al} \cite{cerveron2001another} plantean una modificación del algoritmo de Búsqueda Tabú usando CNN para generar la solución inicial de la búsqueda. Esta idea puede trasladarse a metaheurísticas poblacionales siguiendo un enfoque probabilístico: dada una selección inicial $R_0 \subseteq T$, los bits correspondientes a instancias en $R_0$ tienen mayor probabilidad de aparición que los bits de instancias en $T \setminus R_0$. Estas probabilidades constituyen un vector de probabilidades a ser usado por PBIL como vector inicial, o por los algoritmos genéticos (GGA, SGA y CHC) para generar soluciones iniciales. El algoritmo \ref{inicial-sol-alg} implementa este esquema de generación. Para un $\delta$ particular (que determina el número de bits prendidos en las soluciones iniciales), el vector de probabilidades $V$ generado por el algoritmo cumple con que un máximo del $70\%$ de los bits prendidos en soluciones generadas usando $V$, pertenecen a la solución inicial $R_0$. Esto contribuye a guiar la búsqueda realizada por las metaheurísticas poblacionales, mientras se mantiene la variabilidad.
+Sin embargo, el punto inicial de la búsqueda en términos de precisión sigue siendo aleatorio. Una estrategia común en metaheurísticas de trayectoria es la generación de soluciones iniciales usando algoritmos de aproximación; \emph{Cerveron et. al} \cite{cerveron2001another} plantean una modificación del algoritmo de Búsqueda Tabú para el problema de \emph{SI}, en la cuál usan CNN para generar la solución inicial de la búsqueda. Esta idea puede trasladarse a metaheurísticas poblacionales siguiendo un enfoque probabilístico: dada una selección inicial $R_0 \subseteq T$, los bits correspondientes a instancias en $R_0$ tienen mayor probabilidad de aparición que los bits de instancias en $T \setminus R_0$. Estas probabilidades constituyen un vector de probabilidades a ser usado por PBIL como vector inicial, o por los algoritmos genéticos (GGA, SGA y CHC) para generar soluciones iniciales. El algoritmo \ref{inicial-sol-alg} implementa este esquema de generación; para un $\delta$ particular (que determina el número de bits prendidos en las soluciones iniciales), el vector de probabilidades $V$ generado por el algoritmo cumple con que un máximo del $70\%$ de los bits prendidos en soluciones generadas usando $V$, pertenecen a la solución inicial $R_0$. Esto contribuye a guiar la búsqueda realizada por las metaheurísticas poblacionales, mientras se mantiene la variabilidad.
 
 \begin{algorithm}
 \caption{Generador de vector de probabilidades inicial}
@@ -47,8 +49,8 @@ Sin embargo, el punto inicial de la búsqueda en términos de precisión sigue s
 \Require $R_0$ solución inicial
 \Ensure Vector de probabilidades en base a $R_0$
 
-\State{$hi \gets min(0.9, \frac{\delta * \vert T \vert * 0.7}{\vert R_0 \vert})$}
-\State{$low \gets \frac{\delta * \vert T \vert - hi * \vert R_0 \vert}{\vert T \setminus R_0 \vert}$}
+\State{$hi \gets min(0.9, \frac{\delta \vert T \vert 0.7}{\vert R_0 \vert})$}
+\State{$low \gets \frac{\delta \vert T \vert - hi \vert R_0 \vert}{\vert T \setminus R_0 \vert}$}
 \State{$V \gets$ Vector de probabilidades de tamaño n}
 \For{$i \in [1 \dots n]$}
 	\If{$t_i \in R_0$}
@@ -61,7 +63,43 @@ Sin embargo, el punto inicial de la búsqueda en términos de precisión sigue s
 \end{algorithmic}
 \end{algorithm}
 
-Cualquier solución generada por algoritmos de aproximación para el problema de \emph{SI} (sección \ref{alg-aprox-si}) sirve como ``semilla'' de este generador; en el presente trabajo se prueba el impacto del uso de soluciones iniciales calculadas por CNN y ENN. Adicionalmente se incluyen dos selecciones basadas en el órden según el \emph{enemigo más cercano} (NE - ``\emph{Nearest Enemy}''); se seleccionan las $\delta \vert T \vert$ instancias con mayor distancia NE (selección por \emph{Farthest NE}), o menor distancia NE (selección por \emph{Closest NE}). Finalmente, se prueba un método de selección propio llamado \emph{Nearest Enemy Hypersphere Selection} descrito a continuación.
+Cualquier solución generada por algoritmos de aproximación para el problema de \emph{SI} (sección \ref{alg-aprox-si}) sirve como ``semilla'' de este generador; en el presente trabajo se prueba el impacto del uso de soluciones iniciales calculadas por CNN. También se incluyen dos selecciones basadas en el órden según el \emph{enemigo más cercano} (NE - ``\emph{Nearest Enemy}''), seleccionando las instancias con mayor distancia NE (selección por \emph{Farthest NE}), o menor distancia NE (selección por \emph{Closest NE}). Finalmente, se prueba un método de selección propio llamado \emph{Nearest Enemy Hypersphere Selection} (NEHS). En la figura \ref{seleccion} se pueden observar los subconjuntos seleccionados por estas cuatro (4) estrategias.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.8\textwidth]{seleccion.pdf}
+\caption[Algoritmos de Selección de Instancias]{Subconjunto de instancias seleccionadas por CNN, NEHS, Closest NE y Farthest NE, para el conjunto de instancias \textsc{Banana}. Las instancias están pintadas en amarillo y rojo según su clase en el conjunto de datos, y en azul aquellas instancias pertenecientes a la selección correspondiente.}
+\label{seleccion}
+\end{figure}
+
+\subsubsection{Condensed Nearest Neighbor}
+
+Descrito por \emph{Hart} \cite{Hart:2006:CNN:2263267.2267647}, CNN 
+
+\begin{algorithm}
+\caption{Condensed Nearest Neighbor}
+\label{cnn-alg}
+\begin{algorithmic}[1]
+
+\Require $T$ conjunto de instancias inicial
+\Ensure Conjunto de instancias $R \subseteq T$
+
+\State $R \gets \left\lbrace \mathrm{Una\ instancia\ cualquiera}\ t \in T \right\rbrace$
+\Repeat
+	\State $R' \gets R$
+	\ForAll{$t \in T$}
+		\If{$t$ es mal clasificada usando $R$ con un clasificador 1-NN}
+			\State $R \gets R \cup \left\lbrace t \right\rbrace$
+		\EndIf
+	\EndFor
+\Until{$R = R'$}
+\State \Return{$R$}
+\end{algorithmic}
+\end{algorithm}
+
+\subsubsection{Closest Nearest Enemy}
+
+\subsubsection{Farthest Nearest Enemy}
 
 \subsubsection{Nearest Enemy Hypersphere Selection}
 
@@ -76,7 +114,7 @@ La idea tras el uso de la regla NN es que instancias ``cercanas'' en un espacio 
 \Ensure Conjunto de instancias $R \subseteq T$
 
 \State $R \gets \emptyset$
-\For{$t \in T$ en orden descendiente de distancia NE\par
+\ForAll{$t \in T$ en orden descendiente de distancia NE\par
 	\hskip\algorithmicindent excluyendo las últimas $\Delta\vert T \vert$ instancias}
 	\If{$\lnot\exists\ r \in R$ tal que $\varphi(t,r) < \varphi(r,\mathrm{NE}(r)) + \varphi(t,\mathrm{NE}(t))$}
 		\State $R \gets R \cup \left\lbrace t \right\rbrace$
@@ -88,7 +126,7 @@ La idea tras el uso de la regla NN es que instancias ``cercanas'' en un espacio 
 
 \section{Modificaciones particulares}
 
-\subsection{GGA, SGA y CHC}
+\subsection{Adaptación de GGA, SGA y CHC}
 
 Para aplicar algún algoritmo genético al problema de \emph{SI}, es necesario describir las estrategias de selección, recombinación, mutación y reemplazo que seguirá el algoritmo durante el proceso evolutivo.
 
@@ -98,11 +136,11 @@ Debido a que CHC aplica un operador de recombinación particular (HUX) y no requ
 
 Finalmente, es necesario describir los criterios de reemplazo. Al tratarse de estrategias evolutivas generacionales, GGA y CHC reemplazan la población de forma incondicional en favor de la decendencia. En cambio, el criterio de reemplazo usado en SGA es ``elitista''; se sustituyen los peores individuos en la población por la nueva decendencia generada, solo si dicha decendencia es mejor.
 
-\subsection{PBIL}
+\subsection{Adaptación de PBIL}
 
 La estrategia evolutiva de PBIL no requiere modificaciones adicionales para su aplicación al problema de selección de instancias; está diseñado para encontrar soluciones con representación binaria, lo que permite su aplicación directa al problema. La única modificación realizada al esquema estándar de PBIL es en el método de generación del vector de probabilidades iniciales, reflejando lo descrito en la sección \ref{generacion-sol-inic}.
 
-\subsection{PSO}
+\subsection{Adaptación de PSO}
 
 La adaptación de PSO al problema de \emph{SI} es mayor, debido a que PSO está pensado para problemas con representación en espacios euclideanos; \emph{i.e.} es necesario el mapeo de vectores en $\mathbb{R}^l$ a soluciones con representación binaria. En este sentido, se adopta el esquema poblacional de PBIL en el que el genotipo de la población se representa de forma probabilística.
 
