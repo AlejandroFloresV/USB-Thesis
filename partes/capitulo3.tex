@@ -97,10 +97,6 @@ Descrito por \emph{Hart} \cite{Hart:2006:CNN:2263267.2267647}, CNN
 \end{algorithmic}
 \end{algorithm}
 
-\subsubsection{Closest Nearest Enemy}
-
-\subsubsection{Farthest Nearest Enemy}
-
 \subsubsection{Nearest Enemy Hypersphere Selection}
 
 La idea tras el uso de la regla NN es que instancias ``cercanas'' en un espacio cualquiera (\emph{i.e.} con atributos similares) comparten su clasificación; esto conlleva a la división de dicho espacio en regiones con instancias de igual clase. La idea fundamental de \emph{Nearest Enemy Hypersphere Selection} (NEHS) es seleccionar instancias en los centros de dichas regiones, con la finalidad de reducir la cantidad de instancias necesarias para generalizar el espacio descrito por el conjunto original. Para esto hace uso de la distancia del \emph{enemigo más cercano}: cada instancia $t \in T$ tiene un enemigo más cercano $\mathrm{NE}(t)$, cuya distancia $\varphi(t,\mathrm{NE}(t))$ define una hiperesfera en el espacio dentro de la cual toda instancia comparte la clase $\omega_t$. NEHS implementa una estrategia \emph{greedy} que busca seleccionar las mayores hiperesferas que no intersecten entre sí. Ver algoritmo \ref{necs-alg}.
@@ -123,6 +119,22 @@ La idea tras el uso de la regla NN es que instancias ``cercanas'' en un espacio 
 \State \Return{$R$}
 \end{algorithmic}
 \end{algorithm}
+
+\subsubsection{Closest Nearest Enemy}
+
+La distancia del \emph{enemigo más cercano} (NE) de una instancia cualquiera $t \in T$ (\emph{i.e.} $\varphi(t,\mathrm{NE}(t))$), indica su cercanía a los bordes de decisión establecidos mediante un clasificador 1-NN. La selección por \emph{Closest NE} escoge aquellas instancias con \emph{menor} distancia NE entre las instancias en $T$, \emph{i.e.} instancias pertenecientes --o cercanas-- a los bordes de decisión de los datos. En el presente trabajo, \emph{Closest NE} selecciona el $5\%$ ($\delta = 0.05$) de instancias con menor distancia NE.
+
+\begin{equation}
+R_\mathrm{ClosestNE} = \left\lbrace \delta \vert T \vert\ \mathrm{instancias\ con\ menor\ distancia\ NE} \right\rbrace
+\end{equation}
+
+\subsubsection{Farthest Nearest Enemy}
+
+Similar a la selección por \emph{Closest NE}, \emph{Farthest NE} se basa en el uso de la distancia NE para incluir instancias en el conjunto reducido $R \subseteq T$. Sin embargo, \emph{Farthest NE} selecciona aquellas instancias con \emph{mayor} distancia NE, \emph{i.e.} instancias alejadas de los bordes de decisión y cercanas a los centros de sus respectivas regiones. Este método también usa un porcentaje de selección igual al $5\%$ ($\delta = 0.05$) de las instancias en $T$.
+
+\begin{equation}
+R_\mathrm{FarthestNE} = \left\lbrace \delta \vert T \vert\ \mathrm{instancias\ con\ mayor\ distancia\ NE} \right\rbrace
+\end{equation}
 
 \section{Modificaciones particulares}
 
