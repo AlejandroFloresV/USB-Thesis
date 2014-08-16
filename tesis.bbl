@@ -1,6 +1,11 @@
 \newcommand{\etalchar}[1]{$^{#1}$}
 \begin{thebibliography}{DGKL94}
 
+\bibitem[AR11]{amal2011survey}
+MILOUD-AOUIDATE Amal and BABA-ALI~Ahmed Riadh.
+\newblock Survey of nearest neighbor condensing techniques.
+\newblock 2011.
+
 \bibitem[Bac96]{back1996evolutionary}
 T.~Back.
 \newblock {\em Evolutionary algorithms in theory and practice: evolution
@@ -145,6 +150,10 @@ J.H. Holland.
 \newblock {\em Adaptation in natural and artificial systems: an introductory
   analysis with applications to biology, control, and artificial intelligence}.
 \newblock University of Michigan Press, 1975.
+
+\bibitem[JG]{Jankowski_comparisonof}
+Norbert Jankowski and Marek Grochowski.
+\newblock Comparison of instances seletion algorithms i. algorithms survey.
 
 \bibitem[KE95]{kennedy1995particle}
 J~Kennedy and R~Eberhart.

@@ -1,9 +1,9 @@
-\contentsline {algorithm}{\numberline {2.1}{\ignorespaces Generational Genetic Algorithm\relax }}{14}{algorithm.45}
-\contentsline {algorithm}{\numberline {2.2}{\ignorespaces Steady-State Genetic Algorithm\relax }}{15}{algorithm.51}
-\contentsline {algorithm}{\numberline {2.3}{\ignorespaces CHC Adaptive Search Algorithm\relax }}{16}{algorithm.53}
-\contentsline {algorithm}{\numberline {2.4}{\ignorespaces Population-Based Incremental Learning\relax }}{17}{algorithm.59}
-\contentsline {algorithm}{\numberline {2.5}{\ignorespaces Particle Swarm Optimization\relax }}{18}{algorithm.64}
-\contentsline {algorithm}{\numberline {3.1}{\ignorespaces Generador de vector de probabilidades inicial\relax }}{23}{algorithm.75}
-\contentsline {algorithm}{\numberline {3.2}{\ignorespaces Condensed Nearest Neighbor\relax }}{24}{algorithm.78}
-\contentsline {algorithm}{\numberline {3.3}{\ignorespaces Nearest Enemy Hypersphere Selection\relax }}{24}{algorithm.80}
-\contentsline {algorithm}{\numberline {3.4}{\ignorespaces Population-Based PSO\relax }}{27}{algorithm.89}
+\contentsline {algorithm}{\numberline {2.1}{\ignorespaces Generational Genetic Algorithm\relax }}{14}{algorithm.47}
+\contentsline {algorithm}{\numberline {2.2}{\ignorespaces Steady-State Genetic Algorithm\relax }}{15}{algorithm.53}
+\contentsline {algorithm}{\numberline {2.3}{\ignorespaces CHC Adaptive Search Algorithm\relax }}{16}{algorithm.55}
+\contentsline {algorithm}{\numberline {2.4}{\ignorespaces Population-Based Incremental Learning\relax }}{17}{algorithm.61}
+\contentsline {algorithm}{\numberline {2.5}{\ignorespaces Particle Swarm Optimization\relax }}{18}{algorithm.66}
+\contentsline {algorithm}{\numberline {3.1}{\ignorespaces Generador de vector de probabilidades inicial\relax }}{23}{algorithm.77}
+\contentsline {algorithm}{\numberline {3.2}{\ignorespaces Condensed Nearest Neighbor\relax }}{24}{algorithm.80}
+\contentsline {algorithm}{\numberline {3.3}{\ignorespaces Nearest Enemy Hypersphere Selection\relax }}{25}{algorithm.83}
+\contentsline {algorithm}{\numberline {3.4}{\ignorespaces Population-Based PSO\relax }}{28}{algorithm.92}

@@ -15,35 +15,35 @@
 \contentsline {section}{\numberline {1.2}Selecci\IeC {\'o}n de Instancias}{4}{section.19}
 \contentsline {subsection}{\numberline {1.2.1}Regla del Vecino M\IeC {\'a}s Cercano (NN)}{4}{subsection.21}
 \contentsline {subsection}{\numberline {1.2.2}Definiciones relevantes}{6}{subsection.24}
-\contentsline {section}{\numberline {1.3}Algor\IeC {\'\i }tmos de aproximaci\IeC {\'o}n para Selecci\IeC {\'o}n de Instancias}{7}{section.29}
-\contentsline {subsection}{\numberline {1.3.1}M\IeC {\'e}todos basados en la regla NN}{7}{subsection.30}
-\contentsline {subsection}{\numberline {1.3.2}M\IeC {\'e}todos basados en eliminaci\IeC {\'o}n ordenada}{8}{subsection.31}
-\contentsline {subsection}{\numberline {1.3.3}M\IeC {\'e}todos basados en muestreo aleatorio}{9}{subsection.32}
-\contentsline {subsection}{\numberline {1.3.4}M\IeC {\'e}todos basados en metaheur\IeC {\'\i }sticas}{9}{subsection.33}
-\contentsline {subsection}{\numberline {1.3.5}Criterios de comparaci\IeC {\'o}n}{10}{subsection.34}
-\contentsline {chapter}{\numberline {2}Metaheur\IeC {\'\i }sticas}{11}{chapter.35}
-\contentsline {section}{\numberline {2.1}Descripci\IeC {\'o}n general}{11}{section.36}
-\contentsline {section}{\numberline {2.2}Metaheur\IeC {\'\i }sticas inspiradas en la naturaleza}{12}{section.37}
-\contentsline {subsection}{\numberline {2.2.1}Algoritmos Evolutivos}{12}{subsection.40}
-\contentsline {subsubsection}{\numberline {2.2.1.1}Generational Genetic Algorithm (GGA)}{13}{subsubsection.41}
-\contentsline {subsubsection}{\numberline {2.2.1.2}Steady-State Genetic Algorithm (SGA)}{14}{subsubsection.46}
-\contentsline {subsubsection}{\numberline {2.2.1.3}CHC Adaptive Search Algorithm}{14}{subsubsection.52}
-\contentsline {subsubsection}{\numberline {2.2.1.4}Population-Based Incremental Learning (PBIL)}{15}{subsubsection.54}
-\contentsline {subsection}{\numberline {2.2.2}Inteligencia de Enjambre}{17}{subsection.60}
-\contentsline {subsubsection}{\numberline {2.2.2.1}Particle Swarm Optimization (PSO)}{17}{subsubsection.61}
-\contentsline {chapter}{\numberline {3}Adaptaci\IeC {\'o}n al problema de Selecci\IeC {\'o}n de Instancias}{20}{chapter.68}
-\contentsline {section}{\numberline {3.1}Consideraciones generales}{20}{section.69}
-\contentsline {subsection}{\numberline {3.1.1}Representaci\IeC {\'o}n}{20}{subsection.70}
-\contentsline {subsection}{\numberline {3.1.2}Funci\IeC {\'o}n de evaluaci\IeC {\'o}n}{21}{subsection.72}
-\contentsline {subsection}{\numberline {3.1.3}Generaci\IeC {\'o}n de soluciones iniciales}{22}{subsection.74}
-\contentsline {subsubsection}{\numberline {3.1.3.1}Condensed Nearest Neighbor}{24}{subsubsection.77}
-\contentsline {subsubsection}{\numberline {3.1.3.2}Nearest Enemy Hypersphere Selection}{24}{subsubsection.79}
-\contentsline {subsubsection}{\numberline {3.1.3.3}Closest Nearest Enemy}{25}{subsubsection.81}
-\contentsline {subsubsection}{\numberline {3.1.3.4}Farthest Nearest Enemy}{25}{subsubsection.83}
-\contentsline {section}{\numberline {3.2}Modificaciones particulares}{25}{section.85}
-\contentsline {subsection}{\numberline {3.2.1}Adaptaci\IeC {\'o}n de GGA, SGA y CHC}{25}{subsection.86}
-\contentsline {subsection}{\numberline {3.2.2}Adaptaci\IeC {\'o}n de PBIL}{26}{subsection.87}
-\contentsline {subsection}{\numberline {3.2.3}Adaptaci\IeC {\'o}n de PSO}{26}{subsection.88}
-\contentsline {chapter}{\numberline {4}Evaluaci\IeC {\'o}n Experimental}{28}{chapter.90}
-\contentsline {chapter}{Conclusiones y Recomendaciones}{30}{chapter*.91}
+\contentsline {section}{\numberline {1.3}Algor\IeC {\'\i }tmos de aproximaci\IeC {\'o}n para Selecci\IeC {\'o}n de Instancias}{7}{section.31}
+\contentsline {subsection}{\numberline {1.3.1}M\IeC {\'e}todos basados en la regla NN}{7}{subsection.32}
+\contentsline {subsection}{\numberline {1.3.2}M\IeC {\'e}todos basados en eliminaci\IeC {\'o}n ordenada}{8}{subsection.33}
+\contentsline {subsection}{\numberline {1.3.3}M\IeC {\'e}todos basados en muestreo aleatorio}{9}{subsection.34}
+\contentsline {subsection}{\numberline {1.3.4}M\IeC {\'e}todos basados en metaheur\IeC {\'\i }sticas}{9}{subsection.35}
+\contentsline {subsection}{\numberline {1.3.5}Criterios de comparaci\IeC {\'o}n}{10}{subsection.36}
+\contentsline {chapter}{\numberline {2}Metaheur\IeC {\'\i }sticas}{11}{chapter.37}
+\contentsline {section}{\numberline {2.1}Descripci\IeC {\'o}n general}{11}{section.38}
+\contentsline {section}{\numberline {2.2}Metaheur\IeC {\'\i }sticas inspiradas en la naturaleza}{12}{section.39}
+\contentsline {subsection}{\numberline {2.2.1}Algoritmos Evolutivos}{12}{subsection.42}
+\contentsline {subsubsection}{\numberline {2.2.1.1}Generational Genetic Algorithm (GGA)}{13}{subsubsection.43}
+\contentsline {subsubsection}{\numberline {2.2.1.2}Steady-State Genetic Algorithm (SGA)}{14}{subsubsection.48}
+\contentsline {subsubsection}{\numberline {2.2.1.3}CHC Adaptive Search Algorithm}{14}{subsubsection.54}
+\contentsline {subsubsection}{\numberline {2.2.1.4}Population-Based Incremental Learning (PBIL)}{15}{subsubsection.56}
+\contentsline {subsection}{\numberline {2.2.2}Inteligencia de Enjambre}{17}{subsection.62}
+\contentsline {subsubsection}{\numberline {2.2.2.1}Particle Swarm Optimization (PSO)}{17}{subsubsection.63}
+\contentsline {chapter}{\numberline {3}Adaptaci\IeC {\'o}n al problema de Selecci\IeC {\'o}n de Instancias}{20}{chapter.70}
+\contentsline {section}{\numberline {3.1}Consideraciones generales}{20}{section.71}
+\contentsline {subsection}{\numberline {3.1.1}Representaci\IeC {\'o}n}{20}{subsection.72}
+\contentsline {subsection}{\numberline {3.1.2}Funci\IeC {\'o}n de evaluaci\IeC {\'o}n}{21}{subsection.74}
+\contentsline {subsection}{\numberline {3.1.3}Generaci\IeC {\'o}n de soluciones iniciales}{22}{subsection.76}
+\contentsline {subsubsection}{\numberline {3.1.3.1}Condensed Nearest Neighbor}{24}{subsubsection.79}
+\contentsline {subsubsection}{\numberline {3.1.3.2}Nearest Enemy Hypersphere Selection}{24}{subsubsection.81}
+\contentsline {subsubsection}{\numberline {3.1.3.3}Closest Nearest Enemy}{26}{subsubsection.84}
+\contentsline {subsubsection}{\numberline {3.1.3.4}Farthest Nearest Enemy}{26}{subsubsection.86}
+\contentsline {section}{\numberline {3.2}Modificaciones particulares}{26}{section.88}
+\contentsline {subsection}{\numberline {3.2.1}Adaptaci\IeC {\'o}n de GGA, SGA y CHC}{26}{subsection.89}
+\contentsline {subsection}{\numberline {3.2.2}Adaptaci\IeC {\'o}n de PBIL}{27}{subsection.90}
+\contentsline {subsection}{\numberline {3.2.3}Adaptaci\IeC {\'o}n de PSO}{27}{subsection.91}
+\contentsline {chapter}{\numberline {4}Evaluaci\IeC {\'o}n Experimental}{29}{chapter.93}
+\contentsline {chapter}{Conclusiones y Recomendaciones}{31}{chapter*.94}
 \vspace {2em}

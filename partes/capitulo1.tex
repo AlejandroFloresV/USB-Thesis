@@ -45,13 +45,13 @@ Dado un conjunto inicial de instancias $T = \left\{ t_i \mid i = 1 \dots n \righ
 
 Más aún, este problema puede ser formulado como un \emph{problema de optimización}, donde se busca el $R^* \subseteq T$ de menor cardinalidad, que mantenga (o mejore) la capacidad de representación del conjunto original.
 
-En particular, la literatura se ha enfocado en la aplicación del problema de \emph{SI} para su uso en clasificadores \cite{DBLP:journals/corr/GottliebK14,DBLP:conf/jcdcg/Toussaint02}. El subconjunto seleccionado se usa como conjunto de entrenamiento, en base al cuál el clasificador estima la clase $\hat{\omega}$ de instancias previemente desconocidas. En este sentido, el problema de optimización de \emph{SI} busca conseguir un $R^* \subseteq T$ \emph{consistente} y de cardinalidad mínima, donde:
+En particular, la literatura se ha enfocado en la aplicación del problema de \emph{SI} para su uso en clasificadores \cite{DBLP:journals/corr/GottliebK14,DBLP:conf/jcdcg/Toussaint02}. El subconjunto seleccionado se usa como conjunto de entrenamiento, en base al cuál el clasificador estima la clase $\hat{\omega}$ de instancias previamente desconocidas. En este sentido, el problema de optimización de \emph{SI} busca conseguir un $R^* \subseteq T$ \emph{consistente} y de cardinalidad mínima, donde:
 
 \begin{definicion}
 Un conjunto $R$ es \textbf{consistente} con $T$, \emph{si y solo si} toda instancia $t \in T$ es clasificada correctamente (\emph{e.i.} $\hat{\omega}_t = \omega_t$) mediante el uso de un clasificador \emph{M} y las instancias en $R$ como conjunto de entrenamiento.
 \end{definicion}
 
-La complejidad del problema de selección ha sido estudiada por diferentes autores: \emph{Bien} y \emph{Tibshirani} \cite{2012arXiv1202.5933B} describen la reducción del problema de \emph{SI} al problema de \emph{Conjunto de Cobertura} (``\emph{Set Cover}'' en inglés), cuya versión de optimización es NP-Dura. Adicionalmente, \emph{Wilfong} \cite{Wilfong:1991:NNP:109648.109673} y  \emph{Zukhba} \cite{Zukhba:2010:NPP:1921730.1921735} muestran que el problema de selección es {\color{red}NP-Completo}.
+La complejidad del problema de selección ha sido estudiada por diferentes autores: \emph{Bien} y \emph{Tibshirani} \cite{2012arXiv1202.5933B} describen la reducción del problema de \emph{SI} al problema de \emph{Conjunto de Cobertura} (``\emph{Set Cover}'' en inglés), cuya versión de optimización es NP-Dura. Más aún, \emph{Wilfong} \cite{Wilfong:1991:NNP:109648.109673} y  \emph{Zukhba} \cite{Zukhba:2010:NPP:1921730.1921735} muestran que el problema de selección es NP-Duro.
 
 En general, la literatura relacionada con el problema de \emph{SI} se ha enfocado en el uso de clasificadores $k$-NN por su simplicidad, y sobretodo, por su capacidad de representación de modelos sin información adicional sobre la distribución de los datos. El caso particular del problema de \emph{SI} para su uso con clasificadores $k$-NN también es conocido como \emph{Selección de Prototipos} (\emph{SP}). A continuación se describen los clasificadores NN.
 
@@ -70,7 +70,7 @@ $k$-NN es un clasificador no paramétrico, de \emph{aprendizaje perezoso} (debid
 
 Uno de los trabajos de mayor relevancia es el de \emph{Cover} y \emph{Hart} \cite{Cover:2006:NNP:2263261.2267456}, quienes mostraron que cuando el número de instancias de entrenamiento tiende a infinito, el clasificador $k$-NN garantiza un error no mayor al doble de la tasa de error de Bayes: la menor tasa de error posible para un clasificador dado. Adicionalmente, probaron que para un conjunto de entrenamiento de cardinalidad finita, el clasificador 1-NN es admisible dentro de la clase de clasificadores $k$-NN: \emph{e.i.} No existe $k > 1$ tal que $k$-NN tenga menor probabilidad de error frente a 1-NN, para toda posible distribución de los datos.
 
-Adicionalmente algunos trabajos en geometría computacional han contribuido significativamente en la comprensión del problema. En este sentido, el clasificador 1-NN para espacios euclideanos puede definirse de forma alternativa en función de \emph{Diagramas de Voronoi} \cite{voronoi1908nouvelles}; donde el espacio $\mathbb{R}^m$ se encuentra particionado en \emph{Celdas de Voronoi}, cada una definida por una instancia $t \in T$ donde $t$ es el \emph{vecino más cercano} para todos los puntos dentro del espacio dentro de dicha celda (ver Figura \ref{voronoi}). Esto ha permitido el desarrollo de nuevos enfoques para la búsqueda de vecinos más cercanos basados en \emph{Diagramas de Voronoi}, como el descrito por \emph{Kolahdouzan} y \emph{Shahabi} \cite{Kolahdouzan:2004:VKN:1316689.1316762}.
+Adicionalmente algunos trabajos en geometría computacional han contribuido significativamente en la comprensión del problema. En este sentido, el clasificador 1-NN para espacios euclidianos puede definirse de forma alternativa en función de \emph{Diagramas de Voronoi} \cite{voronoi1908nouvelles}; donde el espacio $\mathbb{R}^m$ se encuentra particionado en \emph{Celdas de Voronoi}, cada una definida por una instancia $t \in T$ donde $t$ es el \emph{vecino más cercano} para todos los puntos dentro del espacio dentro de dicha celda (ver Figura \ref{voronoi}). Esto ha permitido el desarrollo de nuevos enfoques para la búsqueda de vecinos más cercanos basados en \emph{Diagramas de Voronoi}, como el descrito por \emph{Kolahdouzan} y \emph{Shahabi} \cite{Kolahdouzan:2004:VKN:1316689.1316762}.
 
 \begin{figure}[h!]
 \centering
@@ -81,7 +81,7 @@ Adicionalmente algunos trabajos en geometría computacional han contribuido sign
 
 Similarmente, esta relación ha permitido avances importantes en términos de complejidad. En particular, mediante el uso de \emph{kd}-trees \cite{Bentley:1975:MBS:361002.361007} (árboles de búsqueda binaria en múltiples dimensiones) se ha logrado disminuir la complejidad en tiempo de clasificación, de $\mathcal{O}(n)$ (de un enfoque ``ingenuo'' revisando todas las instancias) a $\mathcal{O}(\log{n})$, a costas de un aumento en el tiempo necesario para el entrenamiento del clasificador: de $\mathcal{O}(1)$ a $\mathcal{O}(n\log{n})$, el tiempo necesario para la construcción del árbol.
 
-Sin embargo, los clasificadores $k$-NN presentan ciertas propiedades desalentadoras; el problema de conseguir el vecino más cercano de un punto dado, requiere --en cualquiera de los casos-- almacenar todas las instancias de entrenamiento: \emph{e.i.} $\mathcal{O}(n)$ en espacio. Adicionalmente, trabajos más recientes \cite{DBLP:conf/soda/KrauthgamerL04} muestran que en espacios euclideanos de altas dimensiones la búsqueda del vecino más cercano requiere $\mathcal{O}(n)$ en tiempo: un fenómeno conocido como la \guillemotleft\emph{maldición de la dimensionalidad}\guillemotright\ (``\emph{curse of dimensionality}'' en inglés). Finalmente, según \emph{Shwartz} y \emph{David} \cite{shalev2014understanding} los clasificadores NN tienden a sobreajustar el modelo con respecto al conjunto de entrenamiento (\emph{overfitting} en inglés); efecto que puede mitigarse aumentando el $k$ del clasificador \cite{devroye1994strong, shalev2014understanding}, y eliminando instancias del conjunto de datos \cite{DBLP:journals/corr/GottliebKK13}.
+Sin embargo, los clasificadores $k$-NN presentan ciertas propiedades desalentadoras; el problema de conseguir el vecino más cercano de un punto dado, requiere --en cualquiera de los casos-- almacenar todas las instancias de entrenamiento: \emph{e.i.} $\mathcal{O}(n)$ en espacio. Adicionalmente, trabajos más recientes \cite{DBLP:conf/soda/KrauthgamerL04} muestran que en espacios euclidianos de altas dimensiones la búsqueda del vecino más cercano requiere $\mathcal{O}(n)$ en tiempo: un fenómeno conocido como la \guillemotleft\emph{maldición de la dimensionalidad}\guillemotright\ (``\emph{curse of dimensionality}'' en inglés). Finalmente, según \emph{Shwartz} y \emph{David} \cite{shalev2014understanding} los clasificadores NN tienden a sobre-ajustar el modelo con respecto al conjunto de entrenamiento (\emph{overfitting} en inglés); efecto que puede mitigarse aumentando el $k$ del clasificador \cite{devroye1994strong, shalev2014understanding}, y eliminando instancias del conjunto de datos \cite{DBLP:journals/corr/GottliebKK13}.
 
 \subsection{Definiciones relevantes}
 
@@ -95,16 +95,23 @@ Los \textbf{asociados} en $Q$ de una instancia $t$ son aquellas instancias en $Q
 \end{definicion}
 
 \begin{definicion}
-Los \textbf{enemigos} en $Q$ de una instancia $t$ son aquellas instancias en $Q$ con una \emph{clase} diferente a la \emph{clase} de $t$:
+Los \textbf{enemigos} en $Q$ de una instancia $t \in T$ son aquellas instancias en $Q$ con una \emph{clase} diferente a la \emph{clase} de $t$:
 \begin{equation}
 \emph{enemigos}_Q(t) = \left\lbrace q \in Q \mid \omega_{q} \neq \omega_{t} \right\rbrace
+\end{equation}
+\end{definicion}
+
+\begin{definicion}
+El \textbf{enemigo más cercano} (NE, \emph{nearest enemy}) en $Q$ de una instancia $t \in T$ ---denotada como $\mathrm{NE}_Q(t)$---, es la instancia más cercana a $t$ con diferente clase (\emph{i.e.} la instancia más cercana a $t$ perteneciente a $\emph{enemigos}_Q(t)$):
+\begin{equation}
+\mathrm{NE}_Q(t) = \operatorname*{arg\,min}_{e\ \in\ \emph{enemigos}_Q(t)} \varphi(t,e)
 \end{equation}
 \end{definicion}
 
 \section{Algorítmos de aproximación para Selección de Instancias}
 \label{alg-aprox-si}
 
-Debido a la complejidad del problema de \emph{SI}, la literatura se ha enfocado en la definición de heurísticas para conseguir soluciones aproximadas. De nuevo, el uso de clasificadores $k$-NN es una práctica extendida a lo largo de estos trabajos, por lo que las caracteristicas de la regla NN han servido para el desarrollo de muchos métodos de selección. Sin embargo, nuevos estudios se han realizado basándose en heurísticas diferentes con el fin de desarrollar 
+Debido a la complejidad del problema de \emph{SI}, la literatura se ha enfocado en la definición de heurísticas para conseguir soluciones aproximadas. De nuevo, el uso de clasificadores $k$-NN es una práctica extendida a lo largo de estos trabajos, por lo que las características de la regla NN han servido para el desarrollo de muchos métodos de selección. Sin embargo, nuevos estudios se han realizado basándose en heurísticas diferentes con el fin de desarrollar 
 
 \subsection{Métodos basados en la regla NN}
 
@@ -117,7 +124,7 @@ Comienza con $R = T$. Luego itera sobre las instancias en $R$; aquellas que no s
 \item \emph{Repeated Edited Nearest Neighbor} (RENN) \cite{wilson1972asymptotic}\\
 Aplica ENN al conjunto de datos $R$ (inicialmente $R = T$) hasta que no ocurran cambios en $R$. Amplía la distancia entre clases y ``suaviza'' los bordes de decisión.
 \item \emph{Reduced Nearest Neighbor} (RNN) \cite{DBLP:journals/tit/Gates72}\\
-RNN extiende a CNN, usandola como solución inicial $R = R_{CNN}$. Luego, itera sobre cada instancia $t \in R$: si todas las instancias en $T$ son correctamente clasificadas usando $R\setminus\left\lbrace t \right\rbrace$, se elimina $t$ de $R$. En caso contrario, se mantiene $R$ y continua la iteración. La precisión de RNN puede mejorar respecto a CNN, pero es más costoso y su consistencia depende de la consistencia del conjunto resultante de CNN y del orden en que se iteren las instancias en $R$.
+RNN extiende a CNN, usándola como solución inicial $R = R_{CNN}$. Luego, itera sobre cada instancia $t \in R$: si todas las instancias en $T$ son correctamente clasificadas usando $R\setminus\left\lbrace t \right\rbrace$, se elimina $t$ de $R$. En caso contrario, se mantiene $R$ y continua la iteración. La precisión de RNN puede mejorar respecto a CNN, pero es más costoso y su consistencia depende de la consistencia del conjunto resultante de CNN y del orden en que se iteren las instancias en $R$.
 \end{itemize}
 
 \subsection{Métodos basados en eliminación ordenada}

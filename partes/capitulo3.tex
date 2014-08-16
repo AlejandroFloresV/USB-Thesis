@@ -24,7 +24,7 @@ Este conjunto $R_s$ permite evaluar la ``bondad'' de la solución $s$ en funció
 
 El objeto de la aplicación de metaheurísticas es conseguir soluciones óptimas o casi óptimas a gran variedad de problemas. Para ello es necesario definir una estrategia de comparación entre soluciones, \emph{i.e.} saber cuándo una solución es \guillemotleft\emph{mejor}\guillemotright\ que otra, que permita seleccionar aquellas soluciones que mejor se adapten a los objetivos del problema en cuestión.
 
-Para el caso del problema de \emph{SI}, el objetivo es encontrar un subconjunto $R$ del menor tamaño posible, que mantenga un alto porcentaje de precisión de clasificación. \emph{Cano et. al} \cite{cano2003using} definen una función de evaluación que combina ambos objetivos en función de un parámetro $\alpha \in [0,1]$; a continuación se presenta una modificación de dicha función (su complemento), usada en el presente trabajo:
+Para el caso del problema de \emph{SI}, el objetivo es encontrar un subconjunto $R$ del menor tamaño posible, que mantenga un alto porcentaje de precisión de clasificación. \emph{Cano et al.} \cite{cano2003using} definen una función de evaluación que combina ambos objetivos en función de un parámetro $\alpha \in [0,1]$; a continuación se presenta una modificación de dicha función (su complemento), usada en el presente trabajo:
 
 \begin{equation}
 \mathit{fitness}(R) = \alpha\ \mathit{error}(R) + (1 - \alpha) \vert R \vert
@@ -32,14 +32,14 @@ Para el caso del problema de \emph{SI}, el objetivo es encontrar un subconjunto 
 
 Donde $\mathit{error}(R)$ es el número de instancias en $T$ que son erróneamente clasificadas usando el conjunto $R \subseteq T$ como conjunto de entrenamiento de un clasificador 1-NN. El parámetro $\alpha$ combina los objetivos de la búsqueda: se usa $\alpha = 0.5$ siguiendo lo descrito por \cite{cano2003using} para obtener soluciones que satisfagan ambos objetivos del problema.
 
-Para esta definción, el objetivo de las metaheurísticas para selección de instancias es \emph{minimizar} la función de evaluación descrita. Para ello deben minimizar ambos objetivos de la función; el error de clasificación usando el subconjunto seleccionado, y el tamaño de dicho subconjunto. En este sentido, dadas dos posibles soluciones $a$ y $b$, $a$ es \guillemotleft\emph{mejor}\guillemotright\ que $b$ si y solo si $\mathit{fitness}(R_a) < \mathit{fitness}(R_b)$.
+Para esta definición, el objetivo de las metaheurísticas para selección de instancias es \emph{minimizar} la función de evaluación descrita. Para ello deben minimizar ambos objetivos de la función; el error de clasificación usando el subconjunto seleccionado, y el tamaño de dicho subconjunto. En este sentido, dadas dos posibles soluciones $a$ y $b$, $a$ es \guillemotleft\emph{mejor}\guillemotright\ que $b$ si y solo si $\mathit{fitness}(R_a) < \mathit{fitness}(R_b)$.
 
 \subsection{Generación de soluciones iniciales}
 \label{generacion-sol-inic}
 
 Para muchos problemas con esquemas de representación binaria, la generación de soluciones iniciales usada por metaheurísticas sigue una estrategia común: al generar un cromosoma aleatorio, cada bit tiene $50\%$ de probabilidad de estar prendido ($\delta = 0.5$). Esta estrategia genera soluciones con valor esperado de la mitad de los bits prendidos. Para el problema de \emph{SI} esto implica soluciones con una reducción inicial del $50\%$ sobre el conjunto $T$, y hace necesario un alto número de iteraciones para lograr obtener soluciones con reducciones significativas \cite{cano2003using}. Por esta razón, en el presente trabajo se usa una probabilidad de aparición del $5\%$ por cada bit ($\delta = 0.05$), generando soluciones iniciales con reducciones cercanas al $95\%$; el rol de la función objetivo no recae en disminuir los porcentajes de reducción de las soluciones, sino en mantenerlos en niveles aceptables, permitiendo explotar el espacio de búsqueda para conseguir soluciones con mayor precisión.
 
-Sin embargo, el punto inicial de la búsqueda en términos de precisión sigue siendo aleatorio. Una estrategia común en metaheurísticas de trayectoria es la generación de soluciones iniciales usando algoritmos de aproximación; \emph{Cerveron et. al} \cite{cerveron2001another} plantean una modificación del algoritmo de Búsqueda Tabú para el problema de \emph{SI}, en la cuál usan CNN para generar la solución inicial de la búsqueda. Esta idea puede trasladarse a metaheurísticas poblacionales siguiendo un enfoque probabilístico: dada una selección inicial $R_0 \subseteq T$, los bits correspondientes a instancias en $R_0$ tienen mayor probabilidad de aparición que los bits de instancias en $T \setminus R_0$. Estas probabilidades constituyen un vector de probabilidades a ser usado por PBIL como vector inicial, o por los algoritmos genéticos (GGA, SGA y CHC) para generar soluciones iniciales. El algoritmo \ref{inicial-sol-alg} implementa este esquema de generación; para un $\delta$ particular (que determina el número de bits prendidos en las soluciones iniciales), el vector de probabilidades $V$ generado por el algoritmo cumple con que un máximo del $70\%$ de los bits prendidos en soluciones generadas usando $V$, pertenecen a la solución inicial $R_0$. Esto contribuye a guiar la búsqueda realizada por las metaheurísticas poblacionales, mientras se mantiene la variabilidad.
+Sin embargo, el punto inicial de la búsqueda en términos de precisión sigue siendo aleatorio. Una estrategia común en metaheurísticas de trayectoria es la generación de soluciones iniciales usando algoritmos de aproximación; \emph{Cerveron et al.} \cite{cerveron2001another} plantean una modificación del algoritmo de Búsqueda Tabú para el problema de \emph{SI}, en la cuál usan CNN para generar la solución inicial de la búsqueda. Esta idea puede trasladarse a metaheurísticas poblacionales siguiendo un enfoque probabilístico: dada una selección inicial $R_0 \subseteq T$, los bits correspondientes a instancias en $R_0$ tienen mayor probabilidad de aparición que los bits de instancias en $T \setminus R_0$. Estas probabilidades constituyen un vector de probabilidades a ser usado por PBIL como vector inicial, o por los algoritmos genéticos (GGA, SGA y CHC) para generar soluciones iniciales. El algoritmo \ref{inicial-sol-alg} implementa este esquema de generación; para un $\delta$ particular (que determina el número de bits prendidos en las soluciones iniciales), el vector de probabilidades $V$ generado por el algoritmo cumple con que un máximo del $70\%$ de los bits prendidos en soluciones generadas usando $V$, pertenecen a la solución inicial $R_0$. Esto contribuye a guiar la búsqueda realizada por las metaheurísticas poblacionales, mientras se mantiene la variabilidad.
 
 \begin{algorithm}
 \caption{Generador de vector de probabilidades inicial}
@@ -49,12 +49,12 @@ Sin embargo, el punto inicial de la búsqueda en términos de precisión sigue s
 \Require $R_0$ solución inicial
 \Ensure Vector de probabilidades en base a $R_0$
 
-\State{$hi \gets min(0.9, \frac{\delta \vert T \vert 0.7}{\vert R_0 \vert})$}
+\State{$high \gets min(0.9, \frac{\delta \vert T \vert 0.7}{\vert R_0 \vert})$}
 \State{$low \gets \frac{\delta \vert T \vert - hi \vert R_0 \vert}{\vert T \setminus R_0 \vert}$}
 \State{$V \gets$ Vector de probabilidades de tamaño n}
 \For{$i \in [1 \dots n]$}
 	\If{$t_i \in R_0$}
-		\State{$V_i \gets hi$}
+		\State{$V_i \gets high$}
 	\Else
 		\State{$V_i \gets low$}
 	\EndIf
@@ -63,7 +63,7 @@ Sin embargo, el punto inicial de la búsqueda en términos de precisión sigue s
 \end{algorithmic}
 \end{algorithm}
 
-Cualquier solución generada por algoritmos de aproximación para el problema de \emph{SI} (sección \ref{alg-aprox-si}) sirve como ``semilla'' de este generador; en el presente trabajo se prueba el impacto del uso de soluciones iniciales calculadas por CNN. También se incluyen dos selecciones basadas en el órden según el \emph{enemigo más cercano} (NE - ``\emph{Nearest Enemy}''), seleccionando las instancias con mayor distancia NE (selección por \emph{Farthest NE}), o menor distancia NE (selección por \emph{Closest NE}). Finalmente, se prueba un método de selección propio llamado \emph{Nearest Enemy Hypersphere Selection} (NEHS). En la figura \ref{seleccion} se pueden observar los subconjuntos seleccionados por estas cuatro (4) estrategias.
+Cualquier solución generada por algoritmos de aproximación para el problema de \emph{SI} (sección \ref{alg-aprox-si}) sirve como ``semilla'' de este generador; en el presente trabajo se prueba el impacto del uso de soluciones iniciales calculadas por CNN. También se incluyen dos selecciones basadas en el orden según el \emph{enemigo más cercano} (NE - ``\emph{Nearest Enemy}''), seleccionando las instancias con mayor distancia NE (selección por \emph{Farthest NE}), o menor distancia NE (selección por \emph{Closest NE}). Finalmente, se prueba un método de selección propio llamado \emph{Nearest Enemy Hypersphere Selection} (NEHS). En la figura \ref{seleccion} se pueden observar los subconjuntos seleccionados por estas cuatro (4) estrategias.
 
 \begin{figure}[h!]
 \centering
@@ -74,7 +74,9 @@ Cualquier solución generada por algoritmos de aproximación para el problema de
 
 \subsubsection{Condensed Nearest Neighbor}
 
-Descrito por \emph{Hart} \cite{Hart:2006:CNN:2263267.2267647}, CNN 
+En 1968 \emph{Hart} \cite{Hart:2006:CNN:2263267.2267647} fue el primero en proponer un método de reducción de instancias a ser usadas por la regla NN; este método se conoce como \emph{Condensed Nearest Neighbor} (CNN). El objetivo de CNN es realizar un proceso de selección previo al entrenamiento del clasificador 1-NN, consiguiendo un conjunto $R \subseteq T$ que mantenga la efectividad del conjunto de datos original $T$ para clasificar instancias desconocidas.
+
+Se trata de un algoritmo incremental en el que se incluyen en $R$ aquellas instancias en $T$ que son mal clasificadas usando conjunto reducido como conjunto de entrenamiento en un clasificador 1-NN. Dicho proceso se repite hasta que no se incluyan nuevas instancias en el conjunto $R$ luego de una iteración completa sobre las instancias en $T$; ver algoritmo \ref{cnn-alg}.
 
 \begin{algorithm}
 \caption{Condensed Nearest Neighbor}
@@ -97,9 +99,22 @@ Descrito por \emph{Hart} \cite{Hart:2006:CNN:2263267.2267647}, CNN
 \end{algorithmic}
 \end{algorithm}
 
+CNN logra una reducción considerable sobre el conjunto de datos original, y asegura un conjunto consistente con $T$. Sin embargo, al ser dependiente del orden de revisión de las instancias, CNN no asegura un conjunto consistente \emph{mínimo}. Este algoritmo tiende a seleccionar instancias cercanas a los bordes de decisión, viéndose particularmente afectado por datos ruidosos \cite{amal2011survey, Jankowski_comparisonof}.
+
 \subsubsection{Nearest Enemy Hypersphere Selection}
 
-La idea tras el uso de la regla NN es que instancias ``cercanas'' en un espacio cualquiera (\emph{i.e.} con atributos similares) comparten su clasificación; esto conlleva a la división de dicho espacio en regiones con instancias de igual clase. La idea fundamental de \emph{Nearest Enemy Hypersphere Selection} (NEHS) es seleccionar instancias en los centros de dichas regiones, con la finalidad de reducir la cantidad de instancias necesarias para generalizar el espacio descrito por el conjunto original. Para esto hace uso de la distancia del \emph{enemigo más cercano}: cada instancia $t \in T$ tiene un enemigo más cercano $\mathrm{NE}(t)$, cuya distancia $\varphi(t,\mathrm{NE}(t))$ define una hiperesfera en el espacio dentro de la cual toda instancia comparte la clase $\omega_t$. NEHS implementa una estrategia \emph{greedy} que busca seleccionar las mayores hiperesferas que no intersecten entre sí. Ver algoritmo \ref{necs-alg}.
+La idea tras el uso de la regla NN es que instancias ``cercanas'' en un espacio cualquiera (\emph{i.e.} con atributos similares) comparten su clasificación; esto conlleva a la división de dicho espacio en regiones con instancias de igual clase. La idea fundamental de \emph{Nearest Enemy Hypersphere Selection} (NEHS) es seleccionar instancias en los centros de dichas regiones, con la finalidad de reducir la cantidad de instancias necesarias para generalizar el espacio descrito por el conjunto original.
+
+Para esto hace uso de la distancia del \emph{enemigo más cercano}: cada instancia $t \in T$ tiene un enemigo más cercano $\mathrm{NE}(t) \in T$, cuya distancia $\varphi(t,\mathrm{NE}(t))$ define el radio de una hiperesfera en el espacio $m$-dimensional de atributos con centro en $t$, dentro de la cual toda instancia comparte la clase $\omega_t$.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.8\textwidth]{hiperesferas.pdf}
+\caption[Selección obtenida por NEHS]{a) Subconjunto de instancias seleccionadas por NEHS, e\\b) Hiperesferas correspondientes a la selección de NEHS, con radio en\\función a la distancia del enemigo más cercano.}
+\label{seleccion}
+\end{figure}
+
+NEHS implementa una estrategia \emph{greedy} que busca seleccionar las mayores hiperesferas que no intersecten entre sí. Realiza la selección de hiperesferas comenzando con las de mayor tamaño, con el objetivo de cubrir el mayor espacio posible (ver el algoritmo \ref{necs-alg}). Sin embargo, para evitar la selección de puntos cercanos a los bordes de decisión (y posiblemente ruidosos), NEHS ignora un porcentaje $\Delta$ de instancias en $T$ con menor distancia NE, \emph{i.e.} las hiperesferas de menor radio. Esto implica una selección con bordes de decisión mucho más ``suaves'' que los del conjunto original.
 
 \begin{algorithm}
 \caption{Nearest Enemy Hypersphere Selection}
@@ -146,7 +161,7 @@ GGA, SGA y CHC requieren de un operador que seleccione individuos de la poblaci�
 
 Debido a que CHC aplica un operador de recombinación particular (HUX) y no requiere de un operador de mutación, dichos operadores deben ser definidos solo para GGA y SGA. El operador de \emph{crossover} aplicado en ambos algoritmos es el \emph{recombinación en un punto}. Dados dos cromosomas ``padres'', se elige aleatoriamente un punto de corte en la longitud de ambos cromosomas; los cromosomas ``hijos'' resultan de combinar la sección izquierda del corte de un padre, con la sección derecha del corte del otro padre. El operador de mutación sigue --en ambos casos-- el esquema estándar de modificación de cada bit con una cierta probabilidad.
 
-Finalmente, es necesario describir los criterios de reemplazo. Al tratarse de estrategias evolutivas generacionales, GGA y CHC reemplazan la población de forma incondicional en favor de la decendencia. En cambio, el criterio de reemplazo usado en SGA es ``elitista''; se sustituyen los peores individuos en la población por la nueva decendencia generada, solo si dicha decendencia es mejor.
+Finalmente, es necesario describir los criterios de reemplazo. Al tratarse de estrategias evolutivas generacionales, GGA y CHC reemplazan la población de forma incondicional en favor de la descendencia. En cambio, el criterio de reemplazo usado en SGA es ``elitista''; se sustituyen los padres por la descendencia generada, solo si dicha descendencia es mejor.
 
 \subsection{Adaptación de PBIL}
 
@@ -154,7 +169,7 @@ La estrategia evolutiva de PBIL no requiere modificaciones adicionales para su a
 
 \subsection{Adaptación de PSO}
 
-La adaptación de PSO al problema de \emph{SI} es mayor, debido a que PSO está pensado para problemas con representación en espacios euclideanos; \emph{i.e.} es necesario el mapeo de vectores en $\mathbb{R}^l$ a soluciones con representación binaria. En este sentido, se adopta el esquema poblacional de PBIL en el que el genotipo de la población se representa de forma probabilística.
+La adaptación de PSO al problema de \emph{SI} es mayor, debido a que PSO está pensado para problemas con representación en espacios euclidianos; \emph{i.e.} es necesario el mapeo de vectores en $\mathbb{R}^l$ a soluciones con representación binaria. En este sentido, se adopta el esquema poblacional de PBIL en el que el genotipo de la población se representa de forma probabilística.
 
 A esta adaptación de PSO la llamaremos \emph{Population-Based PSO} (ver algoritmo \ref{pbpso-alg}), en la cuál el vector de posición $\vec{X_i}$ de cada partícula es un vector de probabilidades que representa el genotipo de una población particular. Esto permite la generación de soluciones en codificación binaria para su respectiva evaluación, en base al vector de probabilidades que describe dicha población. A diferencia del PSO tradicional, la selección de óptimos locales y globales se hace en base a las soluciones generadas mediante $\vec{X_i}$, y no en base al vector $\vec{X_i}$ por si solo. Sin embargo, la modificación de los vectores de probabilidad y velocidad ($\vec{X_i}$ y $\vec{V_i}$ respectivamente) sigue la estrategia de actualización estándar en base a la mejor solución local y la mejor solución global.
 
@@ -164,7 +179,7 @@ A esta adaptación de PSO la llamaremos \emph{Population-Based PSO} (ver algorit
 \begin{algorithmic}[1]
 
 \Require \texttt{pop} tamaño de la población,
-	\texttt{part} número de particulas,
+	\texttt{part} número de partículas,
 	\texttt{vmax} velocidad máxima,
 	\texttt{w} peso de inercia,
 	\texttt{c1} peso del mejor local,
