@@ -78,11 +78,11 @@ Thyroid      &  7200 & 21 &  3 \\
 
 \subsection{Particiones y ejecuciones}
 
-Los conjuntos de datos considerados en la sección anterior son particionados usando la estrategia de validación cruzada en 10 iteraciones (10-\emph{fold cross-validation}). Dado el conjunto inicial de instancias $T$, es dividido aleatoriamente en 10 conjuntos disjuntos de igual tamaño $T_0, T_1, \dots T_{10}$. Adicionalmente, cada conjunto $T_i$ mantiene la proporción de distribución de las clases del conjunto original $T$. En función de esta partición, se definen un par de conjuntos $(T'_i, T_i)$, con $i = 1 \dots 10$, donde $T'_i = T \setminus T_i$.
+Los conjuntos de datos considerados en la sección anterior son particionados usando la estrategia de validación cruzada en 10 iteraciones (10-\emph{fold cross-validation}). El conjunto inicial de instancias $T$ es dividido aleatoriamente en 10 conjuntos disjuntos de igual tamaño $T_0, T_1, \dots T_{10}$. Adicionalmente, cada conjunto $T_i$ se mantiene la proporción de distribución de las clases del conjunto original $T$. En función de esta partición, se definen un par de conjuntos $(T'_i, T_i)$, con $i = 1 \dots 10$, donde $T'_i = T \setminus T_i$.
 
-El conjunto $T'_i$ (el conjunto de ``entrenamiento'') es usado por las metaheurísticas durante el proceso de búsqueda para evaluar soluciones intermedias; en vez de usar $T$, se usa el conjunto $T'_i$ como el conjunto de instancias inicial. Las instancias restantes, pertenecientes al conjunto $T_i$, son usadas como conjunto de ``validación''; la mejor solución encontrada por las metaheurísticas es usada para clasificar las instancias --previamente desconocidas-- de $T_i$.
+El conjunto $T'_i$, también conocido como el conjunto de ``entrenamiento'', es usado por las metaheurísticas durante el proceso de búsqueda para evaluar soluciones intermedias; en vez de usar $T$, se usa el conjunto $T'_i$ como el conjunto de instancias inicial. Las instancias restantes, pertenecientes al conjunto $T_i$, son usadas como conjunto de ``validación'', \emph{i.e.} la mejor solución encontrada por las metaheurísticas es usada para clasificar las instancias --previamente desconocidas-- de $T_i$.
 
-Cada metaheurística es evaluada usando los 10 pares de conjuntos $(T'_i, T_i)$. Por cada par de conjunto entrenamiento-validación se realizaron 3 repeticiones, para un total de 30 ejecuciones de una metaheurística para un conjunto de datos y un tipo de inicialización particular.
+Cada metaheurística es evaluada usando los 10 pares de conjuntos $(T'_i, T_i)$. Por cada par de conjunto entrenamiento-validación se realizan 3 repeticiones. \emph{i.e.} un total de 30 ejecuciones de una metaheurística para un conjunto de datos y un tipo de inicialización particular.
 
 \subsection{Parámetros}
 
