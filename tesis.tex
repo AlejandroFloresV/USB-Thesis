@@ -20,12 +20,18 @@
 \usepackage{blindtext}
 \usepackage{paralist}
 \usepackage{parskip}
+\usepackage{multirow}
 \usepackage[noend]{algpseudocode}
 \usepackage[chapter]{algorithm}
 
 \floatname{algorithm}{Algoritmo}
 \renewcommand{\algorithmicrequire}{\textbf{Input:}}
 \renewcommand{\algorithmicensure}{\textbf{Output:}}
+
+\decimalpoint
+
+\let\oldtabular\tabular
+\renewcommand{\tabular}{\footnotesize\oldtabular}
 
 \graphicspath{{img/}}
 

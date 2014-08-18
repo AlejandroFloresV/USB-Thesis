@@ -1,6 +1,14 @@
 \newcommand{\etalchar}[1]{$^{#1}$}
 \begin{thebibliography}{DGKL94}
 
+\bibitem[AFL{\etalchar{+}}10]{alcala2010keel}
+J~Alcal{\'a}, A~Fern{\'a}ndez, J~Luengo, J~Derrac, S~Garc{\'\i}a,
+  L~S{\'a}nchez, and F~Herrera.
+\newblock Keel data-mining software tool: Data set repository, integration of
+  algorithms and experimental analysis framework.
+\newblock {\em Journal of Multiple-Valued Logic and Soft Computing},
+  17:255--287, 2010.
+
 \bibitem[AR11]{amal2011survey}
 MILOUD-AOUIDATE Amal and BABA-ALI~Ahmed Riadh.
 \newblock Survey of nearest neighbor condensing techniques.
@@ -43,6 +51,10 @@ Jon~Louis Bentley.
 Avrim Blum and Pat Langley.
 \newblock Selection of relevant features and examples in machine learning.
 \newblock {\em Artif. Intell.}, 97(1-2):245--271, 1997.
+
+\bibitem[BL13]{BacheLichman:2013}
+K.~Bache and M.~Lichman.
+\newblock {UCI} machine learning repository, 2013.
 
 \bibitem[BS12]{binitha2012survey}
 S~Siva~Sathya Binitha~S.

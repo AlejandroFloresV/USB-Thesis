@@ -2,4 +2,119 @@
 \label{capitulo4}
 \lhead{Capítulo 4. \emph{Evaluación Experimental}}
 
-\Blindtext
+Este capítulo consiste en la descripción de la metodología usada durante la evaluación de los métodos introducidos en los capítulos anteriores, así como el análisis de los resultados obtenidos de dicha evaluación. El objetivo de este estudio radica en la comparación empírica de cinco metaheurísticas (\emph{i.e.} GGA, SGA, CHC, PBIL y PSO) adaptadas para encontrar soluciones al problema de selección de instancias. Adicionalmente, se pretende estudiar el impacto de la aplicación de estrategias alternativas de generación de soluciones iniciales, usando como semilla los subconjuntos de instancias generados por diferentes algoritmos heurísticos al problema en cuestión (\emph{i.e.} CNN, NEHS, ClosestNE y FarthestNE).
+
+\section{Diseño Experimental}
+
+La metodología seguida durante la evaluación experimental permite establecer la efectividad de las metaheurísticas descritas en función de
+\begin{inparaenum}[\itshape a\upshape)]
+\item la reducción del conjunto de instancias usado para el entrenamiento del clasificador (en este caso un clasificador 1-NN), y
+\item la precisión de dicho clasificador --una vez entrenado-- al clasificar instancias previamente desconocidas.
+\end{inparaenum}
+La metodología experimental debe permitir la generalización del comportamiento de las diferentes metaheurísticas, así como las estrategias de generación de soluciones iniciales, con la finalidad de comparar los resultados obtenidos y establecer los métodos más efectivos frente al problema de selección de instancias.
+
+\subsection{Conjuntos de datos}
+
+Un factor esencial en la evaluación de métodos de selección de instancias es el conjunto de datos utilizado; la distribución de los datos, el número de instancias y atributos, y la cantidad de datos ruidosos, son solo algunos de los elementos que modifican el espacio de búsqueda del problema y por ende la efectividad de los algoritmos heurísticos para encontrar buenas soluciones. Los conjuntos de datos usados en este trabajo pertenecen al \emph{UCI Machine Learning Repository} \cite{BacheLichman:2013} y al \emph{KEEL Data-Mining Software Tool} \cite{alcala2010keel}.
+
+Los 14 conjuntos seleccionados fueron separados en 3 grupos en función del número de instancias de cada conjunto. En la tabla \ref{data-small} se presentan 9 conjuntos con menor cantidad de instancias.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{l c c c}
+\hline
+\textsc{Conjunto} & \textsc{Instancias} & \textsc{Atributos} & \textsc{Clases} \\
+\hline
+\hline
+Cleveland & 297 & 13 &  2 \\
+Glass     & 214 &  9 &  6 \\
+Iris      & 150 &  4 &  3 \\
+LED7Digit & 500 &  7 & 10 \\
+Monk      & 432 &  6 &  2 \\
+Pima      & 768 &  8 &  2 \\
+WDBC      & 569 & 30 &  2 \\
+Wine      & 178 & 13 &  3 \\
+Wisconsin & 683 &  9 &  2 \\
+\hline
+\end{tabular}
+\caption{Conjuntos de datos pequeños}
+\label{data-small}
+\end{table}
+
+En la tabla \ref{data-med} se describen dos conjuntos de datos caracterizados como de tamaño medio.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{l c c c}
+\hline
+\textsc{Conjunto} & \textsc{Instancias} & \textsc{Atributos} & \textsc{Clases} \\
+\hline
+\hline
+Banana       &  5300 &  2 &  2 \\
+Segmentation &  2100 & 19 &  7 \\
+\hline
+\end{tabular}
+\caption{Conjuntos de datos medianos}
+\label{data-med}
+\end{table}
+
+Finalmente, los 3 conjuntos con mayor número de instancias se presentan en la tabla \ref{data-big}.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{l c c c}
+\hline
+\textsc{Conjunto} & \textsc{Instancias} & \textsc{Atributos} & \textsc{Clases} \\
+\hline
+\hline
+Pen-Based    & 10992 & 16 & 10 \\
+Satimage     &  6435 & 36 &  6 \\
+Thyroid      &  7200 & 21 &  3 \\
+\hline
+\end{tabular}
+\caption{Conjuntos de datos grandes}
+\label{data-big}
+\end{table}
+
+\subsection{Particiones y ejecuciones}
+
+Los conjuntos de datos considerados en la sección anterior son particionados usando la estrategia de validación cruzada en 10 iteraciones (10-\emph{fold cross-validation}). Dado el conjunto inicial de instancias $T$, es dividido aleatoriamente en 10 conjuntos disjuntos de igual tamaño $T_0, T_1, \dots T_{10}$. Adicionalmente, cada conjunto $T_i$ mantiene la proporción de distribución de las clases del conjunto original $T$. En función de esta partición, se definen un par de conjuntos $(T'_i, T_i)$, con $i = 1 \dots 10$, donde $T'_i = T \setminus T_i$.
+
+El conjunto $T'_i$ (el conjunto de ``entrenamiento'') es usado por las metaheurísticas durante el proceso de búsqueda para evaluar soluciones intermedias; en vez de usar $T$, se usa el conjunto $T'_i$ como el conjunto de instancias inicial. Las instancias restantes, pertenecientes al conjunto $T_i$, son usadas como conjunto de ``validación''; la mejor solución encontrada por las metaheurísticas es usada para clasificar las instancias --previamente desconocidas-- de $T_i$.
+
+Cada metaheurística es evaluada usando los 10 pares de conjuntos $(T'_i, T_i)$. Por cada par de conjunto entrenamiento-validación se realizaron 3 repeticiones, para un total de 30 ejecuciones de una metaheurística para un conjunto de datos y un tipo de inicialización particular.
+
+\subsection{Parámetros}
+
+\blindtext
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{l c c c c c}
+\hline
+\multirow{2}{*}{\textsc{Parámetros}}
+	& \multicolumn{5}{c}{\textsc{Algoritmos}} \\\cline{2-6}
+	& GGA & SGA & CHC & PBIL & PSO \\
+\hline
+\hline
+Iteraciones        &  1000 &  1000 &  1000 &  1000 &  1000 \\
+Población          &    50 &    30 &    30 &    40 &     5 \\
+Prob. de Cruce     &   0.9 &   1.0 &     - &     - &     - \\
+Prob. de Mutación  & 0.001 & 0.001 &     - & 0.001 &     - \\
+Mutation Shift     &     - &     - &     - &  0.01 &     - \\
+Learning Rate      &     - &     - &     - &   0.1 &     - \\
+Neg. Learning Rate &     - &     - &     - &  0.01 &     - \\
+Partículas         &     - &     - &     - &     - &     5 \\
+Velocidad Máxima   &     - &     - &     - &     - &   0.2 \\
+Inercia            &     - &     - &     - &     - &   0.9 \\
+c1                 &     - &     - &     - &     - &   0.1 \\
+c2                 &     - &     - &     - &     - &   0.1 \\
+\hline
+\end{tabular}
+\caption{Parámetros usados en cada metaheurística}
+\label{table-parameters}
+\end{table}
+
+\section{Resultados}
+
+\blindtext
