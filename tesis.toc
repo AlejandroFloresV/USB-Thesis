@@ -50,5 +50,13 @@
 \contentsline {subsection}{\numberline {4.1.2}Particiones y ejecuciones}{31}{subsection.101}
 \contentsline {subsection}{\numberline {4.1.3}Par\IeC {\'a}metros}{31}{subsection.102}
 \contentsline {section}{\numberline {4.2}Resultados}{32}{section.104}
-\contentsline {chapter}{Conclusiones y Recomendaciones}{33}{chapter*.105}
+\contentsline {subsection}{\numberline {4.2.1}Comparaci\IeC {\'o}n entre inicializaciones}{32}{subsection.105}
+\contentsline {subsubsection}{\numberline {4.2.1.1}Probabilidad de aparici\IeC {\'o}n de bit (50\% \emph {vs} 5\%)}{33}{subsubsection.106}
+\contentsline {subsubsection}{\numberline {4.2.1.2}Inicializaci\IeC {\'o}n usando algoritmos heur\IeC {\'\i }sticos}{34}{subsubsection.109}
+\contentsline {subsection}{\numberline {4.2.2}Comparaci\IeC {\'o}n entre metaheur\IeC {\'\i }sticas}{36}{subsection.113}
+\contentsline {subsubsection}{\numberline {4.2.2.1}Conjuntos peque\IeC {\~n}os}{36}{subsubsection.114}
+\contentsline {subsubsection}{\numberline {4.2.2.2}Conjuntos medianos}{37}{subsubsection.117}
+\contentsline {subsubsection}{\numberline {4.2.2.3}Conjuntos grandes}{39}{subsubsection.120}
+\contentsline {subsubsection}{\numberline {4.2.2.4}An\IeC {\'a}lisis de los resultados}{40}{subsubsection.123}
+\contentsline {chapter}{Conclusiones y Recomendaciones}{42}{chapter*.126}
 \vspace {2em}
