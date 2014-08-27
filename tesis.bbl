@@ -263,6 +263,11 @@ Georges Vorono{\"\i}.
 \newblock {\em Journal f{\"u}r die reine und angewandte Mathematik},
   134:198--287, 1908.
 
+\bibitem[Wil45]{wilcoxon1945individual}
+Frank Wilcoxon.
+\newblock Individual comparisons by ranking methods.
+\newblock {\em Biometrics bulletin}, pages 80--83, 1945.
+
 \bibitem[Wil72]{wilson1972asymptotic}
 DR~Wilson.
 \newblock Asymptotic properties of nearest neighbor rules using edited data.

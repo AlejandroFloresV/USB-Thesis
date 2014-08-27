@@ -9,6 +9,7 @@
 \usepackage{enumerate}
 \usepackage{tikz}
 \usepackage{color}
+\usepackage{xcolor,colortbl}
 \usepackage{verbatim}
 \usepackage{fancyvrb}
 \usepackage{hyperref}
@@ -44,8 +45,10 @@
 
 \topmargin 2cm
 
-\renewcommand{\tablename}{Tabla}
+\renewcommand\spanishtablename{Tabla}
 \renewcommand{\arraystretch}{1.1}
+\definecolor{Gray}{gray}{0.95}
+\newcolumntype{g}{>{\columncolor{Gray}}c}
 
 \newcommand\listsymbolname{Acrónimos y Símbolos}
 
@@ -161,8 +164,8 @@ Ingeniero de Computación}
 % +-----------+
 % | APENDICES |
 % +-----------+
-%\appendix
-%\input{./partes/apendiceA}
+\appendix
+\input{./partes/apendiceA}
 %\input{./partes/apendiceB}
 %\addtocontents{toc}{\vspace{2em}}
 

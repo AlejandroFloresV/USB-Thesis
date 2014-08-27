@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.7)  23 AUG 2014 01:12
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.7)  27 AUG 2014 00:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1001,10 +1001,24 @@ File: pgfmodulematrix.code.tex 2010/08/24  (rcs-revision 1.4)
 s/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2008/06/17 v2.10 (rcs-revision 1.2)
 )))
+(/usr/local/texlive/2013/texmf-dist/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2012/02/13 v1.0a Color table columns (DPC)
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/tools/array.sty
+Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen194
+\extrarowheight=\dimen195
+\NC@list=\toks43
+\extratabsurround=\skip73
+\backup@length=\skip74
+)
+\everycr=\toks44
+\minrowclearance=\skip75
+)
 (/usr/local/texlive/2013/texmf-dist/tex/latex/tools/verbatim.sty
 Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks43
-\verbatim@line=\toks44
+\every@verbatim=\toks45
+\verbatim@line=\toks46
 \verbatim@in@stream=\read2
 )
 (/usr/local/texlive/2013/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
@@ -1019,7 +1033,7 @@ Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix
 \FV@StepNumber=\count163
 \FV@OutFile=\write4
 )
-Package hyperref Info: Option `colorlinks' set `false' on input line 15.
+Package hyperref Info: Option `colorlinks' set `false' on input line 16.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/mdframed/mdframed.sty
 Package: mdframed 2013/07/01 1.9b: mdframed
@@ -1087,18 +1101,18 @@ Package: l3file 2013/10/13 v4596 L3 File and I/O operations
 )
 (/usr/local/texlive/2013/texmf-dist/tex/latex/l3kernel/l3skip.sty
 Package: l3skip 2013/07/28 v4581 L3 Dimensions and skips
-\c_zero_dim=\dimen194
-\c_max_dim=\dimen195
-\l_tmpa_dim=\dimen196
-\l_tmpb_dim=\dimen197
-\g_tmpa_dim=\dimen198
-\g_tmpb_dim=\dimen199
-\c_zero_skip=\skip73
-\c_max_skip=\skip74
-\l_tmpa_skip=\skip75
-\l_tmpb_skip=\skip76
-\g_tmpa_skip=\skip77
-\g_tmpb_skip=\skip78
+\c_zero_dim=\dimen196
+\c_max_dim=\dimen197
+\l_tmpa_dim=\dimen198
+\l_tmpb_dim=\dimen199
+\g_tmpa_dim=\dimen200
+\g_tmpb_dim=\dimen201
+\c_zero_skip=\skip76
+\c_max_skip=\skip77
+\l_tmpa_skip=\skip78
+\l_tmpb_skip=\skip79
+\g_tmpa_skip=\skip80
+\g_tmpb_skip=\skip81
 \c_zero_muskip=\muskip12
 \c_max_muskip=\muskip13
 \l_tmpa_muskip=\muskip14
@@ -1134,14 +1148,14 @@ Package: l3box 2013/07/28 v4581 L3 Experimental boxes
 (/usr/local/texlive/2013/texmf-dist/tex/latex/l3kernel/l3coffins.sty
 Package: l3coffins 2013/12/14 v4624 L3 Coffin code layer
 \l__coffin_internal_box=\box50
-\l__coffin_internal_dim=\dimen200
-\l__coffin_offset_x_dim=\dimen201
 Normal \dimen register pool exhausted, switching to extended pool.
-\l__coffin_offset_y_dim=\dimen256
-\l__coffin_x_dim=\dimen257
-\l__coffin_y_dim=\dimen258
-\l__coffin_x_prime_dim=\dimen259
-\l__coffin_y_prime_dim=\dimen260
+\l__coffin_internal_dim=\dimen256
+\l__coffin_offset_x_dim=\dimen257
+\l__coffin_offset_y_dim=\dimen258
+\l__coffin_x_dim=\dimen259
+\l__coffin_y_dim=\dimen260
+\l__coffin_x_prime_dim=\dimen261
+\l__coffin_y_prime_dim=\dimen262
 \c_empty_coffin=\box51
 \l__coffin_aligned_coffin=\box52
 \l__coffin_aligned_internal_coffin=\box53
@@ -1150,9 +1164,9 @@ Normal \dimen register pool exhausted, switching to extended pool.
 \l__coffin_display_coffin=\box56
 \l__coffin_display_coord_coffin=\box57
 \l__coffin_display_pole_coffin=\box58
-\l__coffin_display_offset_dim=\dimen261
-\l__coffin_display_x_dim=\dimen262
-\l__coffin_display_y_dim=\dimen263
+\l__coffin_display_offset_dim=\dimen263
+\l__coffin_display_x_dim=\dimen264
+\l__coffin_display_y_dim=\dimen265
 )
 (/usr/local/texlive/2013/texmf-dist/tex/latex/l3kernel/l3color.sty
 Package: l3color 2012/08/29 v4156 L3 Experimental color support
@@ -1164,22 +1178,22 @@ Package: l3luatex 2013/07/28 v4581 L3 Experimental LuaTeX-specific functions
 )
 (/usr/local/texlive/2013/texmf-dist/tex/latex/l3kernel/l3candidates.sty
 Package: l3candidates 2014/01/06 v4643 L3 Experimental additions to l3kernel
-\l__box_top_dim=\dimen264
-\l__box_bottom_dim=\dimen265
-\l__box_left_dim=\dimen266
-\l__box_right_dim=\dimen267
-\l__box_top_new_dim=\dimen268
-\l__box_bottom_new_dim=\dimen269
-\l__box_left_new_dim=\dimen270
-\l__box_right_new_dim=\dimen271
+\l__box_top_dim=\dimen266
+\l__box_bottom_dim=\dimen267
+\l__box_left_dim=\dimen268
+\l__box_right_dim=\dimen269
+\l__box_top_new_dim=\dimen270
+\l__box_bottom_new_dim=\dimen271
+\l__box_left_new_dim=\dimen272
+\l__box_right_new_dim=\dimen273
 \l__box_internal_box=\box59
-\l__coffin_bounding_shift_dim=\dimen272
-\l__coffin_left_corner_dim=\dimen273
-\l__coffin_right_corner_dim=\dimen274
-\l__coffin_bottom_corner_dim=\dimen275
-\l__coffin_top_corner_dim=\dimen276
-\l__coffin_scaled_total_height_dim=\dimen277
-\l__coffin_scaled_width_dim=\dimen278
+\l__coffin_bounding_shift_dim=\dimen274
+\l__coffin_left_corner_dim=\dimen275
+\l__coffin_right_corner_dim=\dimen276
+\l__coffin_bottom_corner_dim=\dimen277
+\l__coffin_top_corner_dim=\dimen278
+\l__coffin_scaled_total_height_dim=\dimen279
+\l__coffin_scaled_width_dim=\dimen280
 ))
 Package: xparse 2013/12/31 v4634 L3 Experimental document command parser
 \l__xparse_current_arg_int=\count189
@@ -1207,47 +1221,47 @@ Package zref Info: New property: abspage on input line 62.
 (/usr/local/texlive/2013/texmf-dist/tex/latex/needspace/needspace.sty
 Package: needspace 2010/09/12 v1.3d reserve vertical space
 )
-\mdf@templength=\skip79
+\mdf@templength=\skip82
 \c@mdf@globalstyle@cnt=\count196
-\mdf@skipabove@length=\skip80
-\mdf@skipbelow@length=\skip81
-\mdf@leftmargin@length=\skip82
-\mdf@rightmargin@length=\skip83
-\mdf@innerleftmargin@length=\skip84
-\mdf@innerrightmargin@length=\skip85
-\mdf@innertopmargin@length=\skip86
-\mdf@innerbottommargin@length=\skip87
-\mdf@splittopskip@length=\skip88
-\mdf@splitbottomskip@length=\skip89
-\mdf@outermargin@length=\skip90
-\mdf@innermargin@length=\skip91
-\mdf@linewidth@length=\skip92
-\mdf@innerlinewidth@length=\skip93
-\mdf@middlelinewidth@length=\skip94
-\mdf@outerlinewidth@length=\skip95
-\mdf@roundcorner@length=\skip96
-\mdf@footenotedistance@length=\skip97
-\mdf@userdefinedwidth@length=\skip98
-\mdf@needspace@length=\skip99
-\mdf@frametitleaboveskip@length=\skip100
-\mdf@frametitlebelowskip@length=\skip101
-\mdf@frametitlerulewidth@length=\skip102
-\mdf@frametitleleftmargin@length=\skip103
-\mdf@frametitlerightmargin@length=\skip104
-\mdf@shadowsize@length=\skip105
-\mdf@extratopheight@length=\skip106
-\mdf@subtitleabovelinewidth@length=\skip107
-\mdf@subtitlebelowlinewidth@length=\skip108
-\mdf@subtitleaboveskip@length=\skip109
-\mdf@subtitlebelowskip@length=\skip110
-\mdf@subtitleinneraboveskip@length=\skip111
-\mdf@subtitleinnerbelowskip@length=\skip112
-\mdf@subsubtitleabovelinewidth@length=\skip113
-\mdf@subsubtitlebelowlinewidth@length=\skip114
-\mdf@subsubtitleaboveskip@length=\skip115
-\mdf@subsubtitlebelowskip@length=\skip116
-\mdf@subsubtitleinneraboveskip@length=\skip117
-\mdf@subsubtitleinnerbelowskip@length=\skip118
+\mdf@skipabove@length=\skip83
+\mdf@skipbelow@length=\skip84
+\mdf@leftmargin@length=\skip85
+\mdf@rightmargin@length=\skip86
+\mdf@innerleftmargin@length=\skip87
+\mdf@innerrightmargin@length=\skip88
+\mdf@innertopmargin@length=\skip89
+\mdf@innerbottommargin@length=\skip90
+\mdf@splittopskip@length=\skip91
+\mdf@splitbottomskip@length=\skip92
+\mdf@outermargin@length=\skip93
+\mdf@innermargin@length=\skip94
+\mdf@linewidth@length=\skip95
+\mdf@innerlinewidth@length=\skip96
+\mdf@middlelinewidth@length=\skip97
+\mdf@outerlinewidth@length=\skip98
+\mdf@roundcorner@length=\skip99
+\mdf@footenotedistance@length=\skip100
+\mdf@userdefinedwidth@length=\skip101
+\mdf@needspace@length=\skip102
+\mdf@frametitleaboveskip@length=\skip103
+\mdf@frametitlebelowskip@length=\skip104
+\mdf@frametitlerulewidth@length=\skip105
+\mdf@frametitleleftmargin@length=\skip106
+\mdf@frametitlerightmargin@length=\skip107
+\mdf@shadowsize@length=\skip108
+\mdf@extratopheight@length=\skip109
+\mdf@subtitleabovelinewidth@length=\skip110
+\mdf@subtitlebelowlinewidth@length=\skip111
+\mdf@subtitleaboveskip@length=\skip112
+\mdf@subtitlebelowskip@length=\skip113
+\mdf@subtitleinneraboveskip@length=\skip114
+\mdf@subtitleinnerbelowskip@length=\skip115
+\mdf@subsubtitleabovelinewidth@length=\skip116
+\mdf@subsubtitlebelowlinewidth@length=\skip117
+\mdf@subsubtitleaboveskip@length=\skip118
+\mdf@subsubtitlebelowskip@length=\skip119
+\mdf@subsubtitleinneraboveskip@length=\skip120
+\mdf@subsubtitleinnerbelowskip@length=\skip121
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/mdframed/md-frame-0.mdf
 File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
@@ -1257,33 +1271,33 @@ File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
 \mdf@splitbox@one=\box62
 \mdf@splitbox@two=\box63
 \mdf@splitbox@save=\box64
-\mdfsplitboxwidth=\skip119
-\mdfsplitboxtotalwidth=\skip120
-\mdfsplitboxheight=\skip121
-\mdfsplitboxdepth=\skip122
-\mdfsplitboxtotalheight=\skip123
-\mdfframetitleboxwidth=\skip124
-\mdfframetitleboxtotalwidth=\skip125
-\mdfframetitleboxheight=\skip126
-\mdfframetitleboxdepth=\skip127
-\mdfframetitleboxtotalheight=\skip128
-\mdffootnoteboxwidth=\skip129
-\mdffootnoteboxtotalwidth=\skip130
-\mdffootnoteboxheight=\skip131
-\mdffootnoteboxdepth=\skip132
-\mdffootnoteboxtotalheight=\skip133
-\mdftotallinewidth=\skip134
-\mdfboundingboxwidth=\skip135
-\mdfboundingboxtotalwidth=\skip136
-\mdfboundingboxheight=\skip137
-\mdfboundingboxdepth=\skip138
-\mdfboundingboxtotalheight=\skip139
-\mdf@freevspace@length=\skip140
-\mdf@horizontalwidthofbox@length=\skip141
-\mdf@verticalmarginwhole@length=\skip142
-\mdf@horizontalspaceofbox=\skip143
-\mdfsubtitleheight=\skip144
-\mdfsubsubtitleheight=\skip145
+\mdfsplitboxwidth=\skip122
+\mdfsplitboxtotalwidth=\skip123
+\mdfsplitboxheight=\skip124
+\mdfsplitboxdepth=\skip125
+\mdfsplitboxtotalheight=\skip126
+\mdfframetitleboxwidth=\skip127
+\mdfframetitleboxtotalwidth=\skip128
+\mdfframetitleboxheight=\skip129
+\mdfframetitleboxdepth=\skip130
+\mdfframetitleboxtotalheight=\skip131
+\mdffootnoteboxwidth=\skip132
+\mdffootnoteboxtotalwidth=\skip133
+\mdffootnoteboxheight=\skip134
+\mdffootnoteboxdepth=\skip135
+\mdffootnoteboxtotalheight=\skip136
+\mdftotallinewidth=\skip137
+\mdfboundingboxwidth=\skip138
+\mdfboundingboxtotalwidth=\skip139
+\mdfboundingboxheight=\skip140
+\mdfboundingboxdepth=\skip141
+\mdfboundingboxtotalheight=\skip142
+\mdf@freevspace@length=\skip143
+\mdf@horizontalwidthofbox@length=\skip144
+\mdf@verticalmarginwhole@length=\skip145
+\mdf@horizontalspaceofbox=\skip146
+\mdfsubtitleheight=\skip147
+\mdfsubsubtitleheight=\skip148
 \c@mdfcountframes=\count197
 
 ****** mdframed patching \endmdf@trivlist
@@ -1332,17 +1346,17 @@ Normal \count register pool exhausted, switching to extended pool.
 )
 (/usr/local/texlive/2013/texmf-dist/tex/latex/paralist/paralist.sty
 Package: paralist 2013/06/09 v2.4 Extended list environments
-\pltopsep=\skip146
-\plpartopsep=\skip147
-\plitemsep=\skip148
-\plparsep=\skip149
-\pl@lab=\toks45
+\pltopsep=\skip149
+\plpartopsep=\skip150
+\plitemsep=\skip151
+\plparsep=\skip152
+\pl@lab=\toks47
 )
 (/usr/local/texlive/2013/texmf-dist/tex/latex/parskip/parskip.sty
 Package: parskip 2001/04/09 non-zero parskip adjustments
 )
 (/usr/local/texlive/2013/texmf-dist/tex/latex/multirow/multirow.sty
-\bigstrutjot=\dimen279
+\bigstrutjot=\dimen281
 )
 (/usr/local/texlive/2013/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
 Package: algpseudocode 
@@ -1354,13 +1368,13 @@ Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
 \c@ALG@line=\count295
 \c@ALG@rem=\count296
 \c@ALG@nested=\count297
-\ALG@tlm=\skip150
-\ALG@thistlm=\skip151
+\ALG@tlm=\skip153
+\ALG@thistlm=\skip154
 \c@ALG@Lnr=\count298
 \c@ALG@blocknr=\count299
 \c@ALG@storecount=\count300
 \c@ALG@tmpcounter=\count301
-\ALG@tmplength=\skip152
+\ALG@tmplength=\skip155
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
 ) (/usr/local/texlive/2013/texmf-dist/tex/latex/algorithms/algorithm.sty
@@ -1370,12 +1384,12 @@ nment
 (/usr/local/texlive/2013/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count302
-\float@exts=\toks46
+\float@exts=\toks48
 \float@box=\box65
-\@float@everytoks=\toks47
+\@float@everytoks=\toks49
 \@floatcapt=\box66
 )
-\@float@every@algorithm=\toks48
+\@float@every@algorithm=\toks50
 \c@algorithm=\count303
 )
 \c@definicion=\count304
@@ -1388,28 +1402,25 @@ LaTeX Info: Redefining \% on input line 28.
 
 LaTeX Warning: Label `seleccion' multiply defined.
 
-
-LaTeX Warning: Label `res-big' multiply defined.
-
 )
 \openout1 = `tesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 74.
-LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
@@ -1424,20 +1435,20 @@ Package caption Info: End \AtBeginDocument code.
 (/usr/local/texlive/2013/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count305
-\scratchdimen=\dimen280
+\scratchdimen=\dimen282
 \scratchbox=\box67
 \nofMPsegments=\count306
 \nofMParguments=\count307
-\everyMPshowfont=\toks49
+\everyMPshowfont=\toks51
 \MPscratchCnt=\count308
-\MPscratchDim=\dimen281
+\MPscratchDim=\dimen283
 \MPnumerator=\count309
 \makeMPintoPDFobject=\count310
-\everyMPtoPDFconversion=\toks50
+\everyMPtoPDFconversion=\toks52
 )
 \c@lstlisting=\count311
 \AtBeginShipoutBox=\box68
-Package hyperref Info: Link coloring OFF on input line 74.
+Package hyperref Info: Link coloring OFF on input line 77.
  (/usr/local/texlive/2013/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -1446,16 +1457,16 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count312
 )
-LaTeX Info: Redefining \ref on input line 74.
-LaTeX Info: Redefining \pageref on input line 74.
-LaTeX Info: Redefining \nameref on input line 74.
+LaTeX Info: Redefining \ref on input line 77.
+LaTeX Info: Redefining \pageref on input line 77.
+LaTeX Info: Redefining \nameref on input line 77.
 
 (./tesis.out) (./tesis.out)
 \@outlinefile=\write5
 \openout5 = `tesis.out'.
 
-LaTeX Info: Redefining \. on input line 74.
-LaTeX Info: Redefining \% on input line 74.
+LaTeX Info: Redefining \. on input line 77.
+LaTeX Info: Redefining \% on input line 77.
 
 babelbib: Set bibliography fall-back language to spanish
 (/usr/local/texlive/2013/texmf-dist/tex/latex/babelbib/spanish.bdf
@@ -1466,17 +1477,17 @@ babelbib extension \btxifchangecaseoff added to \extrasspanish
 babelbib: Load BibTeX extensions \bibsspanish for spanish
 babelbib: Set language for keywords in the bibliography fixed to spanish
 ABD: EveryShipout initializing macros
-<img/./usb.pdf, id=232, 171.64125pt x 114.4275pt>
+<img/./usb.pdf, id=236, 171.64125pt x 114.4275pt>
 File: img/./usb.pdf Graphic file (type pdf)
  <use img/./usb.pdf>
-Package pdftex.def Info: img/./usb.pdf used on input line 77.
+Package pdftex.def Info: img/./usb.pdf used on input line 80.
 (pdftex.def)             Requested size: 86.72377pt x 57.81422pt.
-LaTeX Font Info:    Try loading font information for U+msa on input line 77.
+LaTeX Font Info:    Try loading font information for U+msa on input line 80.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 77.
+LaTeX Font Info:    Try loading font information for U+msb on input line 80.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1487,7 +1498,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 {/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./img/.
 /usb.pdf>]
-(./partes/acta.tex <img/usb.pdf, id=243, 171.64125pt x 114.4275pt>
+(./partes/acta.tex <img/usb.pdf, id=247, 171.64125pt x 114.4275pt>
 File: img/usb.pdf Graphic file (type pdf)
 
 <use img/usb.pdf>
@@ -1613,7 +1624,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 48--49
 
  []
 
-[4] [5] <img/voronoi.pdf, id=484, 546.29094pt x 369.88188pt>
+[4] [5] <img/voronoi.pdf, id=496, 546.29094pt x 369.88188pt>
 File: img/voronoi.pdf Graphic file (type pdf)
 
 <use img/voronoi.pdf>
@@ -1646,14 +1657,14 @@ Cap\'{\i }tulo 3.
 ------------------------------------------------------------------------------
 [20
 
-] [21] [22] <img/seleccion.pdf, id=904, 853.57898pt x 768.22003pt>
+] [21] [22] <img/seleccion.pdf, id=916, 853.57898pt x 768.22003pt>
 File: img/seleccion.pdf Graphic file (type pdf)
 
 <use img/seleccion.pdf>
 Package pdftex.def Info: img/seleccion.pdf used on input line 70.
 (pdftex.def)             Requested size: 333.97972pt x 300.57753pt.
  [23 <./img/seleccion.pdf>] [24]
-<img/hiperesferas.pdf, id=1147, 853.57898pt x 384.11504pt>
+<img/hiperesferas.pdf, id=1159, 853.57898pt x 384.11504pt>
 File: img/hiperesferas.pdf Graphic file (type pdf)
 
 <use img/hiperesferas.pdf>
@@ -1667,137 +1678,63 @@ Cap\'{\i }tulo 4.
 ------------------------------------------------------------------------------
 [29
 
-] [30]
-
-Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 90.
-
+] [30] [31] [32]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 121.
-
-[31]
-
-Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 125.
-
-[32]
-
-Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 129.
-
-
-Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 162.
-
-<img/uniforme.pdf, id=1325, 483.8075pt x 314.17375pt>
+[33] <img/uniforme.pdf, id=1350, 867.24pt x 314.17375pt>
 File: img/uniforme.pdf Graphic file (type pdf)
- <use img/uniforme.pdf>
-Package pdftex.def Info: img/uniforme.pdf used on input line 165.
-(pdftex.def)             Requested size: 292.22987pt x 189.77608pt.
+
+<use img/uniforme.pdf>
+Package pdftex.def Info: img/uniforme.pdf used on input line 177.
+(pdftex.def)             Requested size: 417.47307pt x 151.23792pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 173.
-
-[33] <img/inits-boxplot.pdf, id=1335, 853.57898pt x 284.52296pt>
+[34 <./img/uniforme.pdf>] [35]
+<img/inits-boxplot.pdf, id=1385, 853.57898pt x 284.52296pt>
 File: img/inits-boxplot.pdf Graphic file (type pdf)
 
 <use img/inits-boxplot.pdf>
-Package pdftex.def Info: img/inits-boxplot.pdf used on input line 198.
+Package pdftex.def Info: img/inits-boxplot.pdf used on input line 236.
 (pdftex.def)             Requested size: 417.47307pt x 139.15697pt.
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 204.
-
-[34 <./img/uniforme.pdf>]
-Overfull \hbox (7.61621pt too wide) in paragraph at lines 207--223
+Overfull \hbox (8.41615pt too wide) in paragraph at lines 245--261
  [][] 
  []
 
-
-Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 228.
-
-
-Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 232.
-
-[35 <./img/inits-boxplot.pdf>]
-
-Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 236.
-
-
-Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 260.
-
-[36]
-
-Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 284.
-
-
-Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 288.
-
+[36 <./img/inits-boxplot.pdf>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 312.
-
-[37]
-
-Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 336.
-
-
-Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 340.
-
-[38]
-
-Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 364.
-
+[37] [38]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 388.
 
 [39]
 
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[40]
+
 Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 392.
+(blindtext)                 on input line 456.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<img/alg-density.pdf, id=1413, 483.8075pt x 314.17375pt>
+<img/alg-density.pdf, id=1444, 483.8075pt x 314.17375pt>
 File: img/alg-density.pdf Graphic file (type pdf)
 
 <use img/alg-density.pdf>
-Package pdftex.def Info: img/alg-density.pdf used on input line 435.
+Package pdftex.def Info: img/alg-density.pdf used on input line 499.
 (pdftex.def)             Requested size: 417.47307pt x 271.10938pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) (./partes/conclusiones.tex [40] [41 <./img/alg-density.pdf>]
+) (./partes/conclusiones.tex [41] [42 <./img/alg-density.pdf>]
 
 Package blindtext Warning: spanish not defined, using English instead.
 (blindtext)                 on input line 7.
@@ -1814,7 +1751,7 @@ Package blindtext Warning: spanish not defined, using English instead.
 Package blindtext Warning: spanish not defined, using English instead.
 (blindtext)                 on input line 7.
 
-[42
+[43
 
 ]
 
@@ -1829,36 +1766,69 @@ Package blindtext Warning: spanish not defined, using English instead.
 Package blindtext Warning: spanish not defined, using English instead.
 (blindtext)                 on input line 9.
 
-) (./tesis.bbl [43] [44
+) (./tesis.bbl [44] [45
 
-] [45] [46] [47] [48]) [49]
+] [46] [47] [48] [49]) (./partes/apendiceA.tex [50]
+Ap\'{e}ndice A.
+------------------------------------------------------------------------------
+ A @nombreApendice
+------------------------------------------------------------------------------
+)
+
+Package blindtext Warning: spanish not defined, using English instead.
+(blindtext)                 on input line 171.
+
+
+Package blindtext Warning: spanish not defined, using English instead.
+(blindtext)                 on input line 171.
+
+
+Package blindtext Warning: spanish not defined, using English instead.
+(blindtext)                 on input line 171.
+
+
+Package blindtext Warning: spanish not defined, using English instead.
+(blindtext)                 on input line 171.
+
+[51
+
+]
+
+Package blindtext Warning: spanish not defined, using English instead.
+(blindtext)                 on input line 171.
+
+
+Package blindtext Warning: spanish not defined, using English instead.
+(blindtext)                 on input line 171.
+
+[52]
 ------------------------------------------------------------------------------
  Bibliograf\'{\i }a
 ------------------------------------------------------------------------------
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 171.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 171.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 174.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 174.
 (./tesis.aux
 LaTeX Info: Redefining \. on input line 24.
 LaTeX Info: Redefining \% on input line 24.
 LaTeX Info: Redefining \. on input line 28.
 LaTeX Info: Redefining \% on input line 28.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 171.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 171.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 174.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 174.
 Package rerunfilecheck Info: File `tesis.out' has not changed.
-(rerunfilecheck)             Checksum: 77BEE321821858343F663E9CFF920074;12518.
+(rerunfilecheck)             Checksum: BFD5A48E20C07D0CE728462C45D46707;12572.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 171.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 174.
  ) 
 Here is how much of TeX's memory you used:
- 30648 strings out of 493308
- 526718 string characters out of 6137817
- 597301 words of memory out of 5000000
- 33254 multiletter control sequences out of 15000+600000
- 35308 words of font info for 83 fonts, out of 8000000 for 9000
+ 30756 strings out of 493308
+ 528159 string characters out of 6137817
+ 606225 words of memory out of 5000000
+ 33345 multiletter control sequences out of 15000+600000
+ 34955 words of font info for 83 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  56i,12n,55p,10441b,631s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
@@ -1875,35 +1845,34 @@ ve/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive
 /2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2
 013/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/20
 13/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texliv
-e/2013/texmf-dist/fonts/type1/public/cm-super/sfbi1200.pfb></usr/local/texlive/
-2013/texmf-dist/fonts/type1/public/cm-super/sfbl1728.pfb></usr/local/texlive/20
-13/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2013
-/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2013/t
-exmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2013/tex
-mf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2013/texmf
--dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2013/texmf-d
-ist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2013/texmf-dis
-t/fonts/type1/public/cm-super/sfcc1000.pfb></usr/local/texlive/2013/texmf-dist/
-fonts/type1/public/cm-super/sfcc1095.pfb></usr/local/texlive/2013/texmf-dist/fo
-nts/type1/public/cm-super/sfcc1200.pfb></usr/local/texlive/2013/texmf-dist/font
-s/type1/public/cm-super/sfcc1440.pfb></usr/local/texlive/2013/texmf-dist/fonts/
-type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2013/texmf-dist/fonts/ty
-pe1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/type
-1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/
-public/cm-super/sfrm1200.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/pu
-blic/cm-super/sfrm1440.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/publ
-ic/cm-super/sfrm2074.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public
-/cm-super/sfsl1728.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/c
-m-super/sfti0800.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-
-super/sfti1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-su
-per/sfti1095.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-supe
-r/sfti1200.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/
-sftt1200.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sf
-xc1200.pfb>
-Output written on tesis.pdf (60 pages, 5288614 bytes).
+e/2013/texmf-dist/fonts/type1/public/cm-super/sfbl1728.pfb></usr/local/texlive/
+2013/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/20
+13/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2013
+/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2013/t
+exmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2013/tex
+mf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2013/texmf
+-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2013/texmf-d
+ist/fonts/type1/public/cm-super/sfcc1000.pfb></usr/local/texlive/2013/texmf-dis
+t/fonts/type1/public/cm-super/sfcc1095.pfb></usr/local/texlive/2013/texmf-dist/
+fonts/type1/public/cm-super/sfcc1200.pfb></usr/local/texlive/2013/texmf-dist/fo
+nts/type1/public/cm-super/sfcc1440.pfb></usr/local/texlive/2013/texmf-dist/font
+s/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2013/texmf-dist/fonts/
+type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/ty
+pe1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2013/texmf-dist/fonts/type
+1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/
+public/cm-super/sfrm1440.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/pu
+blic/cm-super/sfrm2074.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/publ
+ic/cm-super/sfsl1728.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public
+/cm-super/sfti0800.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/c
+m-super/sfti1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-
+super/sfti1095.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-su
+per/sfti1200.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-supe
+r/sftt1200.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/
+sfxc1200.pfb>
+Output written on tesis.pdf (63 pages, 5317226 bytes).
 PDF statistics:
- 1653 PDF objects out of 1728 (max. 8388607)
- 1054 compressed objects within 11 object streams
- 244 named destinations out of 1000 (max. 500000)
- 501 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1694 PDF objects out of 1728 (max. 8388607)
+ 1094 compressed objects within 11 object streams
+ 253 named destinations out of 1000 (max. 500000)
+ 509 words of extra memory for PDF output out of 10000 (max. 10000000)
 

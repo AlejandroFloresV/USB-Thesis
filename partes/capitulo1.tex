@@ -41,19 +41,19 @@ Esta estrategia busca convertir atributos \emph{continuos} en \emph{discretos} (
 
 \section{Selección de Instancias}
 
-Dado un conjunto inicial de instancias $T = \left\{ t_i \mid i = 1 \dots n \right\}$ donde\linebreak $t_i = (v_{i,1}, v_{i,2}, \dots, v_{i,m})$ y $\omega_i \in \Omega$ (siendo $\Omega$ el conjunto de posibles clases para las instancias en $T$), el problema de \emph{Selección de Instancias} (\emph{SI}) consiste en seleccionar un $R \subseteq T$ que mantenga (o mejore) la capacidad de representación del conjunto original $T$.
+Dado un conjunto inicial de instancias $T = \left\{ t_i \mid i = 1 \dots n \right\}$ donde\linebreak $t_i = (v_{i,1}, v_{i,2}, \dots, v_{i,m})$ y $\omega_i \in \Omega$ (siendo $\Omega$ el conjunto de posibles clases para las instancias en $T$), el problema de \emph{Selección de Instancias} (SI) consiste en seleccionar un $R \subseteq T$ que mantenga (o mejore) la capacidad de representación del conjunto original $T$.
 
 Más aún, este problema puede ser formulado como un \emph{problema de optimización}, donde se busca el $R^* \subseteq T$ de menor cardinalidad, que mantenga (o mejore) la capacidad de representación del conjunto original.
 
-En particular, la literatura se ha enfocado en la aplicación del problema de \emph{SI} para su uso en clasificadores \cite{DBLP:journals/corr/GottliebK14,DBLP:conf/jcdcg/Toussaint02}. El subconjunto seleccionado se usa como conjunto de entrenamiento, en base al cuál el clasificador estima la clase $\hat{\omega}$ de instancias previamente desconocidas. En este sentido, el problema de optimización de \emph{SI} busca conseguir un $R^* \subseteq T$ \emph{consistente} y de cardinalidad mínima, donde:\\
+En particular, la literatura se ha enfocado en la aplicación del problema de SI para su uso en clasificadores \cite{DBLP:journals/corr/GottliebK14,DBLP:conf/jcdcg/Toussaint02}. El subconjunto seleccionado se usa como conjunto de entrenamiento, en base al cuál el clasificador estima la clase $\hat{\omega}$ de instancias previamente desconocidas. En este sentido, el problema de optimización de SI busca conseguir un $R^* \subseteq T$ \emph{consistente} y de cardinalidad mínima, donde:\\
 
 \begin{definicion}
 Un conjunto $R$ es \textbf{consistente} con $T$, \emph{si y solo si} toda instancia $t \in T$ es clasificada correctamente (\emph{e.i.} $\hat{\omega}_t = \omega_t$) mediante el uso de un clasificador \emph{M} y las instancias en $R$ como conjunto de entrenamiento.
 \end{definicion}
 
-La complejidad del problema de selección ha sido estudiada por diferentes autores: \emph{Bien} y \emph{Tibshirani} \cite{2012arXiv1202.5933B} describen la reducción del problema de \emph{SI} al problema de \emph{Conjunto de Cobertura} (``\emph{Set Cover}'' en inglés), cuya versión de optimización es NP-Dura. Más aún, \emph{Wilfong} \cite{Wilfong:1991:NNP:109648.109673} y  \emph{Zukhba} \cite{Zukhba:2010:NPP:1921730.1921735} muestran que el problema de selección es NP-Duro.
+La complejidad del problema de selección ha sido estudiada por diferentes autores: \emph{Bien} y \emph{Tibshirani} \cite{2012arXiv1202.5933B} describen la reducción del problema de SI al problema de \emph{Conjunto de Cobertura} (``\emph{Set Cover}'' en inglés), cuya versión de optimización es NP-Dura. Más aún, \emph{Wilfong} \cite{Wilfong:1991:NNP:109648.109673} y  \emph{Zukhba} \cite{Zukhba:2010:NPP:1921730.1921735} muestran que el problema de selección es NP-Duro.
 
-En general, la literatura relacionada con el problema de \emph{SI} se ha enfocado en el uso de clasificadores $k$-NN por su simplicidad, y sobretodo, por su capacidad de representación de modelos sin información adicional sobre la distribución de los datos. El caso particular del problema de \emph{SI} para su uso con clasificadores $k$-NN también es conocido como \emph{Selección de Prototipos} (\emph{SP}). A continuación se describen los clasificadores NN.
+En general, la literatura relacionada con el problema de SI se ha enfocado en el uso de clasificadores $k$-NN por su simplicidad, y sobretodo, por su capacidad de representación de modelos sin información adicional sobre la distribución de los datos. El caso particular del problema de SI para su uso con clasificadores $k$-NN también es conocido como \emph{Selección de Prototipos} (\emph{SP}). A continuación se describen los clasificadores NN.
 
 \subsection{Regla del Vecino Más Cercano (NN)}
 
@@ -111,7 +111,7 @@ El \textbf{enemigo más cercano} (NE, \emph{nearest enemy}) en $Q$ de una instan
 \section{Algorítmos de aproximación para Selección de Instancias}
 \label{alg-aprox-si}
 
-Debido a la complejidad del problema de \emph{SI}, la literatura se ha enfocado en la definición de heurísticas para conseguir soluciones aproximadas. De nuevo, el uso de clasificadores $k$-NN es una práctica extendida a lo largo de estos trabajos, por lo que las características de la regla NN han servido para el desarrollo de muchos métodos de selección.% Sin embargo, nuevos estudios se han realizado basándose en heurísticas diferentes con el fin de desarrollar 
+Debido a la complejidad del problema de SI, la literatura se ha enfocado en la definición de heurísticas para conseguir soluciones aproximadas. De nuevo, el uso de clasificadores $k$-NN es una práctica extendida a lo largo de estos trabajos, por lo que las características de la regla NN han servido para el desarrollo de muchos métodos de selección.% Sin embargo, nuevos estudios se han realizado basándose en heurísticas diferentes con el fin de desarrollar 
 
 \subsection{Métodos basados en la regla NN}
 
@@ -147,22 +147,22 @@ Se selecciona un subconjunto de instancias aleatorias $R$ de tamaño fijo. En ca
 
 \subsection{Métodos basados en metaheurísticas}
 
-Las metaheurísticas son métodos de búsqueda estocástica de propósito general, usadas para encontrar soluciones óptimas o casi óptimas a problemas de optimización combinatoria. Por esta razón, muchos trabajos se han enfocado en el uso de estas técnicas para conseguir soluciones al problema de \emph{SI}.
+Las metaheurísticas son métodos de búsqueda estocástica de propósito general, usadas para encontrar soluciones óptimas o casi óptimas a problemas de optimización combinatoria. Por esta razón, muchos trabajos se han enfocado en el uso de estas técnicas para conseguir soluciones al problema de SI.
 
-Algunos de los primeros trabajos se enfocaron en adaptar el algoritmo de \emph{Búsqueda Tabú} para solucionar el problema de \emph{SI}. En particular, los estudios de \emph{Cerverón et al.} \cite{cerveron2001another} y \emph{Zhang et al.} \cite{zhang2002optimal} describen dos enfoques diferentes de modificación del algoritmo.
+Algunos de los primeros trabajos se enfocaron en adaptar el algoritmo de \emph{Búsqueda Tabú} para solucionar el problema de SI. En particular, los estudios de \emph{Cerverón et al.} \cite{cerveron2001another} y \emph{Zhang et al.} \cite{zhang2002optimal} describen dos enfoques diferentes de modificación del algoritmo.
 
-Sin embargo, la mayoría de los estudios se han enfocado en el uso de \emph{Algoritmos Evolutivos} (\emph{AE}), adaptándolos para la búsqueda de soluciones al problema de selección. Entre ellos destaca el trabajo realizado por \emph{Cano et al.} \cite{cano2003using}; un completo estudio comparativo entre algoritmos ``tradicionales'' de \emph{SI} y adaptaciones de \emph{Generational Genetic Algorithm} (GGA), \emph{Steady-State Genetic Algorithm} (SGA), \emph{CHC Adaptive Search Algorithm} (CHC) y \emph{Population-Based Incremental Learning} (PBIL). Con este estudio, resulta evidente la utilidad de los \emph{AE} frente a los algoritmos tradicionales de \emph{SI} en función de la capacidad de reducción y precisión de los conjuntos seleccionados.
+Sin embargo, la mayoría de los estudios se han enfocado en el uso de \emph{Algoritmos Evolutivos} (\emph{AE}), adaptándolos para la búsqueda de soluciones al problema de selección. Entre ellos destaca el trabajo realizado por \emph{Cano et al.} \cite{cano2003using}; un completo estudio comparativo entre algoritmos ``tradicionales'' de SI y adaptaciones de \emph{Generational Genetic Algorithm} (GGA), \emph{Steady-State Genetic Algorithm} (SGA), \emph{CHC Adaptive Search Algorithm} (CHC) y \emph{Population-Based Incremental Learning} (PBIL). Con este estudio, resulta evidente la utilidad de los \emph{AE} frente a los algoritmos tradicionales de SI en función de la capacidad de reducción y precisión de los conjuntos seleccionados.
 
 Existen también otras adaptaciones y modificaciones sobre \emph{AE}, entre los que destacan: \emph{Estimation of Distribution Algorithm} (EDA) \cite{sierra2001prototype}, \emph{Intelligent Genetic Algorithm} (IGA) \cite{ho2002design}, \emph{Steady-State Memetic Algorithm} (SSMA) \cite{garcia2008memetic} y \emph{Genetic Algorithm} \cite{gil2008evolving} basado en Error Cuadrático Medio, \emph{Clustered Crossover} y \emph{Fast Smart Mutation} (GA-MSE-CC-PSM).
 
 %\subsection{Taxonomía}
 %
-%Debido a los numerosos enfoques existentes para aproximar soluciones al problema de \emph{SI}, el trabajo de \emph{García} \emph{et al.} \cite{Garcia:2012:PSN:2122272.2122582} describe un esquema taxonómico para caracterizar las diferentes estrategias que se han desarrollado en base al uso de clasificadores $k$-NN. Dicho esquema clasifica las heurísticas de acuerdo al tipo de selección, y al tipo de evaluación y dirección de la búsqueda (ver Figura \ref{graphtaxonomia}).
+%Debido a los numerosos enfoques existentes para aproximar soluciones al problema de SI, el trabajo de \emph{García} \emph{et al.} \cite{Garcia:2012:PSN:2122272.2122582} describe un esquema taxonómico para caracterizar las diferentes estrategias que se han desarrollado en base al uso de clasificadores $k$-NN. Dicho esquema clasifica las heurísticas de acuerdo al tipo de selección, y al tipo de evaluación y dirección de la búsqueda (ver Figura \ref{graphtaxonomia}).
 %
 %\begin{figure}[h!]
 %\centering
 %\includegraphics[width=0.7\textwidth]{taxonomia.pdf}
-%\caption[Taxonomía de algoritmos de SI]{Taxonomía de algoritmos de aproximación\\para el problema de \emph{SI} \cite{Garcia:2012:PSN:2122272.2122582}.}
+%\caption[Taxonomía de algoritmos de SI]{Taxonomía de algoritmos de aproximación\\para el problema de SI \cite{Garcia:2012:PSN:2122272.2122582}.}
 %\label{graphtaxonomia}
 %\end{figure}
 %
@@ -176,7 +176,7 @@ Existen también otras adaptaciones y modificaciones sobre \emph{AE}, entre los 
 %\item \emph{Batch}:
 %Estos métodos identifican aquellas instancias que cumplen cierto criterio, para luego eliminarlas/añadirlas todas como un conjunto. Presentan mayor complejidad.
 %\item \emph{Mixed}:
-%Comienzan con una selección aleatoria o con la selección dada por otro método de \emph{SI}, para posteriormente añadir o eliminar instancias. Generalmente presentan \emph{overfitting}, además incrementar el tiempo de cómputo.
+%Comienzan con una selección aleatoria o con la selección dada por otro método de SI, para posteriormente añadir o eliminar instancias. Generalmente presentan \emph{overfitting}, además incrementar el tiempo de cómputo.
 %\item \emph{Fixed}:
 %Se refiere a una subcategoría de las heurísticas \emph{Mixed}, en la cuál se añaden y eliminan el mismo número de instancias; lo cuál no modifica el tamaño de la solución inicial.
 %\end{itemize}
@@ -203,10 +203,10 @@ Existen también otras adaptaciones y modificaciones sobre \emph{AE}, entre los 
 
 \subsection{Criterios de comparación}
 
-Para comparar métodos de \emph{SI} se consideran una serie de criterios usados para evaluar las ventajas y desventajas de cada algoritmo. A continuación se describen los factores más relevantes:
+Para comparar métodos de SI se consideran una serie de criterios usados para evaluar las ventajas y desventajas de cada algoritmo. A continuación se describen los factores más relevantes:
 
 \begin{itemize}
-\item \emph{Reducción}: El objetivo principal de métodos de \emph{SI} es el de reducir el número de instancias del conjunto de datos. Esto no solo disminuye el espacio necesario para almacenar los datos, sino que acelera el proceso de clasificación.
+\item \emph{Reducción}: El objetivo principal de métodos de SI es el de reducir el número de instancias del conjunto de datos. Esto no solo disminuye el espacio necesario para almacenar los datos, sino que acelera el proceso de clasificación.
 \item \emph{Precisión}: Un algoritmo exitoso debe reducir el conjunto de datos, afectando en la menor medida posible su capacidad de generalización.
 \item \emph{Tiempo}: A pesar de que el proceso de preprocesamiento y aprendizaje debe realizarse solo una vez, la complejidad de los algoritmos pueden volverlos poco prácticos para su uso sobre conjuntos de datos ``grandes''.
 %\item \emph{Tolerancia al ruido}: Algoritmos que seleccionen consistentemente instancias atípicas o inconsistentes (``ruido'') presentan menor capacidad de generalización de los datos.
