@@ -67,7 +67,7 @@ Finalmente, los 3 conjuntos con mayor número de instancias se presentan en la t
 \textsc{Conjunto} & \textsc{Instancias} & \textsc{Atributos} & \textsc{Clases} \\
 \hline
 \hline
-Pen-Based    & 10992 & 16 & 10 \\
+Penbased    & 10992 & 16 & 10 \\
 Satimage     &  6435 & 36 &  6 \\
 Thyroid      &  7200 & 21 &  3 \\
 \hline
@@ -78,7 +78,7 @@ Thyroid      &  7200 & 21 &  3 \\
 
 \subsection{Particiones y ejecuciones}
 
-Los conjuntos de datos considerados en la sección anterior son particionados usando la estrategia de validación cruzada en 10 iteraciones (10-\emph{fold cross-validation}). El conjunto inicial de instancias $T$ es dividido en 10 subconjuntos disjuntos de igual tamaño $T_1, T_2, \dots T_{10}$. Adicionalmente, cada conjunto $T_i$ mantiene la proporción de distribución de las clases del conjunto original $T$. En función de esta partición, se definen los pares de conjuntos $(T'_i, T_i)$, con $i = 1 \dots 10$, donde $T'_i = T \setminus T_i$.
+Los conjuntos de datos considerados en la sección anterior son particionados usando la estrategia de validación cruzada en 10 grupos (10-\emph{fold cross-validation}). El conjunto inicial de instancias $T$ es dividido en 10 subconjuntos disjuntos de igual tamaño $T_1, T_2, \dots T_{10}$. Adicionalmente, cada conjunto $T_i$ mantiene la proporción de distribución de las clases del conjunto original $T$. En función de esta partición, se definen los pares de conjuntos $(T'_i, T_i)$, con $i = 1 \dots 10$, donde $T'_i = T \setminus T_i$.
 
 El conjunto $T'_i$, también conocido como el conjunto de ``entrenamiento'', es usado por las metaheurísticas durante el proceso de búsqueda para evaluar soluciones intermedias; en vez de usar $T$, se usa el conjunto $T'_i$ como el conjunto de instancias inicial. Las instancias restantes (pertenecientes al conjunto $T_i$) son usadas como conjunto de ``validación'', \emph{i.e.} la mejor solución encontrada durante la ejecución, es usada para clasificar las instancias previamente desconocidas de $T_i$.
 
@@ -130,6 +130,8 @@ c2                 &     - &     - &     - &     - &   0.1 \\
 \label{table-parameters}
 \end{table}
 
+\subsection{Tablas de resultados}
+
 \section{Resultados}
 
 En esta sección se presentan los resultados obtenidos durante la evaluación experimental. En la sección \ref{sec-comp-inits} se comparan diferentes estrategias de inicialización de soluciones con representación binaria,
@@ -148,7 +150,9 @@ Con la finalidad de comparar diferentes estrategias de inicialización, se reali
 
 \subsubsection{Probabilidad de aparición de bit}
 
-En la tabla \ref{table-unif} se presentan los resultados promedio de la evaluación de las 5 metaheurísticas sobre los conjuntos de datos grandes, modificando \emph{únicamente} el parámetro $\delta$ (probabilidad de aparición de bit). Se usan probabilidades iguales a $50\%$, $25\%$ y $5\%$.
+Con la finalidad de reducir la cardinalidad de las soluciones iniciales generadas, en un intento de reducir el número de iteraciones necesarias para conseguir porcentajes de reducción aceptables, este estudio propone la reducción de la probabilidad de aparición de bits $\delta$. En esta sección se estudia el impacto de la disminución propuesta, usando 3 posibles valores: $50\%$, $25\%$ y $5\%$.
+
+En la tabla \ref{table-unif} se presentan los resultados promedio de la evaluación de las 5 metaheurísticas sobre los conjuntos de datos grandes, modificando únicamente el parámetro $\delta$ (probabilidad de aparición de bit).
 
 \begin{table}[h!]
 \centering
@@ -170,7 +174,9 @@ $5\%$  & \textbf{893.24} & \textbf{4.67} & 6.25 & 7.28 \\
 \label{table-unif}
 \end{table}
 
-Estos datos corroboran la hipótesis de que al usar $\delta = 50\%$, es necesario un mayor número de iteraciones para converger a soluciones con porcentajes de reducción aceptables. En la figura \ref{fig-unif} resultan evidentes las diferencias en el tamaño de los subconjuntos seleccionados usando las 3 probabilidades seleccionadas; no es únicamente una diferencia promedio, la inicialización usando $\delta = 5\%$ logra soluciones más consistentes en términos de la reducción alcanzada. Adicionalmente, el uso de una probabilidad de aparición de bit menor, conlleva a una disminución considerable en el tiempo de ejecución de los algoritmos.
+Estos datos corroboran la hipótesis de que al usar $\delta = 50\%$, es necesario un mayor número de iteraciones para converger a soluciones con porcentajes de reducción aceptables \cite{cano2003using}. Incluso fijando el número de iteraciones en 1000, la reducción de la probabilidad de aparición de bit conlleva a una disminución considerable en el tiempo de ejecución de los algoritmos.
+
+En la figura \ref{fig-unif} resultan evidentes las diferencias en el tamaño de las soluciones encontradas usando las 3 probabilidades seleccionadas; no es únicamente una diferencia promedio, la inicialización usando $\delta = 5\%$ logra soluciones más consistentes en términos de reducción.
 
 \begin{figure}[h!]
 \centering
@@ -179,7 +185,7 @@ Estos datos corroboran la hipótesis de que al usar $\delta = 50\%$, es necesari
 \label{fig-unif}
 \end{figure}
 
-A pesar de que las diferencias en el error de validación son significativas en favor de $\delta = 50\%$, el uso de una probabilidad de aparición de bit igual al $5\%$ supone beneficios importantes en relación al tiempo de ejecución y la reducción alcanzada. Por esta razón, se decidió usar $\delta = 5\%$ durante el resto de la evaluación experimental.
+Sin embargo, la disminución del parámetro $\delta$ conlleva a un aumento en los errores de entrenamiento y validación. 
 
 \begin{table}[h!]
 \centering
@@ -200,6 +206,8 @@ $5\%$  & 2.33 & 2 & $50\%$ & 3.0 &  0 & $50\%$ & 3.0 &  0 \\
 \caption[Ranking de probabilidad de bit $\delta$ según el tamaño y error de validación]{Ranking de inicializaciones según el tamaño y error de validación, considerando los promedios de las ejecuciones de cada algoritmo frente a los conjuntos de datos grandes. Por cada inicialización, se presenta su ranking promedio (\emph{Rank}) y el número de veces que obtuvo los mejores resultados (\emph{Mejor}).}
 \label{table-unif-rank}
 \end{table}
+
+A pesar de que las diferencias en el error de validación son significativas en favor de $\delta = 50\%$, el uso de una probabilidad de aparición de bit igual al $5\%$ supone beneficios importantes en relación al tiempo de ejecución y la reducción alcanzada. Por esta razón, se decidió usar $\delta = 5\%$ durante el resto de la evaluación experimental.
 
 \subsubsection{Inicialización usando algoritmos heurísticos}
 
@@ -229,7 +237,7 @@ ClosestNE  & 932.75 & 5.56 & 7.21 & 8.95 \\
 
 En la tabla \ref{table-inits} se presentan los resultados promedio del usar una distribución uniforme y distribuciones basadas en CNN, NEHS, Closest NE y Farthest NE, para la generación de soluciones iniciales en las 5 metaheuristicas descritas. Los datos en tiempo de ejecución son previsibles, debido al tiempo añadido de ejecución de los algoritmos heurísticos. Sin embargo, contrario a lo esperado, estas modificaciones no mejoran significativamente los porcentajes de error obtenidos mediante una distribución uniforme. Más aún, CNN, Closest NE y Farthest NE empeoran los resultados en todos los aspectos. Solo NEHS reporta resultados alentadores, en el que mejora el error de entrenamiento e iguala el error de validación frente a una distribución uniforme.
 
-La figura \ref{fig-inits} confirma los aspectos señalados: el comportamiento de inicializaciones basadas en CNN, Closest NE y Farthest NE difieren significativamente del comportamiento de aquellas basadas en NEHS o una distribución uniforme. Estas últimas (NEHS y Uniforme) muestran un comportamiento similar en función de ambos objetivos del problema. Una prueba de rangos con signo de \emph{Wilcoxon} \cite{wilcoxon1945individual}, con un nivel de significancia del $5\%$, no encuentra diferencias significativas entre los resultados que usan distribuciones uniforme y basada en NEHS, en términos de tamaño ($V = 55$, \emph{p}-valor $= 0.804$) ni error de validación ($V = 64$, \emph{p}-valor $= 0.8469$).
+La figura \ref{fig-inits} confirma los aspectos señalados: el comportamiento de inicializaciones basadas en CNN, Closest NE y Farthest NE difieren significativamente del comportamiento de aquellas basadas en NEHS o una distribución uniforme. Estas últimas (NEHS y Uniforme) muestran un comportamiento similar en función de ambos objetivos del problema.% Una prueba de rangos con signo de \emph{Wilcoxon} \cite{wilcoxon1945individual}, con un nivel de significancia del $5\%$, no encuentra diferencias significativas entre los resultados que usan distribuciones uniforme y basada en NEHS, en términos de tamaño ($V = 55$, \emph{p}-valor $= 0.804$) ni error de validación ($V = 64$, \emph{p}-valor $= 0.8469$).
 
 \begin{figure}[h!]
 \centering
@@ -423,7 +431,7 @@ PSO  & 4.66 & 0 & SGA  & 4.66 & 0 & PSO  & 4.33 & 0 \\
 \label{res-big-rank}
 \end{table}
 
-En el trabajo de \emph{Cano et al.} \cite{cano2003using} se utilizan estos conjuntos de datos (\emph{i.e.} \emph{Pen-based}, \emph{Satimage} y \emph{Thyroid}) para seleccionar instancias usando GGA, SGA, CHC y PBIL. Esto abre la posibilidad de establecer comparaciones en términos del tamaño de los conjuntos seleccionados y el error de validación alcanzado. En la tabla \ref{res-big-cano} se muestran los resultados promedio obtenidos en el presente trabajo, junto con los datos publicados por \emph{Cano et al.} para los conjuntos mencionados.
+En el trabajo de \emph{Cano et al.} \cite{cano2003using} se utilizan estos conjuntos de datos (\emph{i.e.} \emph{Penbased}, \emph{Satimage} y \emph{Thyroid}) para seleccionar instancias usando GGA, SGA, CHC y PBIL. Esto abre la posibilidad de establecer comparaciones en términos del tamaño de los conjuntos seleccionados y el error de validación alcanzado. En la tabla \ref{res-big-cano} se muestran los resultados promedio obtenidos en el presente trabajo, junto con los datos publicados por \emph{Cano} para los conjuntos de datos mencionados.
 
 \begin{table}[h!]
 \centering
@@ -444,7 +452,7 @@ PBIL & \textbf{2.36} & 26.87 & 6.19 & \textbf{5.87} \\
 \emph{Promedio} & \textbf{4.67} & 25.53 & 6.99 & \textbf{6.20} \\
 \hline
 \end{tabular}
-\caption[Comparación con resultados presentados por \emph{Cano et al.}]{Comparación con resultados presentados por \emph{Cano et al.} usando GGA, SGA, CHC y PBIL para los conjuntos \emph{Pen-based}, \emph{Satimage} y \emph{Thyroid}.}
+\caption[Comparación con resultados presentados por \emph{Cano et al.}]{Comparación con resultados presentados por \emph{Cano et al.} usando GGA, SGA, CHC y PBIL para los conjuntos \emph{Penbased}, \emph{Satimage} y \emph{Thyroid}.}
 \label{res-big-cano}
 \end{table}
 
@@ -478,7 +486,7 @@ Glass        & \textbf{32.49} & 10.19 & 32.85 & 9.38 & 36.55 & \textbf{6.31} & 3
 Iris         &  5.11 &  \textbf{2.66} &  \textbf{4.44} & 3.00 &  5.11 & 2.93 &  6.22 & 2.78 &  4.66 &  4.86 \\
 Led7digit    & 26.03 &  4.84 & 26.89 & 4.88 & 26.10 & \textbf{3.10} & \textbf{25.37} & 3.15 & 30.25 &  6.71 \\
 Monk         & \textbf{11.16} &  6.57 & 18.67 & 7.26 & 19.16 & \textbf{4.53} & 17.88 & 4.85 & 29.40 &  7.49 \\
-Pen-based    &  2.46 &  5.10 &  1.84 & 5.52 &  2.99 & 4.93 & \textbf{1.59} & \textbf{2.32} &  3.03 &  4.86 \\
+Penbased     &  2.46 &  5.10 &  1.84 & 5.52 &  2.99 & 4.93 & \textbf{1.59} & \textbf{2.32} &  3.03 &  4.86 \\
 Pima         & 27.43 &  5.08 & 27.91 & 5.48 & 26.35 & 4.04 & \textbf{26.26} & \textbf{3.68} & 30.08 &  4.97 \\
 Satimage     & 11.80 &  6.49 & 11.21 & 6.40 & 12.92 & 5.18 & \textbf{10.58} & \textbf{3.04} & 14.00 &  4.77 \\
 Segmentation & \textbf{6.33} &  6.72 &  7.25 & 6.26 &  7.12 & 4.23 &  6.34 & \textbf{3.48} & 11.85 &  6.24 \\
@@ -499,4 +507,33 @@ Wisconsin    &  2.88 &  0.81 &  2.83 & 1.66 &  3.46 & 0.75 & \textbf{2.63} & \te
 \includegraphics[width=\textwidth]{alg-density.pdf}
 \caption{Hola}
 \label{fig-alg-density}
+\end{figure}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{l c c|l c c|l c c}
+\hline
+\multicolumn{3}{c|}{\textsc{Error de Validación}}
+	& \multicolumn{3}{c|}{\textsc{Tamaño}}
+	& \multicolumn{3}{c}{\textsc{Error + Tamaño}} \\
+\hline
+Algoritmo & Rank & Mejor & Algoritmo & Rank & Mejor & Algoritmo & Rank & Mejor \\
+\hline
+\hline
+PBIL & 1.71 & 8 & PBIL & 1.28 & 10 & PBIL & 1.35 & 11 \\
+GGA  & 2.42 & 5 & CHC  & 2.14 &  3 & GGA  & 2.78 &  2 \\
+SGA  & 2.57 & 1 & GGA  & 3.57 &  1 & SGA  & 3.00 &  1 \\
+CHC  & 3.78 & 0 & PSO  & 3.85 &  0 & CHC  & 3.07 &  0 \\
+PSO  & 4.50 & 0 & SGA  & 4.14 &  0 & PSO  & 4.78 &  0 \\
+\hline
+\end{tabular}
+\caption[Ranking de metaheurísticas según el tamaño y error de validación en conjuntos de datos grandes]{Ranking de metaheurísticas según el tamaño y error de validación, considerando los promedios de las ejecuciones de cada algoritmo frente a todos los conjuntos de datos. Por cada algoritmo, se presenta su ranking promedio (\emph{Rank}) y el número de veces que obtuvo los mejores resultados (\emph{Mejor}).}
+\label{res-all-rank}
+\end{table}
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.8\textwidth]{tiempo.pdf}
+\caption{Hola}
+\label{fig-tiempo}
 \end{figure}
