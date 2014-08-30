@@ -14,6 +14,7 @@ La metodología seguida durante la evaluación experimental permite establecer l
 La metodología experimental debe permitir la generalización del comportamiento de las diferentes metaheurísticas, así como las estrategias de generación de soluciones iniciales, con la finalidad de comparar los resultados obtenidos y establecer los métodos más efectivos frente al problema de selección de instancias.
 
 \subsection{Conjuntos de datos}
+\label{data-section}
 
 Un factor esencial en la evaluación de métodos de selección de instancias es el conjunto de datos utilizado; la distribución de los datos, el número de instancias y atributos, y la cantidad de datos ruidosos, son solo algunos de los elementos que modifican el espacio de búsqueda del problema y por ende la efectividad de los algoritmos heurísticos para encontrar buenas soluciones. Los conjuntos de datos usados en este trabajo pertenecen al \emph{UCI Machine Learning Repository} \cite{BacheLichman:2013} y al \emph{KEEL Data-Mining Software Tool} \cite{alcala2010keel}.
 
@@ -29,7 +30,7 @@ Los 14 conjuntos seleccionados fueron separados en 3 grupos en función del núm
 Cleveland & 297 & 13 &  5 \\
 Glass     & 214 &  9 &  7 \\
 Iris      & 150 &  4 &  3 \\
-LED7Digit & 500 &  7 & 10 \\
+Led7Digit & 500 &  7 & 10 \\
 Monk      & 432 &  6 &  2 \\
 Pima      & 768 &  8 &  2 \\
 WDBC      & 569 & 30 &  2 \\
@@ -78,21 +79,21 @@ Thyroid      &  7200 & 21 &  3 \\
 
 \subsection{Particiones y ejecuciones}
 
-Los conjuntos de datos considerados en la sección anterior son particionados usando la estrategia de validación cruzada en 10 grupos (10-\emph{fold cross-validation}). El conjunto inicial de instancias $T$ es dividido en 10 subconjuntos disjuntos de igual tamaño $T_1, T_2, \dots T_{10}$. Adicionalmente, cada conjunto $T_i$ mantiene la proporción de distribución de las clases del conjunto original $T$. En función de esta partición, se definen los pares de conjuntos $(T'_i, T_i)$, con $i = 1 \dots 10$, donde $T'_i = T \setminus T_i$.
+Los conjuntos de datos considerados en la sección anterior son particionados usando la estrategia de validación cruzada en 10 grupos (10-\emph{fold cross-validation}). El conjunto inicial de instancias $T$ es dividido en 10 subconjuntos disjuntos de igual tamaño $T_1, T_2, \dots T_{10}$. Cada conjunto $T_i$ mantiene la proporción de distribución de las clases del conjunto original $T$. En función de esta partición, se definen los pares de conjuntos $(T'_i, T_i)$, con $i = 1 \dots 10$, donde $T'_i = T \setminus T_i$.
 
 El conjunto $T'_i$, también conocido como el conjunto de ``entrenamiento'', es usado por las metaheurísticas durante el proceso de búsqueda para evaluar soluciones intermedias; en vez de usar $T$, se usa el conjunto $T'_i$ como el conjunto de instancias inicial. Las instancias restantes (pertenecientes al conjunto $T_i$) son usadas como conjunto de ``validación'', \emph{i.e.} la mejor solución encontrada durante la ejecución, es usada para clasificar las instancias previamente desconocidas de $T_i$.
 
-En base a esta estrategia, se definen los criterios de comparación empleados en el presente trabajo. Dada una solución $R \subseteq T'_i$ al problema de SI, se considera:
+En base a esta estrategia, se definen los criterios de comparación empleados en el presente trabajo. Dada una solución $R \subseteq T'_i$ al problema de SI encontrada por una metaheurística, se considera:
 
 \begin{itemize}
 \item \emph{Error de Entrenamiento}\\
-El porcentaje de instancias en $T'_i$ mal clasificadas usando $R$ como conjunto de prototipos en un clasificador 1-NN.
+El porcentaje de instancias en $T'_i$ mal clasificadas usando $R$ como conjunto de prototipos en un clasificador 1-NN. Para el cálculo de esta métrica no se remueven las instancias antes de ser clasificadas (\emph{Leave-one-out cross-validation}), por lo que toda instancia en $R$ se considera correctamente clasificada.
 \item \emph{Error de Validación}\\
 El porcentaje de instancias en $T_i$ mal clasificadas usando $R$ como conjunto de prototipos en un clasificador 1-NN.
 \item \emph{Tamaño}\\
 El tamaño de $R$ en función de $T'_i$ (\emph{i.e.} $\frac{100 \vert R \vert}{\vert T'_i \vert}$).
 \item \emph{Tiempo}\\
-Segundos empleados por el algoritmo para encontrar $R$.
+Segundos empleados por el algoritmo durante la búsqueda.
 \end{itemize} 
 
 Cada metaheurística es evaluada usando los 10 pares de conjuntos $(T'_i, T_i)$. Por cada par de conjunto entrenamiento-validación se realizan 3 repeticiones. \emph{i.e.} un total de 30 ejecuciones de una metaheurística para un conjunto de datos y un tipo de inicialización particular. Las ejecuciones fueron realizadas de manera independiente en instancias \texttt{c3.2xlarge} de \emph{Amazon EC2}, que disponen de 8 CPUs Intel Xeon E5-2680 v2 (Ivy Bridge), 15GB de memoria RAM y 80GB de disco duro de estado sólido. Todos los experimentos se realizaron bajo el sistema operativo Amazon Linux AMI 2014.03.2 y utilizando GCC 4.8.2.
@@ -174,9 +175,7 @@ $5\%$  & \textbf{893.24} & \textbf{4.67} & 6.25 & 7.28 \\
 \label{table-unif}
 \end{table}
 
-Estos datos corroboran la hipótesis de que al usar $\delta = 50\%$, es necesario un mayor número de iteraciones para converger a soluciones con porcentajes de reducción aceptables \cite{cano2003using}. Incluso fijando el número de iteraciones en 1000, la reducción de la probabilidad de aparición de bit conlleva a una disminución considerable en el tiempo de ejecución de los algoritmos.
-
-En la figura \ref{fig-unif} resultan evidentes las diferencias en el tamaño de las soluciones encontradas usando las 3 probabilidades seleccionadas; no es únicamente una diferencia promedio, la inicialización usando $\delta = 5\%$ logra soluciones más consistentes en términos de reducción.
+Estos datos corroboran la hipótesis de que al usar $\delta = 50\%$, es necesario un mayor número de iteraciones para converger a soluciones con porcentajes de reducción aceptables \cite{cano2003using}. Como era de esperarse, la disminución del parámetro $\delta$ implica una reducción similar en términos del tamaño de las soluciones encontradas. Esto a su vez, supone una disminución importante en el tiempo de ejecución de los algoritmos, debido a que la evaluación de soluciones intermedias depende en gran medida de la cardinalidad de dichas soluciones.
 
 \begin{figure}[h!]
 \centering
@@ -185,7 +184,9 @@ En la figura \ref{fig-unif} resultan evidentes las diferencias en el tamaño de 
 \label{fig-unif}
 \end{figure}
 
-Sin embargo, la disminución del parámetro $\delta$ conlleva a un aumento en los errores de entrenamiento y validación. 
+En la figura \ref{fig-unif} resultan evidentes las diferencias en el tamaño de las soluciones encontradas usando las 3 probabilidades seleccionadas. No es únicamente una diferencia promedio: la inicialización usando $\delta = 5\%$ logra que las 5 metaheurísticas consigan soluciones más consistentes en términos de reducción.
+
+Sin embargo, la disminución del parámetro $\delta$ conlleva a un aumento en los errores de entrenamiento y validación. No obstante, en ambos casos los errores se mantienen en valores aceptables, y en el caso del error de validación, la diferencia es poco significativa.
 
 \begin{table}[h!]
 \centering
@@ -207,7 +208,7 @@ $5\%$  & 2.33 & 2 & $50\%$ & 3.0 &  0 & $50\%$ & 3.0 &  0 \\
 \label{table-unif-rank}
 \end{table}
 
-A pesar de que las diferencias en el error de validación son significativas en favor de $\delta = 50\%$, el uso de una probabilidad de aparición de bit igual al $5\%$ supone beneficios importantes en relación al tiempo de ejecución y la reducción alcanzada. Por esta razón, se decidió usar $\delta = 5\%$ durante el resto de la evaluación experimental.
+A pesar de que las diferencias en el error de validación favorecen el uso de\linebreak$\delta = 50\%$, la disminución de la probabilidad de aparición de bit al $5\%$ supone beneficios importantes en relación a la reducción alcanzada (ver la tabla \ref{table-unif-rank}) y al tiempo de ejecución. Por esta razón, se decidió usar $\delta = 5\%$ durante el resto de la evaluación experimental.
 
 \subsubsection{Inicialización usando algoritmos heurísticos}
 
@@ -277,7 +278,7 @@ Para controlar el proceso de búsqueda, cada metaheurística emplea técnicas di
 
 A continuación se presenta un estudio fraccionado del comportamiento de las 5 metaheurísticas, adaptadas en función de los resultados descritos en la sección \ref{sec-comp-inits}. Se describen los resultados obtenidos usando los conjuntos de datos caracterizados como pequeños, medianos y grandes. Finalmente, se realiza un análisis estadístico conjunto, con la finalidad de determinar si existen diferencias significativas entre las metaheurísticas.
 
-\subsubsection{Conjuntos pequeños}
+\subsubsection{Resultados para conjuntos de datos pequeños}
 
 En la tabla \ref{res-small} se presentan los resultados promedio de cada metaheurística, al ser evaluadas usando los conjuntos de datos pequeños. En función del error de clasificación en los conjuntos de entrenamiento y validación, GGA muestra mejores resultados que el resto de las metaheurísticas. Sin embargo, el error de validación alcanzado por las demás metaheurísticas, en particular los resultados de SGA y PBIL, son bastante cercanos. En términos de la reducción lograda, son PBIL y CHC los que seleccionan conjuntos de datos de menor tamaño, mientras que PSO es el que consigue los peores resultados.
 
@@ -331,7 +332,7 @@ PSO  & 4.33 & 0 & PSO  & 4.66 & 0 & PSO  & 4.88 & 0 \\
 
 Los datos sugieren que PBIL representa la mejor alternativa para encontrar soluciones a instancias ``pequeñas'' del problema de SI, ya que logra buenos resultados tanto en términos de presición de clasificación, como en términos de reducción. Sin embargo, GGA y CHC presentan resultados comparables, por lo que no deben descartarse.
 
-\subsubsection{Conjuntos medianos}
+\subsubsection{Resultados para conjuntos de datos medianos}
 
 En la tabla \ref{res-med} se presentan los resultados obtenidos al evaluar las metaheurísticas frente a los conjuntos de datos medianos. Los tiempos de ejecución aumentan notablemente, y las diferencias en tiempo entre los diferentes algoritmos se mantienen: PSO y GGA requieren en promedio más del doble del tiempo que PBIL, y pueden tardar hasta 9 veces más que SGA y CHC. De nuevo, PBIL y GGA logran los mejores resultados en función del error de clasificación. Sin embargo, los porcentajes de error reportados (sobretodo en el conjunto de validación) no varían considerablemente entre metaheurísticas; a excepción de PSO, que exhibe los mayores errores de clasificación en ambos casos. Por último, el tamaño de los conjuntos encontrados por PBIL es menor que en el resto de algoritmos, aunque CHC también reporta una reducción considerable.
 
@@ -381,7 +382,7 @@ PSO  & 5.0 & 0 & SGA  & 4.5 & 0 & PSO  & 5.0 & 0 \\
 \label{res-med-rank}
 \end{table}
 
-\subsubsection{Conjuntos grandes}
+\subsubsection{Resultados para conjuntos de datos grandes}
 
 Los resultados de las ejecuciones usando los conjuntos de datos grandes se presentan en la tabla \ref{res-big}. El tiempo requerido por las metaheurísticas para solucionar los conjuntos grandes es notablemente mayor que el requerido para conjuntos medianos. Esto es una consecuencia directa del aumento, no solo en el número de instancias, sino en el número de atributos de los datos: el fenómeno conocido como la \guillemotleft\emph{maldición de la dimensionalidad}\guillemotright. Son aumentos en el orden de 24, 22, 17, 12 y 2 veces el tiempo requerido por GGA, PSO, SGA, PBIL y CHC respectivamente, en comparación con los tiempos reportados para los conjuntos medianos.
 
@@ -460,7 +461,11 @@ Los datos indican que, si bien existe una diferencia menor en función del error
 
 \subsubsection{Análisis de los resultados}
 
-\blindtext
+De los resultados presentados anteriormente, resulta evidente la existencia de diferencias en el comportamiento de cada metaheurística y en su capacidad para encontrar soluciones que minimicen ambos objetivos del problema de SI. En esta sección se pretende identificar aquellas metaheurísticas que exhiben un comportamiento consistentemente mejor que el resto de los algoritmos, en función de los dos objetivos del problema de SI y con respecto al tiempo de ejecución que requieren.
+
+En la tabla \ref{res-all} se presentan los resultados promedio en error de validación y tamaño de la solución conseguidos por cada metaheurística frente a los conjuntos de datos descritos en la sección \ref{data-section}.
+
+En promedio, los mejores resultados en términos de error son los alcanzados por GGA, con un $14.25\%$ de error de clasificación en los conjuntos de validación. Sin embargo, aunque el error promedio de PBIL ($14.50\%$) es mayor que GGA, PBIL logra los mejores resultados en 8 de los 14 conjuntos de datos, mientras que GGA lo logra en tan solo 5 conjuntos. Esto ubica a PBIL en el primer lugar en el ranking según el error de validación de las metaheurísticas (ver la tabla \ref{res-all-rank}).
 
 \begin{table}[h!]
 \centering
@@ -495,19 +500,14 @@ WDBC         & \textbf{6.91} &  2.97 &  8.43 & 3.82 &  8.43 & 2.64 &  7.32 & \te
 Wine         & \textbf{3.17} &  2.82 &  4.53 & 3.03 &  5.08 & 2.95 &  3.93 & \textbf{2.62} &  6.00 &  4.76 \\
 Wisconsin    &  2.88 &  0.81 &  2.83 & 1.66 &  3.46 & 0.75 & \textbf{2.63} & \textbf{0.68} &  3.60 &  3.86 \\
 \hline
-\emph{Promedio} & 14.25 & 5.05 & 14.86 & 5.18 & 15.51 & 3.92 & 14.50 & 3.05 & 17.58 & 5.86\\
+\emph{Promedio} & \textbf{14.25} & 5.05 & 14.86 & 5.18 & 15.51 & 3.92 & 14.50 & \textbf{3.05} & 17.58 & 5.86\\
 \hline
 \end{tabular}
-\caption{Parámetros usados en cada metaheurística}
+\caption[Resultados promedio por metaheurística y conjunto de datos]{Resultados promedio del error de validación y tamaño de la solución, de cada metaheurística para cada conjunto de datos. Se marcan en \textbf{negrita} los mejores resultados en error y tamaño por cada conjunto de datos.}
 \label{res-all}
 \end{table}
 
-\begin{figure}[h!]
-\centering
-\includegraphics[width=\textwidth]{alg-density.pdf}
-\caption{Hola}
-\label{fig-alg-density}
-\end{figure}
+En función del tamaño de las soluciones encontradas, los resultados exhibidos por PBIL dominan al resto de las metaheurísticas. Seleccionando en promedio el $3.05\%$ de las instancias de los conjuntos de datos iniciales, PBIL exhibe los mejores resultados en función de la reducción de los datos originales. Adicionalmente, PBIL consigue las soluciones de menor tamaño en 10 de los 14 conjuntos de datos.
 
 \begin{table}[h!]
 \centering
@@ -531,9 +531,62 @@ PSO  & 4.50 & 0 & SGA  & 4.14 &  0 & PSO  & 4.78 &  0 \\
 \label{res-all-rank}
 \end{table}
 
+Sin embargo, los resultados de CHC en términos del tamaño de las soluciones encontradas son interesantes. Presenta un tamaño de soluciones promedio igual a $3.92\%$, solo $0.88\%$ más que PBIL. Adicionalmente, CHC consigue los conjuntos de menor tamaño en 3 ocaciones, logrando la segunda posición en dicho ranking.
+
+En la figura \ref{fig-alg-density} se muestra la distribución de las soluciones encontradas por cada metaheurística, en función de su error de validación (eje $x$) y su tamaño\linebreak(eje $y$). Cada punto representa una de las 30 ejecuciones realizadas para cada conjunto de datos, usando el algoritmo correspondiente. Adicionalmente, se grafica una estimación de densidad multivariable con la finalidad de identificar con mayor facilidad, las áreas de concentración de los resultados.
+
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.8\textwidth]{tiempo.pdf}
-\caption{Hola}
+\includegraphics[width=\textwidth]{alg-density.pdf}
+\caption[Distribución de los resultados de cada metaheurística]{Distribución de los resultados de cada metaheurística,\\en función del error de validación y el tamaño de las soluciones.}
+\label{fig-alg-density}
+\end{figure}
+
+Esta gráfica confirma las conclusiones obtenidas a través de los datos presentados: PBIL muestra los mejores resultados en función de los objetivos del problema de SI. En comparación con las demás metaheurísticas, PBIL exhibe un comportamiento más estable, \emph{i.e.} la mayoria de sus soluciones presentan bajos porcentajes de error y tamaño. Al comparar estos datos con los de GGA, la gráfica de densidad muestra que los resultados de PBIL están mucho más concentrados en un área particular del plano, mientras que GGA presenta mayor variabilidad.
+
+Para poder determinar con seguridad las posibles diferencias entre PBIL y el resto de las metaheurísticas, es necesario aplicar una prueba estadística. Se usa una prueba de rangos con signo de \emph{Wilcoxon} \cite{wilcoxon1945individual} (de cola inferior), con un nivel de significancia del $1\%$, para determinar si la mediana de la resultados de PBIL es menor que la de los resultados de las demás metaheurísticas en términos de error de validación o tamaño. A continuación se establecen las hipotesis de la prueba para este caso particular:
+
+\begin{tabular}{l l}
+$H_0$ & Los resultados de PBIL son mayores o iguales que los del algoritmo en cuestión.\\
+$H_1$ & Los resultados de PBIL son menores que los del algoritmo en cuestión.\\
+\end{tabular}
+
+En función de estas hipótesis, en la tabla \ref{wilcox-res-pbil} se presenta el estadístico $W$ y el $p$-valor que permitirán rechazar o no la hipótesis nula $H_0$.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{l c c c c}
+\hline
+\multirow{2}{*}{\textsc{Algoritmo}}
+	& \multicolumn{2}{c}{\textsc{Error de Validación}}
+	& \multicolumn{2}{c}{\textsc{Tamaño}} \\\cline{2-5}
+ & $W$ & $p$-valor & $W$ & $p$-valor \\
+\hline
+\hline
+GGA & 46 & $3.574 \times 10^1$ &  1 & $1.221 \times 10^4$ \\
+SGA & 27 & $5.945 \times 10^2$ &  0 & $6.104 \times 10^5$ \\
+CHC &  6 & $8.545 \times 10^4$ & 14 & $6.714 \times 10^3$ \\
+PSO &  6 & $8.545 \times 10^4$ &  0 & $6.104 \times 10^5$ \\
+\hline
+\end{tabular}
+\caption[Pruebas de \emph{Wilcoxon} comparando PBIL]{Estadístico $W$ y $p$-valor de pruebas de rangos con signo de \emph{Wilcoxon} para determinar si PBIL es mejor que el resto de las metaheurísticas, en función del error de validación y el tamaño de las soluciones encontradas.}
+\label{wilcox-res-pbil}
+\end{table}
+
+Estos resultados permiten afirmar con un nivel de significancia del $1\%$, que PBIL exhibe mejores resultados que
+\begin{inparaenum}[\itshape a\upshape)]
+\item todas las metaheurísticas en términos de la reducción de los datos, y que
+\item CHC y PSO en función al error de validación.
+\end{inparaenum}
+En resumidas cuentas, para encontrar soluciones al problema de SI, PBIL resulta la mejor opción en función de los objetivos del problema.
+
+Sin embargo, debido a que el objetivo de estos algoritmos es que se apliquen sobre conjuntos de datos de tamaños grandes (mucho mayores a los conjuntos de datos evaluados en este estudio), la métrica del tiempo de ejecución es particularmente importante para evaluar las capacidades de las metaheurísticas para escalar a conjuntos mayores.
+
+En este sentido, en la figura \ref{fig-tiempo} se grafica el aumento en tiempo de ejecución de las metaheurísticas en función del número de instancias de los 14 conjuntos de datos evaluados. Mientras que GGA, SGA, PBIL y PSO exhiben un aumento sustancial en el tiempo de ejecución, resulta evidente que CHC se ve menos afectado por el número de instancias que el resto de las metaheurísticas. Es destacable que CHC logre, en un tiempo significativamente menor, resultados competitivos en función del tamaño de las soluciones encontradas y manteniendo un error de validación aceptable. Esto hace de CHC el candidato perfecto para ser aplicado bajo conjuntos de datos con gran número de instancias.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.9\textwidth]{tiempo.pdf}
+\caption[Tiempo de ejecución de cada metaheurística]{Tiempo de ejecución reportado por cada metaheurística, usando el tiempo promedio en cada conjunto de datos, ordenándolos en función del número de instancias en cada conjunto de datos. Se usa escala logarítmica en ambos ejes.}
 \label{fig-tiempo}
 \end{figure}
