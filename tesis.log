@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.7)  29 AUG 2014 23:32
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.7)  30 AUG 2014 21:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1477,7 +1477,7 @@ babelbib extension \btxifchangecaseoff added to \extrasspanish
 babelbib: Load BibTeX extensions \bibsspanish for spanish
 babelbib: Set language for keywords in the bibliography fixed to spanish
 ABD: EveryShipout initializing macros
-<img/./usb.pdf, id=240, 171.64125pt x 114.4275pt>
+<img/./usb.pdf, id=244, 171.64125pt x 114.4275pt>
 File: img/./usb.pdf Graphic file (type pdf)
  <use img/./usb.pdf>
 Package pdftex.def Info: img/./usb.pdf used on input line 80.
@@ -1498,7 +1498,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 {/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./img/.
 /usb.pdf>]
-(./partes/acta.tex <img/usb.pdf, id=251, 171.64125pt x 114.4275pt>
+(./partes/acta.tex <img/usb.pdf, id=255, 171.64125pt x 114.4275pt>
 File: img/usb.pdf Graphic file (type pdf)
 
 <use img/usb.pdf>
@@ -1624,7 +1624,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 48--49
 
  []
 
-[4] [5] <img/voronoi.pdf, id=509, 546.29094pt x 369.88188pt>
+[4] [5] <img/voronoi.pdf, id=514, 546.29094pt x 369.88188pt>
 File: img/voronoi.pdf Graphic file (type pdf)
 
 <use img/voronoi.pdf>
@@ -1657,14 +1657,14 @@ Cap\'{\i }tulo 3.
 ------------------------------------------------------------------------------
 [20
 
-] [21] [22] <img/seleccion.pdf, id=928, 853.57898pt x 768.22003pt>
+] [21] [22] <img/seleccion.pdf, id=933, 853.57898pt x 768.22003pt>
 File: img/seleccion.pdf Graphic file (type pdf)
 
 <use img/seleccion.pdf>
 Package pdftex.def Info: img/seleccion.pdf used on input line 70.
 (pdftex.def)             Requested size: 333.97972pt x 300.57753pt.
  [23 <./img/seleccion.pdf>] [24]
-<img/hiperesferas.pdf, id=1171, 853.57898pt x 384.11504pt>
+<img/hiperesferas.pdf, id=1176, 853.57898pt x 384.11504pt>
 File: img/hiperesferas.pdf Graphic file (type pdf)
 
 <use img/hiperesferas.pdf>
@@ -1678,75 +1678,71 @@ Cap\'{\i }tulo 4.
 ------------------------------------------------------------------------------
 [29
 
-] [30] [31] [32] [33] <img/uniforme.pdf, id=1362, 867.24pt x 314.17375pt>
+] [30] [31] [32] [33]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[34] <img/uniforme.pdf, id=1373, 867.24pt x 314.17375pt>
 File: img/uniforme.pdf Graphic file (type pdf)
 
 <use img/uniforme.pdf>
-Package pdftex.def Info: img/uniforme.pdf used on input line 182.
+Package pdftex.def Info: img/uniforme.pdf used on input line 190.
 (pdftex.def)             Requested size: 417.47307pt x 151.23792pt.
- [34 <./img/uniforme.pdf>] [35]
-<img/inits-boxplot.pdf, id=1399, 853.57898pt x 284.52296pt>
-File: img/inits-boxplot.pdf Graphic file (type pdf)
-
-<use img/inits-boxplot.pdf>
-Package pdftex.def Info: img/inits-boxplot.pdf used on input line 245.
-(pdftex.def)             Requested size: 417.47307pt x 139.15697pt.
-
-Overfull \hbox (8.41615pt too wide) in paragraph at lines 254--270
- [][] 
- []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[36 <./img/inits-boxplot.pdf>] [37] [38] [39] [40] [41] [42]
-<img/alg-density.pdf, id=1469, 867.24pt x 578.16pt>
+[35 <./img/uniforme.pdf>] [36]
+<img/inits-boxplot.pdf, id=1410, 853.57898pt x 284.52296pt>
+File: img/inits-boxplot.pdf Graphic file (type pdf)
+
+<use img/inits-boxplot.pdf>
+Package pdftex.def Info: img/inits-boxplot.pdf used on input line 253.
+(pdftex.def)             Requested size: 417.47307pt x 139.15697pt.
+
+Overfull \hbox (8.41615pt too wide) in paragraph at lines 262--278
+ [][] 
+ []
+
+[37 <./img/inits-boxplot.pdf>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[38] [39]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[40]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[41]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[42] [43] <img/alg-density.pdf, id=1480, 867.24pt x 578.16pt>
 File: img/alg-density.pdf Graphic file (type pdf)
- <use img/alg-density.pdf>
-Package pdftex.def Info: img/alg-density.pdf used on input line 540.
+
+<use img/alg-density.pdf>
+Package pdftex.def Info: img/alg-density.pdf used on input line 548.
 (pdftex.def)             Requested size: 417.47307pt x 278.31645pt.
-
-[43 <./img/alg-density.pdf>] <img/tiempo.pdf, id=5254, 722.7pt x 433.62pt>
+ [44 <./img/alg-density.pdf>]
+<img/tiempo.pdf, id=5268, 722.7pt x 433.62pt>
 File: img/tiempo.pdf Graphic file (type pdf)
-
-<use img/tiempo.pdf>
-Package pdftex.def Info: img/tiempo.pdf used on input line 589.
+ <use img/tiempo.pdf>
+Package pdftex.def Info: img/tiempo.pdf used on input line 597.
 (pdftex.def)             Requested size: 375.7232pt x 225.43076pt.
- [44]) (./partes/conclusiones.tex [45 <./img/tiempo.pdf>]
-
-Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 7.
 
 
-Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 7.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+) (./partes/conclusiones.tex [45] [46 <./img/tiempo.pdf>] [47
+
+]) [48]
+(./tesis.bbl [49
 
 
-Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 7.
-
-
-Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 7.
-
-[46
-
-]
-
-Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 7.
-
-
-Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 7.
-
-
-Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 9.
-
-) (./tesis.bbl [47] [48
-
-] [49] [50] [51] [52]) (./partes/apendiceA.tex [53]
+] [50] [51] [52] [53]) (./partes/apendiceA.tex [54]
 Ap\'{e}ndice A.
 ------------------------------------------------------------------------------
  A @nombreApendice
@@ -1754,58 +1750,58 @@ Ap\'{e}ndice A.
 )
 
 Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 171.
+(blindtext)                 on input line 174.
 
 
 Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 171.
+(blindtext)                 on input line 174.
 
 
 Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 171.
+(blindtext)                 on input line 174.
 
 
 Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 171.
+(blindtext)                 on input line 174.
 
-[54
+[55
 
 ]
 
 Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 171.
+(blindtext)                 on input line 174.
 
 
 Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 171.
+(blindtext)                 on input line 174.
 
-[55]
+[56]
 ------------------------------------------------------------------------------
  Bibliograf\'{\i }a
 ------------------------------------------------------------------------------
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 174.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 174.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 177.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 177.
 (./tesis.aux
 LaTeX Info: Redefining \. on input line 24.
 LaTeX Info: Redefining \% on input line 24.
 LaTeX Info: Redefining \. on input line 28.
 LaTeX Info: Redefining \% on input line 28.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 174.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 174.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 177.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 177.
 Package rerunfilecheck Info: File `tesis.out' has not changed.
-(rerunfilecheck)             Checksum: 3BC84FA6DD637D04250EAD567E3B332C;13181.
+(rerunfilecheck)             Checksum: 6B9C36DDAF67F28E329140B5AC9B24DA;13291.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 174.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 177.
  ) 
 Here is how much of TeX's memory you used:
  30775 strings out of 493308
- 528420 string characters out of 6137817
- 607629 words of memory out of 5000000
- 33354 multiletter control sequences out of 15000+600000
+ 528438 string characters out of 6137817
+ 611715 words of memory out of 5000000
+ 33357 multiletter control sequences out of 15000+600000
  34955 words of font info for 83 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  56i,12n,55p,10441b,631s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1821,37 +1817,38 @@ exlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texl
 ive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive
 /2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/
 2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/20
-13/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2013
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2013/
-texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2
-013/texmf-dist/fonts/type1/public/cm-super/sfbl1728.pfb></usr/local/texlive/201
-3/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2013/
-texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2013/te
-xmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2013/texm
-f-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2013/texmf-
-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2013/texmf-di
-st/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2013/texmf-dist
-/fonts/type1/public/cm-super/sfcc1000.pfb></usr/local/texlive/2013/texmf-dist/f
-onts/type1/public/cm-super/sfcc1095.pfb></usr/local/texlive/2013/texmf-dist/fon
-ts/type1/public/cm-super/sfcc1200.pfb></usr/local/texlive/2013/texmf-dist/fonts
-/type1/public/cm-super/sfcc1440.pfb></usr/local/texlive/2013/texmf-dist/fonts/t
-ype1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2013/texmf-dist/fonts/typ
-e1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1
-/public/cm-super/sfrm1095.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/p
-ublic/cm-super/sfrm1200.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/pub
-lic/cm-super/sfrm1440.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/publi
-c/cm-super/sfrm2074.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/
-cm-super/sfsl1728.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm
--super/sfti0800.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-s
-uper/sfti1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-sup
-er/sfti1095.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super
-/sfti1200.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/s
-ftt1200.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfx
-c1200.pfb>
-Output written on tesis.pdf (66 pages, 6427973 bytes).
+13/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2013
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2013/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2013/te
+xmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/201
+3/texmf-dist/fonts/type1/public/cm-super/sfbl1728.pfb></usr/local/texlive/2013/
+texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2013/te
+xmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2013/texm
+f-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2013/texmf-
+dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2013/texmf-di
+st/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2013/texmf-dist
+/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2013/texmf-dist/f
+onts/type1/public/cm-super/sfcc1000.pfb></usr/local/texlive/2013/texmf-dist/fon
+ts/type1/public/cm-super/sfcc1095.pfb></usr/local/texlive/2013/texmf-dist/fonts
+/type1/public/cm-super/sfcc1200.pfb></usr/local/texlive/2013/texmf-dist/fonts/t
+ype1/public/cm-super/sfcc1440.pfb></usr/local/texlive/2013/texmf-dist/fonts/typ
+e1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1
+/public/cm-super/sfrm1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/p
+ublic/cm-super/sfrm1095.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/pub
+lic/cm-super/sfrm1200.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/publi
+c/cm-super/sfrm1440.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/
+cm-super/sfrm2074.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm
+-super/sfsl1728.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-s
+uper/sfti0800.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-sup
+er/sfti1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super
+/sfti1095.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/s
+fti1200.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sft
+t1200.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfxc1
+200.pfb>
+Output written on tesis.pdf (67 pages, 6443665 bytes).
 PDF statistics:
- 5540 PDF objects out of 6186 (max. 8388607)
- 3018 compressed objects within 31 object streams
- 262 named destinations out of 1000 (max. 500000)
- 522 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 5543 PDF objects out of 6186 (max. 8388607)
+ 3023 compressed objects within 31 object streams
+ 259 named destinations out of 1000 (max. 500000)
+ 530 words of extra memory for PDF output out of 10000 (max. 10000000)
 

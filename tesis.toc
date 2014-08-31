@@ -51,14 +51,15 @@
 \contentsline {subsection}{\numberline {4.1.3}Par\IeC {\'a}metros}{32}{subsection.102}
 \contentsline {subsection}{\numberline {4.1.4}Tablas de resultados}{33}{subsection.104}
 \contentsline {section}{\numberline {4.2}Resultados}{33}{section.105}
-\contentsline {subsection}{\numberline {4.2.1}Comparaci\IeC {\'o}n entre inicializaciones}{33}{subsection.108}
-\contentsline {subsubsection}{\numberline {4.2.1.1}Probabilidad de aparici\IeC {\'o}n de bit}{33}{subsubsection.109}
-\contentsline {subsubsection}{\numberline {4.2.1.2}Inicializaci\IeC {\'o}n usando algoritmos heur\IeC {\'\i }sticos}{35}{subsubsection.113}
-\contentsline {subsection}{\numberline {4.2.2}Comparaci\IeC {\'o}n entre metaheur\IeC {\'\i }sticas}{37}{subsection.117}
-\contentsline {subsubsection}{\numberline {4.2.2.1}Resultados para conjuntos de datos peque\IeC {\~n}os}{37}{subsubsection.118}
+\contentsline {subsection}{\numberline {4.2.1}Comparaci\IeC {\'o}n entre inicializaciones}{34}{subsection.108}
+\contentsline {subsubsection}{\numberline {4.2.1.1}Probabilidad de aparici\IeC {\'o}n de bit}{34}{subsubsection.109}
+\contentsline {subsubsection}{\numberline {4.2.1.2}Inicializaci\IeC {\'o}n usando algoritmos heur\IeC {\'\i }sticos}{36}{subsubsection.113}
+\contentsline {subsection}{\numberline {4.2.2}Comparaci\IeC {\'o}n entre metaheur\IeC {\'\i }sticas}{38}{subsection.117}
+\contentsline {subsubsection}{\numberline {4.2.2.1}Resultados para conjuntos de datos peque\IeC {\~n}os}{38}{subsubsection.118}
 \contentsline {subsubsection}{\numberline {4.2.2.2}Resultados para conjuntos de datos medianos}{39}{subsubsection.121}
 \contentsline {subsubsection}{\numberline {4.2.2.3}Resultados para conjuntos de datos grandes}{40}{subsubsection.124}
-\contentsline {subsubsection}{\numberline {4.2.2.4}An\IeC {\'a}lisis de los resultados}{41}{subsubsection.128}
-\contentsline {chapter}{Conclusiones y Recomendaciones}{46}{chapter*.136}
+\contentsline {subsubsection}{\numberline {4.2.2.4}An\IeC {\'a}lisis de los resultados}{42}{subsubsection.128}
+\contentsline {chapter}{Conclusiones y Recomendaciones}{47}{chapter*.136}
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{49}{section*.137}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}@nombreApendice}{54}{appendix.143}
+\contentsline {chapter}{\numberline {A}@nombreApendice}{55}{appendix.139}

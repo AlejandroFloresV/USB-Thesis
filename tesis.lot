@@ -8,18 +8,18 @@
 \contentsline {table}{\numberline {4.2}{\ignorespaces Conjuntos de datos medianos\relax }}{30}{table.caption.99}
 \contentsline {table}{\numberline {4.3}{\ignorespaces Conjuntos de datos grandes\relax }}{30}{table.caption.100}
 \contentsline {table}{\numberline {4.4}{\ignorespaces Par\IeC {\'a}metros usados en cada metaheur\IeC {\'\i }stica\relax }}{32}{table.caption.103}
-\contentsline {table}{\numberline {4.5}{\ignorespaces Resultados modificando la probabilidad de aparici\IeC {\'o}n de bit}}{34}{table.caption.110}
-\contentsline {table}{\numberline {4.6}{\ignorespaces Ranking de probabilidad de bit $\delta $ seg\IeC {\'u}n el tama\IeC {\~n}o y error de validaci\IeC {\'o}n}}{35}{table.caption.112}
-\contentsline {table}{\numberline {4.7}{\ignorespaces Resultados usando distribuciones uniforme y heur\IeC {\'\i }sticas}}{35}{table.caption.114}
+\contentsline {table}{\numberline {4.5}{\ignorespaces Resultados modificando la probabilidad de aparici\IeC {\'o}n de bit}}{35}{table.caption.110}
+\contentsline {table}{\numberline {4.6}{\ignorespaces Ranking de probabilidad de bit $\delta $ seg\IeC {\'u}n el tama\IeC {\~n}o y error de validaci\IeC {\'o}n}}{36}{table.caption.112}
+\contentsline {table}{\numberline {4.7}{\ignorespaces Resultados usando distribuciones uniforme y heur\IeC {\'\i }sticas}}{36}{table.caption.114}
 \contentsline {table}{\numberline {4.8}{\ignorespaces Ranking de inicializaciones seg\IeC {\'u}n el tama\IeC {\~n}o y error de validaci\IeC {\'o}n}}{37}{table.caption.116}
-\contentsline {table}{\numberline {4.9}{\ignorespaces Resultados de metaheur\IeC {\'\i }sticas usando conjuntos de datos peque\IeC {\~n}os}}{38}{table.caption.119}
-\contentsline {table}{\numberline {4.10}{\ignorespaces Ranking de metaheur\IeC {\'\i }sticas seg\IeC {\'u}n el tama\IeC {\~n}o y error de validaci\IeC {\'o}n en conjuntos de datos peque\IeC {\~n}os}}{38}{table.caption.120}
-\contentsline {table}{\numberline {4.11}{\ignorespaces Resultados de metaheur\IeC {\'\i }sticas usando conjuntos de datos medianos}}{39}{table.caption.122}
-\contentsline {table}{\numberline {4.12}{\ignorespaces Ranking de metaheur\IeC {\'\i }sticas seg\IeC {\'u}n el tama\IeC {\~n}o y error de validaci\IeC {\'o}n en conjuntos de datos medianos}}{39}{table.caption.123}
-\contentsline {table}{\numberline {4.13}{\ignorespaces Resultados de metaheur\IeC {\'\i }sticas usando conjuntos de datos grandes}}{40}{table.caption.125}
-\contentsline {table}{\numberline {4.14}{\ignorespaces Ranking de metaheur\IeC {\'\i }sticas seg\IeC {\'u}n el tama\IeC {\~n}o y error de validaci\IeC {\'o}n en conjuntos de datos grandes}}{40}{table.caption.126}
-\contentsline {table}{\numberline {4.15}{\ignorespaces Comparaci\IeC {\'o}n con resultados presentados por \emph {Cano et al.}}}{41}{table.caption.127}
-\contentsline {table}{\numberline {4.16}{\ignorespaces Resultados promedio por metaheur\IeC {\'\i }stica y conjunto de datos}}{42}{table.caption.129}
-\contentsline {table}{\numberline {4.17}{\ignorespaces Ranking de metaheur\IeC {\'\i }sticas seg\IeC {\'u}n el tama\IeC {\~n}o y error de validaci\IeC {\'o}n en conjuntos de datos grandes}}{42}{table.caption.130}
-\contentsline {table}{\numberline {4.18}{\ignorespaces Pruebas de \emph {Wilcoxon} comparando PBIL}}{44}{table.caption.132}
+\contentsline {table}{\numberline {4.9}{\ignorespaces Resultados de metaheur\IeC {\'\i }sticas usando conjuntos de datos peque\IeC {\~n}os}}{39}{table.caption.119}
+\contentsline {table}{\numberline {4.10}{\ignorespaces Ranking de metaheur\IeC {\'\i }sticas seg\IeC {\'u}n el tama\IeC {\~n}o y error de validaci\IeC {\'o}n en conjuntos de datos peque\IeC {\~n}os}}{39}{table.caption.120}
+\contentsline {table}{\numberline {4.11}{\ignorespaces Resultados de metaheur\IeC {\'\i }sticas usando conjuntos de datos medianos}}{40}{table.caption.122}
+\contentsline {table}{\numberline {4.12}{\ignorespaces Ranking de metaheur\IeC {\'\i }sticas seg\IeC {\'u}n el tama\IeC {\~n}o y error de validaci\IeC {\'o}n en conjuntos de datos medianos}}{40}{table.caption.123}
+\contentsline {table}{\numberline {4.13}{\ignorespaces Resultados de metaheur\IeC {\'\i }sticas usando conjuntos de datos grandes}}{41}{table.caption.125}
+\contentsline {table}{\numberline {4.14}{\ignorespaces Ranking de metaheur\IeC {\'\i }sticas seg\IeC {\'u}n el tama\IeC {\~n}o y error de validaci\IeC {\'o}n en conjuntos de datos grandes}}{41}{table.caption.126}
+\contentsline {table}{\numberline {4.15}{\ignorespaces Comparaci\IeC {\'o}n con resultados presentados por \emph {Cano et al.}}}{42}{table.caption.127}
+\contentsline {table}{\numberline {4.16}{\ignorespaces Resultados promedio por metaheur\IeC {\'\i }stica y conjunto de datos}}{43}{table.caption.129}
+\contentsline {table}{\numberline {4.17}{\ignorespaces Ranking de metaheur\IeC {\'\i }sticas seg\IeC {\'u}n el tama\IeC {\~n}o y error de validaci\IeC {\'o}n en conjuntos de datos grandes}}{43}{table.caption.130}
+\contentsline {table}{\numberline {4.18}{\ignorespaces Pruebas de \emph {Wilcoxon} comparando PBIL}}{45}{table.caption.132}
 \addvspace {10\p@ }

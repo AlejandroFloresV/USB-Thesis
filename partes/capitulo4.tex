@@ -99,6 +99,7 @@ Segundos empleados por el algoritmo durante la búsqueda.
 Cada metaheurística es evaluada usando los 10 pares de conjuntos $(T'_i, T_i)$. Por cada par de conjunto entrenamiento-validación se realizan 3 repeticiones. \emph{i.e.} un total de 30 ejecuciones de una metaheurística para un conjunto de datos y un tipo de inicialización particular. Las ejecuciones fueron realizadas de manera independiente en instancias \texttt{c3.2xlarge} de \emph{Amazon EC2}, que disponen de 8 CPUs Intel Xeon E5-2680 v2 (Ivy Bridge), 15GB de memoria RAM y 80GB de disco duro de estado sólido. Todos los experimentos se realizaron bajo el sistema operativo Amazon Linux AMI 2014.03.2 y utilizando GCC 4.8.2.
 
 \subsection{Parámetros}
+\label{sec-parametros}
 
 Cada metaheurística tiene un conjunto de parámetros que regulan el proceso de búsqueda sobre el espacio de posibles soluciones. Los valores de cada parámetro y la interacción entre ellos, determinan el comportamiento del algoritmo y su capacidad para encontrar buenas soluciones. Sin embargo, los valores que indican el buen comportamiento de una metaheurística, son altamente dependientes del problema en general, e incluso de la instancia particular que se pretenda evaluar. Esto lo convierte en un proceso complejo, que a menudo conlleva a un diseño factorial con el fin de estudiar la influencia de los parámetros y sus interacciones en asegurar la calidad de las soluciones obtenidas.
 
@@ -133,7 +134,14 @@ c2                 &     - &     - &     - &     - &   0.1 \\
 
 \subsection{Tablas de resultados}
 
+Con la finalidad de analizar los resultados de la sección \ref{sec-res}, e identificar las mejores estrategias de inicialización o las mejores metaheurísticas (según corresponda), se presentan dos estilos de tablas que muestran información complementaria.
+
+En primer lugar, se presenta una tabla con los resultados promedio de cada metaheurística o inicialización evaluada, en función de los 4 criterios de comparación descritos en la subsección \ref{sec-parametros}. Al comparar diferentes estrategias de inicialización, se promedian las métricas obtenidas por las 5 metaheurísticas frente a los conjuntos de datos que correspondan; por ejemplo, los resultados de una inicialización usando $\delta = 50\%$ son los promedios de los resultados de GGA, SGA, CHC, PBIL y PSO al usar los conjuntos de datos grandes. Similarmente, al comparar entre metaheurísticas se promedian los resultados obtenidos por un algoritmo particular (por ejemplo, PBIL) para los conjuntos de datos que correspondan.
+
+Sin embargo, al promediar los resultados puede perderse información relevante. El efecto de una estrategia de inicialización puede variar para diferentes algoritmos, y el comportamiento de una metaheurística depende a su vez del conjunto de datos que se use para evaluarla. Por esta razón, se introducen las tablas de ranking, que presentan información adicional que permite comparar las inicializaciones o metaheurísticas bajo un mismo contexto. En función de una métrica particular, las estrategias de inicialización son ordenadas en función de sus resultados por cada algoritmo en cada conjunto de datos, y las metaheurísticas son ordenadas en función a sus resultados en cada conjunto de datos. Las tablas de ranking muestran el ranking promedio de cada inicialización/metaheurística y el número de veces que logró el mejor resultado.
+
 \section{Resultados}
+\label{sec-res}
 
 En esta sección se presentan los resultados obtenidos durante la evaluación experimental. En la sección \ref{sec-comp-inits} se comparan diferentes estrategias de inicialización de soluciones con representación binaria,
 \begin{inparaenum}[\itshape a\upshape)]
@@ -563,10 +571,10 @@ En función de estas hipótesis, en la tabla \ref{wilcox-res-pbil} se presenta e
  & $W$ & $p$-valor & $W$ & $p$-valor \\
 \hline
 \hline
-GGA & 46 & $3.574 \times 10^1$ &  1 & $1.221 \times 10^4$ \\
-SGA & 27 & $5.945 \times 10^2$ &  0 & $6.104 \times 10^5$ \\
-CHC &  6 & $8.545 \times 10^4$ & 14 & $6.714 \times 10^3$ \\
-PSO &  6 & $8.545 \times 10^4$ &  0 & $6.104 \times 10^5$ \\
+GGA & 46 & $3.574 \times 10^{-1}$ &  1 & $1.221 \times 10^{-4}$ \\
+SGA & 27 & $5.945 \times 10^{-2}$ &  0 & $6.104 \times 10^{-5}$ \\
+CHC &  6 & $8.545 \times 10^{-4}$ & 14 & $6.714 \times 10^{-3}$ \\
+PSO &  6 & $8.545 \times 10^{-4}$ &  0 & $6.104 \times 10^{-5}$ \\
 \hline
 \end{tabular}
 \caption[Pruebas de \emph{Wilcoxon} comparando PBIL]{Estadístico $W$ y $p$-valor de pruebas de rangos con signo de \emph{Wilcoxon} para determinar si PBIL es mejor que el resto de las metaheurísticas, en función del error de validación y el tamaño de las soluciones encontradas.}
