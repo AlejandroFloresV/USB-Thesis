@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.7)  30 AUG 2014 21:07
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.7)  30 AUG 2014 23:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -704,8 +704,8 @@ Package babel Info: Making . an active character on input line 599.
 Package babel Info: Making < an active character on input line 644.
 Package babel Info: Making > an active character on input line 644.
 ))
-LaTeX Info: Redefining \. on input line 4.
-LaTeX Info: Redefining \% on input line 4.
+LaTeX Info: Redefining \. on input line 8.
+LaTeX Info: Redefining \% on input line 8.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/babelbib/babelbib.sty
 Package: babelbib 2012/01/03 v1.31 babelbib: multilingual bibliographies (HH)
@@ -1033,7 +1033,7 @@ Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix
 \FV@StepNumber=\count163
 \FV@OutFile=\write4
 )
-Package hyperref Info: Option `colorlinks' set `false' on input line 16.
+Package hyperref Info: Option `colorlinks' set `false' on input line 20.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/mdframed/mdframed.sty
 Package: mdframed 2013/07/01 1.9b: mdframed
@@ -1392,8 +1392,21 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@every@algorithm=\toks50
 \c@algorithm=\count303
 )
+(/usr/local/texlive/2013/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
+\ttl@box=\box67
+\beforetitleunit=\skip156
+\aftertitleunit=\skip157
+\ttl@plus=\dimen282
+\ttl@minus=\dimen283
+\ttl@toksa=\toks51
+\titlewidth=\dimen284
+\titlewidthlast=\dimen285
+\titlewidthfirst=\dimen286
+)
 \c@definicion=\count304
- (./tesis.aux
+
+(./tesis.aux
 LaTeX Info: Redefining \. on input line 24.
 LaTeX Info: Redefining \% on input line 24.
 LaTeX Info: Redefining \. on input line 28.
@@ -1405,22 +1418,22 @@ LaTeX Warning: Label `seleccion' multiply defined.
 )
 \openout1 = `tesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 86.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
@@ -1435,20 +1448,20 @@ Package caption Info: End \AtBeginDocument code.
 (/usr/local/texlive/2013/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count305
-\scratchdimen=\dimen282
-\scratchbox=\box67
+\scratchdimen=\dimen287
+\scratchbox=\box68
 \nofMPsegments=\count306
 \nofMParguments=\count307
-\everyMPshowfont=\toks51
+\everyMPshowfont=\toks52
 \MPscratchCnt=\count308
-\MPscratchDim=\dimen283
+\MPscratchDim=\dimen288
 \MPnumerator=\count309
 \makeMPintoPDFobject=\count310
-\everyMPtoPDFconversion=\toks52
+\everyMPtoPDFconversion=\toks53
 )
 \c@lstlisting=\count311
-\AtBeginShipoutBox=\box68
-Package hyperref Info: Link coloring OFF on input line 77.
+\AtBeginShipoutBox=\box69
+Package hyperref Info: Link coloring OFF on input line 86.
  (/usr/local/texlive/2013/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -1457,16 +1470,16 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count312
 )
-LaTeX Info: Redefining \ref on input line 77.
-LaTeX Info: Redefining \pageref on input line 77.
-LaTeX Info: Redefining \nameref on input line 77.
+LaTeX Info: Redefining \ref on input line 86.
+LaTeX Info: Redefining \pageref on input line 86.
+LaTeX Info: Redefining \nameref on input line 86.
 
 (./tesis.out) (./tesis.out)
 \@outlinefile=\write5
 \openout5 = `tesis.out'.
 
-LaTeX Info: Redefining \. on input line 77.
-LaTeX Info: Redefining \% on input line 77.
+LaTeX Info: Redefining \. on input line 86.
+LaTeX Info: Redefining \% on input line 86.
 
 babelbib: Set bibliography fall-back language to spanish
 (/usr/local/texlive/2013/texmf-dist/tex/latex/babelbib/spanish.bdf
@@ -1477,17 +1490,17 @@ babelbib extension \btxifchangecaseoff added to \extrasspanish
 babelbib: Load BibTeX extensions \bibsspanish for spanish
 babelbib: Set language for keywords in the bibliography fixed to spanish
 ABD: EveryShipout initializing macros
-<img/./usb.pdf, id=244, 171.64125pt x 114.4275pt>
+<img/./usb.pdf, id=240, 171.64125pt x 114.4275pt>
 File: img/./usb.pdf Graphic file (type pdf)
  <use img/./usb.pdf>
-Package pdftex.def Info: img/./usb.pdf used on input line 80.
+Package pdftex.def Info: img/./usb.pdf used on input line 89.
 (pdftex.def)             Requested size: 86.72377pt x 57.81422pt.
-LaTeX Font Info:    Try loading font information for U+msa on input line 80.
+LaTeX Font Info:    Try loading font information for U+msa on input line 89.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 80.
+LaTeX Font Info:    Try loading font information for U+msb on input line 89.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1498,7 +1511,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 {/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./img/.
 /usb.pdf>]
-(./partes/acta.tex <img/usb.pdf, id=255, 171.64125pt x 114.4275pt>
+(./partes/acta.tex <img/usb.pdf, id=251, 171.64125pt x 114.4275pt>
 File: img/usb.pdf Graphic file (type pdf)
 
 <use img/usb.pdf>
@@ -1514,17 +1527,7 @@ Package pdftex.def Info: img/usb.pdf used on input line 6.
 Package blindtext Warning: spanish not defined, using English instead.
 (blindtext)                 on input line 6.
 
-) [1] (./partes/agradecimientos.tex
-------------------------------------------------------------------------------
- Agradecimientos
-------------------------------------------------------------------------------
-
-Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 6.
-
-[2
-
-])
+) [1]
 ------------------------------------------------------------------------------
  Table of Contents
 ------------------------------------------------------------------------------
@@ -1533,14 +1536,14 @@ LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 LaTeX Info: Redefining \. on input line 2.
 LaTeX Info: Redefining \% on input line 2.
- [3
+ [2
 
 
 ])
 \tf@toc=\write6
 \openout6 = `tesis.toc'.
 
- [4]
+ [3]
 ------------------------------------------------------------------------------
  \IeC {\'I}ndice de Figuras
 ------------------------------------------------------------------------------
@@ -1553,7 +1556,7 @@ LaTeX Info: Redefining \% on input line 2.
 \tf@lof=\write7
 \openout7 = `tesis.lof'.
 
- [5
+ [4
 
 
 ]
@@ -1569,28 +1572,28 @@ LaTeX Info: Redefining \% on input line 2.
 \tf@lot=\write8
 \openout8 = `tesis.lot'.
 
- [6
+ [5
 
 
 ] (./tesis.loa)
 \tf@loa=\write9
 \openout9 = `tesis.loa'.
 
- (./partes/acronimos.tex [7
+ (./partes/acronimos.tex [6
 
 
 ]
 ------------------------------------------------------------------------------
  Acr\IeC {\'o}nimos y S\IeC {\'\i }mbolos
 ------------------------------------------------------------------------------
-[8
+[7
 
 
 ]) (./partes/dedicatoria.tex
 ------------------------------------------------------------------------------
  Dedicatoria
 ------------------------------------------------------------------------------
-[9
+[8
 
 ]) (./partes/introduccion.tex) (./partes/capitulo1.tex [1
 
@@ -1614,7 +1617,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 20--21
  []
 
 
-Underfull \hbox (badness 2809) in paragraph at lines 44--45
+Underfull \hbox (badness 6141) in paragraph at lines 44--45
 []\T1/cmr/m/n/12 Dado un con-jun-to ini-cial de ins-tan-cias $\OML/cmm/m/it/12 
 T \OT1/cmr/m/n/12 = []$ \T1/cmr/m/n/12 don-de
  []
@@ -1624,125 +1627,137 @@ Underfull \hbox (badness 10000) in paragraph at lines 48--49
 
  []
 
-[4] [5] <img/voronoi.pdf, id=514, 546.29094pt x 369.88188pt>
+[4] [5] <img/voronoi.pdf, id=503, 546.29094pt x 369.88188pt>
 File: img/voronoi.pdf Graphic file (type pdf)
 
 <use img/voronoi.pdf>
 Package pdftex.def Info: img/voronoi.pdf used on input line 77.
-(pdftex.def)             Requested size: 250.48637pt x 169.60027pt.
-
+(pdftex.def)             Requested size: 261.58313pt x 177.11234pt.
+ [6 <./img/voronoi.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 88--89
 
  []
 
-[6 <./img/voronoi.pdf>] [7] [8] [9]) (./partes/capitulo2.tex [10]
+[7] [8] [9] [10]) (./partes/capitulo2.tex [11]
 Cap\'{\i }tulo 2.
 ------------------------------------------------------------------------------
  2 Metaheur\IeC {\'\i }sticas
 ------------------------------------------------------------------------------
-[11
+[12
 
-] [12]
+] [13]
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 43.
  (/usr/local/texlive/2013/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
+[14]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 52.
-
-[13] [14] [15] [16] [17]) (./partes/capitulo3.tex [18] [19]
+ [15] [16] [17] [18]) (./partes/capitulo3.tex [19] [20]
 Cap\'{\i }tulo 3.
 ------------------------------------------------------------------------------
  3 Adaptaci\IeC {\'o}n al problema de Selecci\IeC {\'o}n de Instancias
 ------------------------------------------------------------------------------
-[20
+[21
 
-] [21] [22] <img/seleccion.pdf, id=933, 853.57898pt x 768.22003pt>
+] [22] [23] <img/seleccion.pdf, id=928, 853.57898pt x 768.22003pt>
 File: img/seleccion.pdf Graphic file (type pdf)
 
 <use img/seleccion.pdf>
 Package pdftex.def Info: img/seleccion.pdf used on input line 70.
-(pdftex.def)             Requested size: 333.97972pt x 300.57753pt.
- [23 <./img/seleccion.pdf>] [24]
-<img/hiperesferas.pdf, id=1176, 853.57898pt x 384.11504pt>
+(pdftex.def)             Requested size: 348.77528pt x 313.89381pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[24] [25 <./img/seleccion.pdf>]
+<img/hiperesferas.pdf, id=1169, 853.57898pt x 384.11504pt>
 File: img/hiperesferas.pdf Graphic file (type pdf)
 
 <use img/hiperesferas.pdf>
 Package pdftex.def Info: img/hiperesferas.pdf used on input line 112.
-(pdftex.def)             Requested size: 333.97972pt x 150.29073pt.
- [25 <./img/hiperesferas.pdf>] [26] [27])
-(./partes/capitulo4.tex [28]
+(pdftex.def)             Requested size: 348.77528pt x 156.94896pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[26] [27 <./img/hiperesferas.pdf>] [28] [29]) (./partes/capitulo4.tex [30]
 Cap\'{\i }tulo 4.
 ------------------------------------------------------------------------------
  4 Evaluaci\IeC {\'o}n Experimental
 ------------------------------------------------------------------------------
-[29
+[31
 
-] [30] [31] [32] [33]
+]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[34] <img/uniforme.pdf, id=1373, 867.24pt x 314.17375pt>
+[32] [33]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[34] [35] [36] <img/uniforme.pdf, id=1372, 867.24pt x 314.17375pt>
 File: img/uniforme.pdf Graphic file (type pdf)
 
 <use img/uniforme.pdf>
 Package pdftex.def Info: img/uniforme.pdf used on input line 190.
-(pdftex.def)             Requested size: 417.47307pt x 151.23792pt.
+(pdftex.def)             Requested size: 435.96745pt x 157.93979pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[35 <./img/uniforme.pdf>] [36]
-<img/inits-boxplot.pdf, id=1410, 853.57898pt x 284.52296pt>
+[37] [38 <./img/uniforme.pdf>]
+<img/inits-boxplot.pdf, id=1409, 853.57898pt x 284.52296pt>
 File: img/inits-boxplot.pdf Graphic file (type pdf)
 
 <use img/inits-boxplot.pdf>
 Package pdftex.def Info: img/inits-boxplot.pdf used on input line 253.
-(pdftex.def)             Requested size: 417.47307pt x 139.15697pt.
+(pdftex.def)             Requested size: 435.96745pt x 145.32185pt.
 
-Overfull \hbox (8.41615pt too wide) in paragraph at lines 262--278
- [][] 
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[39] [40 <./img/inits-boxplot.pdf>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[41] [42] [43]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[44] [45]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \hbox (badness 2103) in paragraph at lines 544--545
+\T1/cmr/m/n/12 me-taheu-rís-ti-ca, en fun-ción de su error de va-li-da-ción (ej
+e $\OML/cmm/m/it/12 x$\T1/cmr/m/n/12 ) y su ta-ma-ño
  []
 
-[37 <./img/inits-boxplot.pdf>]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[38] [39]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[40]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[41]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[42] [43] <img/alg-density.pdf, id=1480, 867.24pt x 578.16pt>
+[46] <img/alg-density.pdf, id=1484, 867.24pt x 578.16pt>
 File: img/alg-density.pdf Graphic file (type pdf)
 
 <use img/alg-density.pdf>
 Package pdftex.def Info: img/alg-density.pdf used on input line 548.
-(pdftex.def)             Requested size: 417.47307pt x 278.31645pt.
- [44 <./img/alg-density.pdf>]
-<img/tiempo.pdf, id=5268, 722.7pt x 433.62pt>
+(pdftex.def)             Requested size: 435.96745pt x 290.6496pt.
+ [47 <./img/alg-density.pdf>] [48]
+<img/tiempo.pdf, id=5278, 722.7pt x 433.62pt>
 File: img/tiempo.pdf Graphic file (type pdf)
  <use img/tiempo.pdf>
 Package pdftex.def Info: img/tiempo.pdf used on input line 597.
-(pdftex.def)             Requested size: 375.7232pt x 225.43076pt.
+(pdftex.def)             Requested size: 392.36804pt x 235.42168pt.
+)
+(./partes/conclusiones.tex [49 <./img/tiempo.pdf>] [50
+
+]) [51] (./tesis.bbl
+[52
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-) (./partes/conclusiones.tex [45] [46 <./img/tiempo.pdf>] [47
-
-]) [48]
-(./tesis.bbl [49
-
-
-] [50] [51] [52] [53]) (./partes/apendiceA.tex [54]
+] [53] [54] [55] [56]) (./partes/apendiceA.tex [57]
 Ap\'{e}ndice A.
 ------------------------------------------------------------------------------
  A @nombreApendice
@@ -1750,61 +1765,61 @@ Ap\'{e}ndice A.
 )
 
 Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 174.
+(blindtext)                 on input line 183.
 
 
 Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 174.
+(blindtext)                 on input line 183.
 
 
 Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 174.
+(blindtext)                 on input line 183.
 
 
 Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 174.
+(blindtext)                 on input line 183.
 
-[55
+[58
 
 ]
 
 Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 174.
+(blindtext)                 on input line 183.
 
 
 Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 174.
+(blindtext)                 on input line 183.
 
-[56]
+[59]
 ------------------------------------------------------------------------------
  Bibliograf\'{\i }a
 ------------------------------------------------------------------------------
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 177.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 177.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 186.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 186.
 (./tesis.aux
 LaTeX Info: Redefining \. on input line 24.
 LaTeX Info: Redefining \% on input line 24.
 LaTeX Info: Redefining \. on input line 28.
 LaTeX Info: Redefining \% on input line 28.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 177.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 177.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 186.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 186.
 Package rerunfilecheck Info: File `tesis.out' has not changed.
-(rerunfilecheck)             Checksum: 6B9C36DDAF67F28E329140B5AC9B24DA;13291.
+(rerunfilecheck)             Checksum: 2390A9A7FEA9B5E54DD399D76AD88DDA;13174.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 177.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 186.
  ) 
 Here is how much of TeX's memory you used:
- 30775 strings out of 493308
- 528438 string characters out of 6137817
- 611715 words of memory out of 5000000
- 33357 multiletter control sequences out of 15000+600000
+ 31029 strings out of 493308
+ 531767 string characters out of 6137817
+ 612892 words of memory out of 5000000
+ 33609 multiletter control sequences out of 15000+600000
  34955 words of font info for 83 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 56i,12n,55p,10441b,631s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,12n,55p,10441b,648s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 </usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
 /usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></
@@ -1845,10 +1860,10 @@ er/sfti1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super
 fti1200.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sft
 t1200.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfxc1
 200.pfb>
-Output written on tesis.pdf (67 pages, 6443665 bytes).
+Output written on tesis.pdf (69 pages, 6444607 bytes).
 PDF statistics:
- 5543 PDF objects out of 6186 (max. 8388607)
- 3023 compressed objects within 31 object streams
- 259 named destinations out of 1000 (max. 500000)
- 530 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 5546 PDF objects out of 6186 (max. 8388607)
+ 3024 compressed objects within 31 object streams
+ 260 named destinations out of 1000 (max. 500000)
+ 522 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,14 +1,14 @@
 \select@language {spanish}
 \select@language {spanish}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Diagramas de Voronoi y NN}}{6}{figure.caption.23}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Diagramas de Voronoi y NN}}{6}{figure.caption.22}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Algoritmos de Selecci\IeC {\'o}n de Instancias}}{23}{figure.caption.78}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Selecci\IeC {\'o}n obtenida por NEHS}}{25}{figure.caption.82}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Algoritmos de Selecci\IeC {\'o}n de Instancias}}{25}{figure.caption.77}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Selecci\IeC {\'o}n obtenida por NEHS}}{27}{figure.caption.81}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Tama\IeC {\~n}o \emph {vs} error de validaci\IeC {\'o}n modificando $\delta $}}{35}{figure.caption.111}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Tama\IeC {\~n}o y error de validaci\IeC {\'o}n usando algoritmos heur\IeC {\'\i }sticos}}{37}{figure.caption.115}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Distribuci\IeC {\'o}n de los resultados de cada metaheur\IeC {\'\i }stica}}{44}{figure.caption.131}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Tiempo de ejecuci\IeC {\'o}n de cada metaheur\IeC {\'\i }stica}}{46}{figure.caption.135}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Tama\IeC {\~n}o \emph {vs} error de validaci\IeC {\'o}n modificando $\delta $}}{38}{figure.caption.110}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Tama\IeC {\~n}o y error de validaci\IeC {\'o}n usando algoritmos heur\IeC {\'\i }sticos}}{40}{figure.caption.114}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Distribuci\IeC {\'o}n de los resultados de cada metaheur\IeC {\'\i }stica}}{47}{figure.caption.130}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Tiempo de ejecuci\IeC {\'o}n de cada metaheur\IeC {\'\i }stica}}{49}{figure.caption.134}
 \addvspace {10\p@ }

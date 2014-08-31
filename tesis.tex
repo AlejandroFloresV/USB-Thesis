@@ -1,4 +1,8 @@
 \documentclass[letterpaper, 12pt, oneside]{tesis}
+%\usepackage[letterpaper,top=1.5cm,bottom=1.5cm,left=3cm,right=2.5cm]{geometry}%,top=2.5cm,bottom=2.5cm,left=3cm,right=2.5cm
+
+\setlength\paperheight{11in}
+\setlength\paperwidth{8.5in}
 
 \usepackage[spanish]{babel}
 \selectlanguage{spanish}
@@ -24,6 +28,11 @@
 \usepackage{multirow}
 \usepackage[noend]{algpseudocode}
 \usepackage[chapter]{algorithm}
+\usepackage{titlesec}
+
+\titleformat{\chapter}[display]
+{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{0pt}{\Huge}
+\titlespacing*{\chapter}{0pt}{1cm}{40pt}
 
 \floatname{algorithm}{Algoritmo}
 \renewcommand{\algorithmicrequire}{\textbf{Input:}}
@@ -96,7 +105,7 @@ Ingeniero de Computación}
 % +-----------------+
 % | AGRADECIMIENTOS |
 % +-----------------+
-\input{./partes/agradecimientos}
+%\input{./partes/agradecimientos}
 
 \pagestyle{fancy}
 

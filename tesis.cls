@@ -23,7 +23,7 @@
   \if@tempswa \else \PassOptionsToClass{#1}{\baseclass}\fi
 }
 \@checkoptions{11pt}{{10pt}{11pt}{12pt}}
-\PassOptionsToClass{a4paper}{\baseclass}
+\PassOptionsToClass{letterpaper}{\baseclass}
 \ProcessOptions\relax
 \LoadClass{\baseclass}
 \newcommand\bhrule{\typeout{------------------------------------------------------------------------------}}
@@ -52,10 +52,10 @@
 \setlength{\parskip}{2.0ex plus0.5ex minus0.2ex}
 
 \usepackage{paquetes/vmargin}
-\setmarginsrb           { 1.5in}  % left margin
-                        { 0.6in}  % top margin
-                        { 1.0in}  % right margin
-                        { 0.8in}  % bottom margin
+\setmarginsrb           { 3.2cm}  % left margin
+                        { 2.8cm}  % top margin
+                        { 2.5cm}  % right margin
+                        { 2.8cm}  % bottom margin
                         {  20pt}  % head height
                         {0.25in}  % head sep
                         {   9pt}  % foot height
