@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.7)  1 SEP 2014 02:26
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.7)  1 SEP 2014 07:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1752,59 +1752,52 @@ Ap\'{e}ndice A.
 ------------------------------------------------------------------------------
  A Entonaci\IeC {\'o}n de las metaheur\IeC {\'\i }sticas
 ------------------------------------------------------------------------------
-<img/apendice-gga.pdf, id=5409, 995.8505pt x 312.97928pt>
-File: img/apendice-gga.pdf Graphic file (type pdf)
-
-<use img/apendice-gga.pdf>
-Package pdftex.def Info: img/apendice-gga.pdf used on input line 31.
-(pdftex.def)             Requested size: 435.96745pt x 137.01405pt.
-
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [61
 
-] <img/apendice-sga.pdf, id=5417, 995.8505pt x 312.97928pt>
-File: img/apendice-sga.pdf Graphic file (type pdf)
+] <img/apendice-gga.pdf, id=5416, 995.8505pt x 312.97928pt>
+File: img/apendice-gga.pdf Graphic file (type pdf)
 
-<use img/apendice-sga.pdf>
-Package pdftex.def Info: img/apendice-sga.pdf used on input line 64.
+<use img/apendice-gga.pdf>
+Package pdftex.def Info: img/apendice-gga.pdf used on input line 35.
 (pdftex.def)             Requested size: 435.96745pt x 137.01405pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [62 <./img/apendice-gga.pdf>]
-<img/apendice-chc.pdf, id=5448, 483.8075pt x 314.17375pt>
-File: img/apendice-chc.pdf Graphic file (type pdf)
+<img/apendice-sga.pdf, id=5447, 995.8505pt x 312.97928pt>
+File: img/apendice-sga.pdf Graphic file (type pdf)
 
-<use img/apendice-chc.pdf>
-Package pdftex.def Info: img/apendice-chc.pdf used on input line 92.
-(pdftex.def)             Requested size: 217.98372pt x 141.55424pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+<use img/apendice-sga.pdf>
+Package pdftex.def Info: img/apendice-sga.pdf used on input line 68.
+(pdftex.def)             Requested size: 435.96745pt x 137.01405pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [63 <./img/apendice-sga.pdf>]
-<img/apendice-pbil.pdf, id=5479, 995.8505pt x 682.8712pt>
+<img/apendice-chc.pdf, id=5478, 483.8075pt x 314.17375pt>
+File: img/apendice-chc.pdf Graphic file (type pdf)
+
+<use img/apendice-chc.pdf>
+Package pdftex.def Info: img/apendice-chc.pdf used on input line 96.
+(pdftex.def)             Requested size: 217.98372pt x 141.55424pt.
+ [64 <./img/apendice-chc.pdf>]
+<img/apendice-pbil.pdf, id=5501, 995.8505pt x 682.8712pt>
 File: img/apendice-pbil.pdf Graphic file (type pdf)
 
 <use img/apendice-pbil.pdf>
-Package pdftex.def Info: img/apendice-pbil.pdf used on input line 126.
+Package pdftex.def Info: img/apendice-pbil.pdf used on input line 130.
 (pdftex.def)             Requested size: 435.96745pt x 298.94298pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[64 <./img/apendice-chc.pdf>] [65 <./img/apendice-pbil.pdf>]
-<img/apendice-pso.pdf, id=5531, 995.8505pt x 312.97928pt>
+ [65 <./img/apendice-pbil.pdf>]
+<img/apendice-pso.pdf, id=5532, 995.8505pt x 312.97928pt>
 File: img/apendice-pso.pdf Graphic file (type pdf)
 
 <use img/apendice-pso.pdf>
-Package pdftex.def Info: img/apendice-pso.pdf used on input line 157.
+Package pdftex.def Info: img/apendice-pso.pdf used on input line 161.
 (pdftex.def)             Requested size: 435.96745pt x 137.01405pt.
 ) [66 <./img/apendice-pso.pdf>]
 ------------------------------------------------------------------------------
@@ -1829,11 +1822,11 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 186.
  ) 
 Here is how much of TeX's memory you used:
- 31087 strings out of 493308
- 532856 string characters out of 6137817
- 613601 words of memory out of 5000000
- 33646 multiletter control sequences out of 15000+600000
- 33298 words of font info for 81 fonts, out of 8000000 for 9000
+ 31089 strings out of 493308
+ 532878 string characters out of 6137817
+ 613596 words of memory out of 5000000
+ 33647 multiletter control sequences out of 15000+600000
+ 33611 words of font info for 82 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  56i,12n,55p,10441b,664s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
@@ -1873,12 +1866,13 @@ cm-super/sfti0800.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm
 uper/sfti1095.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-sup
 er/sfti1200.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super
 /sftt0800.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/s
-ftt1200.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfx
-c1200.pfb>
-Output written on tesis.pdf (75 pages, 7402865 bytes).
+ftt1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sft
+t1200.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfxc1
+200.pfb>
+Output written on tesis.pdf (75 pages, 7428591 bytes).
 PDF statistics:
- 5743 PDF objects out of 6186 (max. 8388607)
- 3145 compressed objects within 32 object streams
+ 5749 PDF objects out of 6186 (max. 8388607)
+ 3150 compressed objects within 32 object streams
  281 named destinations out of 1000 (max. 500000)
  579 words of extra memory for PDF output out of 10000 (max. 10000000)
 

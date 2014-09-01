@@ -62,5 +62,5 @@
 \contentsline {section}{\numberline {A.1}Entonaci\IeC {\'o}n de GGA}{61}{section.138}
 \contentsline {section}{\numberline {A.2}Entonaci\IeC {\'o}n de SGA}{62}{section.141}
 \contentsline {section}{\numberline {A.3}Entonaci\IeC {\'o}n de CHC}{63}{section.144}
-\contentsline {section}{\numberline {A.4}Entonaci\IeC {\'o}n de PBIL}{63}{section.147}
-\contentsline {section}{\numberline {A.5}Entonaci\IeC {\'o}n de PSO}{64}{section.150}
+\contentsline {section}{\numberline {A.4}Entonaci\IeC {\'o}n de PBIL}{64}{section.147}
+\contentsline {section}{\numberline {A.5}Entonaci\IeC {\'o}n de PSO}{65}{section.150}

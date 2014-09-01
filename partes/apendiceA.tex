@@ -1,10 +1,14 @@
 \chapter{Entonación de las metaheurísticas}
 \label{apendiceA}
-\lhead{Apéndice A. \emph{Entonación de las metaheurísticas}}.
+\lhead{Apéndice A. \emph{Entonación de las metaheurísticas}}
+
+En este apéndice se describe la metodología seguida durante el proceso de entonación de las metaheurísticas descritas en el Capítulo \ref{capitulo2}. Por cada metaheurística se describen los valores evaluados para cada parámetro y se presentan los resultados obtenidos de la experimentación. Estos experimentos fueron realizados usando \emph{Banana} como conjunto de datos de entonación, realizando 30 ejecuciones por cada configuración (3 repeticiones por cada \emph{fold}).
+
+Cade destacar, que para las metaheurísticas GGA, SGA y PBIL se fijó el valor de la probabilidad de mutación en 0.001. Este debe ser un valor pequeño para no convertir el proceso de búsqueda en uno aleatorio, y el valor seleccionado ha sido usado en otros estudios \cite{cano2003using}. El resto de parámetros de cada metaheurística fue entonado, y sus resultados se presentan a continuación.
 
 \section{Entonación de GGA}
 
-Los parámetros de los que depende GGA son: el número de iteraciones, el tamaño de la población y la probabilidad de cruce. En la tabla \ref{table-ap-gga} se presentan los diferentes valores evaluados para cada metaheurística. En este sentido, se realizó un estudio factorial para determinar el impacto de cada valor por separado y la interacción entre valores de diferentes parámetros.
+Los parámetros de los que depende GGA son: el número de iteraciones, el tamaño de la población y la probabilidad de cruce (la prob. de mutación ya está fijada). En la tabla \ref{table-ap-gga} se presentan los diferentes valores evaluados para cada metaheurística. En este sentido, se realizó un estudio factorial para determinar el impacto de cada valor por separado y la interacción entre valores de diferentes parámetros.
 
 \begin{table}[h!]
 \centering
@@ -18,7 +22,7 @@ Población   & 10\ \ 20\ \ 30\ \ 40\ \ \textbf{50} \\
 Prob. de Cruce & 0.5\ \ 0.6\ \ 0.75\ \ \textbf{0.9}\ \ 1.0\\
 \hline
 \end{tabular}
-\caption{Valores evaluados para los parámetros de GGA}
+\caption[Valores evaluados para los parámetros de GGA]{Valores evaluados para los parámetros de GGA.\\En negrita los valores fijados por cada parámetro.}
 \label{table-ap-gga}
 \end{table}
 
@@ -49,7 +53,7 @@ Población   & 10\ \ 20\ \ \textbf{30}\ \ 40\ \ 50 \\
 Prob. de Cruce & 0.5\ \ 0.6\ \ 0.75\ \ 0.9\ \ \textbf{1.0}\\
 \hline
 \end{tabular}
-\caption{Valores evaluados para los parámetros de SGA}
+\caption[Valores evaluados para los parámetros de SGA]{Valores evaluados para los parámetros de SGA.\\En negrita los valores fijados por cada parámetro.}
 \label{table-ap-sga}
 \end{table}
 
@@ -81,7 +85,7 @@ Iteraciones & 100\ \ \textbf{1000}\ \ 10000 \\
 Población   & 10\ \ 20\ \ \textbf{30}\ \ 40\ \ 50 \\
 \hline
 \end{tabular}
-\caption{Valores evaluados para los parámetros de CHC}
+\caption[Valores evaluados para los parámetros de CHC]{Valores evaluados para los parámetros de CHC.\\En negrita los valores fijados por cada parámetro.}
 \label{table-ap-chc}
 \end{table}
 
@@ -96,7 +100,7 @@ Los resultados presentados en la figura \ref{fig-ap-chc} son claros y las conclu
 
 \section{Entonación de PBIL}
 
-La entonación de PBIL resulta más complicada, debido a que depende de un mayor número de parámetros. En la tabla \ref{table-ap-pbil} se describen los valores evaluados para cada parámetro. Se excluye de este estudio el valor de \emph{Mutation Shift}, que se mantiene en un valor bajo. Con los niveles descritos, se realiza un estudio factorial.
+La entonación de PBIL resulta más complicada, debido a que depende de un mayor número de parámetros. En la tabla \ref{table-ap-pbil} se describen los valores evaluados para cada parámetro. Se excluye de este estudio el valor de \emph{Mutation Shift}, que se mantiene en un valor bajo (igual a 0.01). Con los niveles descritos por cada parámetro, se realiza un estudio factorial.
 
 \begin{table}[h!]
 \centering
@@ -111,14 +115,14 @@ Learning Rate & \textbf{0.1}\ \ 0.05\ \ 0.01 \\
 Negative Learning Rate & 0.075\ \ 0.05\ \ \textbf{0.01} \\
 \hline
 \end{tabular}
-\caption{Valores evaluados para los parámetros de PBIL}
+\caption[Valores evaluados para los parámetros de PBIL]{Valores evaluados para los parámetros de PBIL.\\En negrita los valores fijados por cada parámetro.}
 \label{table-ap-pbil}
 \end{table}
 
-De los resultados obtenidos y presentados en la figura \ref{fig-ap-pbil}, se derivan las siguientes conclusiones:
+De los resultados obtenidos (ver figura \ref{fig-ap-pbil}), se derivan las siguientes conclusiones:
 \begin{itemize}
 \item El tamaño de la población y el número de iteraciones influyen significativamente en la disminución del error de validación. Aplicando 1000 iteraciones, los mejores resultados son obtenidos con poblaciones de tamaño 40.
-\item Existe una relación importante entre los valores de \emph{Learning Rate} y el \emph{Negative Learning Rate}. Los mejores resultados se obtienen de la combinación de 0.1 para \emph{Learning Rate} y 0.01 para \emph{Negative Learning Rate}.
+\item Existe una relación importante entre los valores de \emph{Learning Rate} y el \emph{Negative Learning Rate}. La combinación de 0.1 y 0.01 respectivamente, prueba ser la mejor alternativa. Esta conclusión se ratifica al evaluar la interacción entre ambos parámetros y el número de iteraciones.
 \end{itemize}
 
 \begin{figure}[h!]
@@ -130,7 +134,7 @@ De los resultados obtenidos y presentados en la figura \ref{fig-ap-pbil}, se der
 
 \section{Entonación de PSO}
 
-En la tabla \ref{table-ap-pso} se describen los valores utilizados para evaluar el impacto de algunos de los parámetros de los que depende PSO. El resto de los parámetros fueron fijados con la finalidad de limitar el impacto en tiempo sobre el algoritmo. PSO se vio especialmente afectado en tiempo de ejecución por el número de iteraciones, por lo que se decidió fijar este parámetro en 1000 al igual que el resto de las metaheurísticas. Adicionalmente, debido a que el número de soluciones generadas por PSO en cada iteración es igual al número de partículas por el tamaño de la población, se fijó este último parámetro para evitar un aumento considerable en el tiempo de ejecución. Las constantes $c1$ y $c2$ son toman un valor igual a $\frac{\texttt{vmax}}{2}$ pues no tiene sentido usar valores más altos dado que el vector de velocidad está acotado por $\texttt{vmax}$ (velocidad máxima).
+En la tabla \ref{table-ap-pso} se describen los valores utilizados para evaluar el impacto de algunos de los parámetros de los que depende PSO. El resto de los parámetros fueron fijados con la finalidad de limitar el impacto en tiempo sobre el algoritmo. PSO se vio especialmente afectado en tiempo de ejecución por el número de iteraciones, por lo que se decidió fijar este parámetro en 1000 al igual que el resto de las metaheurísticas. Adicionalmente, debido a que el número de soluciones generadas por PSO en cada iteración es igual al número de partículas por el tamaño de la población, se fijó este último parámetro en 5 individuos para evitar un aumento considerable en el tiempo de ejecución y evaluar el impacto del aumento de las partículas. Por último, las constantes $c1$ y $c2$ se fijan en función de la velocidad máxima (\emph{i.e.} $\frac{\texttt{vmax}}{2}$) pues no tiene sentido usar valores más altos dado que el vector de velocidad está acotado por $\texttt{vmax}$.
 
 \begin{table}[h!]
 \centering
@@ -140,11 +144,11 @@ En la tabla \ref{table-ap-pso} se describen los valores utilizados para evaluar 
 \hline
 \hline
 Partículas  & \textbf{5}\ \ 10\ \ 15 \\
-Inercia     & \textbf{0.9}\ \ 0.6\ \ 0.3 \\
-Velocidad Máxima & 0.5\ \ \textbf{0.2}\ \ 0.05 \\
+Inercia ($w$) & \textbf{0.9}\ \ 0.6\ \ 0.3 \\
+Velocidad Máxima (\texttt{vmax}) & 0.5\ \ \textbf{0.2}\ \ 0.05 \\
 \hline
 \end{tabular}
-\caption{Valores evaluados para los parámetros de PSO}
+\caption[Valores evaluados para los parámetros de PSO]{Valores evaluados para los parámetros de PSO.\\En negrita los valores fijados por cada parámetro.}
 \label{table-ap-pso}
 \end{table}
 
