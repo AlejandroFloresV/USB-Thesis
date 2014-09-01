@@ -1,5 +1,5 @@
 \newcommand{\etalchar}[1]{$^{#1}$}
-\begin{thebibliography}{DGKL94}
+\begin{thebibliography}{GDCH12}
 
 \bibitem[AFL{\etalchar{+}}10]{alcala2010keel}
 J~Alcal{\'a}, A~Fern{\'a}ndez, J~Luengo, J~Derrac, S~Garc{\'\i}a,
@@ -130,6 +130,13 @@ Salvador Garc{\'\i}a, Jos{\'e}~Ram{\'o}n Cano, and Francisco Herrera.
 \newblock A memetic algorithm for evolutionary prototype selection: A scaling
   up approach.
 \newblock {\em Pattern Recognition}, 41(8):2693--2709, 2008.
+
+\bibitem[GDCH12]{Garcia:2012:PSN:2122272.2122582}
+Salvador Garcia, Joaquin Derrac, Jose Cano, and Francisco Herrera.
+\newblock Prototype selection for nearest neighbor classification: Taxonomy and
+  empirical study.
+\newblock {\em IEEE Trans. Pattern Anal. Mach. Intell.}, 34(3):417--435, March
+  2012.
 
 \bibitem[GK14]{DBLP:journals/corr/GottliebK14}
 Lee-Ad Gottlieb and Aryeh Kontorovich.

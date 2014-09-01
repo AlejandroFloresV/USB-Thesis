@@ -4,9 +4,9 @@
 
 \section{Descripción general}
 
-Las metaheurísticas son métodos estocásticos de búsqueda de propósito general sobre espacios combinatorios. Son usados generalmente para tratar problemas de optimización combinatoria, donde su complejidad hace imposible evaluar todas las soluciones factibles en un tiempo razonable. Estos algoritmos son capaces de conseguir ``buenas'' soluciones a un problema en un período de tiempo mucho menor. Sin embargo, para muchos problemas la complejidad de estos algoritmos sigue siendo un factor prohibitivo, debido al uso de funciones ``costosas'' para la evaluación de soluciones intermedias.
+Las metaheurísticas son métodos estocásticos de búsqueda de propósito general sobre espacios combinatorios. Son usados generalmente para tratar problemas de optimización combinatoria, donde su complejidad hace imposible evaluar todas las soluciones factibles en un tiempo razonable. Estos algoritmos son capaces de conseguir ``buenas'' soluciones a un problema en períodos de tiempo aceptables. Sin embargo, para muchos problemas la complejidad de estos algoritmos sigue siendo un factor prohibitivo, debido al uso de funciones ``costosas'' para la evaluación de soluciones intermedias.
 
-La idea es desarrollar algoritmos que recorran solo una fracción del espacio de soluciones, y que sean capaces de encontrar soluciones óptimas o casi óptimas al problema en cuestión. Para lograrlo, las metaheurísticas combinan procesos de \emph{diversificación} e \emph{intensificación} (o \emph{exploración} y \emph{explotación} respectivamente) \cite{Yang:2008:NMA:1628847}. La fase de \emph{diversificación} implica la generación de soluciones distintas con el objeto de explorar el espacio de búsqueda, mientras que la fase de \emph{intensificación} se refiere al mejoramiento de soluciones (conseguir óptimos locales) mediante el uso de métodos de búsqueda local. La selección de las mejores soluciones asegura la convergencia a soluciones óptimas, mientras que la exploración aleatoria de soluciones evita que el algoritmo quede ``atrapado'' en óptimos locales. La combinación en el uso de ambos procesos hace posible conseguir buenas soluciones al problema, sin la necesidad de recorrer el espacio de búsqueda completo.
+La idea es desarrollar algoritmos que recorran solo una fracción del espacio de soluciones, y que sean capaces de encontrar buenas soluciones al problema en cuestión. Para lograrlo, las metaheurísticas combinan procesos de \emph{diversificación} e \emph{intensificación} (o \emph{exploración} y \emph{explotación} respectivamente) \cite{Yang:2008:NMA:1628847}. La fase de \emph{diversificación} implica la generación de soluciones distintas con el objeto de explorar el espacio de búsqueda, mientras que la fase de \emph{intensificación} se refiere al mejoramiento de soluciones (conseguir óptimos locales) mediante el uso de métodos de búsqueda local. La selección de las mejores soluciones asegura la convergencia a soluciones óptimas, mientras que la exploración aleatoria de soluciones evita que el algoritmo quede ``atrapado'' en óptimos locales. La combinación en el uso de ambos procesos hace posible conseguir buenas soluciones al problema, sin la necesidad de recorrer el espacio de búsqueda completo.
 
 Cada metaheurística está caracterizada por las estrategias que usa para cada fase, así como el orden y la frecuencia en que las aplica. Esto permite clasificarlas en función de su similitud. En este sentido, a continuación se describe un conjunto de metaheurísticas caracterizadas por tener a la naturaleza como fuente de inspiración.
 
@@ -22,34 +22,34 @@ En particular, los enfoques más comunes en la literatura sobre metaheurísticas
 
 \subsection{Algoritmos Evolutivos}
 
-Los Algoritmos Evolutivos (\emph{AE}) son metaheurísticas basadas en procesos de evolución biológica con el objetivo de explorar en amplitud espacios de solución con distribución desconocida. Con el fin de replicar los procesos evolutivos, los \emph{AE} mantienen un conjunto de soluciones candidatas al problema (una \emph{población} de \emph{cromosomas}/\emph{individuos}), que modifican iterativamente apoyándose en el uso de operadores de \emph{mutación}, \emph{recombinación} y/o \emph{selección}.
+Los Algoritmos Evolutivos (AE) son metaheurísticas basadas en procesos de evolución biológica con el objetivo de explorar en amplitud espacios de solución con distribución desconocida. Con el fin de replicar los procesos evolutivos, los AE mantienen un conjunto de soluciones candidatas al problema (una \emph{población} de \emph{cromosomas}/\emph{individuos}), que modifican iterativamente apoyándose en el uso de operadores de \emph{mutación}, \emph{recombinación} y/o \emph{selección}.
 
-Los \emph{AE} codifican cada cromosoma como una cadena de genes de tamaño $l$ (análogo a la estructura del ADN), donde cada gen representa una parte de la solución al problema en cuestión. A partir de esta representación, los \emph{AE} definen un conjunto de operadores que cumplen la función de las estrategias de \emph{exploración} y \emph{explotación}:
+Los AE codifican cada cromosoma como una cadena de genes de tamaño $l$ (análogo a la estructura del ADN), donde cada gen representa una parte de la solución al problema en cuestión. A partir de esta representación, los AE definen un conjunto de operadores que cumplen la función de las estrategias de \emph{exploración} y \emph{explotación}:
 
 \begin{itemize}
 \item \emph{Mutación}: Modifica los genes de soluciones intermedias con la finalidad de explorar el espacio de soluciones e introducir nueva información a la población. Simula la variabilidad en las poblaciones, fenómeno clave para la aparición de nuevos genes que aumenten la posibilidad de supervivencia.
-\item \emph{Recombinación}/\emph{Crossover}: Permite el intercambio de información entre individuos de la población. Simula la reproducción entre individuos, necesaria para la transmisión de genes relevantes a las siguientes generaciones.
+\item \emph{Recombinación}/\emph{Cruce}: Permite el intercambio de información entre individuos de la población. Simula la reproducción entre individuos, necesaria para la transmisión de genes relevantes a las siguientes generaciones.
 \item \emph{Selección}: Las estrategias de selección permiten definir aquellos individuos que participarán en la fase de reproducción, y por ende, los genes que pasarán a la siguiente generación. Esto simula el proceso de selección natural en el que sobreviven los individuos mejor adaptados al ambiente.
 \end{itemize}
 
-En la literatura se han desarrollado diferentes esquemas que definen el uso de estos operadores. Los \emph{AE} más ``tradicionales'' son conocidos como \emph{Algoritmos Genéticos} (\emph{AG}) \cite{holland1975adaptation}, que suponen la aplicación más directa de los conceptos del proceso evolutivo. Sin embargo, dentro de la clase de \emph{AE} existe otro grupo de algoritmos que aplican dichos conceptos de forma diferente. La clase de \emph{Algoritmos de Estimación de Distribución} (``\emph{Estimation of Distribution Algorithm}'' - EDA) aplican los operadores de \emph{mutación}, \emph{recombinación} y \emph{selección} sobre una población de soluciones implícita en un modelo de distribución probabilístico.
+En la literatura se han desarrollado diferentes esquemas que definen el uso de estos operadores. Los AE más ``tradicionales'' son conocidos como \emph{Algoritmos Genéticos} (AG) \cite{holland1975adaptation}, que suponen la aplicación más directa de los conceptos del proceso evolutivo. Sin embargo, dentro de la clase de AE existe otro grupo de algoritmos que aplican dichos conceptos de forma diferente. La clase de \emph{Algoritmos de Estimación de Distribución} (\emph{Estimation of Distribution Algorithm} o EDA) aplican los operadores de \emph{mutación}, \emph{recombinación} y \emph{selección} sobre una población de soluciones implícita en un modelo de distribución probabilístico.
 
-A continuación se describen cuatro algoritmos pertenecientes a la clase de \emph{AE}: GGA, SGA y CHC, variantes del grupo de \emph{AG}, y PBIL, perteneciente a los \emph{EDA}.
+A continuación se describen cuatro algoritmos pertenecientes a la clase de AE: GGA, SGA y CHC, variantes del grupo de AG, y PBIL, perteneciente a los EDA.
 
-\subsubsection{Generational Genetic Algorithm (GGA)}
+\subsubsection{Algoritmo Genético Generacional (GGA)}
 
-GGA es el esquema ``tradicional'' de aplicación de los \emph{AG} \cite{back1996evolutionary,Muhlenbein91evolutionin}. Mantiene una población de individuos que evolucionan durante un número de iteraciones. Su principal característica es que en cada iteración se genera una nueva población, \emph{i.e.} un proceso de evolución \emph{generacional}.
+GGA (\emph{Generational Genetic Algorithm}) es el esquema ``tradicional'' de aplicación de los AG \cite{back1996evolutionary,Muhlenbein91evolutionin}. Mantiene una población de individuos que evolucionan durante un número de iteraciones. Su principal característica es que en cada iteración se genera una nueva población, \emph{i.e.} un proceso de evolución \emph{generacional}.
 
 En cada iteración el proceso evolutivo consiste en la creación de una nueva población de tamaño $\texttt{pop}$ mediante:
 \begin{inparaenum}[\itshape a\upshape)]
 \item la selección de los individuos para el proceso de reproducción (\emph{padres}),
-\item la recombinación (con probabilidad $\texttt{cp}$) de pares de individuos \emph{padres} usando una estrategia particular de cruce/\emph{crossover}, y
+\item la recombinación (con probabilidad $\texttt{cp}$) de pares de individuos \emph{padres} usando una estrategia particular de cruce, y
 \item la mutación de los individuos de la nueva población (llamados \emph{descendencia}), usando una probabilidad de mutación de cada gen igual a $\texttt{mp}$.
 \end{inparaenum}
 Ver el algoritmo \ref{gga-alg}.
 
 \begin{algorithm}
-\caption{Generational Genetic Algorithm}
+\caption{Algoritmo Genético Generacional}
 \label{gga-alg}
 \begin{algorithmic}[1]
 
@@ -79,9 +79,9 @@ Ver el algoritmo \ref{gga-alg}.
 \end{algorithmic}
 \end{algorithm}
 
-\subsubsection{Steady-State Genetic Algorithm (SGA)}
+\subsubsection{Algoritmo Genético Estacionario (SGA)}
 
-Descrito por \emph{Whitley et al.} \cite{whitley1988genitor}, SGA es una modificación del esquema general de \emph{AG} que sigue una estrategia reproductiva no generacional. SGA comienza con una población de tamaño $\texttt{pop}$, y en cada iteración se producen un máximo de dos nuevos individuos (no una nueva población).
+Descrito por \emph{Whitley et al.} \cite{whitley1988genitor}, SGA (\emph{Steady-State Genetic Algorithm}) es una modificación del esquema general de AG que sigue una estrategia reproductiva no generacional. SGA comienza con una población de tamaño $\texttt{pop}$, y en cada iteración se producen un máximo de dos nuevos individuos (no una nueva población).
 
 En cada iteración
 \begin{inparaenum}[\itshape a\upshape)]
@@ -93,7 +93,7 @@ En cada iteración
 Ver el algoritmo \ref{sga-alg}.
 
 \begin{algorithm}
-\caption{Steady-State Genetic Algorithm}
+\caption{Algoritmo Genético Estacionario}
 \label{sga-alg}
 \begin{algorithmic}[1]
 
@@ -119,11 +119,13 @@ Ver el algoritmo \ref{sga-alg}.
 \end{algorithmic}
 \end{algorithm}
 
+Frente a un esquema generacional como el descrito por GGA, el tiempo de ejecución reportado por SGA es mucho menor. Esto se debe a que en cada iteración, SGA genera un máximo de 2 nuevos individuos en vez de una población completamente nueva.
+
 \subsubsection{CHC Adaptive Search Algorithm}
 
 CHC \cite{eshelman1990chc} se basa en el esquema de evolución generacional aplicado por GGA: mantiene una población de individuos de tamaño fijo ($\texttt{pop}$), generando una nueva población en cada iteración. Sin embargo, en cada iteración CHC aplica una estrategia de reemplazo ``elitista'', donde sobreviven los mejores individuos entre la población actual y la descendencia producida.
 
-La fase de reproducción aplicada por CHC tiene dos particularidades. En primer lugar, implementa un operador de recombinación uniforme media llamado HUX (``\emph{Half Uniform Crossover}''), que intercambia la mitad de los genes que difieren entre los dos padres de forma aleatoria. Adicionalmente, CHC emplea ``prevención de incesto'': antes de realizar el cruce usando HUX, calcula la \emph{distancia de Hamming} entre ambos padres; si dicha distancia es mayor a cierto umbral (inicialmente $l/4$, donde $l$ es la longitud de los cromosomas), se realiza el cruce. En caso de no generarse ninguna descendencia durante una iteración particular, se disminuye el umbral en 1.
+La fase de reproducción aplicada por CHC tiene dos particularidades. En primer lugar, implementa un operador de recombinación uniforme media llamado HUX (\emph{Half Uniform Crossover}) \cite{eshelman1990chc}, que intercambia la mitad de los genes que difieren entre los dos padres de forma aleatoria. Adicionalmente, CHC emplea ``prevención de incesto'': antes de realizar el cruce usando HUX, calcula la \emph{distancia de Hamming} entre ambos padres; si dicha distancia es mayor a cierto umbral (inicialmente $l/4$, donde $l$ es la longitud de los cromosomas), se realiza el cruce. En caso de no generarse ninguna descendencia durante una iteración particular, se disminuye el umbral en 1.
 
 Durante el proceso de evolución de CHC no se aplica el operador de mutación: cuando el umbral de prevención de incesto llega a cero se considera que la población convergió, y comienza un proceso de repoblación en el que se usa la mejor solución encontrada hasta el momento. Se modifican hasta $35\%$ de sus genes de forma aleatoria para generar los $\texttt{pop}-1$ individuos restantes de la nueva población, y luego continuar el proceso evolutivo.
 
@@ -220,7 +222,7 @@ Ver algoritmo \ref{pbil-alg}.
 
 \subsection{Inteligencia de Enjambre}
 
-\emph{Inteligencia de Enjambre} \cite{Bonabeau:1999:SIN:328320} (\emph{IE}) es un paradigma emergente entre los sistemas de cómputo bio-inspirados. Surge como una extensión de los \emph{AE}, pero no se basa en la adaptación genética de poblaciones, sino en el comportamiento colectivo de grupos de organismos. Las estrategias de \emph{IE} exhiben patrones de búsqueda descentralizada y auto-organizada, mediante la simulación de la inteligencia colectiva de grupos de ``agentes'' sencillos.
+\emph{Inteligencia de Enjambre} \cite{Bonabeau:1999:SIN:328320} (IE) es un paradigma emergente entre los sistemas de cómputo bio-inspirados. Surge como una extensión de los AE, pero no se basa en la adaptación genética de poblaciones, sino en el comportamiento colectivo de grupos de organismos. Las estrategias de IE exhiben patrones de búsqueda descentralizada y auto-organizada, mediante la simulación de la inteligencia colectiva de grupos de ``agentes'' sencillos.
 
 Durante la última década se han desarrollado numerosos enfoques basados en la explotación de inteligencia colectiva, inspirados en el comportamiento de colonias de hormigas, abejas, luciérnagas, etc. Uno de los más estudiados se conoce como PSO, inspirado en el vuelo de grupos de aves.
 

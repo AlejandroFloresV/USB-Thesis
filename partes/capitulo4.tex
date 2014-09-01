@@ -2,16 +2,16 @@
 \label{capitulo4}
 \lhead{Capítulo 4. \emph{Evaluación Experimental}}
 
-Este capítulo consiste en la descripción de la metodología usada durante la evaluación de los métodos introducidos en los capítulos anteriores, así como el análisis de los resultados obtenidos de dicha evaluación. El objetivo de este estudio radica en la comparación empírica de cinco metaheurísticas (\emph{i.e.} GGA, SGA, CHC, PBIL y PSO) adaptadas para encontrar soluciones al problema de selección de instancias. Adicionalmente, se pretende estudiar el impacto de la aplicación de estrategias alternativas de generación de soluciones iniciales: disminuyendo la probabilidad de aparición de cada bit (de $50\%$ a $5\%$) y modificando dichas probabilidades en función de los subconjuntos de instancias generados por diferentes algoritmos heurísticos (\emph{i.e.} CNN, NEHS, ClosestNE y FarthestNE).
+Este capítulo consiste en la descripción del diseño experimental empleado durante la evaluación de los métodos introducidos en los capítulos anteriores, así como el análisis de los resultados obtenidos de dicha evaluación. El objetivo de este estudio radica en la comparación empírica de cinco metaheurísticas (\emph{i.e.} GGA, SGA, CHC, PBIL y PSO) adaptadas para encontrar soluciones al problema de selección de instancias. Adicionalmente, se pretende estudiar el impacto de la aplicación de estrategias alternativas de generación de soluciones iniciales: disminuyendo la probabilidad de aparición de cada bit (de $50\%$ a $5\%$) y modificando dichas probabilidades en función de los subconjuntos de instancias generados por diferentes algoritmos heurísticos (\emph{i.e.} CNN, NEHS, Closest NE y Farthest NE).
 
 \section{Diseño Experimental}
 
-La metodología seguida durante la evaluación experimental permite establecer la efectividad de las metaheurísticas descritas en función de
+El diseño experimental aplicado permite establecer la efectividad de las metaheurísticas descritas en función de
 \begin{inparaenum}[\itshape a\upshape)]
 \item la reducción del conjunto de instancias usado para el entrenamiento del clasificador (en este caso un clasificador 1-NN), y
-\item la precisión de dicho clasificador --una vez entrenado-- al clasificar instancias previamente desconocidas.
+\item la precisión de dicho clasificador --una vez entrenado-- al clasificar instancias desconocidas.
 \end{inparaenum}
-La metodología experimental debe permitir la generalización del comportamiento de las diferentes metaheurísticas, así como las estrategias de generación de soluciones iniciales, con la finalidad de comparar los resultados obtenidos y establecer los métodos más efectivos frente al problema de selección de instancias.
+La metodología experimental debe permitir la generalización del comportamiento de las metaheurísticas, así como las estrategias de generación de soluciones iniciales, con la finalidad de comparar los resultados obtenidos y establecer los métodos más efectivos frente al problema de selección de instancias.
 
 \subsection{Conjuntos de datos}
 \label{data-section}
@@ -81,7 +81,8 @@ Thyroid      &  7200 & 21 &  3 \\
 
 Los conjuntos de datos considerados en la sección anterior son particionados usando la estrategia de validación cruzada en 10 grupos (10-\emph{fold cross-validation}). El conjunto inicial de instancias $T$ es dividido en 10 subconjuntos disjuntos de igual tamaño $T_1, T_2, \dots T_{10}$. Cada conjunto $T_i$ mantiene la proporción de distribución de las clases del conjunto original $T$. En función de esta partición, se definen los pares de conjuntos $(T'_i, T_i)$, con $i = 1 \dots 10$, donde $T'_i = T \setminus T_i$.
 
-El conjunto $T'_i$, también conocido como el conjunto de ``entrenamiento'', es usado por las metaheurísticas durante el proceso de búsqueda para evaluar soluciones intermedias; en vez de usar $T$, se usa el conjunto $T'_i$ como el conjunto de instancias inicial. Las instancias restantes (pertenecientes al conjunto $T_i$) son usadas como conjunto de ``validación'', \emph{i.e.} la mejor solución encontrada durante la ejecución, es usada para clasificar las instancias previamente desconocidas de $T_i$.
+El conjunto $T'_i$, también conocido como el conjunto de ``entrenamiento'', es usado por las metaheurísticas durante el proceso de búsqueda para evaluar soluciones intermedias, en vez de usar $T$. %, se usa el conjunto $T'_i$ como el conjunto de instancias inicial.
+Las instancias restantes (pertenecientes al conjunto $T_i$) son usadas como conjunto de ``validación'', \emph{i.e.} la mejor solución encontrada durante la ejecución, es usada para clasificar las instancias desconocidas de $T_i$.
 
 En base a esta estrategia, se definen los criterios de comparación empleados en el presente trabajo. Dada una solución $R \subseteq T'_i$ al problema de SI encontrada por una metaheurística, se considera:
 
@@ -96,12 +97,12 @@ El tamaño de $R$ en función de $T'_i$ (\emph{i.e.} $\frac{100 \vert R \vert}{\
 Segundos empleados por el algoritmo durante la búsqueda.
 \end{itemize} 
 
-Cada metaheurística es evaluada usando los 10 pares de conjuntos $(T'_i, T_i)$. Por cada par de conjunto entrenamiento-validación se realizan 3 repeticiones. \emph{i.e.} un total de 30 ejecuciones de una metaheurística para un conjunto de datos y un tipo de inicialización particular. Las ejecuciones fueron realizadas de manera independiente en instancias \texttt{c3.2xlarge} de \emph{Amazon EC2}, que disponen de 8 CPUs Intel Xeon E5-2680 v2 (Ivy Bridge), 15GB de memoria RAM y 80GB de disco duro de estado sólido. Todos los experimentos se realizaron bajo el sistema operativo Amazon Linux AMI 2014.03.2 y utilizando GCC 4.8.2.
+Cada metaheurística es evaluada usando los 10 pares de conjuntos $(T'_i, T_i)$. Por cada par de conjunto entrenamiento-validación se realizan 3 repeticiones. \emph{i.e.} un total de 30 ejecuciones de una metaheurística para un conjunto de datos y un tipo de inicialización particular. Las ejecuciones fueron realizadas de manera independiente en máquinas de tipo \texttt{c3.2xlarge} de \emph{Amazon EC2}, que disponen de 8 CPUs Intel Xeon E5-2680 v2 (Ivy Bridge), 15GB de memoria RAM y 80GB de disco duro de estado sólido. Todos los experimentos se realizaron bajo el sistema operativo Amazon Linux AMI 2014.03.2 y utilizando GCC 4.8.2.
 
 \subsection{Parámetros}
 \label{sec-parametros}
 
-Cada metaheurística tiene un conjunto de parámetros que regulan el proceso de búsqueda sobre el espacio de posibles soluciones. Los valores de cada parámetro y la interacción entre ellos, determinan el comportamiento del algoritmo y su capacidad para encontrar buenas soluciones. Sin embargo, los valores que indican el buen comportamiento de una metaheurística, son altamente dependientes del problema en general, e incluso de la instancia particular que se pretenda evaluar. Esto lo convierte en un proceso complejo, que a menudo conlleva a un diseño factorial con el fin de estudiar la influencia de los parámetros y sus interacciones en asegurar la calidad de las soluciones obtenidas.
+Cada metaheurística depende de un conjunto de parámetros que regulan el proceso de búsqueda sobre el espacio de posibles soluciones. El valor de cada parámetro y la interacción entre ellos, determinan el comportamiento del algoritmo y su capacidad para encontrar buenas soluciones. Sin embargo, los valores que indican el buen comportamiento de una metaheurística, son altamente dependientes del problema en general, e incluso de la instancia particular que se pretenda evaluar. Esto lo convierte en un proceso complejo, que a menudo conlleva a un diseño factorial con el fin de estudiar la influencia de los parámetros y sus interacciones en asegurar la calidad de las soluciones obtenidas.
 
 En el presente trabajo se realizó la entonación de las metaheurísticas seleccionadas en los capítulos anteriores. Los resultados obtenidos de este proceso se describen en el Apéndice \ref{apendiceA}. En la tabla \ref{table-parameters} se presentan los parámetros seleccionados para cada metaheurística.
 
@@ -134,11 +135,13 @@ c2                 &     - &     - &     - &     - &   0.1 \\
 
 \subsection{Tablas de resultados}
 
-Con la finalidad de analizar los resultados de la sección \ref{sec-res}, e identificar las mejores estrategias de inicialización o las mejores metaheurísticas (según corresponda), se presentan dos estilos de tablas que muestran información complementaria.
+En la sección \ref{sec-res} son presentados y analizados los resultados obtenidos del proceso experimental. Las tablas de resultados deben permitir identificar las mejores estrategias de inicialización o las mejores metaheurísticas, según corresponda.
 
-En primer lugar, se presenta una tabla con los resultados promedio de cada metaheurística o inicialización evaluada, en función de los 4 criterios de comparación descritos en la subsección \ref{sec-parametros}. Al comparar diferentes estrategias de inicialización, se promedian las métricas obtenidas por las 5 metaheurísticas frente a los conjuntos de datos que correspondan; por ejemplo, los resultados de una inicialización usando $\delta = 50\%$ son los promedios de los resultados de GGA, SGA, CHC, PBIL y PSO al usar los conjuntos de datos grandes. Similarmente, al comparar entre metaheurísticas se promedian los resultados obtenidos por un algoritmo particular (por ejemplo, PBIL) para los conjuntos de datos que correspondan.
+En primer lugar, se presenta una tabla con los resultados promedio de cada metaheurística, en función de los 4 criterios de comparación descritos en la subsección \ref{sec-parametros}. Para una metaheurística particular, se promedian sus resultados para los conjuntos de datos que correspondan.
 
-Sin embargo, al promediar los resultados puede perderse información relevante. El efecto de una estrategia de inicialización puede variar para diferentes algoritmos, y el comportamiento de una metaheurística depende a su vez del conjunto de datos que se use para evaluarla. Por esta razón, se introducen las tablas de ranking, que presentan información adicional que permite comparar las inicializaciones o metaheurísticas bajo un mismo contexto. En función de una métrica particular, las estrategias de inicialización son ordenadas en función de sus resultados por cada algoritmo en cada conjunto de datos, y las metaheurísticas son ordenadas en función a sus resultados en cada conjunto de datos. Las tablas de ranking muestran el ranking promedio de cada inicialización/metaheurística y el número de veces que logró el mejor resultado.
+Sin embargo, al promediar los resultados puede perderse información relevante, puesto que el comportamiento de una metaheurística depende del conjunto de datos que se use para evaluarla. Por esta razón, se introducen las tablas de ranking, que presentan información adicional que permite comparar las metaheurísticas bajo un mismo contexto. Por cada conjunto de datos, las metaheurísticas son rankeadas de acuerdo a sus resultados en una métrica particular. A partir del ordenamiento en cada conjunto de datos, la tabla muestra el ranking promedio de cada metaheurística y el número de veces que logró el mejor resultado. Estos valores son calculados usando las métricas de tamaño, error de validación y la combinación lineal de ambos.
+
+Ambas tablas son usadas para presentar los resultados por cada estrategia de inicialización. Para la primera tabla, se promedian los resultados no solo por conjunto de datos, sino también por metaheurística. Para las tablas de ranking ocurre lo mismo: los ordenamientos son realizados por cada combinación de metaheurística y conjunto de datos evaluados.
 
 \section{Resultados}
 \label{sec-res}
@@ -148,7 +151,7 @@ En esta sección se presentan los resultados obtenidos durante la evaluación ex
 \item evaluando el impacto de disminuir la probabilidad de aparición de bits, y
 \item modificando la distribución de dicha probabilidad a lo largo de la cadena de bits, de una distribución uniforme a una distribución personalizada basada en los conjuntos seleccionados por algoritmos heurísticos al problema de SI.
 \end{inparaenum}
-Una vez seleccionada la mejor estrategia de inicialización, en la sección \ref{sec-comp-meta} se comparan los resultados obtenidos por las 5 metaheurísticas descritas. Se concluye con un análisis estadístico para determinar (en caso que existan) aquellas metaheurísticas que se comporten consistentemente mejor que el resto.
+Una vez seleccionada la mejor estrategia de inicialización, en la sección \ref{sec-comp-meta} se comparan los resultados obtenidos por las 5 metaheurísticas descritas. Se concluye con un estudio que busca determinar (en caso que existan) aquellas metaheurísticas que se comporten consistentemente mejor que el resto.
 
 \subsection{Comparación entre inicializaciones}
 \label{sec-comp-inits}
@@ -244,9 +247,9 @@ ClosestNE  & 932.75 & 5.56 & 7.21 & 8.95 \\
 \label{table-inits}
 \end{table}
 
-En la tabla \ref{table-inits} se presentan los resultados promedio del usar una distribución uniforme y distribuciones basadas en CNN, NEHS, Closest NE y Farthest NE, para la generación de soluciones iniciales en las 5 metaheuristicas descritas. Los datos en tiempo de ejecución son previsibles, debido al tiempo añadido de ejecución de los algoritmos heurísticos. Sin embargo, contrario a lo esperado, estas modificaciones no mejoran significativamente los porcentajes de error obtenidos mediante una distribución uniforme. Más aún, CNN, Closest NE y Farthest NE empeoran los resultados en todos los aspectos. Solo NEHS reporta resultados alentadores, en el que mejora el error de entrenamiento e iguala el error de validación frente a una distribución uniforme.
+En la tabla \ref{table-inits} se presentan los resultados promedio del usar una distribución uniforme y distribuciones basadas en CNN, NEHS, Closest NE y Farthest NE, para la generación de soluciones iniciales en las 5 metaheuristicas descritas. Los datos en tiempo de ejecución son previsibles, debido al tiempo añadido de encontrar soluciones mediante el uso de estos algoritmos heurísticos. Sin embargo, contrario a lo esperado, estas modificaciones no mejoran significativamente los porcentajes de error obtenidos mediante una distribución uniforme. Más aún, CNN, Closest NE y Farthest NE empeoran los resultados en todos los aspectos. Solo NEHS reporta resultados alentadores, en el que mejora el error de entrenamiento e iguala el error de validación frente a una distribución uniforme.
 
-La figura \ref{fig-inits} confirma los aspectos señalados: el comportamiento de inicializaciones basadas en CNN, Closest NE y Farthest NE difieren significativamente del comportamiento de aquellas basadas en NEHS o una distribución uniforme. Estas últimas (NEHS y Uniforme) muestran un comportamiento similar en función de ambos objetivos del problema.% Una prueba de rangos con signo de \emph{Wilcoxon} \cite{wilcoxon1945individual}, con un nivel de significancia del $5\%$, no encuentra diferencias significativas entre los resultados que usan distribuciones uniforme y basada en NEHS, en términos de tamaño ($V = 55$, \emph{p}-valor $= 0.804$) ni error de validación ($V = 64$, \emph{p}-valor $= 0.8469$).
+La figura \ref{fig-inits} confirma los aspectos señalados: el comportamiento de inicializaciones basadas en CNN, Closest NE y Farthest NE difieren significativamente del comportamiento de aquellas basadas en NEHS o una distribución uniforme. Estas últimas (NEHS y Uniforme) muestran un comportamiento similar en función de ambos objetivos del problema.
 
 \begin{figure}[h!]
 \centering
@@ -416,7 +419,7 @@ PSO  & 2208.22 & 4.80 & 7.76 & 8.43 \\
 \label{res-big}
 \end{table}
 
-En función del tamaño de los conjuntos seleccionados, los resultados de PBIL dominan con creces los del resto de las metaheurísticas. Adicionalmente, los mejores resultados en términos del error de clasificación (ambos) son reportados por PBIL, conclusión respaldada por la tabla de rankings \ref{res-big-rank}. Sin embargo, los porcentajes de error logrados por SGA y GGA son competitivos frente a PBIL, lo cual se ve reflejado en los rankings promedio del error de validación y el ranking conjunto.
+En función del tamaño de los conjuntos seleccionados, los resultados de PBIL dominan los del resto de las metaheurísticas. Adicionalmente, los mejores resultados en términos del error de clasificación (ambos) son reportados por PBIL, conclusión respaldada por la tabla de rankings \ref{res-big-rank}. Sin embargo, los porcentajes de error logrados por SGA y GGA son competitivos frente a PBIL, lo cual se ve reflejado en los rankings promedio del error de validación y el ranking conjunto.
 
 \begin{table}[h!]
 \centering
@@ -440,7 +443,7 @@ PSO  & 4.66 & 0 & SGA  & 4.66 & 0 & PSO  & 4.33 & 0 \\
 \label{res-big-rank}
 \end{table}
 
-En el trabajo de \emph{Cano et al.} \cite{cano2003using} se utilizan estos conjuntos de datos (\emph{i.e.} \emph{Penbased}, \emph{Satimage} y \emph{Thyroid}) para seleccionar instancias usando GGA, SGA, CHC y PBIL. Esto abre la posibilidad de establecer comparaciones en términos del tamaño de los conjuntos seleccionados y el error de validación alcanzado. En la tabla \ref{res-big-cano} se muestran los resultados promedio obtenidos en el presente trabajo, junto con los datos publicados por \emph{Cano} para los conjuntos de datos mencionados.
+En el trabajo de \emph{Cano et al.} \cite{cano2003using} se utilizan estos conjuntos de datos (\emph{i.e.} \emph{Penbased}, \emph{Satimage} y \emph{Thyroid}) para encontrar soluciones al problema de SI usando GGA, SGA, CHC y PBIL. Esto abre la posibilidad de establecer comparaciones en términos del tamaño de las soluciones encontradas y el error de validación alcanzado. En la tabla \ref{res-big-cano} se muestran los resultados promedio obtenidos en el presente trabajo, junto con los datos publicados por \emph{Cano} para los conjuntos de datos mencionados.
 
 \begin{table}[h!]
 \centering
@@ -465,7 +468,7 @@ PBIL & \textbf{2.36} & 26.87 & 6.19 & \textbf{5.87} \\
 \label{res-big-cano}
 \end{table}
 
-Los datos indican que, si bien existe una diferencia menor en función del error de validación  a favor de las soluciones encontradas por \emph{Cano}, existen diferencias sustanciales en términos de la reducción del conjunto original. En promedio, las soluciones alcanzadas por nuestra implementación tienen un tamaño 5 veces menor que las encontradas por el trabajo de \emph{Cano}. Sin embargo, deben destacarse los excelentes resultados exhibidos por CHC en dicho estudio y en contraste con los resultados obtenidos en este trabajo. Esta diferencia ha de deberse a las modificaciones realizadas sobre la generación inicial de soluciones y el menor número de iteraciones y tamaño de población asignados a la búsqueda realizada por CHC.
+Los datos indican que, si bien existe una diferencia en función del error de validación  a favor de las soluciones encontradas por \emph{Cano}, existen diferencias significativas en términos de la reducción del conjunto original. En promedio, las soluciones alcanzadas por nuestra implementación tienen un tamaño 5 veces menor que las encontradas por el trabajo de \emph{Cano}. Sin embargo, deben destacarse los excelentes resultados exhibidos por CHC en dicho estudio y en contraste con los resultados obtenidos en este trabajo. Esta diferencia puede deberse a que en nuestro estudio se usa un menor número de iteraciones y de tamaño de población para la búsqueda realizada por CHC.
 
 \subsubsection{Análisis de los resultados}
 

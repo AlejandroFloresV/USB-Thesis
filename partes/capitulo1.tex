@@ -2,48 +2,48 @@
 \label{capitulo1}
 \lhead{Capítulo 1. \emph{Selección de Instancias}}
 
-Este capítulo describe el proceso de reducción de datos y sus diferentes estrategias. En particular, se hace especial énfasis en el problema de \emph{Selección de Instancias}: se define formalmente, se describen sus principales características, y se realiza un breve análisis del estado del arte.% Adicionalmente, se introducen un grupo de algoritmos evolutivos --para búsquedas de propósito general--, usados posteriormente para resolver el problema de \emph{Selección de Instancias}.
+Este capítulo describe el problema de \emph{Selección de Instancias} (SI), como estrategia de reducción de datos para la aplicación de técnicas de \emph{Minería de Datos} (MD). El problema es definido formalmente, se describen sus principales características y se realiza un breve análisis del estado del arte.
 
 \section{Reducción de Datos}
 
-Como parte del proceso de ``\emph{Knowledge Discovery in Databases}'' (\emph{KDD}), la fase de \emph{Preprocesamiento de los Datos} juega un rol fundamental para la aplicación efectiva de técnicas de \emph{Minería de Datos} (\emph{MD}). Una de las estrategias de mayor uso durante la fase de preprocesamiento es la de \emph{Reducción de Datos}.
+Como parte del proceso de \emph{Descubrimiento de Conocimiento en Bases de Datos} (Knowledge Discovery in Databases o \emph{KDD}), la fase de preprocesamiento de los datos juega un rol fundamental para la aplicación efectiva de técnicas de \emph{Minería de Datos} (\emph{MD}). Una de las estrategias de mayor uso durante la fase de preprocesamiento es la de \emph{reducción de datos}.
 
-El problema de \emph{Reducción de Datos} consiste en decidir qué datos deben ser utilizados durante la aplicación de algoritmos de \emph{MD} con el objetivo de construir modelos representativos de los datos originales. Dicha decisión debe basarse en la relevancia de los datos con respecto a los objetivos que se persiguen, o inclusive, por limitaciones técnicas. En términos prácticos, la importancia del problema de \emph{Reducción de Datos} radica en los siguientes factores:
+El problema de \emph{reducción de datos} consiste en decidir qué datos deben ser utilizados durante la aplicación de algoritmos de MD con el objetivo de construir modelos representativos de los datos originales. Dicha decisión debe basarse en la relevancia de los datos con respecto a los objetivos que se persiguen, o inclusive, por limitaciones técnicas. En términos prácticos, la importancia del problema de \emph{reducción de datos} radica en los siguientes factores:
 \begin{inparaenum}[\itshape a\upshape)]
 \item \textit{Tiempo y Espacio}: Mientras mayor sea el número de datos a utilizar, mayor será el espacio necesario para almacenarlos y el tiempo requerido para analizarlos. 
 \item \textit{Sensibilidad al ruido}: Al aumentar el número de instancias en el conjunto de datos, también lo hace la probabilidad de aparición de datos atípicos, inconsistentes o redundantes. Su eliminación se vuelve necesaria para evitar un impacto negativo en los modelos de representación creados a partir de los datos.
 \end{inparaenum}
 
-En función de estos criterios, y basados en la definición de los datos, se han formulado diferentes estrategias para llevar a cabo la fase de reducción. En los procesos de \emph{KDD}, el conjunto de datos está definido en función de un conjunto de clases $\Omega$ y un conjunto $T$ de $n$ observaciones de un evento, cada observación con $m$ mediciones, donde:\\
+En función de estos criterios, y basados en la definición de los datos, se han formulado diferentes estrategias para llevar a cabo la fase de reducción. En los procesos de KDD, un conjunto de datos está definido en función de un conjunto de clases $\Omega$ y un conjunto $T$ de $n$ observaciones de un evento, cada una con $m$ mediciones, donde:\\
 
 \begin{definicion}
-Una \textbf{instancia} $t_i$ (con $i = 1\dots n$) es una observación del evento; donde $t_i = (v_{i,1}, v_{i,2}, \dots, v_{i,m})$ es una tupla de $m$ valores/mediciones (un punto en un espacio $m$-dimensional). Adicionalmente, cada instancia en $t_i$ pertenece a la \emph{clase} $\omega_{t_i} \in \Omega$.\\
+Una \textbf{instancia} $t_i$ (con $i = 1\dots n$) es una observación del evento; donde $t_i = (v_{i,1}, v_{i,2}, \dots, v_{i,m})$ es una tupla de $m$ valores/mediciones (un punto en un espacio $m$-dimensional). Adicionalmente, cada instancia $t_i$ pertenece a la \emph{clase} $\omega_{t_i} \in \Omega$.\\
 \end{definicion}
 
 \begin{definicion}
 Un \textbf{atributo} $p_j$ (con $j = 1\dots m$) define el conjunto de mediciones \guillemotleft\emph{de un mismo tipo}\guillemotright\ para todas las observaciones, \emph{i.e.} $p_j = \left\{ v_{i,j} \mid i = 1\dots n \right\}$. Cada atributo puede presentarse en diferentes formatos: \emph{nominales}, \emph{discretos}, o \emph{continuos}.
 \end{definicion}
 
-A continuación se presentan las estrategias de \emph{Reducción de Datos} más estudiadas en la literatura:
+En la literatura se han definido varias estrategias para realizar el proceso de \emph{reducción de datos}. Entre ellas las más relevantes son:
 
 \begin{itemize}
 \item \textbf{Selección de Instancias}
-\cite{DBLP:journals/ai/BlumL97,Liu:2002:IIS:593433.593525}\\
-Busca la reducción del conjunto de datos mediante la selección de un subconjunto de instancias, de forma tal que dicho subconjunto conserve las capacidades de representación del conjunto original.\\
-La sección 1.2 está dedicada a describir esta estrategia en amplitud.
+\cite{DBLP:journals/ai/BlumL97,Liu:2002:IIS:593433.593525}: Busca la reducción del conjunto de datos mediante la selección de un subconjunto de instancias, de forma tal que dicho subconjunto conserve las capacidades de representación del conjunto original.
 \item \textbf{Selección de Atributos}
-\cite{DBLP:journals/ai/BlumL97, Liu:1998:FEC:551943}\\
-Esta técnica permite eliminar atributos del conjunto de datos original, que no contribuyen (o que influyen negativamente) a la construcción de un modelo representativo.
+\cite{DBLP:journals/ai/BlumL97, Liu:1998:FEC:551943}: Esta técnica permite eliminar atributos del conjunto de datos original, que no contribuyen (o que influyen negativamente) a la construcción de un modelo representativo.
 \item \textbf{Discretización de Atributos}
-\cite{DBLP:conf/ijcai/FayyadI93, Liu:2002:DET:593435.593535}\\
-Esta estrategia busca convertir atributos \emph{continuos} en \emph{discretos} (cuantificando el espacio de posibles valores), o disminuir el número de valores \emph{discretos} (combinando valores adyacentes).
+\cite{DBLP:conf/ijcai/FayyadI93, Liu:2002:DET:593435.593535}: Esta estrategia busca convertir atributos \emph{continuos} en \emph{discretos} (cuantificando el espacio de posibles valores), o disminuir el número de valores \emph{discretos} (combinando valores adyacentes).
 \end{itemize}
+
+Digamos que se tiene una base de datos de pacientes en un hospital, y se desea entrenar un clasificador para predecir la existencia de enfermedades cardíacas en nuevos pacientes. Por cada paciente se registra su nombre, sexo, edad, altura, si es fumador o no, cuántas horas de ejercicio hace por semana, si tiene historia de enfermedades cardícacas en su familia, etc. Un algoritmo de selección de atributos eliminaría el atributo del nombre del paciente, puesto que no contribuye en la predicción esperada, mientras que siguiendo alguna estrategia de discretización de atributos, el atributo de edad podría dividirse en intervalos de 15 o 20 años. Finalmente, un algoritmo de selección de instancias buscará eliminar de la base de datos a pacientes con información faltante, repetidos o con valores fuera de lo común.
+
+Este estudio se centra en el problema de \emph{Selección de Instancias}. En las siguientes secciones, el problema será definido formalmente y se describirán sus principales características.
 
 \section{Selección de Instancias}
 
-Dado un conjunto inicial de instancias $T = \left\{ t_i \mid i = 1 \dots n \right\}$ donde\linebreak $t_i = (v_{i,1}, v_{i,2}, \dots, v_{i,m})$ y $\omega_i \in \Omega$ (siendo $\Omega$ el conjunto de posibles clases para las instancias en $T$), el problema de \emph{Selección de Instancias} (SI) consiste en seleccionar un $R \subseteq T$ que mantenga (o mejore) la capacidad de representación del conjunto original $T$.
+Dado un conjunto inicial de instancias $T = \left\{ t_i \mid i = 1 \dots n \right\}$ y un conjunto de clases $\Omega$, donde cada instancia está formada por una tupla de valores $t_i = (v_{i,1}, v_{i,2}, \dots, v_{i,m})$ y pertenece a la clase $\omega_{t_i} \in \Omega$, el problema de \emph{Selección de Instancias} (SI) consiste en seleccionar un subconjunto $R \subseteq T$ que mantenga (o mejore) la capacidad de representación del conjunto original $T$.
 
-Más aún, este problema puede ser formulado como un \emph{problema de optimización}, donde se busca el $R^* \subseteq T$ de menor cardinalidad, que mantenga (o mejore) la capacidad de representación del conjunto original.
+Este problema puede ser formulado como un \emph{problema de optimización combinatoria}, donde se busca el $R^* \subseteq T$ de menor cardinalidad que mantenga (o mejore) la capacidad de representación del conjunto original. Cada instancia perteneciente a $T$, puede o no pertenecer a $R$, lo que significa que el problema de SI tiene un espacio de posibles soluciones igual a $2^n$.
 
 En particular, la literatura se ha enfocado en la aplicación del problema de SI para su uso en clasificadores \cite{DBLP:journals/corr/GottliebK14,DBLP:conf/jcdcg/Toussaint02}. El subconjunto seleccionado se usa como conjunto de entrenamiento, en base al cuál el clasificador estima la clase $\hat{\omega}$ de instancias previamente desconocidas. En este sentido, el problema de optimización de SI busca conseguir un $R^* \subseteq T$ \emph{consistente} y de cardinalidad mínima, donde:\\
 
@@ -51,13 +51,13 @@ En particular, la literatura se ha enfocado en la aplicación del problema de SI
 Un conjunto $R$ es \textbf{consistente} con $T$, \emph{si y solo si} toda instancia $t \in T$ es clasificada correctamente (\emph{e.i.} $\hat{\omega}_t = \omega_t$) mediante el uso de un clasificador \emph{M} y las instancias en $R$ como conjunto de entrenamiento.
 \end{definicion}
 
-La complejidad del problema de selección ha sido estudiada por diferentes autores: \emph{Bien} y \emph{Tibshirani} \cite{2012arXiv1202.5933B} describen la reducción del problema de SI al problema de \emph{Conjunto de Cobertura} (``\emph{Set Cover}'' en inglés), cuya versión de optimización es NP-Dura. Más aún, \emph{Wilfong} \cite{Wilfong:1991:NNP:109648.109673} y  \emph{Zukhba} \cite{Zukhba:2010:NPP:1921730.1921735} muestran que el problema de selección es NP-Duro.
+La complejidad del problema de selección de instancias ha sido estudiada por diferentes autores: \emph{Bien} y \emph{Tibshirani} \cite{2012arXiv1202.5933B} describen una reducción del problema de SI al problema de \emph{Conjunto de Cobertura}, cuya versión de optimización es NP-Dura. Más aún, \emph{Wilfong} \cite{Wilfong:1991:NNP:109648.109673} y  \emph{Zukhba} \cite{Zukhba:2010:NPP:1921730.1921735} muestran que el problema de SI es NP-Duro.
 
-En general, la literatura relacionada con el problema de SI se ha enfocado en el uso de clasificadores $k$-NN por su simplicidad, y sobretodo, por su capacidad de representación de modelos sin información adicional sobre la distribución de los datos. El caso particular del problema de SI para su uso con clasificadores $k$-NN también es conocido como \emph{Selección de Prototipos} (\emph{SP}). A continuación se describen los clasificadores NN.
+En general, la literatura relacionada con el problema de SI se ha enfocado en el uso de clasificadores $k$-NN \cite{Garcia:2012:PSN:2122272.2122582} por su simplicidad y sobretodo, por su capacidad de representación de modelos sin información adicional sobre la distribución de los datos. El caso particular del problema de SI usando clasificadores $k$-NN también es conocido como \emph{Selección de Prototipos}. A continuación se describen estos clasificadores.
 
 \subsection{Regla del Vecino Más Cercano (NN)}
 
-Inicialmente descrita por \emph{Fix} y \emph{Hodges} \cite{fix_51_discriminatory}, la regla del \emph{Vecino Más Cercano} (``\emph{Nearest Neighbor}'', \emph{NN}) es una regla de inferencia basada en la idea de que instancias con atributos similares (cercanas en un espacio de $m$ dimensiones) tienden a compartir la misma clase. La regla NN estima la clase $\hat{\omega}_x$ de un punto $x$ en un espacio $m$-dimensional, dado un conjunto $T$ de instancias de entrenamiento y una función de distancia $\varphi$ entre dos puntos en dicho espacio:
+Inicialmente descrita por \emph{Fix} y \emph{Hodges} \cite{fix_51_discriminatory}, la regla del \emph{Vecino Más Cercano} (Nearest Neighbor o NN) es una regla de inferencia basada en la idea de que instancias con atributos similares (cercanas en un espacio de $m$ dimensiones) tienden a compartir la misma clase. La regla NN estima la clase $\hat{\omega}_x$ de un punto $x$ en un espacio $m$-dimensional, dado un conjunto $T$ de instancias de entrenamiento y una función de distancia $\varphi$ entre dos puntos en dicho espacio:
 
 \begin{equation}
 \hat{\omega}_x = \omega_{t^*}\ ,\ 
@@ -81,11 +81,10 @@ Adicionalmente, algunos trabajos en geometría computacional han contribuido sig
 
 Similarmente, esta relación ha permitido avances importantes en términos de complejidad. En particular, mediante el uso de \emph{kd}-trees \cite{Bentley:1975:MBS:361002.361007} (árboles de búsqueda binaria en múltiples dimensiones) se ha logrado disminuir la complejidad en tiempo de clasificación, de $\mathcal{O}(n)$ (de un enfoque ``ingenuo'' revisando todas las instancias) a $\mathcal{O}(\log{n})$, a costas de un aumento en el tiempo necesario para el entrenamiento del clasificador: de $\mathcal{O}(1)$ a $\mathcal{O}(n\log{n})$, el tiempo necesario para la construcción del árbol.
 
-Sin embargo, los clasificadores $k$-NN presentan ciertas propiedades desalentadoras; el problema de conseguir el vecino más cercano de un punto dado, requiere --en cualquiera de los casos-- almacenar todas las instancias de entrenamiento: \emph{e.i.} $\mathcal{O}(n)$ en espacio. Adicionalmente, trabajos más recientes \cite{DBLP:conf/soda/KrauthgamerL04} muestran que en espacios euclidianos de altas dimensiones, la búsqueda del vecino más cercano requiere $\mathcal{O}(n)$ en tiempo: un fenómeno conocido como la \guillemotleft\emph{maldición de la dimensionalidad}\guillemotright\ (``\emph{curse of dimensionality}'' en inglés). Finalmente, según \emph{Shwartz} y \emph{David} \cite{shalev2014understanding} los clasificadores NN tienden a sobre-ajustar el modelo con respecto al conjunto de entrenamiento (\emph{overfitting} en inglés); efecto que puede mitigarse aumentando el $k$ del clasificador \cite{devroye1994strong, shalev2014understanding} y eliminando instancias del conjunto de datos \cite{DBLP:journals/corr/GottliebKK13}.
+Sin embargo, los clasificadores $k$-NN presentan ciertas propiedades desalentadoras; el problema de conseguir el vecino más cercano de un punto dado, requiere --en cualquiera de los casos-- almacenar todas las instancias de entrenamiento: \emph{e.i.} $\mathcal{O}(n)$ en espacio. Adicionalmente, trabajos más recientes \cite{DBLP:conf/soda/KrauthgamerL04} muestran que en espacios euclidianos de altas dimensiones, la búsqueda del vecino más cercano requiere $\mathcal{O}(n)$ en tiempo: un fenómeno conocido como la \guillemotleft\emph{maldición de la dimensionalidad}\guillemotright\ (\emph{curse of dimensionality} en inglés). Finalmente, según \emph{Shwartz} y \emph{David} \cite{shalev2014understanding} los clasificadores NN tienden a sobre-ajustar el modelo con respecto al conjunto de entrenamiento (\emph{overfitting} en inglés); efecto que puede mitigarse aumentando el $k$ del clasificador \cite{devroye1994strong, shalev2014understanding} y eliminando instancias del conjunto de datos \cite{DBLP:journals/corr/GottliebKK13}.
 
-\subsection{Definiciones relevantes}
-
-A continuación se definen algunos conceptos relevantes para la descripción de métodos de selección de instancias. Dado un conjunto de instancias $Q \subseteq T$:\\
+\paragraph*{Algunas definiciones}
+A continuación se definen algunos conceptos relevantes para la descripción de métodos heurísticos de SI en futuras secciones. Para un subconjunto de instancias cualquiera $Q \subseteq T$:\\
 
 \begin{definicion}
 Los \textbf{asociados} en $Q$ de una instancia $t$ son aquellas instancias en $Q$ para las cuales $t$ pertenece a su conjunto de $k$ instancias más cercanas:
@@ -102,7 +101,7 @@ Los \textbf{enemigos} en $Q$ de una instancia $t \in T$ son aquellas instancias 
 \end{definicion}
 
 \begin{definicion}
-El \textbf{enemigo más cercano} (NE, \emph{nearest enemy}) en $Q$ de una instancia $t \in T$ ---denotada como $\mathrm{NE}_Q(t)$---, es la instancia más cercana a $t$ con diferente clase (\emph{i.e.} la instancia más cercana a $t$ perteneciente a $\emph{enemigos}_Q(t)$):
+El \textbf{enemigo más cercano} (\emph{nearest enemy} o NE) en $Q$ de una instancia $t \in T$, es la instancia más cercana a $t$ con diferente clase, y es denotada como $\mathrm{NE}_Q(t)$. \emph{i.e.} $\mathrm{NE}_Q(t)$ es la instancia más cercana a $t$ perteneciente a $\emph{enemigos}_Q(t)$:
 \begin{equation}
 \mathrm{NE}_Q(t) = \operatorname*{arg\,min}_{e\ \in\ \emph{enemigos}_Q(t)} \varphi(t,e)
 \end{equation}
@@ -111,7 +110,9 @@ El \textbf{enemigo más cercano} (NE, \emph{nearest enemy}) en $Q$ de una instan
 \section{Algorítmos de aproximación para Selección de Instancias}
 \label{alg-aprox-si}
 
-Debido a la complejidad del problema de SI, la literatura se ha enfocado en la definición de heurísticas para conseguir soluciones aproximadas. De nuevo, el uso de clasificadores $k$-NN es una práctica extendida a lo largo de estos trabajos, por lo que las características de la regla NN han servido para el desarrollo de muchos métodos de selección.% Sin embargo, nuevos estudios se han realizado basándose en heurísticas diferentes con el fin de desarrollar 
+Debido a la complejidad del problema de SI, la literatura se ha enfocado en la definición de algoritmos heurísticos para conseguir soluciones aproximadas. De nuevo, el uso de clasificadores $k$-NN es una práctica extendida a lo largo de estos trabajos, por lo que las características de la regla NN han servido de inspiración para el desarrollo de la mayoría de los métodos de selección. Sin embargo, otras propuestas se basan en el orden de revisión de las instancias, así como en la realización de un muestreo aleatorio sobre el conjunto de datos. Finalmente, algunos enfoques se centran en aplicar procesos de búsqueda de propósito general, guiados por los objetivos del problema.
+
+A continuación se describen brevemente algunos de los algoritmos heurísticos más recurrentes en la literatura relacionada al problema de SI.
 
 \subsection{Métodos basados en la regla NN}
 
@@ -151,9 +152,9 @@ Las metaheurísticas son métodos de búsqueda estocástica de propósito genera
 
 Algunos de los primeros trabajos se enfocaron en adaptar el algoritmo de \emph{Búsqueda Tabú} para solucionar el problema de SI. En particular, los estudios de \emph{Cerverón et al.} \cite{cerveron2001another} y \emph{Zhang et al.} \cite{zhang2002optimal} describen dos enfoques diferentes de modificación del algoritmo.
 
-Sin embargo, la mayoría de los estudios se han enfocado en el uso de \emph{Algoritmos Evolutivos} (\emph{AE}), adaptándolos para la búsqueda de soluciones al problema de selección. Entre ellos destaca el trabajo realizado por \emph{Cano et al.} \cite{cano2003using}; un completo estudio comparativo entre algoritmos ``tradicionales'' de SI y adaptaciones de \emph{Generational Genetic Algorithm} (GGA), \emph{Steady-State Genetic Algorithm} (SGA), \emph{CHC Adaptive Search Algorithm} (CHC) y \emph{Population-Based Incremental Learning} (PBIL). Con este estudio, resulta evidente la utilidad de los \emph{AE} frente a los algoritmos tradicionales de SI en función de la capacidad de reducción y precisión de los conjuntos seleccionados.
+Sin embargo, la mayoría de los estudios se han enfocado en el uso de \emph{Algoritmos Evolutivos} (AE), adaptándolos para la búsqueda de soluciones al problema de selección. Entre ellos destaca el trabajo realizado por \emph{Cano et al.} \cite{cano2003using}; un completo estudio comparativo entre algoritmos ``tradicionales'' de SI y adaptaciones del \emph{Algoritmo Genético Generacional} (GGA), \emph{Algoritmo Genético Estacionario} (SGA), \emph{CHC Adaptive Search Algorithm} (CHC) y \emph{Population-Based Incremental Learning} (PBIL). Con este estudio, resulta evidente la utilidad de los \emph{AE} frente a los algoritmos tradicionales de SI en función de la capacidad de reducción y precisión de los conjuntos seleccionados.
 
-Existen también otras adaptaciones y modificaciones sobre \emph{AE}, entre los que destacan: \emph{Estimation of Distribution Algorithm} (EDA) \cite{sierra2001prototype}, \emph{Intelligent Genetic Algorithm} (IGA) \cite{ho2002design}, \emph{Steady-State Memetic Algorithm} (SSMA) \cite{garcia2008memetic} y \emph{Genetic Algorithm} \cite{gil2008evolving} basado en Error Cuadrático Medio, \emph{Clustered Crossover} y \emph{Fast Smart Mutation} (GA-MSE-CC-PSM).
+Existen también otras adaptaciones y modificaciones sobre AE, entre los que destacan: \emph{Estimation of Distribution Algorithm} (EDA) \cite{sierra2001prototype}, \emph{Intelligent Genetic Algorithm} (IGA) \cite{ho2002design}, \emph{Steady-State Memetic Algorithm} (SSMA) \cite{garcia2008memetic} y \emph{Genetic Algorithm} \cite{gil2008evolving} basado en Error Cuadrático Medio, \emph{Clustered Crossover} y \emph{Fast Smart Mutation} (GA-MSE-CC-PSM).
 
 %\subsection{Taxonomía}
 %

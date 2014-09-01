@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.7)  30 AUG 2014 23:23
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.7)  31 AUG 2014 20:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1490,7 +1490,7 @@ babelbib extension \btxifchangecaseoff added to \extrasspanish
 babelbib: Load BibTeX extensions \bibsspanish for spanish
 babelbib: Set language for keywords in the bibliography fixed to spanish
 ABD: EveryShipout initializing macros
-<img/./usb.pdf, id=240, 171.64125pt x 114.4275pt>
+<img/./usb.pdf, id=236, 171.64125pt x 114.4275pt>
 File: img/./usb.pdf Graphic file (type pdf)
  <use img/./usb.pdf>
 Package pdftex.def Info: img/./usb.pdf used on input line 89.
@@ -1511,7 +1511,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 {/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./img/.
 /usb.pdf>]
-(./partes/acta.tex <img/usb.pdf, id=251, 171.64125pt x 114.4275pt>
+(./partes/acta.tex <img/usb.pdf, id=247, 171.64125pt x 114.4275pt>
 File: img/usb.pdf Graphic file (type pdf)
 
 <use img/usb.pdf>
@@ -1523,10 +1523,6 @@ Package pdftex.def Info: img/usb.pdf used on input line 6.
 ------------------------------------------------------------------------------
  Abstract Page
 ------------------------------------------------------------------------------
-
-Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 6.
-
 ) [1]
 ------------------------------------------------------------------------------
  Table of Contents
@@ -1589,22 +1585,16 @@ LaTeX Info: Redefining \% on input line 2.
 [7
 
 
-]) (./partes/dedicatoria.tex
-------------------------------------------------------------------------------
- Dedicatoria
-------------------------------------------------------------------------------
-[8
-
-]) (./partes/introduccion.tex) (./partes/capitulo1.tex [1
+]) (./partes/introduccion.tex [1
 
 
 
-]
+]) [2] (./partes/capitulo1.tex [3]
 Cap\'{\i }tulo 1.
 ------------------------------------------------------------------------------
  1 Selecci\IeC {\'o}n de Instancias
 ------------------------------------------------------------------------------
-[2
+[4
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 17--18
@@ -1616,51 +1606,45 @@ Underfull \hbox (badness 10000) in paragraph at lines 20--21
 
  []
 
-
-Underfull \hbox (badness 6141) in paragraph at lines 44--45
-[]\T1/cmr/m/n/12 Dado un con-jun-to ini-cial de ins-tan-cias $\OML/cmm/m/it/12 
-T \OT1/cmr/m/n/12 = []$ \T1/cmr/m/n/12 don-de
- []
-
-[3]
+[5]
 Underfull \hbox (badness 10000) in paragraph at lines 48--49
 
  []
 
-[4] [5] <img/voronoi.pdf, id=503, 546.29094pt x 369.88188pt>
+[6] [7] <img/voronoi.pdf, id=514, 546.29094pt x 369.88188pt>
 File: img/voronoi.pdf Graphic file (type pdf)
 
 <use img/voronoi.pdf>
 Package pdftex.def Info: img/voronoi.pdf used on input line 77.
 (pdftex.def)             Requested size: 261.58313pt x 177.11234pt.
- [6 <./img/voronoi.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 88--89
+ [8 <./img/voronoi.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 87--88
 
  []
 
-[7] [8] [9] [10]) (./partes/capitulo2.tex [11]
+[9] [10] [11] [12]) (./partes/capitulo2.tex [13]
 Cap\'{\i }tulo 2.
 ------------------------------------------------------------------------------
  2 Metaheur\IeC {\'\i }sticas
 ------------------------------------------------------------------------------
-[12
+[14
 
-] [13]
+] [15]
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 43.
  (/usr/local/texlive/2013/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-[14]
+[16]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 52.
- [15] [16] [17] [18]) (./partes/capitulo3.tex [19] [20]
+ [17] [18] [19] [20] [21]) (./partes/capitulo3.tex [22]
 Cap\'{\i }tulo 3.
 ------------------------------------------------------------------------------
  3 Adaptaci\IeC {\'o}n al problema de Selecci\IeC {\'o}n de Instancias
 ------------------------------------------------------------------------------
-[21
+[23
 
-] [22] [23] <img/seleccion.pdf, id=928, 853.57898pt x 768.22003pt>
+] [24] [25] <img/seleccion.pdf, id=934, 853.57898pt x 768.22003pt>
 File: img/seleccion.pdf Graphic file (type pdf)
 
 <use img/seleccion.pdf>
@@ -1670,8 +1654,8 @@ Package pdftex.def Info: img/seleccion.pdf used on input line 70.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[24] [25 <./img/seleccion.pdf>]
-<img/hiperesferas.pdf, id=1169, 853.57898pt x 384.11504pt>
+[26] [27 <./img/seleccion.pdf>]
+<img/hiperesferas.pdf, id=1175, 853.57898pt x 384.11504pt>
 File: img/hiperesferas.pdf Graphic file (type pdf)
 
 <use img/hiperesferas.pdf>
@@ -1681,83 +1665,79 @@ Package pdftex.def Info: img/hiperesferas.pdf used on input line 112.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[26] [27 <./img/hiperesferas.pdf>] [28] [29]) (./partes/capitulo4.tex [30]
+[28] [29 <./img/hiperesferas.pdf>] [30] [31]) (./partes/capitulo4.tex [32]
 Cap\'{\i }tulo 4.
 ------------------------------------------------------------------------------
  4 Evaluaci\IeC {\'o}n Experimental
 ------------------------------------------------------------------------------
-[31
+[33
 
 ]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[32] [33]
+[34] [35]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[34] [35] [36] <img/uniforme.pdf, id=1372, 867.24pt x 314.17375pt>
+[36] [37] [38] <img/uniforme.pdf, id=1378, 867.24pt x 314.17375pt>
 File: img/uniforme.pdf Graphic file (type pdf)
 
 <use img/uniforme.pdf>
-Package pdftex.def Info: img/uniforme.pdf used on input line 190.
+Package pdftex.def Info: img/uniforme.pdf used on input line 193.
 (pdftex.def)             Requested size: 435.96745pt x 157.93979pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[37] [38 <./img/uniforme.pdf>]
-<img/inits-boxplot.pdf, id=1409, 853.57898pt x 284.52296pt>
+[39] [40 <./img/uniforme.pdf>]
+<img/inits-boxplot.pdf, id=1416, 853.57898pt x 284.52296pt>
 File: img/inits-boxplot.pdf Graphic file (type pdf)
 
 <use img/inits-boxplot.pdf>
-Package pdftex.def Info: img/inits-boxplot.pdf used on input line 253.
+Package pdftex.def Info: img/inits-boxplot.pdf used on input line 256.
 (pdftex.def)             Requested size: 435.96745pt x 145.32185pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[39] [40 <./img/inits-boxplot.pdf>]
+[41] [42 <./img/inits-boxplot.pdf>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[41] [42] [43]
+[43] [44] [45]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[44] [45]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Underfull \hbox (badness 2103) in paragraph at lines 544--545
+[46] [47] [48]
+Underfull \hbox (badness 2103) in paragraph at lines 547--548
 \T1/cmr/m/n/12 me-taheu-rís-ti-ca, en fun-ción de su error de va-li-da-ción (ej
 e $\OML/cmm/m/it/12 x$\T1/cmr/m/n/12 ) y su ta-ma-ño
  []
 
-[46] <img/alg-density.pdf, id=1484, 867.24pt x 578.16pt>
+<img/alg-density.pdf, id=1490, 867.24pt x 578.16pt>
 File: img/alg-density.pdf Graphic file (type pdf)
-
-<use img/alg-density.pdf>
-Package pdftex.def Info: img/alg-density.pdf used on input line 548.
+ <use img/alg-density.pdf>
+Package pdftex.def Info: img/alg-density.pdf used on input line 551.
 (pdftex.def)             Requested size: 435.96745pt x 290.6496pt.
- [47 <./img/alg-density.pdf>] [48]
-<img/tiempo.pdf, id=5278, 722.7pt x 433.62pt>
+
+[49 <./img/alg-density.pdf>] [50]
+<img/tiempo.pdf, id=5284, 722.7pt x 433.62pt>
 File: img/tiempo.pdf Graphic file (type pdf)
  <use img/tiempo.pdf>
-Package pdftex.def Info: img/tiempo.pdf used on input line 597.
+Package pdftex.def Info: img/tiempo.pdf used on input line 600.
 (pdftex.def)             Requested size: 392.36804pt x 235.42168pt.
 )
-(./partes/conclusiones.tex [49 <./img/tiempo.pdf>] [50
+(./partes/conclusiones.tex [51 <./img/tiempo.pdf>] [52
 
-]) [51] (./tesis.bbl
-[52
+]) [53] (./tesis.bbl
+[54
 
 
-] [53] [54] [55] [56]) (./partes/apendiceA.tex [57]
+] [55] [56] [57] [58]) (./partes/apendiceA.tex [59]
 Ap\'{e}ndice A.
 ------------------------------------------------------------------------------
  A @nombreApendice
@@ -1779,7 +1759,7 @@ Package blindtext Warning: spanish not defined, using English instead.
 Package blindtext Warning: spanish not defined, using English instead.
 (blindtext)                 on input line 183.
 
-[58
+[60
 
 ]
 
@@ -1790,7 +1770,7 @@ Package blindtext Warning: spanish not defined, using English instead.
 Package blindtext Warning: spanish not defined, using English instead.
 (blindtext)                 on input line 183.
 
-[59]
+[61]
 ------------------------------------------------------------------------------
  Bibliograf\'{\i }a
 ------------------------------------------------------------------------------
@@ -1805,7 +1785,7 @@ LaTeX Info: Redefining \% on input line 28.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 186.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 186.
 Package rerunfilecheck Info: File `tesis.out' has not changed.
-(rerunfilecheck)             Checksum: 2390A9A7FEA9B5E54DD399D76AD88DDA;13174.
+(rerunfilecheck)             Checksum: 3DA0A5431B64D1B1675A1AAC79783EA0;12980.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -1813,13 +1793,13 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 186.
  ) 
 Here is how much of TeX's memory you used:
- 31029 strings out of 493308
- 531767 string characters out of 6137817
- 612892 words of memory out of 5000000
- 33609 multiletter control sequences out of 15000+600000
- 34955 words of font info for 83 fonts, out of 8000000 for 9000
+ 31028 strings out of 493308
+ 531831 string characters out of 6137817
+ 612963 words of memory out of 5000000
+ 33612 multiletter control sequences out of 15000+600000
+ 33298 words of font info for 81 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 56i,12n,55p,10441b,648s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,12n,55p,10441b,664s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 </usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
 /usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></
@@ -1836,34 +1816,32 @@ ive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2013/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2013/te
 xmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/201
-3/texmf-dist/fonts/type1/public/cm-super/sfbl1728.pfb></usr/local/texlive/2013/
-texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2013/te
-xmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2013/texm
-f-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2013/texmf-
-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2013/texmf-di
-st/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2013/texmf-dist
-/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2013/texmf-dist/f
-onts/type1/public/cm-super/sfcc1000.pfb></usr/local/texlive/2013/texmf-dist/fon
-ts/type1/public/cm-super/sfcc1095.pfb></usr/local/texlive/2013/texmf-dist/fonts
-/type1/public/cm-super/sfcc1200.pfb></usr/local/texlive/2013/texmf-dist/fonts/t
-ype1/public/cm-super/sfcc1440.pfb></usr/local/texlive/2013/texmf-dist/fonts/typ
-e1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1
-/public/cm-super/sfrm1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/p
-ublic/cm-super/sfrm1095.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/pub
-lic/cm-super/sfrm1200.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/publi
-c/cm-super/sfrm1440.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/
-cm-super/sfrm2074.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm
--super/sfsl1728.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-s
-uper/sfti0800.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-sup
-er/sfti1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super
-/sfti1095.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/s
-fti1200.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sft
-t1200.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfxc1
-200.pfb>
-Output written on tesis.pdf (69 pages, 6444607 bytes).
+3/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2013/
+texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2013/te
+xmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2013/texm
+f-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2013/texmf-
+dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2013/texmf-di
+st/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2013/texmf-dist
+/fonts/type1/public/cm-super/sfcc1000.pfb></usr/local/texlive/2013/texmf-dist/f
+onts/type1/public/cm-super/sfcc1095.pfb></usr/local/texlive/2013/texmf-dist/fon
+ts/type1/public/cm-super/sfcc1200.pfb></usr/local/texlive/2013/texmf-dist/fonts
+/type1/public/cm-super/sfcc1440.pfb></usr/local/texlive/2013/texmf-dist/fonts/t
+ype1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2013/texmf-dist/fonts/typ
+e1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1
+/public/cm-super/sfrm1095.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/p
+ublic/cm-super/sfrm1200.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/pub
+lic/cm-super/sfrm1440.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/publi
+c/cm-super/sfrm2074.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/
+cm-super/sfti0800.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm
+-super/sfti1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-s
+uper/sfti1095.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-sup
+er/sfti1200.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super
+/sftt1200.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/s
+fxc1200.pfb>
+Output written on tesis.pdf (70 pages, 6430510 bytes).
 PDF statistics:
  5546 PDF objects out of 6186 (max. 8388607)
- 3024 compressed objects within 31 object streams
- 260 named destinations out of 1000 (max. 500000)
- 522 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3025 compressed objects within 31 object streams
+ 261 named destinations out of 1000 (max. 500000)
+ 514 words of extra memory for PDF output out of 10000 (max. 10000000)
 
