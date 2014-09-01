@@ -9,6 +9,11 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Tama\IeC {\~n}o \emph {vs} error de validaci\IeC {\'o}n modificando $\delta $}}{40}{figure.caption.109}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Tama\IeC {\~n}o y error de validaci\IeC {\'o}n usando algoritmos heur\IeC {\'\i }sticos}}{42}{figure.caption.113}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Distribuci\IeC {\'o}n de los resultados de cada metaheur\IeC {\'\i }stica}}{49}{figure.caption.129}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Tiempo de ejecuci\IeC {\'o}n de cada metaheur\IeC {\'\i }stica}}{51}{figure.caption.133}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Distribuci\IeC {\'o}n de los resultados de cada metaheur\IeC {\'\i }stica}}{50}{figure.caption.129}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Tiempo de ejecuci\IeC {\'o}n de cada metaheur\IeC {\'\i }stica}}{52}{figure.caption.133}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Resultados de entonaci\IeC {\'o}n de GGA\relax }}{62}{figure.caption.140}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Resultados de entonaci\IeC {\'o}n de SGA\relax }}{63}{figure.caption.143}
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Resultados de entonaci\IeC {\'o}n de CHC\relax }}{64}{figure.caption.146}
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Resultados de entonaci\IeC {\'o}n de PBIL\relax }}{65}{figure.caption.149}
+\contentsline {figure}{\numberline {A.5}{\ignorespaces Resultados de entonaci\IeC {\'o}n de PSO\relax }}{66}{figure.caption.152}

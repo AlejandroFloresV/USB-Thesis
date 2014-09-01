@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.7)  31 AUG 2014 20:10
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.7)  1 SEP 2014 02:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1490,7 +1490,7 @@ babelbib extension \btxifchangecaseoff added to \extrasspanish
 babelbib: Load BibTeX extensions \bibsspanish for spanish
 babelbib: Set language for keywords in the bibliography fixed to spanish
 ABD: EveryShipout initializing macros
-<img/./usb.pdf, id=236, 171.64125pt x 114.4275pt>
+<img/./usb.pdf, id=256, 171.64125pt x 114.4275pt>
 File: img/./usb.pdf Graphic file (type pdf)
  <use img/./usb.pdf>
 Package pdftex.def Info: img/./usb.pdf used on input line 89.
@@ -1511,7 +1511,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 {/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./img/.
 /usb.pdf>]
-(./partes/acta.tex <img/usb.pdf, id=247, 171.64125pt x 114.4275pt>
+(./partes/acta.tex <img/usb.pdf, id=267, 171.64125pt x 114.4275pt>
 File: img/usb.pdf Graphic file (type pdf)
 
 <use img/usb.pdf>
@@ -1611,7 +1611,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 48--49
 
  []
 
-[6] [7] <img/voronoi.pdf, id=514, 546.29094pt x 369.88188pt>
+[6] [7] <img/voronoi.pdf, id=556, 546.29094pt x 369.88188pt>
 File: img/voronoi.pdf Graphic file (type pdf)
 
 <use img/voronoi.pdf>
@@ -1644,7 +1644,7 @@ Cap\'{\i }tulo 3.
 ------------------------------------------------------------------------------
 [23
 
-] [24] [25] <img/seleccion.pdf, id=934, 853.57898pt x 768.22003pt>
+] [24] [25] <img/seleccion.pdf, id=976, 853.57898pt x 768.22003pt>
 File: img/seleccion.pdf Graphic file (type pdf)
 
 <use img/seleccion.pdf>
@@ -1655,7 +1655,7 @@ Package pdftex.def Info: img/seleccion.pdf used on input line 70.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [26] [27 <./img/seleccion.pdf>]
-<img/hiperesferas.pdf, id=1175, 853.57898pt x 384.11504pt>
+<img/hiperesferas.pdf, id=1218, 853.57898pt x 384.11504pt>
 File: img/hiperesferas.pdf Graphic file (type pdf)
 
 <use img/hiperesferas.pdf>
@@ -1680,22 +1680,22 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[36] [37] [38] <img/uniforme.pdf, id=1378, 867.24pt x 314.17375pt>
+[36] [37] [38] <img/uniforme.pdf, id=1421, 867.24pt x 314.17375pt>
 File: img/uniforme.pdf Graphic file (type pdf)
 
 <use img/uniforme.pdf>
-Package pdftex.def Info: img/uniforme.pdf used on input line 193.
+Package pdftex.def Info: img/uniforme.pdf used on input line 196.
 (pdftex.def)             Requested size: 435.96745pt x 157.93979pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [39] [40 <./img/uniforme.pdf>]
-<img/inits-boxplot.pdf, id=1416, 853.57898pt x 284.52296pt>
+<img/inits-boxplot.pdf, id=1458, 853.57898pt x 284.52296pt>
 File: img/inits-boxplot.pdf Graphic file (type pdf)
 
 <use img/inits-boxplot.pdf>
-Package pdftex.def Info: img/inits-boxplot.pdf used on input line 256.
+Package pdftex.def Info: img/inits-boxplot.pdf used on input line 259.
 (pdftex.def)             Requested size: 435.96745pt x 145.32185pt.
 
 
@@ -1705,72 +1705,108 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
 [43] [44] [45]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[46] [47] [48]
-Underfull \hbox (badness 2103) in paragraph at lines 547--548
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[46] [47]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[48]
+Underfull \hbox (badness 2103) in paragraph at lines 550--551
 \T1/cmr/m/n/12 me-taheu-rís-ti-ca, en fun-ción de su error de va-li-da-ción (ej
 e $\OML/cmm/m/it/12 x$\T1/cmr/m/n/12 ) y su ta-ma-ño
  []
 
-<img/alg-density.pdf, id=1490, 867.24pt x 578.16pt>
+<img/alg-density.pdf, id=1533, 867.24pt x 578.16pt>
 File: img/alg-density.pdf Graphic file (type pdf)
  <use img/alg-density.pdf>
-Package pdftex.def Info: img/alg-density.pdf used on input line 551.
+Package pdftex.def Info: img/alg-density.pdf used on input line 554.
 (pdftex.def)             Requested size: 435.96745pt x 290.6496pt.
 
-[49 <./img/alg-density.pdf>] [50]
-<img/tiempo.pdf, id=5284, 722.7pt x 433.62pt>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[49] [50 <./img/alg-density.pdf>]
+<img/tiempo.pdf, id=5325, 722.7pt x 433.62pt>
 File: img/tiempo.pdf Graphic file (type pdf)
  <use img/tiempo.pdf>
-Package pdftex.def Info: img/tiempo.pdf used on input line 600.
+Package pdftex.def Info: img/tiempo.pdf used on input line 603.
 (pdftex.def)             Requested size: 392.36804pt x 235.42168pt.
-)
-(./partes/conclusiones.tex [51 <./img/tiempo.pdf>] [52
-
-]) [53] (./tesis.bbl
-[54
 
 
-] [55] [56] [57] [58]) (./partes/apendiceA.tex [59]
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+) (./partes/conclusiones.tex [51] [52 <./img/tiempo.pdf>] [53
+
+]) [54]
+(./tesis.bbl [55
+
+
+] [56] [57] [58] [59]) (./partes/apendiceA.tex [60]
 Ap\'{e}ndice A.
 ------------------------------------------------------------------------------
- A @nombreApendice
+ A Entonaci\IeC {\'o}n de las metaheur\IeC {\'\i }sticas
 ------------------------------------------------------------------------------
-)
+<img/apendice-gga.pdf, id=5409, 995.8505pt x 312.97928pt>
+File: img/apendice-gga.pdf Graphic file (type pdf)
 
-Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 183.
-
-
-Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 183.
+<use img/apendice-gga.pdf>
+Package pdftex.def Info: img/apendice-gga.pdf used on input line 31.
+(pdftex.def)             Requested size: 435.96745pt x 137.01405pt.
 
 
-Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 183.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[61
+
+] <img/apendice-sga.pdf, id=5417, 995.8505pt x 312.97928pt>
+File: img/apendice-sga.pdf Graphic file (type pdf)
+
+<use img/apendice-sga.pdf>
+Package pdftex.def Info: img/apendice-sga.pdf used on input line 64.
+(pdftex.def)             Requested size: 435.96745pt x 137.01405pt.
 
 
-Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 183.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[60
+[62 <./img/apendice-gga.pdf>]
+<img/apendice-chc.pdf, id=5448, 483.8075pt x 314.17375pt>
+File: img/apendice-chc.pdf Graphic file (type pdf)
 
-]
+<use img/apendice-chc.pdf>
+Package pdftex.def Info: img/apendice-chc.pdf used on input line 92.
+(pdftex.def)             Requested size: 217.98372pt x 141.55424pt.
 
-Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 183.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Package blindtext Warning: spanish not defined, using English instead.
-(blindtext)                 on input line 183.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[61]
+[63 <./img/apendice-sga.pdf>]
+<img/apendice-pbil.pdf, id=5479, 995.8505pt x 682.8712pt>
+File: img/apendice-pbil.pdf Graphic file (type pdf)
+
+<use img/apendice-pbil.pdf>
+Package pdftex.def Info: img/apendice-pbil.pdf used on input line 126.
+(pdftex.def)             Requested size: 435.96745pt x 298.94298pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[64 <./img/apendice-chc.pdf>] [65 <./img/apendice-pbil.pdf>]
+<img/apendice-pso.pdf, id=5531, 995.8505pt x 312.97928pt>
+File: img/apendice-pso.pdf Graphic file (type pdf)
+
+<use img/apendice-pso.pdf>
+Package pdftex.def Info: img/apendice-pso.pdf used on input line 157.
+(pdftex.def)             Requested size: 435.96745pt x 137.01405pt.
+) [66 <./img/apendice-pso.pdf>]
 ------------------------------------------------------------------------------
  Bibliograf\'{\i }a
 ------------------------------------------------------------------------------
@@ -1785,7 +1821,7 @@ LaTeX Info: Redefining \% on input line 28.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 186.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 186.
 Package rerunfilecheck Info: File `tesis.out' has not changed.
-(rerunfilecheck)             Checksum: 3DA0A5431B64D1B1675A1AAC79783EA0;12980.
+(rerunfilecheck)             Checksum: 4E62031764E6524FF115432375451724;14129.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -1793,10 +1829,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 186.
  ) 
 Here is how much of TeX's memory you used:
- 31028 strings out of 493308
- 531831 string characters out of 6137817
- 612963 words of memory out of 5000000
- 33612 multiletter control sequences out of 15000+600000
+ 31087 strings out of 493308
+ 532856 string characters out of 6137817
+ 613601 words of memory out of 5000000
+ 33646 multiletter control sequences out of 15000+600000
  33298 words of font info for 81 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  56i,12n,55p,10441b,664s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1836,12 +1872,13 @@ cm-super/sfti0800.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm
 -super/sfti1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-s
 uper/sfti1095.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-sup
 er/sfti1200.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super
-/sftt1200.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/s
-fxc1200.pfb>
-Output written on tesis.pdf (70 pages, 6430510 bytes).
+/sftt0800.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/s
+ftt1200.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfx
+c1200.pfb>
+Output written on tesis.pdf (75 pages, 7402865 bytes).
 PDF statistics:
- 5546 PDF objects out of 6186 (max. 8388607)
- 3025 compressed objects within 31 object streams
- 261 named destinations out of 1000 (max. 500000)
- 514 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 5743 PDF objects out of 6186 (max. 8388607)
+ 3145 compressed objects within 32 object streams
+ 281 named destinations out of 1000 (max. 500000)
+ 579 words of extra memory for PDF output out of 10000 (max. 10000000)
 

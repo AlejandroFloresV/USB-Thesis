@@ -276,7 +276,7 @@ Ver algoritmo \ref{pso-alg}.
 El vector de velocidad se modifica en función de varios parámetros:
 \begin{inparaenum}[\itshape a\upshape)]
 \item el peso de inercia $\texttt{w} \in \mathbb{R}$ que evita cambios bruscos respecto a la velocidad anterior,
-\item el peso del mejor local $\texttt{c1} \in \mathbb{R}$ que indica la importancia de la mejor solución encontrada por dicha particula, y
+\item el peso del mejor local $\texttt{c1} \in \mathbb{R}$ que indica la importancia de la mejor solución encontrada por dicha partícula, y
 \item  el peso del mejor global $\texttt{c2} \in \mathbb{R}$ que establece la importancia de la mejor solución global encontrada hasta el momento.
 \end{inparaenum}
 Estos parámetros se encargan de dar dirección a la búsqueda de cada partícula. Usualmente los valores del vector de velocidad se limitan a ciertos rangos para permitir la explotación de soluciones locales: se usa el parámetro $\texttt{vmax} \in \mathbb{R}$ para limitar la velocidad entre $[-\texttt{vmax},\texttt{vmax}]$.

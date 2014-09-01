@@ -6,19 +6,20 @@ Este capítulo consiste en la descripción del diseño experimental empleado dur
 
 \section{Diseño Experimental}
 
-El diseño experimental aplicado permite establecer la efectividad de las metaheurísticas descritas en función de
+En este trabajo, el estudio experimental busca medir el impacto de 
 \begin{inparaenum}[\itshape a\upshape)]
-\item la reducción del conjunto de instancias usado para el entrenamiento del clasificador (en este caso un clasificador 1-NN), y
-\item la precisión de dicho clasificador --una vez entrenado-- al clasificar instancias desconocidas.
+\item las metaheurísticas usadas y
+\item las estrategias de inicialización aplicadas,
 \end{inparaenum}
-La metodología experimental debe permitir la generalización del comportamiento de las metaheurísticas, así como las estrategias de generación de soluciones iniciales, con la finalidad de comparar los resultados obtenidos y establecer los métodos más efectivos frente al problema de selección de instancias.
+en los resultados obtenidos en términos de los objetivos del problema de SI y el tiempo de ejecución. Para esto se hace uso de varios conjuntos de datos, que ayuden a identificar los efectos de los diferentes factores a evaluar.
+La metodología seguida debe permitir la generalización del comportamiento tanto de las metaheurísticas como de las estrategias de generación de soluciones iniciales, con la finalidad de comparar los resultados obtenidos y establecer los métodos más efectivos frente al problema de selección de instancias.
 
 \subsection{Conjuntos de datos}
 \label{data-section}
 
 Un factor esencial en la evaluación de métodos de selección de instancias es el conjunto de datos utilizado; la distribución de los datos, el número de instancias y atributos, y la cantidad de datos ruidosos, son solo algunos de los elementos que modifican el espacio de búsqueda del problema y por ende la efectividad de los algoritmos heurísticos para encontrar buenas soluciones. Los conjuntos de datos usados en este trabajo pertenecen al \emph{UCI Machine Learning Repository} \cite{BacheLichman:2013} y al \emph{KEEL Data-Mining Software Tool} \cite{alcala2010keel}.
 
-Los 14 conjuntos seleccionados fueron separados en 3 grupos en función del número de instancias de cada conjunto. En la tabla \ref{data-small} se presentan 9 conjuntos con menor cantidad de instancias.
+Los 14 conjuntos seleccionados fueron separados en 3 grupos en función del número de instancias de cada conjunto. En la tabla \ref{data-small} se presentan 9 conjuntos con menor cantidad de instancias (menor a 1000).
 
 \begin{table}[h!]
 \centering
@@ -42,7 +43,7 @@ Wisconsin & 683 &  9 &  2 \\
 \label{data-small}
 \end{table}
 
-En la tabla \ref{data-med} se describen dos conjuntos de datos caracterizados como de tamaño medio.
+En la tabla \ref{data-med} se describen dos conjuntos de datos caracterizados como de tamaño medio. Estos conjuntos se caracterizan por tener un número de instancias entre 1000 y 6000.
 
 \begin{table}[h!]
 \centering
@@ -59,7 +60,7 @@ Segmentation &  2100 & 19 &  7 \\
 \label{data-med}
 \end{table}
 
-Finalmente, los 3 conjuntos con mayor número de instancias se presentan en la tabla \ref{data-big}.
+Finalmente, los 3 conjuntos con mayor número de instancias se presentan en la tabla \ref{data-big}. Estos conjuntos contienen un número de instancias mayor a 6000 junto con un número de atributos alto.
 
 \begin{table}[h!]
 \centering
@@ -69,8 +70,8 @@ Finalmente, los 3 conjuntos con mayor número de instancias se presentan en la t
 \hline
 \hline
 Penbased    & 10992 & 16 & 10 \\
-Satimage     &  6435 & 36 &  6 \\
-Thyroid      &  7200 & 21 &  3 \\
+Satimage    &  6435 & 36 &  6 \\
+Thyroid     &  7200 & 21 &  3 \\
 \hline
 \end{tabular}
 \caption{Conjuntos de datos grandes}
@@ -97,7 +98,9 @@ El tamaño de $R$ en función de $T'_i$ (\emph{i.e.} $\frac{100 \vert R \vert}{\
 Segundos empleados por el algoritmo durante la búsqueda.
 \end{itemize} 
 
-Cada metaheurística es evaluada usando los 10 pares de conjuntos $(T'_i, T_i)$. Por cada par de conjunto entrenamiento-validación se realizan 3 repeticiones. \emph{i.e.} un total de 30 ejecuciones de una metaheurística para un conjunto de datos y un tipo de inicialización particular. Las ejecuciones fueron realizadas de manera independiente en máquinas de tipo \texttt{c3.2xlarge} de \emph{Amazon EC2}, que disponen de 8 CPUs Intel Xeon E5-2680 v2 (Ivy Bridge), 15GB de memoria RAM y 80GB de disco duro de estado sólido. Todos los experimentos se realizaron bajo el sistema operativo Amazon Linux AMI 2014.03.2 y utilizando GCC 4.8.2.
+Cada metaheurística es evaluada usando los 10 pares de conjuntos $(T'_i, T_i)$. Por cada par de conjunto entrenamiento-validación se realizan 3 repeticiones. \emph{i.e.} un total de 30 ejecuciones de una metaheurística para un conjunto de datos y un tipo de inicialización particular. Las ejecuciones fueron realizadas de manera independiente en máquinas de tipo \texttt{c3.2xlarge} de \emph{Amazon EC2}, que disponen de 8 CPUs Intel Xeon E5-2680 v2 (Ivy Bridge), 15GB de memoria RAM y 80GB de disco duro de estado sólido.
+
+Todos los experimentos se realizaron bajo el sistema operativo Amazon Linux AMI 2014.03.2 y utilizando GCC 4.8.2. En este sentido, la implementación realizada aprovecha la arquitectura usada durante la implementación, evaluando las soluciones intermedias mediante la creación de hilos.
 
 \subsection{Parámetros}
 \label{sec-parametros}
@@ -149,18 +152,18 @@ Ambas tablas son usadas para presentar los resultados por cada estrategia de ini
 En esta sección se presentan los resultados obtenidos durante la evaluación experimental. En la sección \ref{sec-comp-inits} se comparan diferentes estrategias de inicialización de soluciones con representación binaria,
 \begin{inparaenum}[\itshape a\upshape)]
 \item evaluando el impacto de disminuir la probabilidad de aparición de bits, y
-\item modificando la distribución de dicha probabilidad a lo largo de la cadena de bits, de una distribución uniforme a una distribución personalizada basada en los conjuntos seleccionados por algoritmos heurísticos al problema de SI.
+\item modificando dicha probabilidad de forma individual a lo largo de la cadena de bits, de un valor constante $\delta$ para todos los bits, a valores que favorezcan a las instancias pertenecientes a los conjuntos seleccionados por algoritmos heurísticos al problema de SI.
 \end{inparaenum}
 Una vez seleccionada la mejor estrategia de inicialización, en la sección \ref{sec-comp-meta} se comparan los resultados obtenidos por las 5 metaheurísticas descritas. Se concluye con un estudio que busca determinar (en caso que existan) aquellas metaheurísticas que se comporten consistentemente mejor que el resto.
 
 \subsection{Comparación entre inicializaciones}
 \label{sec-comp-inits}
 
-Bajo el contexto del problema de SI, modificar la estrategia de inicialización de soluciones tiene un objetivo claro: iniciar el proceso de búsqueda en ``buenas'' soluciones. Una buena solución al problema de SI debe minimizar tanto la cardinalidad del conjunto $R$, como el error de clasificación usando $R$ como conjunto de prototipos. En este sentido, se propone disminuir la probabilidad de aparición de bits $\delta$ para reducir la cardinalidad de soluciones iniciales, y modificar la distribución de dicha probabilidad, beneficiando a instancias seleccionadas por diferentes algoritmos heurísticos, con la intensión de reducir el error de clasificación.
+Bajo el contexto del problema de SI, modificar la estrategia de inicialización de soluciones tiene un objetivo claro: iniciar el proceso de búsqueda en ``buenas'' soluciones. Una buena solución al problema de SI debe minimizar tanto la cardinalidad del conjunto $R$, como el error de clasificación usando $R$ como conjunto de prototipos. En este sentido, se propone disminuir la probabilidad de aparición de bits $\delta$ para reducir la cardinalidad de soluciones iniciales, y modificar la probabilidad de cada bit de forma individual, beneficiando a instancias seleccionadas por diferentes algoritmos heurísticos, con la intensión de reducir el error de clasificación.
 
 Con la finalidad de comparar diferentes estrategias de inicialización, se realizaron experimentos sobre los conjuntos de datos grandes (Tabla \ref{data-big}). Los resultados obtenidos son presentados y analizados a continuación.
 
-\subsubsection{Probabilidad de aparición de bit}
+\subsubsection{Inicialización disminuyendo la probabilidad de aparición de bit}
 
 Con la finalidad de reducir la cardinalidad de las soluciones iniciales generadas, en un intento de reducir el número de iteraciones necesarias para conseguir porcentajes de reducción aceptables, este estudio propone la reducción de la probabilidad de aparición de bits $\delta$. En esta sección se estudia el impacto de la disminución propuesta, usando 3 posibles valores: $50\%$, $25\%$ y $5\%$.
 
@@ -182,7 +185,7 @@ $25\%$ & 1193.26 & 19.83 & 4.14 & 6.71 \\
 $5\%$  & \textbf{893.24} & \textbf{4.67} & 6.25 & 7.28 \\
 \hline
 \end{tabular}
-\caption[Resultados modificando la probabilidad de aparición de bit]{Resultados promedio de las 5 metaheurísticas\\frente a los conjuntos de datos grandes, usando una\\probabilidad de aparición de bit $\delta$ igual a $50\%$, $25\%$ y $5\%$.}
+\caption[Resultados al disminuir la probabilidad de aparición de bit $\delta$]{Resultados promedio de las 5 metaheurísticas\\frente a los conjuntos de datos grandes, usando una\\probabilidad de aparición de bit $\delta$ igual a $50\%$, $25\%$ y $5\%$.}
 \label{table-unif}
 \end{table}
 
@@ -215,7 +218,7 @@ $25\%$ & 1.93 & 4 & $25\%$ & 2.0 &  0 & $25\%$ & 2.0 &  0 \\
 $5\%$  & 2.33 & 2 & $50\%$ & 3.0 &  0 & $50\%$ & 3.0 &  0 \\
 \hline
 \end{tabular}
-\caption[Ranking de probabilidad de bit $\delta$ según el tamaño y error de validación]{Ranking de inicializaciones según el tamaño y error de validación, considerando los promedios de las ejecuciones de cada algoritmo frente a los conjuntos de datos grandes. Por cada inicialización, se presenta su ranking promedio (\emph{Rank}) y el número de veces que obtuvo los mejores resultados (\emph{Mejor}).}
+\caption[Ranking de valores probabilidad de aparición de bit $\delta$]{Ranking de probabilidades $\delta$ según el tamaño y error de validación, considerando los promedios de las ejecuciones de cada algoritmo frente a los conjuntos de datos grandes. Por cada valor de $\delta$, se presenta su ranking promedio (\emph{Rank}) y el número de veces que obtuvo los mejores resultados (\emph{Mejor}).}
 \label{table-unif-rank}
 \end{table}
 
@@ -223,7 +226,7 @@ A pesar de que las diferencias en el error de validación favorecen el uso de\li
 
 \subsubsection{Inicialización usando algoritmos heurísticos}
 
-En esta sección se evalua el impacto de generar soluciones iniciales, modificando la distribución de probabilidad a lo largo la cadena de bits que representa una solución al problema de SI. El enfoque estandar emplea una distribución uniforme con probabilidad $\delta$, \emph{i.e.} todos los bits tienen igual probabilidad de estar ``prendidos''. En el presente trabajo empleamos una técnica de modificación de distribución, basada en la selección realizada por algoritmos heurísticos.
+En esta sección se evalúa el impacto de generar soluciones iniciales, modificando de forma independiente la probabilidad de aparición de bits lo largo la cadena que representa una solución al problema de SI. El enfoque estándar asigna un valor de probabilidad constante igual a $\delta$, \emph{i.e.} todos los bits tienen igual probabilidad de estar ``prendidos''. En el presente trabajo, se propone una técnica de modificación que asigna valores de probabilidad diferente en base a la selección realizada por algoritmos heurísticos.
 
 \begin{table}[h!]
 \centering
@@ -236,25 +239,25 @@ En esta sección se evalua el impacto de generar soluciones iniciales, modifican
  & & & \scriptsize{Entrenamiento} & \scriptsize{Validación} \\
 \hline
 \hline
-Uniforme   & \textbf{893.24} & \textbf{4.67} & 6.25 & \textbf{7.28} \\
+Constante  & \textbf{893.24} & \textbf{4.67} & 6.25 & \textbf{7.28} \\
 NEHS       & 958.94 & 4.70 & \textbf{6.20} & \textbf{7.28} \\
 CNN        & 921.68 & 5.11 & 6.27 & 7.85 \\
 FarthestNE & 932.19 & 4.98 & 6.94 & 7.67 \\
 ClosestNE  & 932.75 & 5.56 & 7.21 & 8.95 \\
 \hline
 \end{tabular}
-\caption[Resultados usando distribuciones uniforme y heurísticas]{Resultados promedio de las 5 metaheurísticas frente a los\\conjuntos de datos grandes, usando distribuciones de probabilidad\\uniforme y basadas en algoritmos heurísticos.}
+\caption[Resultados usando probabilidades constantes y basadas en heurísticas]{Resultados promedio de las 5 metaheurísticas frente a los\\conjuntos de datos grandes, usando valores de probabilidad constante\\y basados en algoritmos heurísticos.}
 \label{table-inits}
 \end{table}
 
-En la tabla \ref{table-inits} se presentan los resultados promedio del usar una distribución uniforme y distribuciones basadas en CNN, NEHS, Closest NE y Farthest NE, para la generación de soluciones iniciales en las 5 metaheuristicas descritas. Los datos en tiempo de ejecución son previsibles, debido al tiempo añadido de encontrar soluciones mediante el uso de estos algoritmos heurísticos. Sin embargo, contrario a lo esperado, estas modificaciones no mejoran significativamente los porcentajes de error obtenidos mediante una distribución uniforme. Más aún, CNN, Closest NE y Farthest NE empeoran los resultados en todos los aspectos. Solo NEHS reporta resultados alentadores, en el que mejora el error de entrenamiento e iguala el error de validación frente a una distribución uniforme.
+En la tabla \ref{table-inits} se presentan los resultados promedio de las 5 metaheurísticas descritas, generando soluciones iniciales con un valor de probabilidad constante o con valores en función de las selecciones generadas por CNN, NEHS, Closest NE y Farthest NE. Los datos en tiempo de ejecución son previsibles, debido al tiempo que requieren estos algoritmos heurísticos para generar sus soluciones. Sin embargo, contrario a lo esperado, estas modificaciones no mejoran significativamente los porcentajes de error obtenidos mediante el uso de una probabilidad constante. Más aún, las soluciones basadas en CNN, Closest NE y Farthest NE empeoran los resultados en todos los aspectos. Solo probabilidades en función de NEHS reportan resultados alentadores, mejorando el error de entrenamiento e igualando el error de validación frente al uso de una probabilidad constante.
 
-La figura \ref{fig-inits} confirma los aspectos señalados: el comportamiento de inicializaciones basadas en CNN, Closest NE y Farthest NE difieren significativamente del comportamiento de aquellas basadas en NEHS o una distribución uniforme. Estas últimas (NEHS y Uniforme) muestran un comportamiento similar en función de ambos objetivos del problema.
+La figura \ref{fig-inits} confirma los aspectos señalados: el comportamiento de inicializaciones basadas en CNN, Closest NE y Farthest NE difieren significativamente del comportamiento de aquellas basadas en NEHS o con probabilidad constante. Estas últimas muestran un comportamiento similar en función de ambos objetivos del problema.
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=\textwidth]{inits-boxplot.pdf}
-\caption[Tamaño y error de validación usando algoritmos heurísticos]{Diagramas de caja del tamaño y error de validación usando distribuciones de probabilidad uniforme y basadas en algoritmos heurísticos.}
+\caption[Tamaño y error de validación usando algoritmos heurísticos]{Diagramas de caja del tamaño y error de validación usando\\valores de probabilidad constante y basados en algoritmos heurísticos.}
 \label{fig-inits}
 \end{figure}
 
@@ -271,21 +274,21 @@ Sin embargo, la tabla \ref{table-inits-rank} sugiere que una inicialización bas
 Inicialización & Rank & Mejor & Inicialización & Rank & Mejor & Inicialización & Rank & Mejor \\
 \hline
 \hline
-NEHS       & 2.06 & 4 & Uniforme   & 1.86 & 6 & NEHS       & 2.00 & 5 \\
-Uniforme   & 2.40 & 2 & NEHS       & 2.26 & 3 & Uniforme   & 2.20 & 2 \\
+NEHS       & 2.06 & 4 & Constante  & 1.86 & 6 & NEHS       & 2.00 & 5 \\
+Constante  & 2.40 & 2 & NEHS       & 2.26 & 3 & Constante  & 2.20 & 2 \\
 CNN        & 2.86 & 4 & FarthestNE & 2.86 & 4 & CNN        & 2.93 & 4 \\
 FarthestNE & 2.93 & 5 & CNN        & 3.60 & 2 & FarthestNE & 3.06 & 4 \\
 ClosestNE  & 4.73 & 0 & ClosestNE  & 4.40 & 0 & ClosestNE  & 4.80 & 0 \\
 \hline
 \end{tabular}
-\caption[Ranking de inicializaciones según el tamaño y error de validación]{Ranking de inicializaciones según el tamaño y error de validación, considerando los promedios de las ejecuciones de cada algoritmo frente a los conjuntos de datos grandes. Por cada inicialización, se presenta su ranking promedio (\emph{Rank}) y el número de veces que obtuvo los mejores resultados (\emph{Mejor}).}
+\caption[Ranking de probabilidades constantes o basadas en heurísticas]{Ranking de inicializaciones con probabilidades constantes o basadas en heurísticas, según el tamaño y error de validación, considerando los promedios de las ejecuciones de cada algoritmo frente a los conjuntos de datos grandes. Por cada inicialización, se presenta su ranking promedio (\emph{Rank}) y el número de veces que obtuvo los mejores resultados (\emph{Mejor}).}
 \label{table-inits-rank}
 \end{table} 
 
 \subsection{Comparación entre metaheurísticas}
 \label{sec-comp-meta}
 
-Para controlar el proceso de búsqueda, cada metaheurística emplea técnicas diversas para recorrer el espacio de posibles soluciones. Su capacidad para encontrar buenas soluciones está íntimamente ligado al problema que se desea resolver, la representación de sus soluciones, la función de objetivo, entre otros factores. La distribución del espacio de búsqueda puede alterar significativamente la efectividad de una metaheurística particular. Por esta razón, al estudiar el comportamiento de diferentes metaheurísticas frente al problema de SI, es necesario identificar aquellas metaheurísticas que exiban mejor capacidad para seleccionar subconjuntos de instancias que cumplan con los objetivos planteados por el problema.
+Para controlar el proceso de búsqueda, cada metaheurística emplea técnicas diversas para recorrer el espacio de posibles soluciones. Su capacidad para encontrar buenas soluciones está íntimamente ligado al problema que se desea resolver, la representación de sus soluciones, la función de objetivo, entre otros factores. La distribución del espacio de búsqueda puede alterar significativamente la efectividad de una metaheurística particular. Por esta razón, al estudiar el comportamiento de diferentes metaheurísticas frente al problema de SI, es necesario identificar aquellas metaheurísticas que exhiban mejor capacidad para seleccionar subconjuntos de instancias que cumplan con los objetivos planteados por el problema.
 
 A continuación se presenta un estudio fraccionado del comportamiento de las 5 metaheurísticas, adaptadas en función de los resultados descritos en la sección \ref{sec-comp-inits}. Se describen los resultados obtenidos usando los conjuntos de datos caracterizados como pequeños, medianos y grandes. Finalmente, se realiza un análisis estadístico conjunto, con la finalidad de determinar si existen diferencias significativas entre las metaheurísticas.
 
@@ -293,7 +296,7 @@ A continuación se presenta un estudio fraccionado del comportamiento de las 5 m
 
 En la tabla \ref{res-small} se presentan los resultados promedio de cada metaheurística, al ser evaluadas usando los conjuntos de datos pequeños. En función del error de clasificación en los conjuntos de entrenamiento y validación, GGA muestra mejores resultados que el resto de las metaheurísticas. Sin embargo, el error de validación alcanzado por las demás metaheurísticas, en particular los resultados de SGA y PBIL, son bastante cercanos. En términos de la reducción lograda, son PBIL y CHC los que seleccionan conjuntos de datos de menor tamaño, mientras que PSO es el que consigue los peores resultados.
 
-Las mayores diferencias se ven reflejadas en los tiempos de ejecución, donde PSO y GGA requieren de un mayor número de segundos para concluir la búsqueda. No obstante, cabe destacar que sobre los conjuntos de datos pequeños, los tiempos de ejecución de estas metaheurísticas no son prohivitivos.
+Las mayores diferencias se ven reflejadas en los tiempos de ejecución, donde PSO y GGA requieren de un mayor número de segundos para concluir la búsqueda. No obstante, cabe destacar que sobre los conjuntos de datos pequeños, los tiempos de ejecución de estas metaheurísticas no son prohibitivos.
 
 \begin{table}[h!]
 \centering
@@ -337,11 +340,11 @@ CHC  & 3.77 & 0 & SGA  & 3.88 & 0 & SGA  & 3.22 & 1 \\
 PSO  & 4.33 & 0 & PSO  & 4.66 & 0 & PSO  & 4.88 & 0 \\
 \hline
 \end{tabular}
-\caption[Ranking de metaheurísticas según el tamaño y error de validación en conjuntos de datos pequeños]{Ranking de metaheurísticas según el tamaño y error de validación, considerando los promedios de las ejecuciones de cada algoritmo frente a los conjuntos de datos pequeños. Por cada algoritmo, se presenta su ranking promedio (\emph{Rank}) y el número de veces que obtuvo los mejores resultados (\emph{Mejor}).}
+\caption[Ranking de metaheurísticas usando conjuntos de datos pequeños]{Ranking de metaheurísticas según el tamaño y error de validación, considerando los promedios de las ejecuciones de cada algoritmo frente a los conjuntos de datos pequeños. Por cada algoritmo, se presenta su ranking promedio (\emph{Rank}) y el número de veces que obtuvo los mejores resultados (\emph{Mejor}).}
 \label{res-small-rank}
 \end{table}
 
-Los datos sugieren que PBIL representa la mejor alternativa para encontrar soluciones a instancias ``pequeñas'' del problema de SI, ya que logra buenos resultados tanto en términos de presición de clasificación, como en términos de reducción. Sin embargo, GGA y CHC presentan resultados comparables, por lo que no deben descartarse.
+Los datos sugieren que PBIL representa la mejor alternativa para encontrar soluciones a instancias ``pequeñas'' del problema de SI, ya que logra buenos resultados tanto en términos de precisión de clasificación, como en términos de reducción. Sin embargo, GGA y CHC presentan resultados comparables, por lo que no deben descartarse.
 
 \subsubsection{Resultados para conjuntos de datos medianos}
 
@@ -389,7 +392,7 @@ CHC  & 3.0 & 0 & GGA  & 4.5 & 0 & SGA  & 3.5 & 0 \\
 PSO  & 5.0 & 0 & SGA  & 4.5 & 0 & PSO  & 5.0 & 0 \\
 \hline
 \end{tabular}
-\caption[Ranking de metaheurísticas según el tamaño y error de validación en conjuntos de datos medianos]{Ranking de metaheurísticas según el tamaño y error de validación, considerando los promedios de las ejecuciones de cada algoritmo frente a los conjuntos de datos medianos. Por cada algoritmo, se presenta su ranking promedio (\emph{Rank}) y el número de veces que obtuvo los mejores resultados (\emph{Mejor}).}
+\caption[Ranking de metaheurísticas usando conjuntos de datos medianos]{Ranking de metaheurísticas según el tamaño y error de validación, considerando los promedios de las ejecuciones de cada algoritmo frente a los conjuntos de datos medianos. Por cada algoritmo, se presenta su ranking promedio (\emph{Rank}) y el número de veces que obtuvo los mejores resultados (\emph{Mejor}).}
 \label{res-med-rank}
 \end{table}
 
@@ -439,7 +442,7 @@ CHC  & 4.33 & 0 & GGA  & 4.33 & 0 & CHC  & 4.33 & 0 \\
 PSO  & 4.66 & 0 & SGA  & 4.66 & 0 & PSO  & 4.33 & 0 \\
 \hline
 \end{tabular}
-\caption[Ranking de metaheurísticas según el tamaño y error de validación en conjuntos de datos grandes]{Ranking de metaheurísticas según el tamaño y error de validación, considerando los promedios de las ejecuciones de cada algoritmo frente a los conjuntos de datos grandes. Por cada algoritmo, se presenta su ranking promedio (\emph{Rank}) y el número de veces que obtuvo los mejores resultados (\emph{Mejor}).}
+\caption[Ranking  de metaheurísticas usando conjuntos de datos grandes]{Ranking de metaheurísticas según el tamaño y error de validación, considerando los promedios de las ejecuciones de cada algoritmo frente a los conjuntos de datos grandes. Por cada algoritmo, se presenta su ranking promedio (\emph{Rank}) y el número de veces que obtuvo los mejores resultados (\emph{Mejor}).}
 \label{res-big-rank}
 \end{table}
 
@@ -464,7 +467,7 @@ PBIL & \textbf{2.36} & 26.87 & 6.19 & \textbf{5.87} \\
 \emph{Promedio} & \textbf{4.67} & 25.53 & 6.99 & \textbf{6.20} \\
 \hline
 \end{tabular}
-\caption[Comparación con resultados presentados por \emph{Cano et al.}]{Comparación con resultados presentados por \emph{Cano et al.} usando GGA, SGA, CHC y PBIL para los conjuntos \emph{Penbased}, \emph{Satimage} y \emph{Thyroid}.}
+\caption[Comparación con los resultados publicados por \emph{Cano et al.}]{Comparación con resultados publicados por \emph{Cano et al.} usando GGA, SGA, CHC y PBIL para los conjuntos \emph{Penbased}, \emph{Satimage} y \emph{Thyroid}.}
 \label{res-big-cano}
 \end{table}
 
@@ -538,11 +541,11 @@ CHC  & 3.78 & 0 & PSO  & 3.85 &  0 & CHC  & 3.07 &  0 \\
 PSO  & 4.50 & 0 & SGA  & 4.14 &  0 & PSO  & 4.78 &  0 \\
 \hline
 \end{tabular}
-\caption[Ranking de metaheurísticas según el tamaño y error de validación en conjuntos de datos grandes]{Ranking de metaheurísticas según el tamaño y error de validación, considerando los promedios de las ejecuciones de cada algoritmo frente a todos los conjuntos de datos. Por cada algoritmo, se presenta su ranking promedio (\emph{Rank}) y el número de veces que obtuvo los mejores resultados (\emph{Mejor}).}
+\caption[Ranking de metaheurísticas usando todos los conjuntos de datos]{Ranking de metaheurísticas según el tamaño y error de validación, considerando los promedios de las ejecuciones de cada algoritmo frente a todos los conjuntos de datos. Por cada algoritmo, se presenta su ranking promedio (\emph{Rank}) y el número de veces que obtuvo los mejores resultados (\emph{Mejor}).}
 \label{res-all-rank}
 \end{table}
 
-Sin embargo, los resultados de CHC en términos del tamaño de las soluciones encontradas son interesantes. Presenta un tamaño de soluciones promedio igual a $3.92\%$, solo $0.88\%$ más que PBIL. Adicionalmente, CHC consigue los conjuntos de menor tamaño en 3 ocaciones, logrando la segunda posición en dicho ranking.
+Sin embargo, los resultados de CHC en términos del tamaño de las soluciones encontradas son interesantes. Presenta un tamaño de soluciones promedio igual a $3.92\%$, solo $0.88\%$ más que PBIL. Adicionalmente, CHC consigue los conjuntos de menor tamaño en 3 ocasiones, logrando la segunda posición en dicho ranking.
 
 En la figura \ref{fig-alg-density} se muestra la distribución de las soluciones encontradas por cada metaheurística, en función de su error de validación (eje $x$) y su tamaño\linebreak(eje $y$). Cada punto representa una de las 30 ejecuciones realizadas para cada conjunto de datos, usando el algoritmo correspondiente. Adicionalmente, se grafica una estimación de densidad multivariable con la finalidad de identificar con mayor facilidad, las áreas de concentración de los resultados.
 
@@ -553,9 +556,9 @@ En la figura \ref{fig-alg-density} se muestra la distribución de las soluciones
 \label{fig-alg-density}
 \end{figure}
 
-Esta gráfica confirma las conclusiones obtenidas a través de los datos presentados: PBIL muestra los mejores resultados en función de los objetivos del problema de SI. En comparación con las demás metaheurísticas, PBIL exhibe un comportamiento más estable, \emph{i.e.} la mayoria de sus soluciones presentan bajos porcentajes de error y tamaño. Al comparar estos datos con los de GGA, la gráfica de densidad muestra que los resultados de PBIL están mucho más concentrados en un área particular del plano, mientras que GGA presenta mayor variabilidad.
+Esta gráfica confirma las conclusiones obtenidas a través de los datos presentados: PBIL muestra los mejores resultados en función de los objetivos del problema de SI. En comparación con las demás metaheurísticas, PBIL exhibe un comportamiento más estable, \emph{i.e.} la mayoría de sus soluciones presentan bajos porcentajes de error y tamaño. Al comparar estos datos con los de GGA, la gráfica de densidad muestra que los resultados de PBIL están mucho más concentrados en un área particular del plano, mientras que GGA presenta mayor variabilidad.
 
-Para poder determinar con seguridad las posibles diferencias entre PBIL y el resto de las metaheurísticas, es necesario aplicar una prueba estadística. Se usa una prueba de rangos con signo de \emph{Wilcoxon} \cite{wilcoxon1945individual} (de cola inferior), con un nivel de significancia del $1\%$, para determinar si la mediana de la resultados de PBIL es menor que la de los resultados de las demás metaheurísticas en términos de error de validación o tamaño. A continuación se establecen las hipotesis de la prueba para este caso particular:
+Para poder determinar con seguridad las posibles diferencias entre PBIL y el resto de las metaheurísticas, es necesario aplicar una prueba estadística. Se usa una prueba de rangos con signo de \emph{Wilcoxon} \cite{wilcoxon1945individual} (de cola inferior), con un nivel de significancia del $1\%$, para determinar si la mediana de la resultados de PBIL es menor que la de los resultados de las demás metaheurísticas en términos de error de validación o tamaño. A continuación se establecen las hipótesis de la prueba para este caso particular:
 
 \begin{tabular}{l l}
 $H_0$ & Los resultados de PBIL son mayores o iguales que los del algoritmo en cuestión.\\
@@ -580,7 +583,7 @@ CHC &  6 & $8.545 \times 10^{-4}$ & 14 & $6.714 \times 10^{-3}$ \\
 PSO &  6 & $8.545 \times 10^{-4}$ &  0 & $6.104 \times 10^{-5}$ \\
 \hline
 \end{tabular}
-\caption[Pruebas de \emph{Wilcoxon} comparando PBIL]{Estadístico $W$ y $p$-valor de pruebas de rangos con signo de \emph{Wilcoxon} para determinar si PBIL es mejor que el resto de las metaheurísticas, en función del error de validación y el tamaño de las soluciones encontradas.}
+\caption[Pruebas de \emph{Wilcoxon} entre PBIL y las demás metaheurísticas]{Estadístico $W$ y $p$-valor de pruebas de rangos con signo de \emph{Wilcoxon} para determinar si PBIL es mejor que el resto de las metaheurísticas, en función del error de validación y el tamaño de las soluciones encontradas.}
 \label{wilcox-res-pbil}
 \end{table}
 
