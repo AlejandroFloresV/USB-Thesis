@@ -21,7 +21,7 @@ Una \textbf{instancia} $t_i$ (con $i = 1\dots n$) es una observación del evento
 \end{definicion}
 
 \begin{definicion}
-Un \textbf{atributo} $p_j$ (con $j = 1\dots m$) define el conjunto de mediciones \guillemotleft\emph{de un mismo tipo}\guillemotright\ para todas las observaciones, \emph{i.e.} $p_j = \left\{ v_{i,j} \mid i = 1\dots n \right\}$. Cada atributo puede presentarse en diferentes formatos: \emph{nominales}, \emph{discretos}, o \emph{continuos}.
+Un \textbf{atributo} $p_j$ (con $j = 1\dots m$) define el conjunto de mediciones \guillemotleft\emph{de un mismo tipo}\guillemotright\ para todas las observaciones, es decir, $p_j = \left\{ v_{i,j} \mid i = 1\dots n \right\}$. Cada atributo puede presentarse en diferentes formatos: \emph{nominales}, \emph{discretos}, o \emph{continuos}.
 \end{definicion}
 
 En la literatura se han definido varias estrategias para realizar el proceso de \emph{reducción de datos}. Entre ellas las más relevantes son:
@@ -41,14 +41,14 @@ Este estudio se centra en el problema de \emph{Selección de Instancias}. En las
 
 \section{Selección de Instancias}
 
-Dado un conjunto inicial de instancias $T = \left\{ t_i \mid i = 1 \dots n \right\}$ y un conjunto de clases $\Omega$, donde cada instancia está formada por una tupla de valores $t_i = (v_{i,1}, v_{i,2}, \dots, v_{i,m})$ y pertenece a la clase $\omega_{t_i} \in \Omega$, el problema de \emph{Selección de Instancias} (SI) consiste en seleccionar un subconjunto $R \subseteq T$ que mantenga (o mejore) la capacidad de representación del conjunto original $T$.
+Dado un conjunto inicial de instancias $T = \left\{ t_i \mid i = 1 \dots n \right\}$ y un conjunto de clases $\Omega$, donde cada instancia está formada por una tupla de valores $t_i = (v_{i,1}, v_{i,2}, \dots, v_{i,m})$ y pertenece a la clase $\omega_{t_i}$, tal que $\omega_{t_i} \in \Omega$, el problema de \emph{Selección de Instancias} (SI) consiste en seleccionar un conjunto $R$, $R \subseteq T$, que mantenga (o mejore) la capacidad de representación del conjunto original $T$.
 
-Este problema puede ser formulado como un \emph{problema de optimización combinatoria}, donde se busca el $R^* \subseteq T$ de menor cardinalidad que mantenga (o mejore) la capacidad de representación del conjunto original. Cada instancia perteneciente a $T$, puede o no pertenecer a $R$, lo que significa que el problema de SI tiene un espacio de posibles soluciones igual a $2^n$.
+Este problema puede ser formulado como un \emph{problema de optimización combinatoria}, donde se busca el conjunto $R^*$, $R^* \subseteq T$, de menor cardinalidad que mantenga (o mejore) la capacidad de representación del conjunto original. Cada instancia perteneciente a $T$, puede o no pertenecer a $R$, lo que significa que el problema de SI tiene un espacio de posibles soluciones de cardinalidad igual a $2^n$.
 
-En particular, la literatura se ha enfocado en la aplicación del problema de SI para su uso en clasificadores \cite{DBLP:journals/corr/GottliebK14,DBLP:conf/jcdcg/Toussaint02}. El subconjunto seleccionado se usa como conjunto de entrenamiento, en base al cuál el clasificador estima la clase $\hat{\omega}$ de instancias previamente desconocidas. En este sentido, el problema de optimización de SI busca conseguir un $R^* \subseteq T$ \emph{consistente} y de cardinalidad mínima, donde:\\
+En particular, la literatura se ha enfocado en la aplicación del problema de SI para su uso en clasificadores \cite{DBLP:journals/corr/GottliebK14,DBLP:conf/jcdcg/Toussaint02}. El subconjunto seleccionado se usa como conjunto de entrenamiento, en base al cual el clasificador estima la clase $\hat{\omega}$ de instancias previamente desconocidas. En este sentido, el problema de optimización de SI busca conseguir un conjunto $R^*$, $R^* \subseteq T$, \emph{consistente} y de cardinalidad mínima.\\
 
 \begin{definicion}
-Un conjunto $R$ es \textbf{consistente} con $T$, \emph{si y solo si} toda instancia $t \in T$ es clasificada correctamente (\emph{e.i.} $\hat{\omega}_t = \omega_t$) mediante el uso de un clasificador \emph{M} y las instancias en $R$ como conjunto de entrenamiento.
+Un conjunto $R$ es \textbf{consistente} con $T$, \emph{si y solo si} toda instancia $t \in T$ es clasificada correctamente (esto es, $\hat{\omega}_t = \omega_t$) mediante el uso de un clasificador \emph{M} y las instancias en $R$ como conjunto de entrenamiento.
 \end{definicion}
 
 La complejidad del problema de selección de instancias ha sido estudiada por diferentes autores: \emph{Bien} y \emph{Tibshirani} \cite{2012arXiv1202.5933B} describen una reducción del problema de SI al problema de \emph{Conjunto de Cobertura}, cuya versión de optimización es NP-Dura. Más aún, \emph{Wilfong} \cite{Wilfong:1991:NNP:109648.109673} y  \emph{Zukhba} \cite{Zukhba:2010:NPP:1921730.1921735} muestran que el problema de SI es NP-Duro.
@@ -57,20 +57,20 @@ En general, la literatura relacionada con el problema de SI se ha enfocado en el
 
 \subsection{Regla del Vecino Más Cercano (NN)}
 
-Inicialmente descrita por \emph{Fix} y \emph{Hodges} \cite{fix_51_discriminatory}, la regla del \emph{Vecino Más Cercano} (Nearest Neighbor o NN) es una regla de inferencia basada en la idea de que instancias con atributos similares (cercanas en un espacio de $m$ dimensiones) tienden a compartir la misma clase. La regla NN estima la clase $\hat{\omega}_x$ de un punto $x$ en un espacio $m$-dimensional, dado un conjunto $T$ de instancias de entrenamiento y una función de distancia $\varphi$ entre dos puntos en dicho espacio:
+Inicialmente descrita por \emph{Fix} y \emph{Hodges} \cite{fix_51_discriminatory}, la regla del \emph{Vecino Más Cercano} (Nearest Neighbor o NN) es una regla de inferencia basada en la idea de que instancias con atributos similares (cercanas en un espacio de $m$ dimensiones) tienden a compartir la misma clase. La regla NN estima la clase $\hat{\omega}_x$ de un punto $x$ en un espacio $m$-dimensional, dado un conjunto $R$ de instancias de entrenamiento y una función de distancia $\varphi$ entre dos puntos en dicho espacio:
 
 \begin{equation}
 \hat{\omega}_x = \omega_{t^*}\ ,\ 
-t^* = \operatorname*{arg\,min}_{t\ \in\ T} \varphi(t,x)
+t^* = \operatorname*{arg\,min}_{t\ \in\ R} \varphi(t,x)
 \end{equation}
 
-La generalización de la regla de inferencia NN se conoce como el clasificador $k$-NN: dado un $k \in \mathbb{N}$, se estima la clase $\hat{\omega}_x$ de un punto $x$ en función a la clase de las $k$ instancias más cercanas a $x$. En general, se usa la estrategia del \guillemotleft\emph{voto de la mayoría}\guillemotright, asignando la clase más común entre las $k$ instancias más cercanas. En particular, el clasificador 1-NN corresponde a la regla NN.
+La generalización de la regla de inferencia NN se conoce como el clasificador $k$-NN: dado un $k \in \mathbb{N}$, se estima la clase $\hat{\omega}_x$ de un punto $x$ en función a la clase de las $k$ instancias más cercanas a $x$. En general, se usa la estrategia del \guillemotleft\emph{voto de la mayoría}\guillemotright, asignando la clase que más se repita entre las $k$ instancias más cercanas. En particular, el clasificador 1-NN corresponde a la regla NN.
 
 $k$-NN es un clasificador no paramétrico de \emph{aprendizaje perezoso} (debido a que la etapa de aprendizaje consiste en guardar el conjunto de entrenamiento), caracterizado por su sencillez en términos de implementación. Esa simplicidad y su probada utilidad para numerosas aplicaciones, han hecho del clasificador $k$-NN uno de los más estudiados en la literatura.
 
-Uno de los trabajos de mayor relevancia es el de \emph{Cover} y \emph{Hart} \cite{Cover:2006:NNP:2263261.2267456}, quienes mostraron que cuando el número de instancias de entrenamiento tiende a infinito, el clasificador $k$-NN garantiza un error no mayor al doble de la tasa de error de Bayes: la menor tasa de error posible para un clasificador dado. Adicionalmente, probaron que para un conjunto de entrenamiento de cardinalidad finita, el clasificador 1-NN es admisible dentro de la clase de clasificadores $k$-NN: \emph{e.i.} No existe $k > 1$ tal que $k$-NN tenga menor probabilidad de error frente a 1-NN, para toda posible distribución de los datos.
+Uno de los trabajos de mayor relevancia es el de \emph{Cover} y \emph{Hart} \cite{Cover:2006:NNP:2263261.2267456}, quienes mostraron que cuando el número de instancias de entrenamiento tiende a infinito, el clasificador $k$-NN garantiza un error no mayor al doble de la tasa de error de Bayes: la menor tasa de error posible para un clasificador dado. Adicionalmente, probaron que para un conjunto de entrenamiento de cardinalidad finita, el clasificador 1-NN es admisible dentro de la clase de clasificadores $k$-NN: es decir, no existe $k$, $k > 1$, tal que $k$-NN tenga menor probabilidad de error frente a 1-NN, para toda posible distribución de los datos.
 
-Adicionalmente, algunos trabajos en geometría computacional han contribuido significativamente en la comprensión del problema. En este sentido, el clasificador 1-NN para espacios euclidianos puede definirse de forma alternativa en función de \emph{Diagramas de Voronoi} \cite{voronoi1908nouvelles}: una partición del espacio $\mathbb{R}^m$ en \emph{Celdas de Voronoi}, cada una definida por una instancia $t \in T$ donde $t$ es el \emph{vecino más cercano} para todos los puntos dentro del espacio dentro de dicha celda (ver Figura \ref{voronoi}). Esto ha permitido el desarrollo de nuevos enfoques para la búsqueda de vecinos más cercanos basados en \emph{Diagramas de Voronoi}, como el descrito por \emph{Kolahdouzan} y \emph{Shahabi} \cite{Kolahdouzan:2004:VKN:1316689.1316762}.
+Adicionalmente, algunos trabajos en geometría computacional han contribuido significativamente en la comprensión del problema. En este sentido, el clasificador 1-NN para espacios euclidianos puede definirse de forma alternativa en función de \emph{Diagramas de Voronoi} \cite{voronoi1908nouvelles}: una partición del espacio $\mathbb{R}^m$ en \emph{Celdas de Voronoi}, cada una definida por una instancia $t \in T$ donde $t$ es el \emph{vecino más cercano} para todos los puntos del espacio dentro de dicha celda (ver Figura \ref{voronoi}). Esto ha permitido el desarrollo de nuevos enfoques para la búsqueda de vecinos más cercanos basados en \emph{Diagramas de Voronoi}, como el descrito por \emph{Kolahdouzan} y \emph{Shahabi} \cite{Kolahdouzan:2004:VKN:1316689.1316762}.
 
 \begin{figure}[h!]
 \centering
@@ -79,12 +79,12 @@ Adicionalmente, algunos trabajos en geometría computacional han contribuido sig
 \label{voronoi}
 \end{figure}
 
-Similarmente, esta relación ha permitido avances importantes en términos de complejidad. En particular, mediante el uso de \emph{kd}-trees \cite{Bentley:1975:MBS:361002.361007} (árboles de búsqueda binaria en múltiples dimensiones) se ha logrado disminuir la complejidad en tiempo de clasificación, de $\mathcal{O}(n)$ (de un enfoque ``ingenuo'' revisando todas las instancias) a $\mathcal{O}(\log{n})$, a costas de un aumento en el tiempo necesario para el entrenamiento del clasificador: de $\mathcal{O}(1)$ a $\mathcal{O}(n\log{n})$, el tiempo necesario para la construcción del árbol.
+Similarmente, esta relación ha permitido avances importantes en términos de complejidad. En particular, mediante el uso de \emph{kd}-trees \cite{Bentley:1975:MBS:361002.361007} (árboles de búsqueda binaria en múltiples dimensiones) se ha logrado disminuir la complejidad en tiempo de clasificación, de $\mathcal{O}(n)$ (de un enfoque ``ingenuo'' revisando todas las instancias) a $\mathcal{O}(\log{n})$, a costa de un aumento en el tiempo necesario para el entrenamiento del clasificador: de $\mathcal{O}(1)$ a $\mathcal{O}(n\log{n})$, el tiempo necesario para la construcción del árbol.
 
-Sin embargo, los clasificadores $k$-NN presentan ciertas propiedades desalentadoras; el problema de conseguir el vecino más cercano de un punto dado, requiere --en cualquiera de los casos-- almacenar todas las instancias de entrenamiento: \emph{e.i.} $\mathcal{O}(n)$ en espacio. Adicionalmente, trabajos más recientes \cite{DBLP:conf/soda/KrauthgamerL04} muestran que en espacios euclidianos de altas dimensiones, la búsqueda del vecino más cercano requiere $\mathcal{O}(n)$ en tiempo: un fenómeno conocido como la \guillemotleft\emph{maldición de la dimensionalidad}\guillemotright\ (\emph{curse of dimensionality} en inglés). Finalmente, según \emph{Shwartz} y \emph{David} \cite{shalev2014understanding} los clasificadores NN tienden a sobre-ajustar el modelo con respecto al conjunto de entrenamiento (\emph{overfitting} en inglés); efecto que puede mitigarse aumentando el $k$ del clasificador \cite{devroye1994strong, shalev2014understanding} y eliminando instancias del conjunto de datos \cite{DBLP:journals/corr/GottliebKK13}.
+Sin embargo, los clasificadores $k$-NN presentan ciertas propiedades desalentadoras; el problema de conseguir el vecino más cercano de un punto dado, requiere --en cualquiera de los casos-- almacenar todas las instancias de entrenamiento: $\mathcal{O}(n)$ en espacio. Adicionalmente, trabajos más recientes \cite{DBLP:conf/soda/KrauthgamerL04} muestran que en espacios euclidianos de altas dimensiones, la búsqueda del vecino más cercano requiere $\mathcal{O}(n)$ en tiempo: un fenómeno conocido como la \guillemotleft\emph{maldición de la dimensionalidad}\guillemotright\ (\emph{curse of dimensionality} en inglés). Finalmente, según \emph{Shwartz} y \emph{David} \cite{shalev2014understanding} los clasificadores NN tienden a sobre-ajustar el modelo con respecto al conjunto de entrenamiento (\emph{overfitting} en inglés); efecto que puede mitigarse aumentando el $k$ del clasificador \cite{devroye1994strong, shalev2014understanding} y eliminando instancias del conjunto de datos \cite{DBLP:journals/corr/GottliebKK13}.
 
 \paragraph*{Algunas definiciones}
-A continuación se definen algunos conceptos relevantes para la descripción de métodos heurísticos de SI en futuras secciones. Para un subconjunto de instancias cualquiera $Q \subseteq T$:\\
+A continuación se definen algunos conceptos relevantes para la descripción de métodos heurísticos de SI en futuras secciones. Para un subconjunto cualquiera de instancias $Q$, $Q \subseteq T$:\\
 
 \begin{definicion}
 Los \textbf{asociados} en $Q$ de una instancia $t$ son aquellas instancias en $Q$ para las cuales $t$ pertenece a su conjunto de $k$ instancias más cercanas:
@@ -101,7 +101,7 @@ Los \textbf{enemigos} en $Q$ de una instancia $t \in T$ son aquellas instancias 
 \end{definicion}
 
 \begin{definicion}
-El \textbf{enemigo más cercano} (\emph{nearest enemy} o NE) en $Q$ de una instancia $t \in T$, es la instancia más cercana a $t$ con diferente clase, y es denotada como $\mathrm{NE}_Q(t)$. \emph{i.e.} $\mathrm{NE}_Q(t)$ es la instancia más cercana a $t$ perteneciente a $\emph{enemigos}_Q(t)$:
+El \textbf{enemigo más cercano} (\emph{nearest enemy} o NE) en $Q$ de una instancia $t \in T$, es la instancia más cercana a $t$ con diferente clase, y es denotada como $\mathrm{NE}_Q(t)$. Esto es, $\mathrm{NE}_Q(t)$ es la instancia más cercana a $t$ perteneciente a $\emph{enemigos}_Q(t)$:
 \begin{equation}
 \mathrm{NE}_Q(t) = \operatorname*{arg\,min}_{e\ \in\ \emph{enemigos}_Q(t)} \varphi(t,e)
 \end{equation}
@@ -152,7 +152,7 @@ Las metaheurísticas son métodos de búsqueda estocástica de propósito genera
 
 Algunos de los primeros trabajos se enfocaron en adaptar el algoritmo de \emph{Búsqueda Tabú} para solucionar el problema de SI. En particular, los estudios de \emph{Cerverón et al.} \cite{cerveron2001another} y \emph{Zhang et al.} \cite{zhang2002optimal} describen dos enfoques diferentes de modificación del algoritmo.
 
-Sin embargo, la mayoría de los estudios se han enfocado en el uso de \emph{Algoritmos Evolutivos} (AE), adaptándolos para la búsqueda de soluciones al problema de selección. Entre ellos destaca el trabajo realizado por \emph{Cano et al.} \cite{cano2003using}; un completo estudio comparativo entre algoritmos ``tradicionales'' de SI y adaptaciones del \emph{Algoritmo Genético Generacional} (GGA), \emph{Algoritmo Genético Estacionario} (SGA), \emph{CHC Adaptive Search Algorithm} (CHC) y \emph{Population-Based Incremental Learning} (PBIL). Con este estudio, resulta evidente la utilidad de los \emph{AE} frente a los algoritmos tradicionales de SI en función de la capacidad de reducción y precisión de los conjuntos seleccionados.
+Sin embargo, la mayoría de los estudios se han enfocado en el uso de \emph{Algoritmos Evolutivos} (AE), adaptándolos para la búsqueda de soluciones al problema de selección. Entre ellos destaca el trabajo realizado por \emph{Cano et al.} \cite{cano2003using}; un completo estudio comparativo entre algoritmos ``tradicionales'' de SI y adaptaciones de \emph{Algoritmo Genético Generacional} (GGA), \emph{Algoritmo Genético Estacionario} (SGA), \emph{CHC Adaptive Search Algorithm} (CHC) y \emph{Population-Based Incremental Learning} (PBIL). Con este estudio, resulta evidente la utilidad de los \emph{AE} frente a los algoritmos tradicionales de SI en función de la capacidad de reducción y precisión de los conjuntos seleccionados.
 
 Existen también otras adaptaciones y modificaciones sobre AE, entre los que destacan: \emph{Estimation of Distribution Algorithm} (EDA) \cite{sierra2001prototype}, \emph{Intelligent Genetic Algorithm} (IGA) \cite{ho2002design}, \emph{Steady-State Memetic Algorithm} (SSMA) \cite{garcia2008memetic} y \emph{Genetic Algorithm} \cite{gil2008evolving} basado en Error Cuadrático Medio, \emph{Clustered Crossover} y \emph{Fast Smart Mutation} (GA-MSE-CC-PSM).
 
@@ -209,6 +209,5 @@ Para comparar métodos de SI se consideran una serie de criterios usados para ev
 \begin{itemize}
 \item \emph{Reducción}: El objetivo principal de métodos de SI es el de reducir el número de instancias del conjunto de datos. Esto no solo disminuye el espacio necesario para almacenar los datos, sino que acelera el proceso de clasificación.
 \item \emph{Precisión}: Un algoritmo exitoso debe reducir el conjunto de datos, afectando en la menor medida posible su capacidad de generalización.
-\item \emph{Tiempo}: A pesar de que el proceso de preprocesamiento y aprendizaje debe realizarse solo una vez, la complejidad de los algoritmos pueden volverlos poco prácticos para su uso sobre conjuntos de datos ``grandes''.
-%\item \emph{Tolerancia al ruido}: Algoritmos que seleccionen consistentemente instancias atípicas o inconsistentes (``ruido'') presentan menor capacidad de generalización de los datos.
+\item \emph{Tiempo}: A pesar de que el proceso de preprocesamiento y aprendizaje debe realizarse solo una vez, la complejidad de los algoritmos pueden volverlos poco prácticos para su uso sobre conjuntos ``grandes'' de datos.
 \end{itemize}

@@ -7,45 +7,45 @@ Warning--empty journal in amal2011survey
 Warning--empty institution in Baluja94pbil
 Warning--empty institution in Baluja95anempirical
 Warning--empty booktitle in Baluja95removingthe
-You've used 53 entries,
+You've used 55 entries,
             2543 wiz_defined-function locations,
-            924 strings with 15478 characters,
-and the built_in function-call counts, 22503 in all, are:
-= -- 2330
-> -- 952
-< -- 37
-+ -- 316
-- -- 308
-* -- 1551
-:= -- 3575
-add.period$ -- 172
-call.type$ -- 53
-change.case$ -- 316
-chr.to.int$ -- 53
-cite$ -- 57
-duplicate$ -- 941
-empty$ -- 1681
-format.name$ -- 376
-if$ -- 4733
+            938 strings with 15860 characters,
+and the built_in function-call counts, 23312 in all, are:
+= -- 2409
+> -- 995
+< -- 38
++ -- 331
+- -- 323
+* -- 1615
+:= -- 3710
+add.period$ -- 180
+call.type$ -- 55
+change.case$ -- 329
+chr.to.int$ -- 55
+cite$ -- 59
+duplicate$ -- 971
+empty$ -- 1738
+format.name$ -- 393
+if$ -- 4897
 int.to.chr$ -- 1
 int.to.str$ -- 0
-missing$ -- 56
-newline$ -- 267
-num.names$ -- 167
-pop$ -- 299
+missing$ -- 59
+newline$ -- 278
+num.names$ -- 173
+pop$ -- 310
 preamble$ -- 1
-purify$ -- 374
+purify$ -- 390
 quote$ -- 0
-skip$ -- 827
+skip$ -- 851
 stack$ -- 0
-substring$ -- 1407
-swap$ -- 211
-text.length$ -- 37
-text.prefix$ -- 17
+substring$ -- 1448
+swap$ -- 213
+text.length$ -- 38
+text.prefix$ -- 18
 top$ -- 0
-type$ -- 396
+type$ -- 408
 warning$ -- 4
-while$ -- 231
-width$ -- 59
-write$ -- 698
+while$ -- 237
+width$ -- 58
+write$ -- 727
 (There were 4 warnings)

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.7)  1 SEP 2014 07:37
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.7)  29 SEP 2014 06:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -704,8 +704,8 @@ Package babel Info: Making . an active character on input line 599.
 Package babel Info: Making < an active character on input line 644.
 Package babel Info: Making > an active character on input line 644.
 ))
-LaTeX Info: Redefining \. on input line 8.
-LaTeX Info: Redefining \% on input line 8.
+LaTeX Info: Redefining \. on input line 7.
+LaTeX Info: Redefining \% on input line 7.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/babelbib/babelbib.sty
 Package: babelbib 2012/01/03 v1.31 babelbib: multilingual bibliographies (HH)
@@ -1033,7 +1033,7 @@ Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix
 \FV@StepNumber=\count163
 \FV@OutFile=\write4
 )
-Package hyperref Info: Option `colorlinks' set `false' on input line 20.
+Package hyperref Info: Option `colorlinks' set `false' on input line 19.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/mdframed/mdframed.sty
 Package: mdframed 2013/07/01 1.9b: mdframed
@@ -1418,22 +1418,22 @@ LaTeX Warning: Label `seleccion' multiply defined.
 )
 \openout1 = `tesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
@@ -1461,7 +1461,7 @@ Package caption Info: End \AtBeginDocument code.
 )
 \c@lstlisting=\count311
 \AtBeginShipoutBox=\box69
-Package hyperref Info: Link coloring OFF on input line 86.
+Package hyperref Info: Link coloring OFF on input line 85.
  (/usr/local/texlive/2013/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -1470,16 +1470,16 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count312
 )
-LaTeX Info: Redefining \ref on input line 86.
-LaTeX Info: Redefining \pageref on input line 86.
-LaTeX Info: Redefining \nameref on input line 86.
+LaTeX Info: Redefining \ref on input line 85.
+LaTeX Info: Redefining \pageref on input line 85.
+LaTeX Info: Redefining \nameref on input line 85.
 
 (./tesis.out) (./tesis.out)
 \@outlinefile=\write5
 \openout5 = `tesis.out'.
 
-LaTeX Info: Redefining \. on input line 86.
-LaTeX Info: Redefining \% on input line 86.
+LaTeX Info: Redefining \. on input line 85.
+LaTeX Info: Redefining \% on input line 85.
 
 babelbib: Set bibliography fall-back language to spanish
 (/usr/local/texlive/2013/texmf-dist/tex/latex/babelbib/spanish.bdf
@@ -1493,14 +1493,14 @@ ABD: EveryShipout initializing macros
 <img/./usb.pdf, id=256, 171.64125pt x 114.4275pt>
 File: img/./usb.pdf Graphic file (type pdf)
  <use img/./usb.pdf>
-Package pdftex.def Info: img/./usb.pdf used on input line 89.
+Package pdftex.def Info: img/./usb.pdf used on input line 88.
 (pdftex.def)             Requested size: 86.72377pt x 57.81422pt.
-LaTeX Font Info:    Try loading font information for U+msa on input line 89.
+LaTeX Font Info:    Try loading font information for U+msa on input line 88.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 89.
+LaTeX Font Info:    Try loading font information for U+msb on input line 88.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1644,23 +1644,23 @@ Cap\'{\i }tulo 3.
 ------------------------------------------------------------------------------
 [23
 
-] [24] [25] <img/seleccion.pdf, id=976, 853.57898pt x 768.22003pt>
+] [24] [25] <img/seleccion.pdf, id=981, 853.57898pt x 768.22003pt>
 File: img/seleccion.pdf Graphic file (type pdf)
 
 <use img/seleccion.pdf>
 Package pdftex.def Info: img/seleccion.pdf used on input line 70.
-(pdftex.def)             Requested size: 348.77528pt x 313.89381pt.
+(pdftex.def)             Requested size: 305.17587pt x 274.66002pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [26] [27 <./img/seleccion.pdf>]
-<img/hiperesferas.pdf, id=1218, 853.57898pt x 384.11504pt>
+<img/hiperesferas.pdf, id=1228, 853.57898pt x 384.11504pt>
 File: img/hiperesferas.pdf Graphic file (type pdf)
 
 <use img/hiperesferas.pdf>
 Package pdftex.def Info: img/hiperesferas.pdf used on input line 112.
-(pdftex.def)             Requested size: 348.77528pt x 156.94896pt.
+(pdftex.def)             Requested size: 305.17587pt x 137.3318pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -1672,18 +1672,10 @@ Cap\'{\i }tulo 4.
 ------------------------------------------------------------------------------
 [33
 
-]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[34] [35]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[36] [37] [38] <img/uniforme.pdf, id=1421, 867.24pt x 314.17375pt>
+] [34] [35] [36] [37] [38]
+<img/uniforme.pdf, id=1439, 867.24pt x 314.17375pt>
 File: img/uniforme.pdf Graphic file (type pdf)
-
-<use img/uniforme.pdf>
+ <use img/uniforme.pdf>
 Package pdftex.def Info: img/uniforme.pdf used on input line 196.
 (pdftex.def)             Requested size: 435.96745pt x 157.93979pt.
 
@@ -1691,7 +1683,7 @@ Package pdftex.def Info: img/uniforme.pdf used on input line 196.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [39] [40 <./img/uniforme.pdf>]
-<img/inits-boxplot.pdf, id=1458, 853.57898pt x 284.52296pt>
+<img/inits-boxplot.pdf, id=1476, 853.57898pt x 284.52296pt>
 File: img/inits-boxplot.pdf Graphic file (type pdf)
 
 <use img/inits-boxplot.pdf>
@@ -1712,17 +1704,13 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[46] [47]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[48]
+[46] [47] [48]
 Underfull \hbox (badness 2103) in paragraph at lines 550--551
 \T1/cmr/m/n/12 me-taheu-rís-ti-ca, en fun-ción de su error de va-li-da-ción (ej
 e $\OML/cmm/m/it/12 x$\T1/cmr/m/n/12 ) y su ta-ma-ño
  []
 
-<img/alg-density.pdf, id=1533, 867.24pt x 578.16pt>
+<img/alg-density.pdf, id=1550, 867.24pt x 578.16pt>
 File: img/alg-density.pdf Graphic file (type pdf)
  <use img/alg-density.pdf>
 Package pdftex.def Info: img/alg-density.pdf used on input line 554.
@@ -1731,23 +1719,33 @@ Package pdftex.def Info: img/alg-density.pdf used on input line 554.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[49] [50 <./img/alg-density.pdf>]
-<img/tiempo.pdf, id=5325, 722.7pt x 433.62pt>
+[49]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[50 <./img/alg-density.pdf>] <img/tiempo.pdf, id=5343, 722.7pt x 433.62pt>
 File: img/tiempo.pdf Graphic file (type pdf)
- <use img/tiempo.pdf>
+
+<use img/tiempo.pdf>
 Package pdftex.def Info: img/tiempo.pdf used on input line 603.
 (pdftex.def)             Requested size: 392.36804pt x 235.42168pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) (./partes/conclusiones.tex [51] [52 <./img/tiempo.pdf>] [53
+) (./partes/conclusiones.tex [51] [52 <./img/tiempo.pdf>]
+Overfull \hbox (6.72447pt too wide) in paragraph at lines 6--7
+[]\T1/cmr/m/n/12 En el pre-sen-te tra-ba-jo fue-ron im-ple-men-ta-das 5 me-tahe
+u-rís-ti-cas bio-inspiradas (GGA,
+ []
 
-]) [54]
-(./tesis.bbl [55
+[53
+
+]) [54] (./tesis.bbl [55
 
 
-] [56] [57] [58] [59]) (./partes/apendiceA.tex [60]
+] [56] [57] [58] [59]) (./partes/apendiceA.tex
+[60]
 Ap\'{e}ndice A.
 ------------------------------------------------------------------------------
  A Entonaci\IeC {\'o}n de las metaheur\IeC {\'\i }sticas
@@ -1757,7 +1755,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [61
 
-] <img/apendice-gga.pdf, id=5416, 995.8505pt x 312.97928pt>
+] <img/apendice-gga.pdf, id=5433, 995.8505pt x 312.97928pt>
 File: img/apendice-gga.pdf Graphic file (type pdf)
 
 <use img/apendice-gga.pdf>
@@ -1768,7 +1766,7 @@ Package pdftex.def Info: img/apendice-gga.pdf used on input line 35.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [62 <./img/apendice-gga.pdf>]
-<img/apendice-sga.pdf, id=5447, 995.8505pt x 312.97928pt>
+<img/apendice-sga.pdf, id=5464, 995.8505pt x 312.97928pt>
 File: img/apendice-sga.pdf Graphic file (type pdf)
 
 <use img/apendice-sga.pdf>
@@ -1779,21 +1777,21 @@ Package pdftex.def Info: img/apendice-sga.pdf used on input line 68.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [63 <./img/apendice-sga.pdf>]
-<img/apendice-chc.pdf, id=5478, 483.8075pt x 314.17375pt>
+<img/apendice-chc.pdf, id=5495, 483.8075pt x 314.17375pt>
 File: img/apendice-chc.pdf Graphic file (type pdf)
 
 <use img/apendice-chc.pdf>
 Package pdftex.def Info: img/apendice-chc.pdf used on input line 96.
 (pdftex.def)             Requested size: 217.98372pt x 141.55424pt.
  [64 <./img/apendice-chc.pdf>]
-<img/apendice-pbil.pdf, id=5501, 995.8505pt x 682.8712pt>
+<img/apendice-pbil.pdf, id=5518, 995.8505pt x 682.8712pt>
 File: img/apendice-pbil.pdf Graphic file (type pdf)
 
 <use img/apendice-pbil.pdf>
 Package pdftex.def Info: img/apendice-pbil.pdf used on input line 130.
 (pdftex.def)             Requested size: 435.96745pt x 298.94298pt.
  [65 <./img/apendice-pbil.pdf>]
-<img/apendice-pso.pdf, id=5532, 995.8505pt x 312.97928pt>
+<img/apendice-pso.pdf, id=5549, 995.8505pt x 312.97928pt>
 File: img/apendice-pso.pdf Graphic file (type pdf)
 
 <use img/apendice-pso.pdf>
@@ -1803,30 +1801,30 @@ Package pdftex.def Info: img/apendice-pso.pdf used on input line 161.
 ------------------------------------------------------------------------------
  Bibliograf\'{\i }a
 ------------------------------------------------------------------------------
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 186.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 186.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 185.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 185.
 (./tesis.aux
 LaTeX Info: Redefining \. on input line 24.
 LaTeX Info: Redefining \% on input line 24.
 LaTeX Info: Redefining \. on input line 28.
 LaTeX Info: Redefining \% on input line 28.
 )
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 186.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 186.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 185.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 185.
 Package rerunfilecheck Info: File `tesis.out' has not changed.
-(rerunfilecheck)             Checksum: 4E62031764E6524FF115432375451724;14129.
+(rerunfilecheck)             Checksum: 820A8928979B7E5A8FB5E94DC2D099F6;14130.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 186.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 185.
  ) 
 Here is how much of TeX's memory you used:
- 31089 strings out of 493308
- 532878 string characters out of 6137817
- 613596 words of memory out of 5000000
- 33647 multiletter control sequences out of 15000+600000
- 33611 words of font info for 82 fonts, out of 8000000 for 9000
+ 31104 strings out of 493308
+ 533128 string characters out of 6137817
+ 613646 words of memory out of 5000000
+ 33655 multiletter control sequences out of 15000+600000
+ 34379 words of font info for 83 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  56i,12n,55p,10441b,664s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
@@ -1855,24 +1853,25 @@ st/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2013/texmf-dist
 onts/type1/public/cm-super/sfcc1095.pfb></usr/local/texlive/2013/texmf-dist/fon
 ts/type1/public/cm-super/sfcc1200.pfb></usr/local/texlive/2013/texmf-dist/fonts
 /type1/public/cm-super/sfcc1440.pfb></usr/local/texlive/2013/texmf-dist/fonts/t
-ype1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2013/texmf-dist/fonts/typ
-e1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1
-/public/cm-super/sfrm1095.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/p
-ublic/cm-super/sfrm1200.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/pub
-lic/cm-super/sfrm1440.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/publi
-c/cm-super/sfrm2074.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/
-cm-super/sfti0800.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm
--super/sfti1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-s
-uper/sfti1095.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-sup
-er/sfti1200.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super
-/sftt0800.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/s
-ftt1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sft
-t1200.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfxc1
-200.pfb>
-Output written on tesis.pdf (75 pages, 7428591 bytes).
+ype1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2013/texmf-dist/fonts/typ
+e1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1
+/public/cm-super/sfrm1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/p
+ublic/cm-super/sfrm1095.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/pub
+lic/cm-super/sfrm1200.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/publi
+c/cm-super/sfrm1440.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/
+cm-super/sfrm2074.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm
+-super/sfti0800.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-s
+uper/sfti1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-sup
+er/sfti1095.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super
+/sfti1200.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/s
+ftt0800.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sft
+t1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sftt1
+200.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfxc120
+0.pfb>
+Output written on tesis.pdf (75 pages, 7450550 bytes).
 PDF statistics:
- 5749 PDF objects out of 6186 (max. 8388607)
- 3150 compressed objects within 32 object streams
- 281 named destinations out of 1000 (max. 500000)
+ 5770 PDF objects out of 6186 (max. 8388607)
+ 3170 compressed objects within 32 object streams
+ 287 named destinations out of 1000 (max. 500000)
  579 words of extra memory for PDF output out of 10000 (max. 10000000)
 

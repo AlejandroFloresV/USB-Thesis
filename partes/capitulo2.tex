@@ -6,7 +6,7 @@
 
 Las metaheurísticas son métodos estocásticos de búsqueda de propósito general sobre espacios combinatorios. Son usados generalmente para tratar problemas de optimización combinatoria, donde su complejidad hace imposible evaluar todas las soluciones factibles en un tiempo razonable. Estos algoritmos son capaces de conseguir ``buenas'' soluciones a un problema en períodos de tiempo aceptables. Sin embargo, para muchos problemas la complejidad de estos algoritmos sigue siendo un factor prohibitivo, debido al uso de funciones ``costosas'' para la evaluación de soluciones intermedias.
 
-La idea es desarrollar algoritmos que recorran solo una fracción del espacio de soluciones, y que sean capaces de encontrar buenas soluciones al problema en cuestión. Para lograrlo, las metaheurísticas combinan procesos de \emph{diversificación} e \emph{intensificación} (o \emph{exploración} y \emph{explotación} respectivamente) \cite{Yang:2008:NMA:1628847}. La fase de \emph{diversificación} implica la generación de soluciones distintas con el objeto de explorar el espacio de búsqueda, mientras que la fase de \emph{intensificación} se refiere al mejoramiento de soluciones (conseguir óptimos locales) mediante el uso de métodos de búsqueda local. La selección de las mejores soluciones asegura la convergencia a soluciones óptimas, mientras que la exploración aleatoria de soluciones evita que el algoritmo quede ``atrapado'' en óptimos locales. La combinación en el uso de ambos procesos hace posible conseguir buenas soluciones al problema, sin la necesidad de recorrer el espacio de búsqueda completo.
+La idea es desarrollar algoritmos que recorran solo una fracción del espacio de soluciones, y que sean capaces de encontrar buenas soluciones al problema en cuestión. Para lograrlo, las metaheurísticas combinan procesos de \emph{diversificación} e \emph{intensificación} (o \emph{exploración} y \emph{explotación} respectivamente) \cite{Yang:2008:NMA:1628847}. La fase de \emph{diversificación} implica la generación de soluciones distintas con el objeto de explorar el espacio de búsqueda, mientras que la fase de \emph{intensificación} se refiere al mejoramiento de soluciones (conseguir óptimos locales) mediante el uso de métodos de búsqueda local. La selección de las mejores soluciones busca la convergencia a soluciones óptimas o casi óptimas, mientras que la exploración aleatoria de soluciones evita que el algoritmo quede ``atrapado'' en óptimos locales. La combinación en el uso de ambos procesos hace posible conseguir buenas soluciones al problema, sin la necesidad de recorrer el espacio de búsqueda completo.
 
 Cada metaheurística está caracterizada por las estrategias que usa para cada fase, así como el orden y la frecuencia en que las aplica. Esto permite clasificarlas en función de su similitud. En este sentido, a continuación se describe un conjunto de metaheurísticas caracterizadas por tener a la naturaleza como fuente de inspiración.
 
@@ -14,7 +14,7 @@ Cada metaheurística está caracterizada por las estrategias que usa para cada f
 
 La habilidad de la naturaleza para moldear soluciones a situaciones complejas mediante procesos y reglas caracterizadas por su simplicidad, la ha convertido en una fuente inagotable de inspiración para el desarrollo de algoritmos de optimización. Estos algoritmos a menudo presentan buen desempeño para aproximar soluciones a todo tipo de problemas, dado que no requieren información sobre la distribución del espacio de búsqueda. Por esta razón, existe una amplia literatura sobre enfoques bio-inspirados \cite{binitha2012survey} para resolver gran variedad de problemas en diversas áreas de computación.
 
-En particular, los enfoques más comunes en la literatura sobre metaheurísticas inspiradas en la naturaleza se apoyan en
+En particular, los enfoques más comunes en la literatura \cite{yang2013swarm} sobre metaheurísticas inspiradas en la naturaleza se apoyan en
 \begin{inparaenum}[\itshape a\upshape)]
 \item la evolución de poblaciones (Algoritmos Evolutivos) y
 \item el comportamiento colectivo (Inteligencia de Enjambre).
@@ -38,7 +38,7 @@ A continuación se describen cuatro algoritmos pertenecientes a la clase de AE: 
 
 \subsubsection{Algoritmo Genético Generacional (GGA)}
 
-GGA (\emph{Generational Genetic Algorithm}) es el esquema ``tradicional'' de aplicación de los AG \cite{back1996evolutionary,Muhlenbein91evolutionin}. Mantiene una población de individuos que evolucionan durante un número de iteraciones. Su principal característica es que en cada iteración se genera una nueva población, \emph{i.e.} un proceso de evolución \emph{generacional}.
+GGA (\emph{Generational Genetic Algorithm}) es el esquema ``tradicional'' de aplicación de los AG \cite{back1996evolutionary,Muhlenbein91evolutionin}. Mantiene una población de individuos que evolucionan durante un número de iteraciones. Su principal característica es que en cada iteración se genera una nueva población, es decir, un proceso de evolución \emph{generacional}.
 
 En cada iteración el proceso evolutivo consiste en la creación de una nueva población de tamaño $\texttt{pop}$ mediante:
 \begin{inparaenum}[\itshape a\upshape)]

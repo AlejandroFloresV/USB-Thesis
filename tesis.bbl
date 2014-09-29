@@ -148,6 +148,13 @@ Lee-Ad Gottlieb, Aryeh Kontorovich, and Robert Krauthgamer.
 \newblock Efficient classification for metric data.
 \newblock {\em CoRR}, abs/1306.2547, 2013.
 
+\bibitem[Glo86]{Glover1986533}
+Fred Glover.
+\newblock Future paths for integer programming and links to artificial
+  intelligence.
+\newblock {\em Computers \& Operations Research}, 13(5):533 -- 549, 1986.
+\newblock Applications of Integer Programming.
+
 \bibitem[GPY08]{gil2008evolving}
 Roberto Gil-Pita and Xin Yao.
 \newblock Evolving edited k-nearest neighbor classifiers.
@@ -170,9 +177,10 @@ J.H. Holland.
   analysis with applications to biology, control, and artificial intelligence}.
 \newblock University of Michigan Press, 1975.
 
-\bibitem[JG]{Jankowski_comparisonof}
+\bibitem[JG04]{Jankowski_comparisonof}
 Norbert Jankowski and Marek Grochowski.
-\newblock Comparison of instances seletion algorithms i. algorithms survey.
+\newblock Comparison of instances seletion algorithms i. algorithms survey,
+  2004.
 
 \bibitem[KE95]{kennedy1995particle}
 J~Kennedy and R~Eberhart.
@@ -304,6 +312,12 @@ D.~Randall Wilson and Tony~R. Martinez.
 Xin-She Yang.
 \newblock {\em Nature-Inspired Metaheuristic Algorithms}.
 \newblock Luniver Press, 2008.
+
+\bibitem[YCX{\etalchar{+}}13]{yang2013swarm}
+X.S. Yang, Z.~Cui, R.~Xiao, A.H. Gandomi, and M.~Karamanoglu.
+\newblock {\em Swarm Intelligence and Bio-Inspired Computation: Theory and
+  Applications}.
+\newblock Elsevier insights. Elsevier Science, 2013.
 
 \bibitem[ZS02]{zhang2002optimal}
 Hongbin Zhang and Guangyu Sun.

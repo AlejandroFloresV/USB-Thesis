@@ -4,27 +4,27 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Conjuntos de datos peque\IeC {\~n}os\relax }}{34}{table.caption.96}
-\contentsline {table}{\numberline {4.2}{\ignorespaces Conjuntos de datos medianos\relax }}{34}{table.caption.97}
-\contentsline {table}{\numberline {4.3}{\ignorespaces Conjuntos de datos grandes\relax }}{35}{table.caption.98}
-\contentsline {table}{\numberline {4.4}{\ignorespaces Par\IeC {\'a}metros usados en cada metaheur\IeC {\'\i }stica\relax }}{37}{table.caption.101}
-\contentsline {table}{\numberline {4.5}{\ignorespaces Resultados al disminuir la probabilidad de aparici\IeC {\'o}n de bit $\delta $}}{39}{table.caption.108}
-\contentsline {table}{\numberline {4.6}{\ignorespaces Ranking de valores probabilidad de aparici\IeC {\'o}n de bit $\delta $}}{40}{table.caption.110}
-\contentsline {table}{\numberline {4.7}{\ignorespaces Resultados usando probabilidades constantes y basadas en heur\IeC {\'\i }sticas}}{41}{table.caption.112}
-\contentsline {table}{\numberline {4.8}{\ignorespaces Ranking de probabilidades constantes o basadas en heur\IeC {\'\i }sticas}}{42}{table.caption.114}
-\contentsline {table}{\numberline {4.9}{\ignorespaces Resultados de metaheur\IeC {\'\i }sticas usando conjuntos de datos peque\IeC {\~n}os}}{44}{table.caption.117}
-\contentsline {table}{\numberline {4.10}{\ignorespaces Ranking de metaheur\IeC {\'\i }sticas usando conjuntos de datos peque\IeC {\~n}os}}{44}{table.caption.118}
-\contentsline {table}{\numberline {4.11}{\ignorespaces Resultados de metaheur\IeC {\'\i }sticas usando conjuntos de datos medianos}}{45}{table.caption.120}
-\contentsline {table}{\numberline {4.12}{\ignorespaces Ranking de metaheur\IeC {\'\i }sticas usando conjuntos de datos medianos}}{45}{table.caption.121}
-\contentsline {table}{\numberline {4.13}{\ignorespaces Resultados de metaheur\IeC {\'\i }sticas usando conjuntos de datos grandes}}{46}{table.caption.123}
-\contentsline {table}{\numberline {4.14}{\ignorespaces Ranking de metaheur\IeC {\'\i }sticas usando conjuntos de datos grandes}}{47}{table.caption.124}
-\contentsline {table}{\numberline {4.15}{\ignorespaces Comparaci\IeC {\'o}n con los resultados publicados por \emph {Cano et al.}}}{47}{table.caption.125}
-\contentsline {table}{\numberline {4.16}{\ignorespaces Resultados promedio por metaheur\IeC {\'\i }stica y conjunto de datos}}{48}{table.caption.127}
-\contentsline {table}{\numberline {4.17}{\ignorespaces Ranking de metaheur\IeC {\'\i }sticas usando todos los conjuntos de datos}}{49}{table.caption.128}
-\contentsline {table}{\numberline {4.18}{\ignorespaces Pruebas de \emph {Wilcoxon} entre PBIL y las dem\IeC {\'a}s metaheur\IeC {\'\i }sticas}}{50}{table.caption.130}
+\contentsline {table}{\numberline {4.1}{\ignorespaces Conjuntos de datos peque\IeC {\~n}os\relax }}{34}{table.caption.99}
+\contentsline {table}{\numberline {4.2}{\ignorespaces Conjuntos de datos medianos\relax }}{34}{table.caption.100}
+\contentsline {table}{\numberline {4.3}{\ignorespaces Conjuntos de datos grandes\relax }}{35}{table.caption.101}
+\contentsline {table}{\numberline {4.4}{\ignorespaces Par\IeC {\'a}metros usados en cada metaheur\IeC {\'\i }stica\relax }}{37}{table.caption.104}
+\contentsline {table}{\numberline {4.5}{\ignorespaces Resultados al disminuir la probabilidad de aparici\IeC {\'o}n de bit $\delta $}}{39}{table.caption.112}
+\contentsline {table}{\numberline {4.6}{\ignorespaces Ranking de valores probabilidad de aparici\IeC {\'o}n de bit $\delta $}}{40}{table.caption.114}
+\contentsline {table}{\numberline {4.7}{\ignorespaces Resultados usando probabilidades constantes y basadas en heur\IeC {\'\i }sticas}}{41}{table.caption.116}
+\contentsline {table}{\numberline {4.8}{\ignorespaces Ranking de probabilidades constantes o basadas en heur\IeC {\'\i }sticas}}{42}{table.caption.118}
+\contentsline {table}{\numberline {4.9}{\ignorespaces Resultados de metaheur\IeC {\'\i }sticas usando conjuntos de datos peque\IeC {\~n}os}}{44}{table.caption.121}
+\contentsline {table}{\numberline {4.10}{\ignorespaces Ranking de metaheur\IeC {\'\i }sticas usando conjuntos de datos peque\IeC {\~n}os}}{44}{table.caption.122}
+\contentsline {table}{\numberline {4.11}{\ignorespaces Resultados de metaheur\IeC {\'\i }sticas usando conjuntos de datos medianos}}{45}{table.caption.124}
+\contentsline {table}{\numberline {4.12}{\ignorespaces Ranking de metaheur\IeC {\'\i }sticas usando conjuntos de datos medianos}}{45}{table.caption.125}
+\contentsline {table}{\numberline {4.13}{\ignorespaces Resultados de metaheur\IeC {\'\i }sticas usando conjuntos de datos grandes}}{46}{table.caption.127}
+\contentsline {table}{\numberline {4.14}{\ignorespaces Ranking de metaheur\IeC {\'\i }sticas usando conjuntos de datos grandes}}{47}{table.caption.128}
+\contentsline {table}{\numberline {4.15}{\ignorespaces Comparaci\IeC {\'o}n con los resultados publicados por \emph {Cano et al.}}}{47}{table.caption.129}
+\contentsline {table}{\numberline {4.16}{\ignorespaces Resultados promedio por metaheur\IeC {\'\i }stica y conjunto de datos}}{48}{table.caption.131}
+\contentsline {table}{\numberline {4.17}{\ignorespaces Ranking de metaheur\IeC {\'\i }sticas usando todos los conjuntos de datos}}{49}{table.caption.132}
+\contentsline {table}{\numberline {4.18}{\ignorespaces Pruebas de \emph {Wilcoxon} entre PBIL y las dem\IeC {\'a}s metaheur\IeC {\'\i }sticas}}{51}{table.caption.134}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {A.1}{\ignorespaces Valores evaluados para los par\IeC {\'a}metros de GGA}}{62}{table.caption.139}
-\contentsline {table}{\numberline {A.2}{\ignorespaces Valores evaluados para los par\IeC {\'a}metros de SGA}}{63}{table.caption.142}
-\contentsline {table}{\numberline {A.3}{\ignorespaces Valores evaluados para los par\IeC {\'a}metros de CHC}}{64}{table.caption.145}
-\contentsline {table}{\numberline {A.4}{\ignorespaces Valores evaluados para los par\IeC {\'a}metros de PBIL}}{64}{table.caption.148}
-\contentsline {table}{\numberline {A.5}{\ignorespaces Valores evaluados para los par\IeC {\'a}metros de PSO}}{66}{table.caption.151}
+\contentsline {table}{\numberline {A.1}{\ignorespaces Valores evaluados para los par\IeC {\'a}metros de GGA}}{62}{table.caption.143}
+\contentsline {table}{\numberline {A.2}{\ignorespaces Valores evaluados para los par\IeC {\'a}metros de SGA}}{63}{table.caption.146}
+\contentsline {table}{\numberline {A.3}{\ignorespaces Valores evaluados para los par\IeC {\'a}metros de CHC}}{64}{table.caption.149}
+\contentsline {table}{\numberline {A.4}{\ignorespaces Valores evaluados para los par\IeC {\'a}metros de PBIL}}{64}{table.caption.152}
+\contentsline {table}{\numberline {A.5}{\ignorespaces Valores evaluados para los par\IeC {\'a}metros de PSO}}{66}{table.caption.155}
